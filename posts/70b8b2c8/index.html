@@ -1,0 +1,1008 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=&#34;auto&#34;>
+
+
+
+<head>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-9HJ2PMCHPY"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-9HJ2PMCHPY');
+</script>
+<meta name="msvalidate.01" content="FA75E899632FACA1BA9E71D03A1FD8EC" />
+<script src="https://utteranc.es/client.js"
+        repo="LizheNing/LizheNing.github.io"
+        issue-term="pathname"
+        label="Comment"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script>  
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/tag-icon.png">
+  <link rel="icon" href="/img/tag-icon.png">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+  
+  <meta name="theme-color" content="#2f4154">
+  
+    <meta name="description" content="本文给出了2020年中国电网平均排放因子的计算结果以及与2019电网排放因子的异同点。">
+  
+  <meta name="author" content="John Doe">
+  <meta name="keywords" content="">
+  
+  <title>2020年电网排放因子 - Hexo</title>
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.4.0/styles/github-gist.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+  
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"lizhening.github.io","root":"/","version":"1.8.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":"§"},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"onlypost":false},"web_analytics":{"enable":true,"baidu":null,"google":"UA-208524185-1","gtag":"G-9HJ2PMCHPY","tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}}};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+</head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>Lizhe's Blog</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/links/">
+                <i class="iconfont icon-link-fill"></i>
+                友链
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;</a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" href="javascript:">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner" id="banner" parallax=true
+         style="background: url('/img/default.png') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="2020年电网排放因子">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2023-04-29 11:41" pubdate>
+        2023年4月29日 中午
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      6.1k 字
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      70
+       分钟
+    </span>
+  
+
+  
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">2020年电网排放因子</h1>
+            
+            <div class="markdown-body">
+              <blockquote>
+<p>恰逢国家30·60碳达峰碳中和战略，2019年中国区域及省级电网排放因子得到了各界朋友关注。各位前辈、同仁对上述数据提出了宝贵意见。在参考各位，结合个人理解，2020年中国区域及省级电网排放因子。</p>
+</blockquote>
+<p>“电网排放因子”是指向电力系统提供的每单位电力相关联的温室气体排放因子，包括二氧化碳排放因子（$tCO_2/MWh$）、甲烷排放因子（$tCH_4/MWh$）、氧化亚氮排放因子（$tN_2O/MWh$）以及二氧化碳当量排放因子（$tCO_2e/MWh$）。</p>
+<h2 id="主要进展"><a href="#主要进展" class="headerlink" title="主要进展"></a>主要进展</h2><p>相对于2019年只计算了二氧化碳排放因子，该版本数据最大的变化是在二氧化碳排放因子的基础上，增加了甲烷和氧化亚氮排放因子，并得到二氧化碳当量电力排放因子，数据更加完整，与国际通行标准更加对接。同时本次更新增加了2020年数据，并同时修正了部分排放因子引用错误，使结果更加准确。</p>
+<h2 id="电网划分"><a href="#电网划分" class="headerlink" title="电网划分"></a>电网划分</h2><h3 id="区域电网"><a href="#区域电网" class="headerlink" title="区域电网"></a>区域电网</h3><p>区域电网划分与2019年并无变化，因此不在赘述，电网名称和覆盖的地理范围如下：</p>
+<table>
+<thead>
+<tr>
+<th align="center"><strong>电网名称</strong></th>
+<th align="left"><strong>覆盖的地理范围</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">华北区域电网</td>
+<td align="left">北京市、天津市、河北省、山西省、山东省、内蒙古自治区</td>
+</tr>
+<tr>
+<td align="center">东北区域电网</td>
+<td align="left">辽宁省、吉林省、黑龙江省</td>
+</tr>
+<tr>
+<td align="center">华东区域电网</td>
+<td align="left">上海市、江苏省、浙江省、安徽省、福建省</td>
+</tr>
+<tr>
+<td align="center">华中区域电网</td>
+<td align="left">河南省、湖北省、湖南省、江西省、四川省、重庆市</td>
+</tr>
+<tr>
+<td align="center">西北区域电网</td>
+<td align="left">陕西省、甘肃省、青海省、宁夏自治区、新疆自治区</td>
+</tr>
+<tr>
+<td align="center">南方区域电网</td>
+<td align="left">广东省、广西自治区、云南省、贵州省、海南省</td>
+</tr>
+</tbody></table>
+<h3 id="省级电网"><a href="#省级电网" class="headerlink" title="省级电网"></a>省级电网</h3><p>按照省级电网边界仍然与省级行政区域边界相一致的原则，将中国的省级电网划分为北京、天津、河北、山西、内蒙古、山东、辽宁、吉林、黑龙江、上海、江苏、浙江、安徽、福建、河南、湖北、湖南、江西、四川、重庆、陕西、甘肃、青海、宁夏、新疆、广东、广西、云南、贵州和海南电网。由于缺少相关信息，暂不考虑西藏自治区、香港特别行政区、澳门特别行政区和台湾省四个地区的省级电网。</p>
+<h2 id="排放因子计算方法"><a href="#排放因子计算方法" class="headerlink" title="排放因子计算方法"></a>排放因子计算方法</h2><p>排放因子计算思路与2019年并无本质区别，但2020年数据增加了甲烷和氧化亚氮排放因子，并且燃料燃烧的甲烷、氧化亚氮排放量的计算方式与二氧化碳排放量的计算方式有一定差异，为了便于读者区分，再次将两种方式全部展开介绍。</p>
+<h3 id="区域电网-1"><a href="#区域电网-1" class="headerlink" title="区域电网"></a>区域电网</h3><p>区域电网排放因子是该区域范围内，发、用电隐含的温室气体排放量与其对应的发、用电量的比值。其中，发、用电包含三个来源：</p>
+<ol>
+<li>区域电网 $i$ 覆盖的地理范围内，电厂的净上网电量（扣除厂自用电，下文所称“净上网电量”均扣除厂自用电）；</li>
+<li>区域电网 $j$ 向区域电网 $i$ 净送出的电量；</li>
+<li>$k$ 国向区域电网 $i$ 净出口的电量。</li>
+</ol>
+<p>因此，温室气体排放量也应统计上述三种电力来源，包括：</p>
+<ol>
+<li>区域电网 $i$ 覆盖的地理范围内发电产生的直接温室气体排放量；</li>
+<li>区域电网 $j$ 向区域电网 $i$ 净送出的电量隐含的温室气体排放量；</li>
+<li>$k$ 国向区域电网 $i$ 净出口的电量隐含的温室气体排放量。</li>
+</ol>
+<p>计算公式如下：<br>$$EF_{grid,i}=\frac{Em_{grid,i}+\sum_{j}^{}\left (EF_{grid,j}\times E_{imp,j,i}\right)+\sum_{k}^{}\left (EF_{k}\times E_{imp,k,i}\right)}{\sum_{q}^{}E_{grid,i,q}+\sum_{j}^{}E_{imp,j,i} + \sum_{k}^{}E_{imp,k,i}} \tag{1} $$</p>
+<p>式中：<br>$EF_{grid,i}$：区域电网 $i$ 的排放因子，$tCO_2/ 10^{4} kWh、gCH_4/ 10^{4} kWh、gN_2O/ 10^{4} kWh、tCO_2e/ 10^{4} kWh$；<br>$Em_{grid,i}$：区域电网 $i$ 覆盖的地理范围内发电产生的直接温室气体排放量（由公式（2）计算得到），$tCO_2、tCH_4、tN_2O、tCO_2e$；<br>$EF_{grid,j}$：向区域电网 $i$ 净送出电量的区域电网 $j$ 的温室气体排放因子，$tCO_2/ 10^{4} kWh、gCH_4/ 10^{4} kWh、gN_2O/ 10^{4} kWh、tCO_2e/ 10^{4} kWh$；<br>$E_{imp,j,i}$：区域电网 $j$ 向区域电网 $i$ 净送出的电量，$10^{4}kWh$;<br>$EF_{k}$：向区域电网 $i$ 净出口电量的 $k$ 国发电温室气体排放因子，$tCO_2/ 10^{4} kWh、gCH_4/ 10^{4} kWh、gN_2O/ 10^{4} kWh、tCO_2e/ 10^{4} kWh$；<br>$E_{imp,k,i}$：$k$ 国向区域电网 $i$ 净出口的电量，$10^{4}kWh$;<br>$E_{grid,i}$：区域电网 $i$ 覆盖的地理范围内，应用 $q$ 类型技术发电厂的年<strong>净上网电量（由公式（4）计算得到）</strong>，$10^{4}kWh$;<br>$i$：东北、华北、华东、华中、西北和南方区域电网之一；<br>$j$：向区域电网 $i$ 净送出电量的其他区域电网；<br>$k$：向区域电网 $i$ 净出口电量的其他国家；<br>$q$：火电、水力发电、风力发电、核能发电以及太阳能发电之一。</p>
+<p>其中，区域电网 $i$ 覆盖的地理范围内，发电产生的直接温室气体排放量（$Em_{grid,i}$），可以通过化石燃料消耗量（$FC_{m}$）、燃料平均低位发热量（$NCV_{m}$）以及燃料排放因子（$EF_{m}$）乘积求得，公式如下：<br>$$Em_{grid,i}=\sum_{m}^{}\left ( FC_{m}\times NCV_{m}\times EF_{m}\div 100 \right )<br> \tag{2}$$<br>式中：<br>$FC_{m}$：电网 $i$ 覆盖的地理范围内用于发电的化石燃料 $m$ 的消费量，$10^{4}t、10^{8}m^{3}$；<br>$NCV_{m}$：化石燃料 $m$ 的平均低位热值，$MJ/t、MJ/10^{4}m^{3}$；<br>$EF_{m}$：化石燃料 $m$ 的温室气体排放因子（$CO_2$排放因子由公式（3）计算得到），$gCO_{2}/MJ、gCH_{4}/MJ、gN_{2}O/MJ$；<br>$m$：发电消费的化石燃料种类。</p>
+<p>在计算不同种类温室气体排放量时，对于公式（2）中的燃料排放因子（$EF_{m}$）来源不同：</p>
+<ol>
+<li>对于$CO_2$排放量，应基于燃料，选择中国本土数据根据公式（3）计算求得；</li>
+<li>对于$CH_4、N_2O$，由于缺少更精确数据，可以直接使用基于燃料热量的排放因子。<br>$$EF_{m}=CC_{m}\times OF_{m}\times \frac{44}{12} \tag{3}$$<br>式中：<br>$CC_{m}$：化石燃料 $m$ 的单位热值含碳量，$g C/MJ$；<br>$OF_{m}$：化石燃料 $m$ 的碳氧化率，%；<br>$\frac{44}{12}$：碳到二氧化碳的换算系数。</li>
+</ol>
+<p>在计算本区域内电厂的净上网电量时，应当扣除发电企业自身厂用电量，公式如下：<br>$$E_{grid,i,q}=E_{plant,i,q}\times (1-PCR_{i,q}) \tag{4}$$<br>式中：<br>$E_{plant,i,q}$：区域电网 $i$ 覆盖的地理范围内，应用 $q$ 类型技术的电厂年发电量，$10^{4}kWh$；<br>$PCR_{i,q}$：区域电网 $i$ 覆盖的地理范围内，应用 $q$ 类型技术发电厂平均厂用电率，%。</p>
+<h3 id="省级电网-1"><a href="#省级电网-1" class="headerlink" title="省级电网"></a>省级电网</h3><p>省级电网排放因子计算方法与区域电网类似，相较于区域电网，省级电网多了一重电力来源——区域电网 $i$ 向 $p$ 省净送出的电量。部分区域，如北京，社会总用电量高于本地发电量、其他省份净送入电量之和。因此，考虑缺口部分为华北电网向北京净送出电力。省级电网排放因子计算公式如下：<br>$$EF_{p}=\frac{Em_{p}+\sum_{n}^{}(EF_{n}\times E_{imp,n,p})+\sum_{k}^{} (EF_{k}\times E_{imp,k,p})+(EF_{grid,i}\times E_{imp,i,p})}{\sum_{q}^{}E_{p,q}+\sum_{n}^{}E_{imp,n,p} + \sum_{k}^{}E_{imp,k,p} + E_{imp,i,p}} \tag{5} $$<br>式中：<br>$EF_{p}$：$p$ 省电网的温室气体排放因子，$tCO_2/ 10^{4} kWh、gCH_4/ 10^{4} kWh、gN_2O/ 10^{4} kWh、tCO_2e/ 10^{4} kWh$；<br>$Em_{p}$：$p$ 省发电产生的温室气体直接排放量（参照公式（2）），$tCO_2、tCH_4、tN_2O、tCO_2e$；<br>$EF_{n}$：向 $p$ 省净送出电量的 $n$ 省电网温室气体排放因子，$tCO_2/ 10^{4} kWh、gCH_4/ 10^{4} kWh、gN_2O/ 10^{4} kWh、tCO_2e/ 10^{4} kWh$；<br>$E_{imp,n,p}$：$n$ 省向 $p$ 省净送出的电量，$10^{4}kWh$；<br>$EF_{k}$：向 $p$ 省净出口电量的 $k$ 国发电温室气体排放因子，$tCO_2/ 10^{4} kWh、gCH_4/ 10^{4} kWh、gN_2O/ 10^{4} kWh、tCO_2e/ 10^{4} kWh$；<br>$E_{imp,k,p}$：$k$ 国向 $p$ 省净出口的电量，$10^{4}kWh$；<br>$EF_{grid,i}$：区域电网 $i$ 的温室气体排放因子，$tCO_2/ 10^{4} kWh、gCH_4/ 10^{4} kWh、gN_2O/ 10^{4} kWh、tCO_2e/ 10^{4} kWh$；<br>$E_{imp,i,p}$：区域电网 $i$ 向 $p$ 省净送出的电量（由公式（7）计算得到），$10^{4}kWh$；<br>$E_{p,q}$：$p$ 省，应用 $q$ 类型技术发电厂年净上网电量（参照公式（4）），$10^{4}kWh$；<br>$p$：北京、天津、河北、山西、内蒙古、山东、辽宁、吉林、黑龙江、上海、江苏、浙江、安徽、福建、河南、湖北、湖南、江西、四川、重庆、陕西、甘肃、青海、宁夏、新疆、广东、广西、云南、贵州和海南 30 个省份之一；<br>$n$：向 $p$ 省净送出电量的其他省份；<br>$k$：向 $p$ 省净出口电量的国家；<br>$i$：$p$ 省所在的区域电网；<br>$q$：火电、水力发电、风力发电、核能发电以及太阳能发电之一。</p>
+<p>其中，区域电网 $i$ 向 $p$ 省净送出的电量应按公式（6）计算，<br>$$E_{imp,i,p}=max((E_{u,p} - E_{p} - \sum_{n}^{}E_{imp,n,p} - \sum_{k}^{}E_{imp,k,p}),0) \tag{6}$$<br>式中：<br>$E_{u,p}$：$p$ 省年度全社会总用电量，$10^{4}kWh$。</p>
+<h2 id="计算顺序"><a href="#计算顺序" class="headerlink" title="计算顺序"></a>计算顺序</h2><p>在确定排放因子计算方法之后，需要确定排放因子的计算顺序，即先算哪一个区域/省级电网的排放因子。 $p$ 省（区域）的电网排放因子大小会受到四方面因素影响：</p>
+<ol>
+<li>自身发电结构；</li>
+<li>向 $p$ 省净送出电量的 $n$ 省电网温室气体排放因子；</li>
+<li>向 $p$ 省净出口电量的 $k$ 国发电温室气体排放因子；</li>
+<li>区域电网 $i$ 向 $p$ 省净送出的电量的温室气体排放因子。</li>
+</ol>
+<p>因此，应当<strong>优先计算区域电网排放因子，在计算省级电网排放因子</strong>，确定过程如下：</p>
+<ol>
+<li>计算省际间电力净流向关系。根据各省送出电量情况，计算出电力净流向量，得出省际间电力净流向关系。</li>
+<li>计算各省与区域电网间的电力交换量。根据各省发电、用电、与其他省份及国家和地区的电力交换等数据，参照公式（6）计算得出各省与所在区域电网间的电力交换量。</li>
+<li>确定电网因子计算顺序。按照<strong>先计算无调入电力的电网</strong>，再计算调入电排放因子已知电网的顺序依次计算。</li>
+<li>如果存在三个区域/省级电网之间呈现环状送电情况，即如下图所示，华中电网向华东电网净送出电力，华东电网向南方电网净送出电力，南方电网向华中电网净送出电力。无法按照上述顺序求解每一个电网排放因子，建议利用下方恒等式构建三元一次方程，同时求解三个电网排放因子。</li>
+</ol>
+<figure class="highlight excel"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs excel">电网总排放量=电网总用电量×电网排放因子<br> =本地发电排放量+其他地区调入电量×调入地区电力排放因子<br><br>以华东电网二氧化碳排放因子为例，<br>华东电网总二氧化碳排放量=华东电网用电量*华东电网二氧化碳排放因子<br> =华东电网发电二氧化碳排放量+华中向华东净调入电量*华中电网二氧化碳排放因子+南方向华东净调入电量*南方电网二氧化碳排放因子+华北向华东净调入电量*华北电网二氧化碳排放因子+西北向华东净调入电量*西北电网二氧化碳排放因子<br>其中，华东电网用电量=华东电网覆盖范围内电网净上网电量+华中向华东净调入电量+南方向华东净调入电量+华北向华东净调入电量+西北向华东净调入电量<br><br>整理可得，<br>华东电网用电量（已知量）*华东电网排放因子（未知量）-华中向华东净调入电量（已知量）*华中电网二氧化碳排放因子（未知量）-南方向华东净调入电量（已知量）*南方电网二氧化碳排放因子（未知量）<br>=华东电网发电二氧化碳排放量（已知量）+华北向华东净调入电量（已知量）*华北电网二氧化碳排放因子（已知量）+西北向华东净调入电量（已知量）*西北电网二氧化碳排放因子（已知量）<br></code></pre></td></tr></table></figure>
+
+<p><img src="https://lizhening.github.io/img/circle.png" srcset="/img/loading.gif" alt="环状电网示意图"></p>
+<h2 id="数据来源"><a href="#数据来源" class="headerlink" title="数据来源"></a>数据来源</h2><p>数据来源方面变化主要体现在增加了燃料的甲烷和氧化亚氮排放因子，以综合评估电力温室气体排放。同时更新了之前少量引用错误的数据。</p>
+<h3 id="活动数据"><a href="#活动数据" class="headerlink" title="活动数据"></a>活动数据</h3><ol>
+<li>发电燃料消费量（$FC_{m}$）来源自《中国能源统计年鉴2021》；</li>
+<li>火电、水电、风电、太阳能发电量（$E_{p,q}$）来源自《中国电力统计年鉴2021》，核电发电量以及厂用电率（$PCR_{i,q}$）来自《2020年电力工业统计资料汇编》；</li>
+<li>跨省电量交换（$E_{imp,n,p}$）和进出口电量（$E_{imp,k,p}$）、以及全社会总用电量（$E_{u,p}$）来源自《2020年电力工业统计资料汇编》。</li>
+</ol>
+<h3 id="排放因子"><a href="#排放因子" class="headerlink" title="排放因子"></a>排放因子</h3><h4 id="燃料含碳量-CC-m"><a href="#燃料含碳量-CC-m" class="headerlink" title="燃料含碳量$(CC_{m})$"></a>燃料含碳量$(CC_{m})$</h4><p><strong>燃料含碳量数据主要采用2011 年发行的《省级温室气体清单编制指南（试行）》第一章（能源活动）的表1.5（公共电力与热力），少量未尽数据及其来源如下：</strong></p>
+<ul>
+<li>煤矸石采用“国家碳市场帮助平台”中专家提供的缺省值；</li>
+<li>高炉煤气、转炉煤气和其他煤气分别采用《2006 IPCC Guidelines for National Greenhouse Gas Inventories》V2_1_Ch1 table 1.3 Blast Furnace Gas、Oxygen Steel Furnace Gas和Gas Works Gas的缺省值；</li>
+<li>其他焦化产品、煤油、液化石油气、石油脑、润滑油、石油沥青、石油焦分别采用《省级温室气体清单编制指南（试行）》（2011年3月）第一章第18页表1.7中其他焦化产品、一般煤油、LPG、石油脑、润滑油、沥青、石油焦的含碳量，石蜡和溶剂油采用《2005中国温室气体清单研究》（2014年1月）第二章第55页表2-30中潜在碳排放因子20.0tC/TJ。</li>
+<li>未特别说明的燃料种类均采用《省级温室气体清单编制指南》表1.5对应燃料种类的数值。</li>
+</ul>
+<h4 id="燃料碳氧化率-OF-m"><a href="#燃料碳氧化率-OF-m" class="headerlink" title="燃料碳氧化率($OF_{m}$)"></a>燃料碳氧化率($OF_{m}$)</h4><p><strong>燃煤的碳氧化率</strong>按照2022年12月19日发布的《企业温室气体排放核算与报告指南 发电设施》中提供的最新数据**取99%**。</p>
+<p>其他燃料类型按照2011年《省级温室气体清单编制指南（试行）》第一章能源活动、化石燃料燃烧活动内容节、部门方法中给出的<strong>能源行业平均氧化率：燃油（98%）和燃气（99%）</strong>。</p>
+<p>其中煤制品、焦炭和其他焦化产品采用《省级温室气体清单编制指南（试行）》（2011年3月）第一章第18页表1.7中的型煤、焦炭和其他焦化产品碳氧化率90%、93%和93%，石蜡、溶剂油采用《2005中国温室气体清单研究》（2014年1月）第二章第55页表2-30中的碳氧化率均为98%。</p>
+<h4 id="燃料平均低位发热量-NCV-m"><a href="#燃料平均低位发热量-NCV-m" class="headerlink" title="燃料平均低位发热量($NCV_{m}$)"></a>燃料平均低位发热量($NCV_{m}$)</h4><p><strong>平均低位发热量数据主要摘自《中国能源统计年鉴2021》，部分数据来源于《公共机构能源资源消耗统计制度》（2017年）以及《2019年度减排项目中国区域电网基准线排放因子》，详细说明如下：</strong></p>
+<ul>
+<li>其它洗煤、煤制品、焦炉煤气、其他煤气、其他焦化产品、天然气和其它能源取值《2019年度减排项目中国区域电网基准线排放因子》OM计算时取值一致；</li>
+<li>煤矸石、高炉煤气、转炉煤气、石油脑、润滑油、石蜡、溶剂油、石油沥青、石油焦、其他石油制品、液化天然气采用《公共机构能源资源消耗统计制度》（2017年7月）附录数据；</li>
+<li><strong>未特别说明均采用能源年鉴数值</strong>。</li>
+</ul>
+<h4 id="燃料-CH-4-与-N-2-O-的排放因子"><a href="#燃料-CH-4-与-N-2-O-的排放因子" class="headerlink" title="燃料$CH_{4}$与$N_{2}O$的排放因子"></a>燃料$CH_{4}$与$N_{2}O$的排放因子</h4><p>由于缺少中国本土数据，<strong>因此$CH_4$和$N_{2}O$的排放因子采用《2006年IPCC国家温室气体清单指南》</strong>，第 2 卷 能源，第二章 固定源燃烧 表2.2 能源工业中固定源燃烧的缺省排放因子。</p>
+<ul>
+<li>排放因子的取值上，原煤、洗精煤、其他洗煤、煤矸石和其他焦化产品均取自Coking Coal的缺省值；</li>
+<li>煤制品取自Brown Coal Briquettes的缺省值；</li>
+<li>焦炭取自Coke Oven Coke and Lignite Coke的缺省值；</li>
+<li>高炉煤气、转炉煤气和其他煤气分别采用Blast Furnace Gas、Oxygen Steel Furnace Gas和Gas Works Gas的缺省值；</li>
+<li>燃料油取自Residual Fuel Oil的缺省值；</li>
+<li>溶剂油取自White Spirit and SBP的缺省值；</li>
+<li>石油沥青取自Bitumen缺省值；</li>
+<li>液化天然气与天然气数值相同。</li>
+</ul>
+<h4 id="进口电量隐含的温室气体排放因子-EF-k"><a href="#进口电量隐含的温室气体排放因子-EF-k" class="headerlink" title="进口电量隐含的温室气体排放因子($EF_{k}$)"></a>进口电量隐含的温室气体排放因子($EF_{k}$)</h4><p>中国电力企业联合会发布的《2020年电力工业统计资料汇编》显示，2020年我国与周边多国存在电力跨境交易，以向周边国家售电，支持边境地区发展为主。但仍有例外，2020年通过黑龙江省从俄罗斯联邦净购入302,804万度电、通过云南省从缅甸联邦共和国净购入72694万度电。上述两国电网二氧化碳排放因子来自<a target="_blank" rel="noopener" href="https://www.irena.org/">International Renewable Energy Agency(IRENA)</a>，俄罗斯联邦电网二氧化碳排放因子为$295gCO2/kWh$ ，缅甸联邦共和国电网二氧化碳排放因子为$262gCO2/kWh$。</p>
+<h4 id="全球升温潜值-GWP"><a href="#全球升温潜值-GWP" class="headerlink" title="全球升温潜值($GWP$)"></a>全球升温潜值($GWP$)</h4><p>计算$CO_{2}e$使用的是《气候变化2019：联合国政府间气候变化专门委员会第六次评估报告》中提出的100年全球变暖潜势值。$GWP_{CH_{4}}$取29.8，$GWP_{N_{2}O}$取273。</p>
+<h2 id="数据质量说明"><a href="#数据质量说明" class="headerlink" title="数据质量说明"></a>数据质量说明</h2><p>在计算过程中得到了各位前辈和同仁大力支持，本人也力图使用尽可能精确的数据和方法进行排放因子计算，仍有下列不确定因素。</p>
+<ul>
+<li>甲烷和氧化亚氮排放因子取决于燃烧技术和工作条件，而在各个燃烧装置和各段时期之间其差异很大。本计算采用《2006年IPCC国家温室气体清单指南》提供的缺省值，该数值可能与中国实际数据存在偏差，会引入很大的不确定性。</li>
+<li>西藏自治区通过多条输电线路与青海、四川等地相连，并实现向四川省供电（华中电网）。由于缺少西藏发电燃料消耗数据，无法合理计算西藏电网排放因子，因此本文，对四川省和华中电网从西藏自治区购入电量以及购入电量隐含的排放均不纳入计算。这会导致四川省和华中电网排放因子与实际值存在偏差。西藏自治区火力发电量仅占自治区总上网电网1.12%，电力清洁化程度高，排放因子较小。并且西藏自治区向四川省净送出电量仅占四川发电量0.14%，因此，不会对本文得出的计算结果产生显著影响。</li>
+<li>本文使用公式（6）估算区域电网 $i$ 向 $p$ 省净送出的电量，社会总用电量为终端实际用电量，不包含电力传输和分配过程中损耗，会造成估算电量偏小，对部分省市排放因子的计算结果产生影响。</li>
+<li>本文计算采用的数据来源广泛，包括来自《电力工业统计资料汇编》和《中国能源统计年鉴》的活动水平数据，来自《中国能源统计年鉴》、《省级温室气体清单编制指南（试行）》、《重点用能单位能源利用状况报告》、《2006年IPCC国家温室气体清单指南》和《公共机构能源资源消耗统计制度》的计算参数等。数据来源的数据质量会直接影响本文排放因子的计算结果。</li>
+<li>《能源统计年鉴》中对生产电力投入的“其他能源”并没有清楚定义，无法确定其他排放因子，因此本文参考《2019年度减排项目中国区域电网基准线排放因子》，未计算由“其他能源”生产电力导致的排放。</li>
+<li>本文假设水电、核电、风电和太阳能的发电过程没有产生任何温室气体直接排放，这样可能会低估电力生产导致的排放。</li>
+</ul>
+<h2 id="计算结果"><a href="#计算结果" class="headerlink" title="计算结果"></a>计算结果</h2><h3 id="区域电网排放因子计算结果"><a href="#区域电网排放因子计算结果" class="headerlink" title="区域电网排放因子计算结果"></a>区域电网排放因子计算结果</h3><table>
+<thead>
+<tr>
+<th align="center">区域</th>
+<th align="center">排放因子（$tCO_2e/MWh$）</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">东北 Northeast</td>
+<td align="center">0.8604</td>
+</tr>
+<tr>
+<td align="center">西北 Northwest</td>
+<td align="center">0.6812</td>
+</tr>
+<tr>
+<td align="center">华中 Central</td>
+<td align="center">0.4349</td>
+</tr>
+<tr>
+<td align="center">华北 North China</td>
+<td align="center">0.9023</td>
+</tr>
+<tr>
+<td align="center">华东 East China</td>
+<td align="center">0.6308</td>
+</tr>
+<tr>
+<td align="center">南方 Southern</td>
+<td align="center">0.4178</td>
+</tr>
+</tbody></table>
+<h3 id="省级电网排放因子计算结果"><a href="#省级电网排放因子计算结果" class="headerlink" title="省级电网排放因子计算结果"></a>省级电网排放因子计算结果</h3><table>
+<thead>
+<tr>
+<th align="center">电网名称</th>
+<th align="center">CO2 排放因子</th>
+<th align="center">CH4 排放因子</th>
+<th align="center">N2O 排放因子</th>
+<th align="center">CO2 当量排放因子</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"></td>
+<td align="center">$tCO_2/10^4kWh$</td>
+<td align="center">$gCH_4/10^4kWh$</td>
+<td align="center">$gN_2O/10^4kWh$</td>
+<td align="center">$tCO_2e/10^4kWh$</td>
+</tr>
+<tr>
+<td align="center">辽宁省 Liaoning</td>
+<td align="center">8.8493</td>
+<td align="center">85.4059</td>
+<td align="center">119.4561</td>
+<td align="center">8.8845</td>
+</tr>
+<tr>
+<td align="center">吉林省 Jilin</td>
+<td align="center">8.8480</td>
+<td align="center">90.2199</td>
+<td align="center">132.2501</td>
+<td align="center">8.8868</td>
+</tr>
+<tr>
+<td align="center">黑龙江省 Heilongjiang</td>
+<td align="center">8.5103</td>
+<td align="center">87.4651</td>
+<td align="center">127.5686</td>
+<td align="center">8.5477</td>
+</tr>
+<tr>
+<td align="center">北京市 Beijing</td>
+<td align="center">6.8418</td>
+<td align="center">78.7717</td>
+<td align="center">78.1575</td>
+<td align="center">6.8655</td>
+</tr>
+<tr>
+<td align="center">天津市 Tianjin</td>
+<td align="center">8.9489</td>
+<td align="center">97.4149</td>
+<td align="center">109.1597</td>
+<td align="center">8.9816</td>
+</tr>
+<tr>
+<td align="center">河北省 Hebei</td>
+<td align="center">11.0020</td>
+<td align="center">93.2625</td>
+<td align="center">116.5665</td>
+<td align="center">11.0366</td>
+</tr>
+<tr>
+<td align="center">山西省 Shanxi</td>
+<td align="center">8.9902</td>
+<td align="center">93.4738</td>
+<td align="center">130.3812</td>
+<td align="center">9.0286</td>
+</tr>
+<tr>
+<td align="center">内蒙古 Inner Mongolia</td>
+<td align="center">10.4919</td>
+<td align="center">108.0796</td>
+<td align="center">160.4248</td>
+<td align="center">10.5390</td>
+</tr>
+<tr>
+<td align="center">山东省 Shandong</td>
+<td align="center">7.8486</td>
+<td align="center">78.3806</td>
+<td align="center">112.5172</td>
+<td align="center">7.8817</td>
+</tr>
+<tr>
+<td align="center">陕西省 Shaanxi</td>
+<td align="center">6.7646</td>
+<td align="center">72.3055</td>
+<td align="center">99.5182</td>
+<td align="center">6.7940</td>
+</tr>
+<tr>
+<td align="center">甘肃省 Gansu</td>
+<td align="center">4.5918</td>
+<td align="center">47.3291</td>
+<td align="center">70.1625</td>
+<td align="center">4.6124</td>
+</tr>
+<tr>
+<td align="center">青海省 Qinghai</td>
+<td align="center">0.9584</td>
+<td align="center">10.0458</td>
+<td align="center">14.9777</td>
+<td align="center">0.9628</td>
+</tr>
+<tr>
+<td align="center">宁夏自治区 Ningxia</td>
+<td align="center">8.5283</td>
+<td align="center">88.3995</td>
+<td align="center">130.4300</td>
+<td align="center">8.5665</td>
+</tr>
+<tr>
+<td align="center">新疆自治区 Xinjiang</td>
+<td align="center">8.0112</td>
+<td align="center">83.9185</td>
+<td align="center">123.6992</td>
+<td align="center">8.0475</td>
+</tr>
+<tr>
+<td align="center">上海市 Shanghai</td>
+<td align="center">5.7352</td>
+<td align="center">59.6171</td>
+<td align="center">73.6203</td>
+<td align="center">5.7571</td>
+</tr>
+<tr>
+<td align="center">江苏省 Jiangsu</td>
+<td align="center">7.2753</td>
+<td align="center">72.5561</td>
+<td align="center">95.5780</td>
+<td align="center">7.3036</td>
+</tr>
+<tr>
+<td align="center">浙江省 Zhejiang</td>
+<td align="center">5.4379</td>
+<td align="center">57.4743</td>
+<td align="center">80.3691</td>
+<td align="center">5.4616</td>
+</tr>
+<tr>
+<td align="center">安徽省 Anhui</td>
+<td align="center">7.9750</td>
+<td align="center">80.0542</td>
+<td align="center">115.7180</td>
+<td align="center">8.0090</td>
+</tr>
+<tr>
+<td align="center">福建省 Fujian</td>
+<td align="center">5.0928</td>
+<td align="center">52.4793</td>
+<td align="center">72.8901</td>
+<td align="center">5.1143</td>
+</tr>
+<tr>
+<td align="center">江西省 Jiangxi</td>
+<td align="center">6.4137</td>
+<td align="center">62.2699</td>
+<td align="center">88.1664</td>
+<td align="center">6.4397</td>
+</tr>
+<tr>
+<td align="center">河南省 Henan</td>
+<td align="center">7.5608</td>
+<td align="center">76.9309</td>
+<td align="center">110.6354</td>
+<td align="center">7.5933</td>
+</tr>
+<tr>
+<td align="center">湖北省 Hubei</td>
+<td align="center">3.3085</td>
+<td align="center">32.9476</td>
+<td align="center">46.2324</td>
+<td align="center">3.3221</td>
+</tr>
+<tr>
+<td align="center">湖南省 Hunan</td>
+<td align="center">4.8485</td>
+<td align="center">46.4541</td>
+<td align="center">63.4507</td>
+<td align="center">4.8672</td>
+</tr>
+<tr>
+<td align="center">重庆市 Chongqing</td>
+<td align="center">4.4230</td>
+<td align="center">43.5167</td>
+<td align="center">59.8730</td>
+<td align="center">4.4406</td>
+</tr>
+<tr>
+<td align="center">四川省 Sichuan</td>
+<td align="center">1.2276</td>
+<td align="center">11.3641</td>
+<td align="center">14.1424</td>
+<td align="center">1.2318</td>
+</tr>
+<tr>
+<td align="center">广东省 Guangdong</td>
+<td align="center">4.6084</td>
+<td align="center">50.4417</td>
+<td align="center">61.8620</td>
+<td align="center">4.6268</td>
+</tr>
+<tr>
+<td align="center">广西自治区 Guangxi</td>
+<td align="center">5.1804</td>
+<td align="center">49.3476</td>
+<td align="center">65.7552</td>
+<td align="center">5.1999</td>
+</tr>
+<tr>
+<td align="center">海南省 Hainan</td>
+<td align="center">4.8726</td>
+<td align="center">53.6614</td>
+<td align="center">70.8820</td>
+<td align="center">4.8936</td>
+</tr>
+<tr>
+<td align="center">贵州省 Guizhou</td>
+<td align="center">4.4146</td>
+<td align="center">46.5668</td>
+<td align="center">67.3391</td>
+<td align="center">4.4343</td>
+</tr>
+</tbody></table>
+<h2 id="致谢"><a href="#致谢" class="headerlink" title="致谢"></a>致谢</h2><p>本文及2020年排放因子的顺利完成，离不开各位前辈和朋友的指导和帮助。在此我要感谢张哲老师、蔡博峰老师、周才华老师的指导和帮助。各位前辈渊博的专业知识，严谨的科学精神，对我产生了深远的影响。没有各位前辈鼓励与指导，我不可能完成这项工作。在此，谨向各位老师致以我最诚挚的谢意和最衷心的感谢！<br>本项工作成果已经发表在《环境工程》期刊中，标题为：<br><a target="_blank" rel="noopener" href="https://kns.cnki.net/kcms2/article/abstract?v=3uoqIhG8C44YLTlOAiTRKu87-SJxoEJu6LL9TJzd50kWXLzff2OIDqabAEbAp1cmz4feubCBy0WijI_uXwJY2YYbqEj4-N0h&uniplatform=NZKPT">2020年中国区域和省级电网温室气体排放因子研究</a>，欢迎各位引用。</p>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/%E5%BA%94%E5%AF%B9%E6%B0%94%E5%80%99%E5%8F%98%E5%8C%96/">应对气候变化</a>
+                    
+                      <a class="hover-with-bg" href="/categories/%E5%BA%94%E5%AF%B9%E6%B0%94%E5%80%99%E5%8F%98%E5%8C%96/%E6%B8%A9%E5%AE%A4%E6%B0%94%E4%BD%93%E5%87%8F%E6%8E%92/">温室气体减排</a>
+                    
+                      <a class="hover-with-bg" href="/categories/%E5%BA%94%E5%AF%B9%E6%B0%94%E5%80%99%E5%8F%98%E5%8C%96/%E6%B8%A9%E5%AE%A4%E6%B0%94%E4%BD%93%E5%87%8F%E6%8E%92/%E6%8E%92%E6%94%BE%E9%87%8F%E8%AE%A1%E7%AE%97/">排放量计算</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/%E7%94%B5%E7%BD%91%E5%B9%B3%E5%9D%87CO2%E6%8E%92%E6%94%BE%E5%9B%A0%E5%AD%90/">电网平均CO2排放因子</a>
+                    
+                      <a class="hover-with-bg" href="/tags/%E7%9C%81%E7%BA%A7%E7%94%B5%E7%BD%91/">省级电网</a>
+                    
+                      <a class="hover-with-bg" href="/tags/%E5%8C%BA%E5%9F%9F%E7%94%B5%E7%BD%91/">区域电网</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">
+                  
+                    本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！
+                  
+                </p>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/posts/1faf2881/">
+                        <span class="hidden-mobile">什么是电子燃料</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+              <!-- Comments -->
+              <article class="comments" id="comments">
+                
+                  
+                
+                
+  <script type="text/javascript">
+    Fluid.utils.waitElementVisible('comments', function() {
+      var light = 'github-light';
+      var dark = 'github-dark';
+      var schema = document.documentElement.getAttribute('data-user-color-scheme');
+      if (schema === 'dark') {
+        schema = dark;
+      } else {
+        schema = light;
+      }
+      window.UtterancesThemeLight = light;
+      window.UtterancesThemeDark = dark;
+      var s = document.createElement('script');
+      s.setAttribute('src', 'https://utteranc.es/client.js');
+      s.setAttribute('repo', 'LizheNing/LizheNing.github.io');
+      s.setAttribute('issue-term', 'pathname');
+      
+      s.setAttribute('label', 'utterances');
+      
+      s.setAttribute('theme', schema);
+      s.setAttribute('crossorigin', 'anonymous');
+      document.getElementById('comments').appendChild(s);
+    })
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+              </article>
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"> <img src="https://img.shields.io/badge/Powered-Hexo-{blue}" srcset="/img/loading.gif"></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"> <img src="https://img.shields.io/badge/Theme-Fluid-{red}" srcset="/img/loading.gif"></a> 
+  </div>
+  
+  <div class="statistics">
+    
+    
+
+    
+      
+        <!-- 不蒜子统计PV -->
+        <span id="busuanzi_container_site_pv" style="display: none">
+            总访问量 
+            <span id="busuanzi_value_site_pv"></span>
+             次
+          </span>
+      
+      
+        <!-- 不蒜子统计UV -->
+        <span id="busuanzi_container_site_uv" style="display: none">
+            总访客数 
+            <span id="busuanzi_value_site_uv"></span>
+             人
+          </span>
+      
+    
+  </div>
+
+
+  
+
+  
+</footer>
+
+<!-- SCRIPTS -->
+
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/debouncer.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  
+    <script  src="/js/lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/tocbot@4.12.0/dist/tocbot.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4.3.0/anchor.min.js" ></script>
+
+
+
+  <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js" ></script>
+
+
+
+  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
+
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+      typing(title)
+      
+    })(window, document);
+  </script>
+
+
+
+  <script  src="/js/local-search.js" ></script>
+  <script>
+    (function () {
+      var path = "/local-search.xml";
+      $('#local-search-input').on('click', function() {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      });
+      $('#modalSearch').on('shown.bs.modal', function() {
+        $('#local-search-input').focus();
+      });
+    })()
+  </script>
+
+
+
+
+
+  
+
+  
+    <!-- MathJax -->
+    <script>
+      MathJax = {
+        tex: {
+          inlineMath: [['$', '$'], ['\\(', '\\)']]
+        },
+        options: {
+          renderActions: {
+            findScript: [10, doc => {
+              document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+                const display = !!node.type.match(/; *mode=display/);
+                const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+                const text = document.createTextNode('');
+                node.parentNode.replaceChild(text, node);
+                math.start = { node: text, delim: '', n: 0 };
+                math.end = { node: text, delim: '', n: 0 };
+                doc.math.push(math);
+              });
+            }, '', false],
+            insertedScript: [200, () => {
+              document.querySelectorAll('mjx-container').forEach(node => {
+                let target = node.parentNode;
+                if (target.nodeName.toLowerCase() === 'li') {
+                  target.parentNode.classList.add('has-jax');
+                }
+              });
+            }, '', false]
+          }
+        }
+      };
+    </script>
+
+    <script async src="https://cdn.jsdelivr.net/npm/mathjax@3.1.2/es5/tex-svg.js" ></script>
+
+  
+
+
+
+
+
+
+
+
+  
+
+  
+    <!-- Google Analytics -->
+    <script defer>
+      window.ga = window.ga || function () { (ga.q = ga.q || []).push(arguments) };
+      ga.l = +new Date;
+      ga('create', 'UA-208524185-1', 'auto');
+      ga('send', 'pageview');
+    </script>
+    <script async src='https://www.google-analytics.com/analytics.js'></script>
+  
+
+  
+    <!-- Google gtag.js -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-9HJ2PMCHPY"></script>
+    <script defer>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-9HJ2PMCHPY');
+    </script>
+  
+
+  
+
+  
+
+  
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+<!-- 不蒜子访问量统计
+  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
+  </script> 
+
+  <span id="busuanzi_container_site_uv">
+    本站访客数<span id="busuanzi_value_site_uv"></span>人次
+  </span>
+
+  <span id="busuanzi_container_page_pv">
+    本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+  </span>
+-->
+
+</body>
+</html>

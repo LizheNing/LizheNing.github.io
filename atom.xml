@@ -1,0 +1,595 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Hexo</title>
+  
+  
+  <link href="https://lizhening.github.io/atom.xml" rel="self"/>
+  
+  <link href="https://lizhening.github.io/"/>
+  <updated>2023-05-07T15:57:41.731Z</updated>
+  <id>https://lizhening.github.io/</id>
+  
+  <author>
+    <name>John Doe</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>2020年电网排放因子</title>
+    <link href="https://lizhening.github.io/posts/70b8b2c8/"/>
+    <id>https://lizhening.github.io/posts/70b8b2c8/</id>
+    <published>2023-04-29T03:41:38.000Z</published>
+    <updated>2023-05-07T15:57:41.731Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><p>恰逢国家30·60碳达峰碳中和战略，2019年中国区域及省级电网排放因子得到了各界朋友关注。各位前辈、同仁对上述数据提出了宝贵意见。在参考各位，结合个人理解，2020年中国区域及省级电网排放因子。</p></blockquote><p>“电网排放因子”是指向电力系统提供的每单位电力相关联的温室气体排放因子，包括二氧化碳排放因子（$tCO_2/MWh$）、甲烷排放因子（$tCH_4/MWh$）、氧化亚氮排放因子（$tN_2O/MWh$）以及二氧化碳当量排放因子（$tCO_2e/MWh$）。</p><h2 id="主要进展"><a href="#主要进展" class="headerlink" title="主要进展"></a>主要进展</h2><p>相对于2019年只计算了二氧化碳排放因子，该版本数据最大的变化是在二氧化碳排放因子的基础上，增加了甲烷和氧化亚氮排放因子，并得到二氧化碳当量电力排放因子，数据更加完整，与国际通行标准更加对接。同时本次更新增加了2020年数据，并同时修正了部分排放因子引用错误，使结果更加准确。</p><h2 id="电网划分"><a href="#电网划分" class="headerlink" title="电网划分"></a>电网划分</h2><h3 id="区域电网"><a href="#区域电网" class="headerlink" title="区域电网"></a>区域电网</h3><p>区域电网划分与2019年并无变化，因此不在赘述，电网名称和覆盖的地理范围如下：</p><table><thead><tr><th align="center"><strong>电网名称</strong></th><th align="left"><strong>覆盖的地理范围</strong></th></tr></thead><tbody><tr><td align="center">华北区域电网</td><td align="left">北京市、天津市、河北省、山西省、山东省、内蒙古自治区</td></tr><tr><td align="center">东北区域电网</td><td align="left">辽宁省、吉林省、黑龙江省</td></tr><tr><td align="center">华东区域电网</td><td align="left">上海市、江苏省、浙江省、安徽省、福建省</td></tr><tr><td align="center">华中区域电网</td><td align="left">河南省、湖北省、湖南省、江西省、四川省、重庆市</td></tr><tr><td align="center">西北区域电网</td><td align="left">陕西省、甘肃省、青海省、宁夏自治区、新疆自治区</td></tr><tr><td align="center">南方区域电网</td><td align="left">广东省、广西自治区、云南省、贵州省、海南省</td></tr></tbody></table><h3 id="省级电网"><a href="#省级电网" class="headerlink" title="省级电网"></a>省级电网</h3><p>按照省级电网边界仍然与省级行政区域边界相一致的原则，将中国的省级电网划分为北京、天津、河北、山西、内蒙古、山东、辽宁、吉林、黑龙江、上海、江苏、浙江、安徽、福建、河南、湖北、湖南、江西、四川、重庆、陕西、甘肃、青海、宁夏、新疆、广东、广西、云南、贵州和海南电网。由于缺少相关信息，暂不考虑西藏自治区、香港特别行政区、澳门特别行政区和台湾省四个地区的省级电网。</p><h2 id="排放因子计算方法"><a href="#排放因子计算方法" class="headerlink" title="排放因子计算方法"></a>排放因子计算方法</h2><p>排放因子计算思路与2019年并无本质区别，但2020年数据增加了甲烷和氧化亚氮排放因子，并且燃料燃烧的甲烷、氧化亚氮排放量的计算方式与二氧化碳排放量的计算方式有一定差异，为了便于读者区分，再次将两种方式全部展开介绍。</p><h3 id="区域电网-1"><a href="#区域电网-1" class="headerlink" title="区域电网"></a>区域电网</h3><p>区域电网排放因子是该区域范围内，发、用电隐含的温室气体排放量与其对应的发、用电量的比值。其中，发、用电包含三个来源：</p><ol><li>区域电网 $i$ 覆盖的地理范围内，电厂的净上网电量（扣除厂自用电，下文所称“净上网电量”均扣除厂自用电）；</li><li>区域电网 $j$ 向区域电网 $i$ 净送出的电量；</li><li>$k$ 国向区域电网 $i$ 净出口的电量。</li></ol><p>因此，温室气体排放量也应统计上述三种电力来源，包括：</p><ol><li>区域电网 $i$ 覆盖的地理范围内发电产生的直接温室气体排放量；</li><li>区域电网 $j$ 向区域电网 $i$ 净送出的电量隐含的温室气体排放量；</li><li>$k$ 国向区域电网 $i$ 净出口的电量隐含的温室气体排放量。</li></ol><p>计算公式如下：<br>$$EF_{grid,i}=\frac{Em_{grid,i}+\sum_{j}^{}\left (EF_{grid,j}\times E_{imp,j,i}\right)+\sum_{k}^{}\left (EF_{k}\times E_{imp,k,i}\right)}{\sum_{q}^{}E_{grid,i,q}+\sum_{j}^{}E_{imp,j,i} + \sum_{k}^{}E_{imp,k,i}} \tag{1} $$</p><p>式中：<br>$EF_{grid,i}$：区域电网 $i$ 的排放因子，$tCO_2/ 10^{4} kWh、gCH_4/ 10^{4} kWh、gN_2O/ 10^{4} kWh、tCO_2e/ 10^{4} kWh$；<br>$Em_{grid,i}$：区域电网 $i$ 覆盖的地理范围内发电产生的直接温室气体排放量（由公式（2）计算得到），$tCO_2、tCH_4、tN_2O、tCO_2e$；<br>$EF_{grid,j}$：向区域电网 $i$ 净送出电量的区域电网 $j$ 的温室气体排放因子，$tCO_2/ 10^{4} kWh、gCH_4/ 10^{4} kWh、gN_2O/ 10^{4} kWh、tCO_2e/ 10^{4} kWh$；<br>$E_{imp,j,i}$：区域电网 $j$ 向区域电网 $i$ 净送出的电量，$10^{4}kWh$;<br>$EF_{k}$：向区域电网 $i$ 净出口电量的 $k$ 国发电温室气体排放因子，$tCO_2/ 10^{4} kWh、gCH_4/ 10^{4} kWh、gN_2O/ 10^{4} kWh、tCO_2e/ 10^{4} kWh$；<br>$E_{imp,k,i}$：$k$ 国向区域电网 $i$ 净出口的电量，$10^{4}kWh$;<br>$E_{grid,i}$：区域电网 $i$ 覆盖的地理范围内，应用 $q$ 类型技术发电厂的年<strong>净上网电量（由公式（4）计算得到）</strong>，$10^{4}kWh$;<br>$i$：东北、华北、华东、华中、西北和南方区域电网之一；<br>$j$：向区域电网 $i$ 净送出电量的其他区域电网；<br>$k$：向区域电网 $i$ 净出口电量的其他国家；<br>$q$：火电、水力发电、风力发电、核能发电以及太阳能发电之一。</p><p>其中，区域电网 $i$ 覆盖的地理范围内，发电产生的直接温室气体排放量（$Em_{grid,i}$），可以通过化石燃料消耗量（$FC_{m}$）、燃料平均低位发热量（$NCV_{m}$）以及燃料排放因子（$EF_{m}$）乘积求得，公式如下：<br>$$Em_{grid,i}=\sum_{m}^{}\left ( FC_{m}\times NCV_{m}\times EF_{m}\div 100 \right )<br> \tag{2}$$<br>式中：<br>$FC_{m}$：电网 $i$ 覆盖的地理范围内用于发电的化石燃料 $m$ 的消费量，$10^{4}t、10^{8}m^{3}$；<br>$NCV_{m}$：化石燃料 $m$ 的平均低位热值，$MJ/t、MJ/10^{4}m^{3}$；<br>$EF_{m}$：化石燃料 $m$ 的温室气体排放因子（$CO_2$排放因子由公式（3）计算得到），$gCO_{2}/MJ、gCH_{4}/MJ、gN_{2}O/MJ$；<br>$m$：发电消费的化石燃料种类。</p><p>在计算不同种类温室气体排放量时，对于公式（2）中的燃料排放因子（$EF_{m}$）来源不同：</p><ol><li>对于$CO_2$排放量，应基于燃料，选择中国本土数据根据公式（3）计算求得；</li><li>对于$CH_4、N_2O$，由于缺少更精确数据，可以直接使用基于燃料热量的排放因子。<br>$$EF_{m}=CC_{m}\times OF_{m}\times \frac{44}{12} \tag{3}$$<br>式中：<br>$CC_{m}$：化石燃料 $m$ 的单位热值含碳量，$g C/MJ$；<br>$OF_{m}$：化石燃料 $m$ 的碳氧化率，%；<br>$\frac{44}{12}$：碳到二氧化碳的换算系数。</li></ol><p>在计算本区域内电厂的净上网电量时，应当扣除发电企业自身厂用电量，公式如下：<br>$$E_{grid,i,q}=E_{plant,i,q}\times (1-PCR_{i,q}) \tag{4}$$<br>式中：<br>$E_{plant,i,q}$：区域电网 $i$ 覆盖的地理范围内，应用 $q$ 类型技术的电厂年发电量，$10^{4}kWh$；<br>$PCR_{i,q}$：区域电网 $i$ 覆盖的地理范围内，应用 $q$ 类型技术发电厂平均厂用电率，%。</p><h3 id="省级电网-1"><a href="#省级电网-1" class="headerlink" title="省级电网"></a>省级电网</h3><p>省级电网排放因子计算方法与区域电网类似，相较于区域电网，省级电网多了一重电力来源——区域电网 $i$ 向 $p$ 省净送出的电量。部分区域，如北京，社会总用电量高于本地发电量、其他省份净送入电量之和。因此，考虑缺口部分为华北电网向北京净送出电力。省级电网排放因子计算公式如下：<br>$$EF_{p}=\frac{Em_{p}+\sum_{n}^{}(EF_{n}\times E_{imp,n,p})+\sum_{k}^{} (EF_{k}\times E_{imp,k,p})+(EF_{grid,i}\times E_{imp,i,p})}{\sum_{q}^{}E_{p,q}+\sum_{n}^{}E_{imp,n,p} + \sum_{k}^{}E_{imp,k,p} + E_{imp,i,p}} \tag{5} $$<br>式中：<br>$EF_{p}$：$p$ 省电网的温室气体排放因子，$tCO_2/ 10^{4} kWh、gCH_4/ 10^{4} kWh、gN_2O/ 10^{4} kWh、tCO_2e/ 10^{4} kWh$；<br>$Em_{p}$：$p$ 省发电产生的温室气体直接排放量（参照公式（2）），$tCO_2、tCH_4、tN_2O、tCO_2e$；<br>$EF_{n}$：向 $p$ 省净送出电量的 $n$ 省电网温室气体排放因子，$tCO_2/ 10^{4} kWh、gCH_4/ 10^{4} kWh、gN_2O/ 10^{4} kWh、tCO_2e/ 10^{4} kWh$；<br>$E_{imp,n,p}$：$n$ 省向 $p$ 省净送出的电量，$10^{4}kWh$；<br>$EF_{k}$：向 $p$ 省净出口电量的 $k$ 国发电温室气体排放因子，$tCO_2/ 10^{4} kWh、gCH_4/ 10^{4} kWh、gN_2O/ 10^{4} kWh、tCO_2e/ 10^{4} kWh$；<br>$E_{imp,k,p}$：$k$ 国向 $p$ 省净出口的电量，$10^{4}kWh$；<br>$EF_{grid,i}$：区域电网 $i$ 的温室气体排放因子，$tCO_2/ 10^{4} kWh、gCH_4/ 10^{4} kWh、gN_2O/ 10^{4} kWh、tCO_2e/ 10^{4} kWh$；<br>$E_{imp,i,p}$：区域电网 $i$ 向 $p$ 省净送出的电量（由公式（7）计算得到），$10^{4}kWh$；<br>$E_{p,q}$：$p$ 省，应用 $q$ 类型技术发电厂年净上网电量（参照公式（4）），$10^{4}kWh$；<br>$p$：北京、天津、河北、山西、内蒙古、山东、辽宁、吉林、黑龙江、上海、江苏、浙江、安徽、福建、河南、湖北、湖南、江西、四川、重庆、陕西、甘肃、青海、宁夏、新疆、广东、广西、云南、贵州和海南 30 个省份之一；<br>$n$：向 $p$ 省净送出电量的其他省份；<br>$k$：向 $p$ 省净出口电量的国家；<br>$i$：$p$ 省所在的区域电网；<br>$q$：火电、水力发电、风力发电、核能发电以及太阳能发电之一。</p><p>其中，区域电网 $i$ 向 $p$ 省净送出的电量应按公式（6）计算，<br>$$E_{imp,i,p}=max((E_{u,p} - E_{p} - \sum_{n}^{}E_{imp,n,p} - \sum_{k}^{}E_{imp,k,p}),0) \tag{6}$$<br>式中：<br>$E_{u,p}$：$p$ 省年度全社会总用电量，$10^{4}kWh$。</p><h2 id="计算顺序"><a href="#计算顺序" class="headerlink" title="计算顺序"></a>计算顺序</h2><p>在确定排放因子计算方法之后，需要确定排放因子的计算顺序，即先算哪一个区域/省级电网的排放因子。 $p$ 省（区域）的电网排放因子大小会受到四方面因素影响：</p><ol><li>自身发电结构；</li><li>向 $p$ 省净送出电量的 $n$ 省电网温室气体排放因子；</li><li>向 $p$ 省净出口电量的 $k$ 国发电温室气体排放因子；</li><li>区域电网 $i$ 向 $p$ 省净送出的电量的温室气体排放因子。</li></ol><p>因此，应当<strong>优先计算区域电网排放因子，在计算省级电网排放因子</strong>，确定过程如下：</p><ol><li>计算省际间电力净流向关系。根据各省送出电量情况，计算出电力净流向量，得出省际间电力净流向关系。</li><li>计算各省与区域电网间的电力交换量。根据各省发电、用电、与其他省份及国家和地区的电力交换等数据，参照公式（6）计算得出各省与所在区域电网间的电力交换量。</li><li>确定电网因子计算顺序。按照<strong>先计算无调入电力的电网</strong>，再计算调入电排放因子已知电网的顺序依次计算。</li><li>如果存在三个区域/省级电网之间呈现环状送电情况，即如下图所示，华中电网向华东电网净送出电力，华东电网向南方电网净送出电力，南方电网向华中电网净送出电力。无法按照上述顺序求解每一个电网排放因子，建议利用下方恒等式构建三元一次方程，同时求解三个电网排放因子。</li></ol><figure class="highlight excel"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs excel">电网总排放量=电网总用电量×电网排放因子<br> =本地发电排放量+其他地区调入电量×调入地区电力排放因子<br><br>以华东电网二氧化碳排放因子为例，<br>华东电网总二氧化碳排放量=华东电网用电量*华东电网二氧化碳排放因子<br> =华东电网发电二氧化碳排放量+华中向华东净调入电量*华中电网二氧化碳排放因子+南方向华东净调入电量*南方电网二氧化碳排放因子+华北向华东净调入电量*华北电网二氧化碳排放因子+西北向华东净调入电量*西北电网二氧化碳排放因子<br>其中，华东电网用电量=华东电网覆盖范围内电网净上网电量+华中向华东净调入电量+南方向华东净调入电量+华北向华东净调入电量+西北向华东净调入电量<br><br>整理可得，<br>华东电网用电量（已知量）*华东电网排放因子（未知量）-华中向华东净调入电量（已知量）*华中电网二氧化碳排放因子（未知量）-南方向华东净调入电量（已知量）*南方电网二氧化碳排放因子（未知量）<br>=华东电网发电二氧化碳排放量（已知量）+华北向华东净调入电量（已知量）*华北电网二氧化碳排放因子（已知量）+西北向华东净调入电量（已知量）*西北电网二氧化碳排放因子（已知量）<br></code></pre></td></tr></table></figure><p><img src="https://lizhening.github.io/img/circle.png" alt="环状电网示意图"></p><h2 id="数据来源"><a href="#数据来源" class="headerlink" title="数据来源"></a>数据来源</h2><p>数据来源方面变化主要体现在增加了燃料的甲烷和氧化亚氮排放因子，以综合评估电力温室气体排放。同时更新了之前少量引用错误的数据。</p><h3 id="活动数据"><a href="#活动数据" class="headerlink" title="活动数据"></a>活动数据</h3><ol><li>发电燃料消费量（$FC_{m}$）来源自《中国能源统计年鉴2021》；</li><li>火电、水电、风电、太阳能发电量（$E_{p,q}$）来源自《中国电力统计年鉴2021》，核电发电量以及厂用电率（$PCR_{i,q}$）来自《2020年电力工业统计资料汇编》；</li><li>跨省电量交换（$E_{imp,n,p}$）和进出口电量（$E_{imp,k,p}$）、以及全社会总用电量（$E_{u,p}$）来源自《2020年电力工业统计资料汇编》。</li></ol><h3 id="排放因子"><a href="#排放因子" class="headerlink" title="排放因子"></a>排放因子</h3><h4 id="燃料含碳量-CC-m"><a href="#燃料含碳量-CC-m" class="headerlink" title="燃料含碳量$(CC_{m})$"></a>燃料含碳量$(CC_{m})$</h4><p><strong>燃料含碳量数据主要采用2011 年发行的《省级温室气体清单编制指南（试行）》第一章（能源活动）的表1.5（公共电力与热力），少量未尽数据及其来源如下：</strong></p><ul><li>煤矸石采用“国家碳市场帮助平台”中专家提供的缺省值；</li><li>高炉煤气、转炉煤气和其他煤气分别采用《2006 IPCC Guidelines for National Greenhouse Gas Inventories》V2_1_Ch1 table 1.3 Blast Furnace Gas、Oxygen Steel Furnace Gas和Gas Works Gas的缺省值；</li><li>其他焦化产品、煤油、液化石油气、石油脑、润滑油、石油沥青、石油焦分别采用《省级温室气体清单编制指南（试行）》（2011年3月）第一章第18页表1.7中其他焦化产品、一般煤油、LPG、石油脑、润滑油、沥青、石油焦的含碳量，石蜡和溶剂油采用《2005中国温室气体清单研究》（2014年1月）第二章第55页表2-30中潜在碳排放因子20.0tC/TJ。</li><li>未特别说明的燃料种类均采用《省级温室气体清单编制指南》表1.5对应燃料种类的数值。</li></ul><h4 id="燃料碳氧化率-OF-m"><a href="#燃料碳氧化率-OF-m" class="headerlink" title="燃料碳氧化率($OF_{m}$)"></a>燃料碳氧化率($OF_{m}$)</h4><p><strong>燃煤的碳氧化率</strong>按照2022年12月19日发布的《企业温室气体排放核算与报告指南 发电设施》中提供的最新数据**取99%**。</p><p>其他燃料类型按照2011年《省级温室气体清单编制指南（试行）》第一章能源活动、化石燃料燃烧活动内容节、部门方法中给出的<strong>能源行业平均氧化率：燃油（98%）和燃气（99%）</strong>。</p><p>其中煤制品、焦炭和其他焦化产品采用《省级温室气体清单编制指南（试行）》（2011年3月）第一章第18页表1.7中的型煤、焦炭和其他焦化产品碳氧化率90%、93%和93%，石蜡、溶剂油采用《2005中国温室气体清单研究》（2014年1月）第二章第55页表2-30中的碳氧化率均为98%。</p><h4 id="燃料平均低位发热量-NCV-m"><a href="#燃料平均低位发热量-NCV-m" class="headerlink" title="燃料平均低位发热量($NCV_{m}$)"></a>燃料平均低位发热量($NCV_{m}$)</h4><p><strong>平均低位发热量数据主要摘自《中国能源统计年鉴2021》，部分数据来源于《公共机构能源资源消耗统计制度》（2017年）以及《2019年度减排项目中国区域电网基准线排放因子》，详细说明如下：</strong></p><ul><li>其它洗煤、煤制品、焦炉煤气、其他煤气、其他焦化产品、天然气和其它能源取值《2019年度减排项目中国区域电网基准线排放因子》OM计算时取值一致；</li><li>煤矸石、高炉煤气、转炉煤气、石油脑、润滑油、石蜡、溶剂油、石油沥青、石油焦、其他石油制品、液化天然气采用《公共机构能源资源消耗统计制度》（2017年7月）附录数据；</li><li><strong>未特别说明均采用能源年鉴数值</strong>。</li></ul><h4 id="燃料-CH-4-与-N-2-O-的排放因子"><a href="#燃料-CH-4-与-N-2-O-的排放因子" class="headerlink" title="燃料$CH_{4}$与$N_{2}O$的排放因子"></a>燃料$CH_{4}$与$N_{2}O$的排放因子</h4><p>由于缺少中国本土数据，<strong>因此$CH_4$和$N_{2}O$的排放因子采用《2006年IPCC国家温室气体清单指南》</strong>，第 2 卷 能源，第二章 固定源燃烧 表2.2 能源工业中固定源燃烧的缺省排放因子。</p><ul><li>排放因子的取值上，原煤、洗精煤、其他洗煤、煤矸石和其他焦化产品均取自Coking Coal的缺省值；</li><li>煤制品取自Brown Coal Briquettes的缺省值；</li><li>焦炭取自Coke Oven Coke and Lignite Coke的缺省值；</li><li>高炉煤气、转炉煤气和其他煤气分别采用Blast Furnace Gas、Oxygen Steel Furnace Gas和Gas Works Gas的缺省值；</li><li>燃料油取自Residual Fuel Oil的缺省值；</li><li>溶剂油取自White Spirit and SBP的缺省值；</li><li>石油沥青取自Bitumen缺省值；</li><li>液化天然气与天然气数值相同。</li></ul><h4 id="进口电量隐含的温室气体排放因子-EF-k"><a href="#进口电量隐含的温室气体排放因子-EF-k" class="headerlink" title="进口电量隐含的温室气体排放因子($EF_{k}$)"></a>进口电量隐含的温室气体排放因子($EF_{k}$)</h4><p>中国电力企业联合会发布的《2020年电力工业统计资料汇编》显示，2020年我国与周边多国存在电力跨境交易，以向周边国家售电，支持边境地区发展为主。但仍有例外，2020年通过黑龙江省从俄罗斯联邦净购入302,804万度电、通过云南省从缅甸联邦共和国净购入72694万度电。上述两国电网二氧化碳排放因子来自<a href="https://www.irena.org/">International Renewable Energy Agency(IRENA)</a>，俄罗斯联邦电网二氧化碳排放因子为$295gCO2/kWh$ ，缅甸联邦共和国电网二氧化碳排放因子为$262gCO2/kWh$。</p><h4 id="全球升温潜值-GWP"><a href="#全球升温潜值-GWP" class="headerlink" title="全球升温潜值($GWP$)"></a>全球升温潜值($GWP$)</h4><p>计算$CO_{2}e$使用的是《气候变化2019：联合国政府间气候变化专门委员会第六次评估报告》中提出的100年全球变暖潜势值。$GWP_{CH_{4}}$取29.8，$GWP_{N_{2}O}$取273。</p><h2 id="数据质量说明"><a href="#数据质量说明" class="headerlink" title="数据质量说明"></a>数据质量说明</h2><p>在计算过程中得到了各位前辈和同仁大力支持，本人也力图使用尽可能精确的数据和方法进行排放因子计算，仍有下列不确定因素。</p><ul><li>甲烷和氧化亚氮排放因子取决于燃烧技术和工作条件，而在各个燃烧装置和各段时期之间其差异很大。本计算采用《2006年IPCC国家温室气体清单指南》提供的缺省值，该数值可能与中国实际数据存在偏差，会引入很大的不确定性。</li><li>西藏自治区通过多条输电线路与青海、四川等地相连，并实现向四川省供电（华中电网）。由于缺少西藏发电燃料消耗数据，无法合理计算西藏电网排放因子，因此本文，对四川省和华中电网从西藏自治区购入电量以及购入电量隐含的排放均不纳入计算。这会导致四川省和华中电网排放因子与实际值存在偏差。西藏自治区火力发电量仅占自治区总上网电网1.12%，电力清洁化程度高，排放因子较小。并且西藏自治区向四川省净送出电量仅占四川发电量0.14%，因此，不会对本文得出的计算结果产生显著影响。</li><li>本文使用公式（6）估算区域电网 $i$ 向 $p$ 省净送出的电量，社会总用电量为终端实际用电量，不包含电力传输和分配过程中损耗，会造成估算电量偏小，对部分省市排放因子的计算结果产生影响。</li><li>本文计算采用的数据来源广泛，包括来自《电力工业统计资料汇编》和《中国能源统计年鉴》的活动水平数据，来自《中国能源统计年鉴》、《省级温室气体清单编制指南（试行）》、《重点用能单位能源利用状况报告》、《2006年IPCC国家温室气体清单指南》和《公共机构能源资源消耗统计制度》的计算参数等。数据来源的数据质量会直接影响本文排放因子的计算结果。</li><li>《能源统计年鉴》中对生产电力投入的“其他能源”并没有清楚定义，无法确定其他排放因子，因此本文参考《2019年度减排项目中国区域电网基准线排放因子》，未计算由“其他能源”生产电力导致的排放。</li><li>本文假设水电、核电、风电和太阳能的发电过程没有产生任何温室气体直接排放，这样可能会低估电力生产导致的排放。</li></ul><h2 id="计算结果"><a href="#计算结果" class="headerlink" title="计算结果"></a>计算结果</h2><h3 id="区域电网排放因子计算结果"><a href="#区域电网排放因子计算结果" class="headerlink" title="区域电网排放因子计算结果"></a>区域电网排放因子计算结果</h3><table><thead><tr><th align="center">区域</th><th align="center">排放因子（$tCO_2e/MWh$）</th></tr></thead><tbody><tr><td align="center">东北 Northeast</td><td align="center">0.8604</td></tr><tr><td align="center">西北 Northwest</td><td align="center">0.6812</td></tr><tr><td align="center">华中 Central</td><td align="center">0.4349</td></tr><tr><td align="center">华北 North China</td><td align="center">0.9023</td></tr><tr><td align="center">华东 East China</td><td align="center">0.6308</td></tr><tr><td align="center">南方 Southern</td><td align="center">0.4178</td></tr></tbody></table><h3 id="省级电网排放因子计算结果"><a href="#省级电网排放因子计算结果" class="headerlink" title="省级电网排放因子计算结果"></a>省级电网排放因子计算结果</h3><table><thead><tr><th align="center">电网名称</th><th align="center">CO2 排放因子</th><th align="center">CH4 排放因子</th><th align="center">N2O 排放因子</th><th align="center">CO2 当量排放因子</th></tr></thead><tbody><tr><td align="center"></td><td align="center">$tCO_2/10^4kWh$</td><td align="center">$gCH_4/10^4kWh$</td><td align="center">$gN_2O/10^4kWh$</td><td align="center">$tCO_2e/10^4kWh$</td></tr><tr><td align="center">辽宁省 Liaoning</td><td align="center">8.8493</td><td align="center">85.4059</td><td align="center">119.4561</td><td align="center">8.8845</td></tr><tr><td align="center">吉林省 Jilin</td><td align="center">8.8480</td><td align="center">90.2199</td><td align="center">132.2501</td><td align="center">8.8868</td></tr><tr><td align="center">黑龙江省 Heilongjiang</td><td align="center">8.5103</td><td align="center">87.4651</td><td align="center">127.5686</td><td align="center">8.5477</td></tr><tr><td align="center">北京市 Beijing</td><td align="center">6.8418</td><td align="center">78.7717</td><td align="center">78.1575</td><td align="center">6.8655</td></tr><tr><td align="center">天津市 Tianjin</td><td align="center">8.9489</td><td align="center">97.4149</td><td align="center">109.1597</td><td align="center">8.9816</td></tr><tr><td align="center">河北省 Hebei</td><td align="center">11.0020</td><td align="center">93.2625</td><td align="center">116.5665</td><td align="center">11.0366</td></tr><tr><td align="center">山西省 Shanxi</td><td align="center">8.9902</td><td align="center">93.4738</td><td align="center">130.3812</td><td align="center">9.0286</td></tr><tr><td align="center">内蒙古 Inner Mongolia</td><td align="center">10.4919</td><td align="center">108.0796</td><td align="center">160.4248</td><td align="center">10.5390</td></tr><tr><td align="center">山东省 Shandong</td><td align="center">7.8486</td><td align="center">78.3806</td><td align="center">112.5172</td><td align="center">7.8817</td></tr><tr><td align="center">陕西省 Shaanxi</td><td align="center">6.7646</td><td align="center">72.3055</td><td align="center">99.5182</td><td align="center">6.7940</td></tr><tr><td align="center">甘肃省 Gansu</td><td align="center">4.5918</td><td align="center">47.3291</td><td align="center">70.1625</td><td align="center">4.6124</td></tr><tr><td align="center">青海省 Qinghai</td><td align="center">0.9584</td><td align="center">10.0458</td><td align="center">14.9777</td><td align="center">0.9628</td></tr><tr><td align="center">宁夏自治区 Ningxia</td><td align="center">8.5283</td><td align="center">88.3995</td><td align="center">130.4300</td><td align="center">8.5665</td></tr><tr><td align="center">新疆自治区 Xinjiang</td><td align="center">8.0112</td><td align="center">83.9185</td><td align="center">123.6992</td><td align="center">8.0475</td></tr><tr><td align="center">上海市 Shanghai</td><td align="center">5.7352</td><td align="center">59.6171</td><td align="center">73.6203</td><td align="center">5.7571</td></tr><tr><td align="center">江苏省 Jiangsu</td><td align="center">7.2753</td><td align="center">72.5561</td><td align="center">95.5780</td><td align="center">7.3036</td></tr><tr><td align="center">浙江省 Zhejiang</td><td align="center">5.4379</td><td align="center">57.4743</td><td align="center">80.3691</td><td align="center">5.4616</td></tr><tr><td align="center">安徽省 Anhui</td><td align="center">7.9750</td><td align="center">80.0542</td><td align="center">115.7180</td><td align="center">8.0090</td></tr><tr><td align="center">福建省 Fujian</td><td align="center">5.0928</td><td align="center">52.4793</td><td align="center">72.8901</td><td align="center">5.1143</td></tr><tr><td align="center">江西省 Jiangxi</td><td align="center">6.4137</td><td align="center">62.2699</td><td align="center">88.1664</td><td align="center">6.4397</td></tr><tr><td align="center">河南省 Henan</td><td align="center">7.5608</td><td align="center">76.9309</td><td align="center">110.6354</td><td align="center">7.5933</td></tr><tr><td align="center">湖北省 Hubei</td><td align="center">3.3085</td><td align="center">32.9476</td><td align="center">46.2324</td><td align="center">3.3221</td></tr><tr><td align="center">湖南省 Hunan</td><td align="center">4.8485</td><td align="center">46.4541</td><td align="center">63.4507</td><td align="center">4.8672</td></tr><tr><td align="center">重庆市 Chongqing</td><td align="center">4.4230</td><td align="center">43.5167</td><td align="center">59.8730</td><td align="center">4.4406</td></tr><tr><td align="center">四川省 Sichuan</td><td align="center">1.2276</td><td align="center">11.3641</td><td align="center">14.1424</td><td align="center">1.2318</td></tr><tr><td align="center">广东省 Guangdong</td><td align="center">4.6084</td><td align="center">50.4417</td><td align="center">61.8620</td><td align="center">4.6268</td></tr><tr><td align="center">广西自治区 Guangxi</td><td align="center">5.1804</td><td align="center">49.3476</td><td align="center">65.7552</td><td align="center">5.1999</td></tr><tr><td align="center">海南省 Hainan</td><td align="center">4.8726</td><td align="center">53.6614</td><td align="center">70.8820</td><td align="center">4.8936</td></tr><tr><td align="center">贵州省 Guizhou</td><td align="center">4.4146</td><td align="center">46.5668</td><td align="center">67.3391</td><td align="center">4.4343</td></tr></tbody></table><h2 id="致谢"><a href="#致谢" class="headerlink" title="致谢"></a>致谢</h2><p>本文及2020年排放因子的顺利完成，离不开各位前辈和朋友的指导和帮助。在此我要感谢张哲老师、蔡博峰老师、周才华老师的指导和帮助。各位前辈渊博的专业知识，严谨的科学精神，对我产生了深远的影响。没有各位前辈鼓励与指导，我不可能完成这项工作。在此，谨向各位老师致以我最诚挚的谢意和最衷心的感谢！<br>本项工作成果已经发表在《环境工程》期刊中，标题为：<br><a href="https://kns.cnki.net/kcms2/article/abstract?v=3uoqIhG8C44YLTlOAiTRKu87-SJxoEJu6LL9TJzd50kWXLzff2OIDqabAEbAp1cmz4feubCBy0WijI_uXwJY2YYbqEj4-N0h&uniplatform=NZKPT">2020年中国区域和省级电网温室气体排放因子研究</a>，欢迎各位引用。</p>]]></content>
+    
+    
+    <summary type="html">本文给出了2020年中国电网平均排放因子的计算结果以及与2019电网排放因子的异同点。</summary>
+    
+    
+    
+    <category term="应对气候变化" scheme="https://lizhening.github.io/categories/%E5%BA%94%E5%AF%B9%E6%B0%94%E5%80%99%E5%8F%98%E5%8C%96/"/>
+    
+    <category term="温室气体减排" scheme="https://lizhening.github.io/categories/%E5%BA%94%E5%AF%B9%E6%B0%94%E5%80%99%E5%8F%98%E5%8C%96/%E6%B8%A9%E5%AE%A4%E6%B0%94%E4%BD%93%E5%87%8F%E6%8E%92/"/>
+    
+    <category term="排放量计算" scheme="https://lizhening.github.io/categories/%E5%BA%94%E5%AF%B9%E6%B0%94%E5%80%99%E5%8F%98%E5%8C%96/%E6%B8%A9%E5%AE%A4%E6%B0%94%E4%BD%93%E5%87%8F%E6%8E%92/%E6%8E%92%E6%94%BE%E9%87%8F%E8%AE%A1%E7%AE%97/"/>
+    
+    
+    <category term="电网平均CO2排放因子" scheme="https://lizhening.github.io/tags/%E7%94%B5%E7%BD%91%E5%B9%B3%E5%9D%87CO2%E6%8E%92%E6%94%BE%E5%9B%A0%E5%AD%90/"/>
+    
+    <category term="省级电网" scheme="https://lizhening.github.io/tags/%E7%9C%81%E7%BA%A7%E7%94%B5%E7%BD%91/"/>
+    
+    <category term="区域电网" scheme="https://lizhening.github.io/tags/%E5%8C%BA%E5%9F%9F%E7%94%B5%E7%BD%91/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>什么是电子燃料</title>
+    <link href="https://lizhening.github.io/posts/1faf2881/"/>
+    <id>https://lizhening.github.io/posts/1faf2881/</id>
+    <published>2023-04-06T15:25:23.000Z</published>
+    <updated>2023-04-09T16:36:51.148Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="什么是电子燃料"><a href="#什么是电子燃料" class="headerlink" title="什么是电子燃料"></a>什么是电子燃料</h2><p>电子燃料(e-fuel)有成合成燃料，有时被称作power-to-X (PtX)、 power-to-liquids (PtL)、 power-to-gas (PtG)，<strong>由可再生能源电力、氢气（由水电解获得）以及二氧化碳化合而成，其中二氧化碳可以直接从空气中捕集(DAC)或者从工业工业尾气中回收利用</strong>。通常来说，每生产1升的电子燃料需要消耗25度电，4升水。</p><img src="/posts/1faf2881/ResourcesRequiredForLiquidE-fuelProduction.png" class="" title="液体电子燃料质量能量流"><p>常见的PtL包括电子氨、电子甲醇、电子汽油、电子柴油、电子航空煤油、电子二甲醚（e-DME）。PtG常见有电子甲烷和电子氢，也就是绿氢。电子燃料的潜在使用场景目前主要集中在一些专业领域，从下图能看出只有甲醇燃料和氢燃料在乘用车领域潜力稍高，目前甲醇汽车已经开始商业化生产，<a href="https://www.ithome.com/0/638/940.htm">吉利已经量产甲醇乘用车</a>，氢燃料电池汽车仍处于实验阶段，丰田为日本奥运会提供了氢燃料电池车MIRAI和氢燃料巴士，仍然小问题不断。</p><img src="/posts/1faf2881/PotentialPrimaryUsesOfE-fuels.png" class="" title="电子燃料的潜在主要用途.png"><h2 id="电子燃料需求量"><a href="#电子燃料需求量" class="headerlink" title="电子燃料需求量"></a>电子燃料需求量</h2><p>由于技术原因，在2030年之前，即使在交通运输部门电子燃料也很难成为主要的动力来源。如果想要实现1.5℃目标，电子燃料将会是一种重要的能源，尤其在海运、航空等行业，对燃料能量密度有一定要求，电子燃料将会是这些行业减排重要手段。</p><p>预计到2050年，欧盟交通运输行业对电子燃料需求达到0.5~1亿吨标准油，约占2050年欧盟交通燃料需求总量的30%左右。到2050年，全球对电子燃料的需求量将达到8.5~35亿吨标准油。</p><h2 id="电子燃料优点"><a href="#电子燃料优点" class="headerlink" title="电子燃料优点"></a>电子燃料优点</h2><p>电子燃料在六个方面具有优势：</p><ul><li>碳排放低。电子燃料单位里程碳排放大约在 $4gCO_2/km$，相对化石燃料可以降低70%~96%。并且电子燃料排放主要来自燃料运输过程能源消耗，如果运输过程改用低碳燃料，碳足迹还将有进一步下降空间。<img src="/posts/1faf2881/GHGIntensityOfDifferentLight-dutyFuel-powertrainCombinations.png" class="" title="不同轻型燃料动力GHG强度.png"></li><li>可以利用现有的基础设施。尤其在交通运输行业，相对于其他低碳能源，电子燃料与化石燃料特性相似，对现有油气输运、存储和加注设施稍加改造就能投入使用，降低了技术研究和投资门槛。<img src="/posts/1faf2881/DifferentAlternativesVersusDifferentKeyParameters.png" class="" title="不同能源形式关键参数对比"></li><li>电子燃料便于存储和运输。尤其相对于电力，液体电力燃料的存储和运输技术已经非常成熟，能够低成本的实现大容量、长时间存储，增加使用便捷程度，同时也确保能源安全。</li><li>能量密度高，适合于航空、航海以及远途货物运输。</li><li>解除内燃机汽车的碳排放锁定，使其能实现碳中和。同时，相对化石燃料能够改善空气质量。</li></ul><h2 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a>缺点</h2><p>虽然电子燃料有上述优势，但是其知名度和应用规模都远低于电池储能，也能从侧面说明电子燃料目前存在非常明显劣势。</p><p>生产技术是<strong>当下</strong>困扰电子燃料最大难题，目前电子燃料生产装置大多处于工业验证阶段，距离商业化生产还太过于遥远。在高效电解、氢气储运、碳捕集等技术仍需攻关，意味着距离商业化仍需投入大量资金，这也会阻碍电子燃料应用。但是可以乐观的看到在一些关键技术上，已经有了商业化解决方案，<a href="http://paper.people.com.cn/zgnyb/html/2023-02/27/content_25968853.htm">吉利已经实现二氧化碳加氢制甲醇商业化生产</a>，<a href="https://haruoni.com/#/zh">保时捷和西门子的Haru Oni项目已经实现电子甲醇、电子汽油的生产</a><br>，预计在2027年将实现全面商业化生产。</p><p>但是目前面临技术问题很多，但这仍然存在更加重要的问题，——全生命周期能源效率太低。电子燃料全生命周期热效率仅有15%，是电池的1/4~1/6。这将极大增加对可再生电力的需求，造成资源浪费，<a href="https://www.techtimes.com/articles/289559/20230326/eu-allows-continued-sale-e-fuel-powered-ice-cars-2035.htm">这也是电子燃料目前受到批评最多的问题</a>。如果不能有效改变电子燃料低效的现状，未来大规模应用电子燃料合理性和前景还会继续受到质疑。</p><img src="/posts/1faf2881/E-fuelsFinalEfficiencyInEngines.png" class="" title="能源效率(WTW).png"><p>另外，还有一个比较严重的问题是电子燃料的成本较高，目前电子燃料成本约为7€/L，预计到2050年能够降低到1~3€/L，但这仍然是化石燃料的1~3倍。但好消息是电费是电子燃料成本的核心，占总成本30%以上，随着可再生能源并网增加，电价可能会逐步降低，有助于降低电子燃料成本。</p><img src="/posts/1faf2881/Costbreakdownfore-fuels.png" class="" title="电子燃料成本拆解"><h2 id="发展关键"><a href="#发展关键" class="headerlink" title="发展关键"></a>发展关键</h2><p>电子燃料的优点十分突出，如何攻克生产技术瓶颈，降低单价是推动电子燃料广泛使用的关键。价格问题相对较容易解决，电子燃料的成本中电费占据相当比例，如果能够有效降低电费，例如在新能源基地或者电费价格较低地区建设电子燃料工厂，能够有效降低电子燃料单价。</p><p>但是组织资金解决生产技术问题可能需要更多的政策支撑。政策支持可以是直接的，比如将电子燃料纳入国家或者行业的减排路径中，这一定能够激发企业持续研究相关技术的动力，推动电子燃料早日商业化。也可以是间接的，如果能够不断提升减排雄心与排放要求，会推动高排放行业，比如钢铁、水泥、电力等，和汽车主机厂开展电子燃料研发。高排放行业可以利用电子燃料对二氧化碳的需求，降低自身碳排放，降低减排成本。主机厂能够利用电子燃料碳中和属性确保自身产品符合监管要求。</p>]]></content>
+    
+    
+    <summary type="html">从概念、用途、优缺点等方面介绍电子燃料。</summary>
+    
+    
+    
+    <category term="应对气候变化" scheme="https://lizhening.github.io/categories/%E5%BA%94%E5%AF%B9%E6%B0%94%E5%80%99%E5%8F%98%E5%8C%96/"/>
+    
+    <category term="气候适应" scheme="https://lizhening.github.io/categories/%E5%BA%94%E5%AF%B9%E6%B0%94%E5%80%99%E5%8F%98%E5%8C%96/%E6%B0%94%E5%80%99%E9%80%82%E5%BA%94/"/>
+    
+    <category term="材料与技术" scheme="https://lizhening.github.io/categories/%E5%BA%94%E5%AF%B9%E6%B0%94%E5%80%99%E5%8F%98%E5%8C%96/%E6%B0%94%E5%80%99%E9%80%82%E5%BA%94/%E6%9D%90%E6%96%99%E4%B8%8E%E6%8A%80%E6%9C%AF/"/>
+    
+    
+    <category term="电子燃料" scheme="https://lizhening.github.io/tags/%E7%94%B5%E5%AD%90%E7%87%83%E6%96%99/"/>
+    
+    <category term="E-fuel" scheme="https://lizhening.github.io/tags/E-fuel/"/>
+    
+    <category term="合成材料" scheme="https://lizhening.github.io/tags/%E5%90%88%E6%88%90%E6%9D%90%E6%96%99/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>对《关于做好2023—2025年发电行业企业温室气体排放报告管理有关工作的通知》的发现与思考</title>
+    <link href="https://lizhening.github.io/posts/dd323c72/"/>
+    <id>https://lizhening.github.io/posts/dd323c72/</id>
+    <published>2023-02-13T14:29:37.000Z</published>
+    <updated>2023-02-19T10:36:48.855Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><p>2023年2月7日，生态环境部例行发布了2023年温室气体核查的通知，也就是<a href="https://www.mee.gov.cn/xxgk2018/xxgk/xxgk06/202302/t20230207_1015569.html">《关于做好2023—2025年发电行业企业温室气体排放报告管理有关工作的通知》</a>（以下简称《通知》）。将《通知》与<a href="https://www.mee.gov.cn/xxgk2018/xxgk/xxgk06/202203/t20220315_971468.html">《关于做好2022年企业温室气体排放报告管理相关重点工作的通知》</a>对比，能够发现《通知》在内容和行文上与往年有较大变化，以下是个人对这种变化的思考。</p></blockquote><h2 id="整体"><a href="#整体" class="headerlink" title="整体"></a>整体</h2><p>先说一下总体的感受，通读全文有三个感受特别明显。</p><p><strong>首先，文件非常的简明</strong>，正文共计2428个字，比去年少了20%多，字数少了是一方面，另一方面是行文顺序更加贴合业务流程，尤其对于一线工作人员，读的真是酣畅淋漓，立刻能够抓住重点和时间节点。</p><p><strong>其次，更加强调数据质量</strong>，《通知》开篇就提出要<strong>建立健全数据质量管理长效工作机制</strong>，全文中“数据质量”出现了12次，比去年还多了两次。在业务流程上，首次把“制订数据质量控制计划”和“信息化存证”作为两个独立业务环节，分别从策划和实施两方面把控数据质量。可见提升数据质量会是今后一段时间的工作重点。</p><p>最后，通读文件能感觉到，<strong>经过近三年的建设，碳市场基础设施更加完善，流程更加细致</strong>。最明显的是核算-履约周期稳定、核算基础更加扎实。从《通知》中明确看到以两年为一个履约周期，在同一个周期内使用相同核算指南。并且明确提出2023~2024履约周期使用《企业温室气体排放核算与报告指南 发电设施》（环办气候函〔2022〕485号），展现出主管部门的核算指南的自信，客观上反映了核算体系比较成熟。<del>其他行业核算指南编制也应该提上日程了吧</del>。还有其他一些细节，例如，今年首次明确了新投产发电设施纳入条件和关停设施的退出要求。感受最大的是推出了<a href="www.cets.org.cn">全国碳市场管理平台</a>，集填报、核查、监督、披露于一体。不仅结束了被迫委身排污许可证管理平台的窘境，一站式平台能够显著降低相关方工作量，服务更加完善，管理更加细致。</p><h2 id="《通知》中展现的变化"><a href="#《通知》中展现的变化" class="headerlink" title="《通知》中展现的变化"></a>《通知》中展现的变化</h2><h3 id="温室气体排放报告工作常态化管理"><a href="#温室气体排放报告工作常态化管理" class="headerlink" title="温室气体排放报告工作常态化管理"></a>温室气体排放报告工作常态化管理</h3><p>有别于以往，每年单独下发通知，启动上一年全国核查工作的模式。《通知》一次性覆盖“2023~2025”年，涵盖了“十四五”剩下年份。从每年视情况调整工作重心的“重点工作”，转变为以“建立健全数据质量管理长效工作机制”为目标的“有关工作”。随着工作目标、流程逐渐清晰，业务成熟度提升，工作的特殊性和重要性会逐渐回归正常水平。这向各级政府、企业和社会传达了明确的信号，即温室气体排放报告与核查工作已经常态化。这对所有相关主体都有积极的一面。</p><p>将安排核查的主动权交给地方政府，这有利于地方政府规划自身工作，至少能避免核查工作与其他重要工作撞车，保证时间是确保工作高质量完成的基础。并且通过调整核查时间，进可以把时间缩短或者与几个省份一起核查，迫使全国性机构分身乏术，以便本地机构承接工作，推动本省机构的能力，退可以把时间放的宽松，以提升数据质量。另外，中期规划有助于地方政府的统筹未来计划，提升了灵活性，尤其在如何实施数据质量日常监管方面，将实施路径交由地方自由发挥。并且《通知》也明确提出要落实该部分经费，地方环保部门有更多时间和精力发挥自身能动性，建设有特色、符合地区发展水平的温室气体管理模式。</p><p>对于企业，尤其是重点排放行业的企业，不确定性降低了。首先，至少在“十四五”周期内，政府必定仍然使用运用市场机制控制温室气体排放。其次《通知》明确提到钢铁、有色等重点排放行业核查工作将会另行安排，我<strong>猜测</strong>这应该是一个信号，预示今年纳入全国碳市场的行业会有新的变化，毕竟距离生态环境部委托<a href="http://www.cbmf.org/cbmf/yw/7076283/index.html">中国建筑材料联合会开展建材行业纳入全国碳市场相关工作</a>、<a href="https://www.eco.gov.cn/news_info/46080.html">委托中国钢铁工业协会开展钢铁行业碳排放权交易相关工作</a>已经过去了两年，至少也应该有初步结论了，是时候拉出来溜溜。不过这终归是个人猜测，参考电力行业纳入全国碳市场一波三折的经历，主管机构还是非常谨慎，让我们静观其变吧。</p><p>在这种背景下，企业最重要的事情就是尽可能多的搜集信息。层次清晰、体系完整、可以相互印证的信息能够帮助企业做决策。但这就对企业信息鉴别能力提出考验，随着双碳概念大火，市场中鱼龙混杂，最不缺的就是“骗子”，各种信息更是鱼目混珠。识别信息准确性对公司管理层是非常巨大的考验，尽快提升人员能力肯定是最紧迫的。《通知》中也着重加强能力建设，提出要<strong>尽快</strong>组建<strong>高水平，专业化</strong>队伍，并且要求市级生态环境部门定期组织培训，企业可以借着这股东风，提升老员工能力。至少在中短期，这基本就足够应对政府见惯了，毕竟政府的目标是减排，而不是把企业整趴下。如果有更高的目标，比如说在市场中盈利，无论是有形的还是无形的，那就至少需要组建一个专业的团队了。<br>解决人员问题之后，就要着手建立工作流程问题，也就是管理体系。排放核算工作不复杂，但是涉及部门众多，能源、安环、保卫等部门都有可能会涉及其中，并且数据质量要求逐年提升。建立一套工作制度，各部门各司其责，能够有效避免扯皮、推诿，提升工作速度与质量。</p><h3 id="温室气体排放报告工作逐渐细致化"><a href="#温室气体排放报告工作逐渐细致化" class="headerlink" title="温室气体排放报告工作逐渐细致化"></a>温室气体排放报告工作逐渐细致化</h3><p>今年《通知》首次按照工作流程顺序，将工作分为独立的七个步骤，设置明确的控制节点。一改过去按照重要性开展工作的模式，增加过程控制和流程管理。修订后的工作流程如下：</p><table><thead><tr><th align="center">工作流程</th><th align="left">时间节点</th></tr></thead><tbody><tr><td align="center">确定并公开年度名录</td><td align="left">每年12月31日前确定下一年度名录</td></tr><tr><td align="center">组织制订2023年度数据质量控制计划</td><td align="left">每年12月31日前完成下一年度数据质量控制计划制订工作</td></tr><tr><td align="center">组织开展月度信息化存证</td><td align="left">在每月结束后的40个自然日内完成存证工作</td></tr><tr><td align="center">组织报送年度温室气体排放报告</td><td align="left">每年3月31日前报送上一年度温室气体排放报告</td></tr><tr><td align="center">组织开展年度排放报告核查</td><td align="left">每年6月30日前完成上一年度温室气体排放报告的核查工作</td></tr><tr><td align="center">强化数据质量日常监管</td><td align="left">实时</td></tr><tr><td align="center">开展对核查技术服务机构的评估</td><td align="left">每年7月31日前向社会公开评估结果</td></tr></tbody></table><p>总体业务流程和内容方面都有所细化。业务流程方面，《通知》不仅把“制订数据质量控制计划”和“信息化存证”作为两个独立业务环节，还首次提出“数据质量日常监管”要求，强化数据质量管理工作。内容上，明确了明确了新投产项目和关停项目进入和退出要求，对于新投产项目，排放量预估达到2.6万吨就需要纳入核算。但是对于退出企业，不仅需要确认排放量低于2.6万吨，还要省级生态环境部门组织现场核实，并确认无历史履约问题后才能从核查名单中移除。</p><h3 id="再次强化数据质量保障"><a href="#再次强化数据质量保障" class="headerlink" title="再次强化数据质量保障"></a>再次强化数据质量保障</h3><p>数据质量是一个老生常谈的问题，每年都强调。今年《通知》中核查的7步的业务流程里面有3步和数据质量管理有关，分别是负责源头控制的“数据质量控制计划”，负责过程控制“信息化存证”，负责监管工作的“数据质量日常监督”，监管部门对数据质量保持十分的重视。今年虽然没有公布典型违规案例，但是提出三项新举措，<strong>首先是，提出数据质量日常监督。其次是，首次提出对各地碳排放质量进行评估。最后一点，开展核查机构评估</strong>。</p><p>早在2021年，生态环境部就提出了日常监督要求，但是当时监督的对象是整个核查流程，甚至都没有提到数据质量，但是今年，《通知》在日常监督前面加上了明确的限定语——“数据质量”，将监督力量集中在数据质量领域。并且《通知》细致提出不同程度数据质量问题的应对方案，并且还要求核查机构识别异常数据，反馈问题。这势必要求对负责日常监督的市级生态环境部门提出一个新问题，如何监管企业填报数据。考虑到数据量大、工作专业性高和数据保密性要求，这部分工作要么由政府委托三方机构抽查，但是抽查的效率太低、覆盖面还窄，还存在腐败风险。考虑到现在所有排放数据都汇聚在全国碳市场管理平台，感觉未来可以逐步采用数字化方法查证，通过算法对企业填报数据进行提示和预警，既能减少企业填错风险，也便于政府对重点问题进行纠察。这可能对市场上新兴的一众数字化碳服务公司是个业务机会，数字化查证识别算法重要性会提升一些。</p><p>《通知》首次提出数据质量考核要求。生态环境部会对各地数据质量开展评估，评估意味着有优劣、评比和考核，这会增强对地方约束能力，并且《通知》明确提出要求各地落实数据质量日常监管的预算。预算有保障、还有上级考核，地方主管机构更有动力去做日常审查。同时还应注意到，《通知》中删除了省级主管部门月度、季度汇报监督结果的要求，转变为通过统一平台随时反馈，这增加事中监察力度，有利于提升数据质量。也对企业响应速度提出要求，企业可能需要专岗来应对核算工作。首先这能保障企业上传的支撑材料的质量，减少材料错误和流程错误。《通知》<strong>今年首次要求审核机构在平台进行文件评审并电子化留痕</strong>，这对企业提交材料质量有很高要求，虽然第一年大概率还需要现场审核解决。问题越少处理对所有人来说都是一种解脱。其次如果有问题，转岗也可以随时响应，能够在规定时间内完成整改，《通知》提到的3天的处理时间还是很短的。从数字化存证和线上评审电子化留痕可以看出，主管机构越来越希望应用数字化方法增加过程透明度确保数据质量，数字化核查可能是一个趋势，这可能对碳管理软件公司是一个利好消息吧。</p><p>核查技术服务机构是重要的利益相关方，是最主要的技术提供方，是保障数据质量的核心力量。如何激发核查机构的主观能动性，《通知》给出了方案。今年首次提出对核查技术服务机构<strong>评估</strong>，透露出分级思想。目前已经有试点省份对核查报告分级，比如<a href="http://sthjj.beijing.gov.cn/bjhrb/index/xxgk69/zfxxgk43/fdzdgknr2/325924085/326031828/index.html">北京市已经连续四个履约周期公布了核查工作质量评估情况</a>，还将公示各家机构“优”等报告比例以及出现重大偏差被退回的报告数量，并将核查机构评为“优”、“良”两档。核查机构能力水平高低一目了然，有助于企业筛选核查机构。该措施出台后，北京试点碳市场的核查机构从2019年的27家降到2022年的17家，优胜劣汰，有助于行业适度集中，减少恶性竞争。也有可能参考认证机构评定思路，将机构分为A、B、C级别，对A级机构进行信任管理，对B级机构采取正常管理，对C级机构加强管理。不论采用哪种方式，都会促使核查机构从维护自生声誉角度，重视核查报告质量。</p><h3 id="疑问"><a href="#疑问" class="headerlink" title="疑问"></a>疑问</h3><p>纵观全文，过去数年努力终于实现了质变，我相信所有从业者都能感受到这项工作正在发生的变化。但是在文中依然出现了一些我无法理解的变化，留在这里。</p><ol><li>首先是首次提出“鼓励省级生态环境部门委托下属单位开展有关核查工作”。从我的自身经历来看，现场核查费工费神还不赚钱，下属单位大概率也不愿意去。要么是让下属单位当总包，把控进度和文件质量，这也是他们擅长的工作。要么让下属单位统筹负责日常监察。但是这种事情为啥要写道文件里面呀？这么直白表述出来，是对三方单位的不信任吗？还是只是给下属机构谋一点福利？</li><li>目前省级主管机构仍需书面报送核查结构，但是现在已经有了数字化平台了，并且报送的内容还都是平台生成的数据，为啥不能数字化报送呢？担心系统出问题，留个备份？还是数据出问题时候便于分摊责任？<del>下载、打印、盖章、邮寄、存档，这可一点也不低碳呀！</del></li><li>《通知》中没有表述核查任务分配和管理方面内容。大概率还会延续去年由主管机构分配。但是有没有可能让企业自己指定？未来是否有可能演化成企业自己付费核查的模式？</li><li>电网排放因子从0.581$CO_2/MWh$修订为0.5703$CO_2/MWh$，同时也指出电网排放因子更新频率为最多为每年。但是仍然没有公布电网排放因计算方式，变成一个黑箱，没有人知道它代表什么，也没有人知道它除了全国市场碳核查外还能做点啥？</li></ol>]]></content>
+    
+    
+    <summary type="html">对比了2023年和2022年发布的&quot;温室气体排放报告管理&quot;工作通知的异同，尝试分析核查工作未来变化。</summary>
+    
+    
+    
+    <category term="应对气候变化" scheme="https://lizhening.github.io/categories/%E5%BA%94%E5%AF%B9%E6%B0%94%E5%80%99%E5%8F%98%E5%8C%96/"/>
+    
+    <category term="气候适应" scheme="https://lizhening.github.io/categories/%E5%BA%94%E5%AF%B9%E6%B0%94%E5%80%99%E5%8F%98%E5%8C%96/%E6%B0%94%E5%80%99%E9%80%82%E5%BA%94/"/>
+    
+    <category term="法律法规" scheme="https://lizhening.github.io/categories/%E5%BA%94%E5%AF%B9%E6%B0%94%E5%80%99%E5%8F%98%E5%8C%96/%E6%B0%94%E5%80%99%E9%80%82%E5%BA%94/%E6%B3%95%E5%BE%8B%E6%B3%95%E8%A7%84/"/>
+    
+    
+    <category term="政策分析" scheme="https://lizhening.github.io/tags/%E6%94%BF%E7%AD%96%E5%88%86%E6%9E%90/"/>
+    
+    <category term="温室气体排放报告管理" scheme="https://lizhening.github.io/tags/%E6%B8%A9%E5%AE%A4%E6%B0%94%E4%BD%93%E6%8E%92%E6%94%BE%E6%8A%A5%E5%91%8A%E7%AE%A1%E7%90%86/"/>
+    
+    <category term="温室气体核查" scheme="https://lizhening.github.io/tags/%E6%B8%A9%E5%AE%A4%E6%B0%94%E4%BD%93%E6%A0%B8%E6%9F%A5/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>新《中国清洁发展机制基金管理办法》发布</title>
+    <link href="https://lizhening.github.io/posts/ee333938/"/>
+    <id>https://lizhening.github.io/posts/ee333938/</id>
+    <published>2022-07-01T11:06:35.000Z</published>
+    <updated>2022-07-10T16:02:37.617Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><p>历时两年多的修订，7部门于7月1日联合颁布新版《中国清洁发展机制基金管理办法》。相较于之前版本，规则更加精简，从上位法角度规定各方权责，将执行细节交予配套政策完善；更关注资金使用，受限于CDM市场低迷，主要基金来源断绝，如何保持基金可持续发展，成为办法关注重点。</p></blockquote><p>在分析政策之前，想通过对清洁发展基金以及基金管理办法脉络的梳理，有助于对现状的理解。</p><h2 id="文件背景"><a href="#文件背景" class="headerlink" title="文件背景"></a>文件背景</h2><p>为利用气候变化国际合作带来的机遇，进一步加强和促进国家应对气候变化行动，我国政府决定建立国家应对气候变化的创新资金机制——中国清洁发展机制基金（以下简称“基金”），<strong>为国家应对气候变化工作提供可持续的资金支持。</strong></p><h3 id="清洁发展基金发展历程"><a href="#清洁发展基金发展历程" class="headerlink" title="清洁发展基金发展历程"></a>清洁发展基金发展历程</h3><p>清洁发展基金的历史可以追溯到2004年，当年5月发改委、科技部、外交部制定了<a href="http://www.gov.cn/gongbao/content/2005/content_63344.htm">《清洁发展机制项目运行管理暂行办法》（发改委、科技部、外交部令第10号）</a>，其中规定了国家从CDM项目减排量转让收入中收取一定国家收入，用于应对气候变化工作。但是直至2005年10月<a href="https://www.mee.gov.cn/ywgz/gjjlhz/lydt/200703/t20070301_101174.shtml">《清洁发展机制项目运行管理办法》（发改委、科技部、外交部、财政部令第37号）</a>明确了国家和企业之间的分配比例后，才正式收取相关资金，基金原型初现。由财政部牵头，历时一年半完成基金正式开展业务。</p><ul><li>2006年5月，财政部、发改委、外交部和科技部向国务院呈交了关于建立基金的联合请示。</li><li>2006年8月，国务院批准建立中国清洁发展机制基金及其管理中心。</li><li>2007年3月，基金管理中心在国家事业单位登记管理局完成注册登记。</li><li>2007年4月，基金审核理事会第一次会议召开，审议通过《中国清洁发展机制基金及其管理中心章程》和《中国清洁发展机制基金管理办法》。</li><li>2007年4月，基金进入初期业务运行。</li><li>2008年11月，基金首批赠款项目开始实施。</li><li>2011年4月，第一批清洁发展委托贷款项目获得批准，标志着基金有偿使用业务是指启动。</li></ul><h3 id="《中国清洁发展机制基金管理办法》"><a href="#《中国清洁发展机制基金管理办法》" class="headerlink" title="《中国清洁发展机制基金管理办法》"></a>《中国清洁发展机制基金管理办法》</h3><p>基金成立之初，没有对应的上位法明确应该如何收取、筹集、管理和使用基金。经过三年多的探索，2010年10月《<a href="http://www.gov.cn/flfg/2010-10/21/content_1727534.htm">中国清洁发展机制基金管理办法》（财政部 国家发展改革委 外交部 科技部 环境保护部 农业部 中国气象局令第59号）</a>颁布施行，基金业务由此全面展开。</p><ul><li>2010年出台的“管理办法”重点明确了“基金”的治理框架、资金来源和使用方法内容。</li><li>2018年7部门对管理办法进行了一次修订，<a href="http://www.gov.cn/gongbao/content/2018/content_5288826.htm">增加了违规违法行为处理办法</a>。</li><li>从2020年开始，7部门开始对管理办法进行修订，由财政部主持并于当年7月10日发布修订草案征求意见稿，向社会公开征求意见，并在当年12月31日得到财政部审批通过。</li><li>历时一年半协商与修改，2022年7月正式发布《中国清洁发展机制基金管理办法》。多部门联合与协调费时费力！</li></ul><p>在清洁基金管理办法颁布以后，制订了业务管理、风险控制、资金管理、机构运行等方面的 60 多项管理制度，形成了比较规范而健全的内部管理体系，确保了基金的规范管理和高效运行，重要规定有：</p><ul><li><a href="http://www.gov.cn/gongbao/content/2013/content_2321134.htm">《中国清洁发展机制基金有偿使用管理办法》</a></li><li><a href="https://www.cdmfund.org/upload/20210106/ea9f48bb3bbd348a4fe9939b20dbae2e.pdf">《清洁发展机制基金市场化委托贷款管理办法》（试行）</a></li><li><a href="https://www.cdmfund.org/27750.html">《中国清洁发展机制基金赠款项目管理办法》</a></li></ul><p>同时还出台了一批配套的评价指南、风险管理制度，这些内容不仅填补了国内空白，还为为后续其他绿色基金管理和运营提供了经验和参考。</p><ul><li><a href="https://www.cdmfund.org/upload/20210106/635314a60c1dc59544a4ec73c5ea3961.pdf">《中国清洁发展机制基金绿色创新投资业务操作指南》（试行）</a></li><li><a href="https://www.cdmfund.org/fxglzd.html">《中国清洁发展机制基金管理中心风险管理制度》</a></li><li><a href="https://www.cdmfund.org/fxglbf.html">《中国清洁发展机制基金投资和资产配置业务风险预警管理办法》</a></li><li><a href="https://www.cdmfund.org/u/cms/www/201802/0210374933rj.pdf">《环境与社会风险管理手册》</a></li></ul><h2 id="主要内容介绍"><a href="#主要内容介绍" class="headerlink" title="主要内容介绍"></a>主要内容介绍</h2><p>到目前为止，能看到三份《中国清洁发展机制基金管理办法》，分别是2010年版本、2020年征求意见稿和2022年版本。顺着“管理办法”脉络，能追踪我国在应对气候变化方向不同时期的特点。我将从“基金性质”、“基金来源”、“基金使用”和“基金组织机构”分别介绍。</p><h3 id="基金性质"><a href="#基金性质" class="headerlink" title="基金性质"></a>基金性质</h3><p>基金性质和管理方法延续了最初的设计思路——按照社会性基金模式管理的政策性基金。有一个表述上调整，2010版文件中，基金按照<strong>社会性基金模式</strong>管理，后两版文件中调整为<strong>市场化模式</strong>进行管理。</p><p><strong>虽然管理模式从社会性基金管理模式变为市场化模式，但是本质没有变化</strong>，根据财政部负责人描述，社会性基金模式管理，是指清洁基金在保值、增值的原则下，独立运营，开展支持国家应对气候变化相关产业的投资活动，这就是市场化运作模式。但是，后续文件均要求基金有偿使用<strong>依托专业机构开展</strong>。引入了新的相关方，提升了基金运营的专业性。</p><h3 id="基金来源"><a href="#基金来源" class="headerlink" title="基金来源"></a>基金来源</h3><p>基金来源是变化最少的部分，在三版办法中均规定基金资金来源于以下四方面∶</p><ul><li>通过清洁发展机制（CDM）项目转让温室气体减排量所获得收入中属于国家所有的部分，即国家收入；</li><li>基金运营收入；</li><li>国内外机构、组织和个人捐赠；</li><li>其他来源。</li></ul><p>根据基金2017年度报告，清洁基金累计收入179.44亿元，当年收入仅为5.39亿元，连续六年下降。<strong>基金家底厚实但是近年来基金收入逐年降低</strong>，随着CDM暂停、国际组织赠款减少，<strong>基金未来收入会转移到基金运营收入，更加考验基金运营管理水平。</strong><br><img src="https://s2.loli.net/2022/07/03/Dgrd7wpaXvhP1FL.png" alt="2007-2017年基金收入情况"></p><h3 id="基金去向"><a href="#基金去向" class="headerlink" title="基金去向"></a>基金去向</h3><p>这次修订最大的变化出现在基金的使用方向，管理办法提出了<strong>以保本微利、实现可持续发展为原则</strong>，并且明文规定使用方式为<strong>赠款、有偿使用</strong>，移除了2010版和征求意见稿中出现的理财方式，在一定程度上能够提升基金使用效率，避免懒政和不作为。</p><p>同时修订后的文件中增加了对碳达峰、碳中和、污染防治和生态保护工作和研究的支持，随着对应对气候变化工作认识和协同治理理解加深，会有越来越多，越来越细节的工作方向纳入到基金的支持方向中。</p><h4 id="赠款"><a href="#赠款" class="headerlink" title="赠款"></a>赠款</h4><p>基金对赠款项目的审核要求更加严格，主要体现在申报主体资质上，修订后管理办法要求，申报主体应当是省级以上人民政府有关部门。私营部门受到赠款支持的概率降低，但是修订后的管理办法并未言明赠款项目的申报、评审管理规定，并且由于申报主体和组织评审机构均有较大变化，原有的《中国清洁发展机制基金赠款项目管理办法》也不再适合以后情况，期待生态环境部后续出台配套管理办法规定、解释相应规则。</p><h4 id="有偿使用"><a href="#有偿使用" class="headerlink" title="有偿使用"></a>有偿使用</h4><p>有偿使用方式相较2010年文件发生变化，债券投资代替了委托贷款，扩大了有偿使用范围，有助于基金发挥更大作用。有偿使用项目管理规定表述存在模糊空间，但是管理办法对有偿使用调整有限，因此可能仍然参照2012年颁布的《中国清洁发展机制基金有偿使用管理办法》进行申报、评审、管理和考核验收。</p><h3 id="基金组织机构"><a href="#基金组织机构" class="headerlink" title="基金组织机构"></a>基金组织机构</h3><p>2010版管理办法中，基金的组织机构由审核理事会和管理中心组成，<strong>基金审核理事会</strong>是关于基金事务的部际议事机构，7部门代表组成，负责审核基金基本管理制度、基金赠款项目和重大有偿使用项目申请、基金年度财务收支预算与决算等重大业务事项。<strong>基金管理中心</strong>是基金的日常管理机构，负责基金的筹集、管理和使用工作，由财政部归口管理。<strong>简单来说，审核理事会是决策机构，管理中心是执行机构。</strong><br><img src="https://s2.loli.net/2022/07/10/UTakbWwMu4njI76.png" alt="清洁基金治理结构"></p><p>在后续文件中，基金的组织架构由基金政策指导委员会和基金管理中心组成。不仅仅是名称发生变换，职权也有削弱。<strong>基金政策指导委员会只是建议机构和咨询机构</strong>，没有了项目审批和财务收支预算和决算的权力。</p><p>还有一个很有意思的事情，不同文件中各部门地位有很大变化，主要体现在财政部和生态环境部地位提升，发改委稍有下降。</p><p>2019年职能划转之后，生态环境部从发改委承担了大部分应对气候变化工作，地位提升意料之中。发改委移交应对气候变化之后，的确对基金指导有限，在征求意见稿中，发改委在指导委员会中排在外交部后面，也不再是联合主席单位了。<br><code>基金政策指导委员会由财政部、生态环境部、外交部、发展改革委、科学技术部、农业农村部和中国气象局的代表组成。</code><br><code>基金政策指导委员会设联合主席，由财政部和生态环境部的代表担任。</code><br>但是在刚刚公布管理办法中，发改委重要性提升，只排在财政部、生态环境部之后，位列联合主席单位。我<strong>猜测</strong>这种变化与2020年底双碳政策的提出，以及发改委在双碳政策中绝对领导地位密切相关。<br><code>基金政策指导委员会由财政部、生态环境部、发展改革委、外交部、科技部、农业农村部和气象局的代表组成。</code><br><code>基金政策指导委员会设联合主席，由财政部、生态环境部和发展改革委的代表担任</code></p><h3 id="其他变化"><a href="#其他变化" class="headerlink" title="其他变化"></a>其他变化</h3><p>修订后的管理办法更加注重信息公开，公开原则早在2010版本中就已经出现，虽然没有明文规定披露内容和披露方式，但是清洁基金在这方面做的非常好，通过年报、项目统计和项目案例方式向外界披露基金运行情况，美中不足的是年报披露在2017年就停止了。</p><p>修订后的管理办法明文规定，基金管理中心应当披露：</p><ol><li>基金有关政策文件；</li><li>基金赠款项目的申报流程以及所需提供的材料清单；</li><li>基金赠款、有偿使用等业务开展情况，但涉及国家秘密、商业秘密的除外；</li><li>法律、法规规定应当公开的其他信息。</li></ol><p>希望基金管理中心能在原有基础上再接再厉，为公众提供一条清晰、便捷的了解清洁基金运行情况、资助方向的渠道。</p><h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><ul><li>[1] <a href="http://www.gov.cn/flfg/2010-10/21/content_1727534.htm">中国清洁发展机制基金管理办法（财政部 国家发展改革委 外交部 科技部 环境保护部 农业部 中国气象局令第59号）</a></li><li>[2] <a href="http://tfs.mof.gov.cn/caizhengbuling/202207/t20220701_3824117.htm">中国清洁发展机制基金管理办法（财政部　生态环境部 发展改革委　外交部　科技部　农业农村部 中国气象局令第111号）</a></li><li>[3] <a href="http://www.gov.cn/gzdt/2010-10/21/content_1727446.htm">财政部有关负责人就《中国清洁发展机制基金管理办法》答记者问</a></li><li>[4] <a href="http://tfs.mof.gov.cn/zhengcejiedu/202207/t20220701_3824164.htm">财政部有关负责人就修订出台 《中国清洁发展机制基金管理办法》 答记者问</a></li><li>[5] <a href="http://www.gov.cn/xinwen/2020-07/13/content_5526384.htm">关于《中国清洁发展机制基金管理办法（修订草案征求意见稿）》向社会公开征求意见的通知</a></li><li>[6] <a href="https://www.cdmfund.org/20609.html">中国清洁发展机制基金2017年度报告</a></li><li>[7]齐小乎. 清洁基金创业五载 继往开来任重道远[N]. 中国财经报,2013-02-02(005).DOI:10.28053/n.cnki.nccjb.2013.000189.</li><li>[8]齐小乎. 我国清洁基金管理运行有了“根本指南”[N]. 中国财经报,2010-10-23(001).DOI:10.28053/n.cnki.nccjb.2010.003002.</li><li>[9]李路阳.走近中国清洁发展机制基金[J].国际融资,2008(02):14-18.</li><li>[10]巨奎林.为国家应对气候变化创立资金机制——中国清洁发展机制基金介绍[J].环境保护,2007(11):43-46.</li></ul>]]></content>
+    
+    
+    <summary type="html">整理清洁发展机制基金发展脉络，对比新旧《中国清洁发展机制基金管理办法》差异。</summary>
+    
+    
+    
+    <category term="应对气候变化" scheme="https://lizhening.github.io/categories/%E5%BA%94%E5%AF%B9%E6%B0%94%E5%80%99%E5%8F%98%E5%8C%96/"/>
+    
+    <category term="气候适应" scheme="https://lizhening.github.io/categories/%E5%BA%94%E5%AF%B9%E6%B0%94%E5%80%99%E5%8F%98%E5%8C%96/%E6%B0%94%E5%80%99%E9%80%82%E5%BA%94/"/>
+    
+    <category term="法律法规" scheme="https://lizhening.github.io/categories/%E5%BA%94%E5%AF%B9%E6%B0%94%E5%80%99%E5%8F%98%E5%8C%96/%E6%B0%94%E5%80%99%E9%80%82%E5%BA%94/%E6%B3%95%E5%BE%8B%E6%B3%95%E8%A7%84/"/>
+    
+    
+    <category term="政策分析" scheme="https://lizhening.github.io/tags/%E6%94%BF%E7%AD%96%E5%88%86%E6%9E%90/"/>
+    
+    <category term="清洁发展机制基金" scheme="https://lizhening.github.io/tags/%E6%B8%85%E6%B4%81%E5%8F%91%E5%B1%95%E6%9C%BA%E5%88%B6%E5%9F%BA%E9%87%91/"/>
+    
+    <category term="管理办法" scheme="https://lizhening.github.io/tags/%E7%AE%A1%E7%90%86%E5%8A%9E%E6%B3%95/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>2018年全球温室气体排放地图</title>
+    <link href="https://lizhening.github.io/posts/2ad87410/"/>
+    <id>https://lizhening.github.io/posts/2ad87410/</id>
+    <published>2022-06-09T14:41:25.000Z</published>
+    <updated>2022-06-10T17:14:09.626Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><p>对可视化有兴趣，暂时没有看到全球碳排放的地图，所以想自己搞一个。</p></blockquote><h2 id="数据源"><a href="#数据源" class="headerlink" title="数据源"></a>数据源</h2><p>温室气体排放数据来自于欧盟委员会的<a href="https://edgar.jrc.ec.europa.eu/">Emissions Database for Global Atmospheric Research（EDGAR）</a>。我用的是 EDGAR v6.0，它提供了每个部门和国家的三种主要温室气体（CO2、CH4、N2O）和氟化气体的排放量。由于网络问题，我始终没法下载到氟化气体的排放量表格，所以可视化成果中只展示 CO2、CH4、N2O 排放。</p><p><a href="https://edgar.jrc.ec.europa.eu/dataset_ghg60#p1">EDGAR v6.0 数据主页</a>详细介绍了每项数据的来源：</p><p><code>能源部门活动数据主要基于来自 IEA (2019) World Energy Balances ，经欧盟委员会联合研究中心修改；农业部门活动数据主要来自粮农组织（FAO）。美国地质调查局 (USGS)、国际化肥协会 (IFA)、气体燃烧减少伙伴关系 (GGFR)/美国国家海洋和大气管理局 (NOAA)、UNFCCC 和世界钢铁协会 (worldsteel) 最新的统计数据也用于活动数据。</code></p><p>我直接使用了时间序列数据进行可视化，虽然 EDGAR 同时提供了，更加精细的排放数据，甚至可以精确到每平方米温室气体排放量。但是我既弄不清楚这类数据的来源（卫星数据？？），也不符合我的最初的想法。我想获得一张国别的温室气体排放地图，因此数据精确到国别更加符合我的需要。</p><h2 id="数据处理"><a href="#数据处理" class="headerlink" title="数据处理"></a>数据处理</h2><p>EDGAR v6.0 数据包含生物源和化石源排放，本次工作包含了生物源和化石源的CO2、CH4和N2O排放，使用GWP将CH4和N2O折算为CO2e。并将折算后的二氧化碳当量作为2018年该国家温室气体排放量。</p><p>值得注意的是，本次工作使用使用GWP数据区分了化石源甲烷和非化石源甲烷，数据来自AR6第一工作组编制的《Climate Change 2021: The Physical Science Basis》1017页，第7章表7.15，GWP应用值如下表所示：<br><img src="https://s2.loli.net/2022/06/10/BN24DjJUOsE1Itw.png" alt="GWP应用值"></p><p>至于为什么同样是甲烷，化石源和非化石源和GWP不同，<a href="https://clear.ucdavis.edu/explainers/why-methane-cattle-warms-climate-differently-co2-fossil-fuels">一种说法</a>是非化石源甲烷，比如反刍动物或者湿地产生的甲烷，都能溯源到大气中的二氧化碳，而对大气来说化石源甲烷是全新的碳，因此化石源甲烷升温潜值更高。</p><h2 id="遗留问题"><a href="#遗留问题" class="headerlink" title="遗留问题"></a>遗留问题</h2><p>虽然我也广泛的寻找资料，但是由于能力有限，还是有一些问题没法解决：</p><ol><li>无法区分塞尔维亚共和国和黑山的排放量。塞尔维亚和黑山原本是一个国家，2006年分成塞尔维亚共和国、黑山两个国家。不知道什么原因，EDGAR v6.0 仍将其视为一个整体统计排放量。因此，谨慎起见不对塞尔维亚共和国以及黑山排放量进行可视化。</li><li>缺少部分地区和国家排放量。为了保证对比相对客观，我只可视化均有化石源以及生物源CO2、CH4、N2O数据的国家和地区，存在一项或者多项数据缺失国家或地区均未纳入可视化范围。</li><li>未纳入氟化气体的排放量。</li></ol><h2 id="成果展示"><a href="#成果展示" class="headerlink" title="成果展示"></a>成果展示</h2><p>由于页面大小所限，为了更好的观看体验请请移步<a href="https://lizhening.github.io/html/Global_Emission_Map.html">Global_Emission_Map页面</a>。</p>]]></content>
+    
+    
+    <summary type="html">使用Emissions Database for Global Atmospheric Research（EDGAR）2018年全球碳排放数据，制成全球碳排放地图。</summary>
+    
+    
+    
+    <category term="应对气候变化" scheme="https://lizhening.github.io/categories/%E5%BA%94%E5%AF%B9%E6%B0%94%E5%80%99%E5%8F%98%E5%8C%96/"/>
+    
+    <category term="气候适应" scheme="https://lizhening.github.io/categories/%E5%BA%94%E5%AF%B9%E6%B0%94%E5%80%99%E5%8F%98%E5%8C%96/%E6%B0%94%E5%80%99%E9%80%82%E5%BA%94/"/>
+    
+    <category term="可视化" scheme="https://lizhening.github.io/categories/%E5%BA%94%E5%AF%B9%E6%B0%94%E5%80%99%E5%8F%98%E5%8C%96/%E6%B0%94%E5%80%99%E9%80%82%E5%BA%94/%E5%8F%AF%E8%A7%86%E5%8C%96/"/>
+    
+    
+    <category term="温室气体" scheme="https://lizhening.github.io/tags/%E6%B8%A9%E5%AE%A4%E6%B0%94%E4%BD%93/"/>
+    
+    <category term="碳排放" scheme="https://lizhening.github.io/tags/%E7%A2%B3%E6%8E%92%E6%94%BE/"/>
+    
+    <category term="地理可视化" scheme="https://lizhening.github.io/tags/%E5%9C%B0%E7%90%86%E5%8F%AF%E8%A7%86%E5%8C%96/"/>
+    
+    <category term="全球" scheme="https://lizhening.github.io/tags/%E5%85%A8%E7%90%83/"/>
+    
+    <category term="碳排放地图" scheme="https://lizhening.github.io/tags/%E7%A2%B3%E6%8E%92%E6%94%BE%E5%9C%B0%E5%9B%BE/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>森林碳交易的先行者Pachama</title>
+    <link href="https://lizhening.github.io/posts/d06fc2e0/"/>
+    <id>https://lizhening.github.io/posts/d06fc2e0/</id>
+    <published>2022-05-10T05:23:25.000Z</published>
+    <updated>2022-05-13T01:15:56.993Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><p>这个板块会记录一些自己了解过的初创公司，这些企业将最新的科学技术应用到应对气候变化中，并在实现商业化的道路上进行探索。不论最终结果如何，都值得我去学习，我也想在这个过程中，磨炼出我看待公司的方法论。</p></blockquote><h2 id="公司简介"><a href="#公司简介" class="headerlink" title="公司简介"></a>公司简介</h2><p>Pachama成立于2018年11月，总部位于旧金山。这是一家致力于维护森林功能扩展森林面积来解决气候问题的科技公司。通过使用卫星数据和人工智能，<strong>Pachama提高了林业碳减排项目监测核查的效率，增加了减排项目透明度，并提供了碳信用交易的服务帮助企业实现净零发展。</strong></p><p>以森林碳汇为代表的NBS类项目越来越受到更广泛的利益相关方的关注。通过保护、修复、重建自然生态系统，不仅能够吸收温室气体，同时具有明显的协同效应，能够增加生物多样性，减少水土流失等，越来越多大型企业愿意使用森林碳汇来抵消其碳排放。<strong>但是这类项目产生的碳信用的真实性和有效性始终遭受诟病。</strong>相比于工业碳减排项目，林地面积大，树种多，因此通常采用抽样方法核算碳汇量。这就留下很大操作空间，<strong>容易出现碳汇量造假</strong>。并且林木是这类项目最主要的碳库，<strong>但是经受虫害、火害、采伐活动后，林木存储的二氧化碳又被释放出来，造成碳泄露。</strong>一旦在碳信用签发后出现上述情景，无疑会<strong>影响碳信用的信誉，导致使用这种碳信用抵消碳足迹的企业至于尴尬的境地。</strong></p><p>上述问题犹如达摩克利斯之剑始终威胁着林业碳信用的有效性，始终影响该类碳信用接受程度和价格。Pachama的独到之处在于使用卫星遥感技术和机器学习技术为森林碳减排项目设立6条额外的筛选要求：</p><ol><li>Real，真实性。运用遥感技术确保项目真实存在。</li><li>Additional，额外性。使用遥感技术比较项目内的森林以及项目周边未受保护的森林的表现，选择对比效果明显，额外碳收益显著的项目，增强碳信用的信誉。</li><li>Permanent，永久性。通过评估项目所有权、当地森林火灾和虫害等情况，筛选毁林风险低的项目，降低碳泄露风险。</li><li>Verifiable，可核查。在减排机制要求的第三方机构核查外，Pachama通过卫星遥感技术对项目碳汇量进行再核查，确保碳汇数量准确，增强碳信用的信誉。</li><li>Enforceable，可执行。Pachama从顶尖的减排机制中选取森林碳减排项目，确保碳信用不会被重复计算。目前选取减排机制包括Verra、GS、CAR和American Carbon Registry。</li><li>Impactful beyond carbon，除碳之外的影响。Pachama收集整理项目所在地社区、生态环境和经济等方面信息，为项目贴上额外的标签，以便消费者选择最符合要求和价值观的项目。</li></ol><p>经过上述筛选过程，增加了项目透明度、提升碳汇量可靠性、降低碳泄露风险，同时还为消费者提供多方位视角，<strong>确保买放心、安心、舒心。</strong></p><h2 id="利益相关方"><a href="#利益相关方" class="headerlink" title="利益相关方"></a>利益相关方</h2><h3 id="团队介绍"><a href="#团队介绍" class="headerlink" title="团队介绍"></a>团队介绍</h3><p>公司由连续创业人Diego和机器学习专家Tomas，两位阿根廷人联合创立。除此之外公司团队还有44人，其中17位技术人员，其中包含了4位机器学习、3个自动化以及2个碳方案专家，占技术人员一半。值得注意的是，在支持团队中客户留存经理<a href="https://www.smartkarrot.com/resources/blog/what-is-a-client-success-manager/">（Client Success）</a>和销售数量基本持平。这是从公开渠道中找到的<a href="https://www.theofficialboard.cn/%E6%9C%BA%E6%9E%84%E7%BB%84%E7%BB%87%E5%9B%BE/pachama">机构组织图</a>显示，公司虽小五脏俱全，初具规模。</p><h3 id="股东情况和融资情况"><a href="#股东情况和融资情况" class="headerlink" title="股东情况和融资情况"></a>股东情况和融资情况</h3><p>Pachama在碳交易市场的潜力已经吸引到了不少投资者，<a href="https://www.tianyancha.com/brand/b0487661048">目前已经进行了5轮融资</a>，共获得7,900万美元资金。最近一次是B轮融资发生在2022年5月。投资人中不仅有Breakthrough Energy Ventures（盖茨参与建立的基金）、亚马逊气候承诺基金、Saltwater（Ryan Graves的基金）这种贯穿了多轮的坚定支持者，也有Future Positive Capital这样的新贵以及更多各行各业的个人投资者。每轮融资额基本是前一轮高出一倍，这显示出投资人对这家公司比较看好。</p><h2 id="商业模式"><a href="#商业模式" class="headerlink" title="商业模式"></a>商业模式</h2><h3 id="产品或服务"><a href="#产品或服务" class="headerlink" title="产品或服务"></a>产品或服务</h3><p>Pachama为森林碳信用提供了公开、透明的交易平台，买家可以通过Pachama了解到购买的林业项目现状，包括林业项目基本信息、项目所在地的遥感监测图像、项目实施过程照片以及碳减排项目所需披露的报告。<strong>Pachama通过技术手段提升森林碳减排项目透明度，降低了森林项目造假的可能。并通过可视化手段增加消费者对其付费产生影响的感知和信心，满足消费者心理认同，从而促进消费者持续支持平台中的森林碳减排项目。</strong></p><p><strong>Pachama的商业模式更像是一个电子商务平台</strong>，有点像早期的网易严选。<strong>根据平台的标准，在现有减排机制中筛选合适的项目，并对其做了优选推荐，并从买家付费中抽取20%的作为服务费。</strong>避开了减排机制设计和减排项目的投资运营，这种人力和资金密集领域，专注于提供可靠的中介服务。</p><h3 id="目标客户，竞争者，运营推广"><a href="#目标客户，竞争者，运营推广" class="headerlink" title="目标客户，竞争者，运营推广"></a>目标客户，竞争者，运营推广</h3><p>对于Pachama交易的森林碳信用产品，财大气粗、影响力巨大的通信软件公司是他的拥趸。Pachama官网上公开信息也能印证这点，包括微软、软银以及电子商务公司shopify和mercado libre、国际航运经纪公司flexport都是他的客户。</p><p>由于目前愿意付费购买碳信用的企业优有限，让老顾客满意并重复消费是Pachama优先选择，这也是我理解的团队中客户留存经理（Client Success）和销售数量基本持平的原因。</p><p>Pachama开通了Twitter和Linkedin主页并且还有自己Newsletter和Blog。传播矩阵层次丰富，结构立体，基本是小成本囊括各种分发渠道。以Twitter来看，基本保持周更的节奏，3年时间吸引了近8千位关注者。Blog相对来说更新频率更低，用长文介绍企业价值观和技术手段，目前也有422个Fellows。并且著名的投资者和频繁的融资让Pachama成文新闻媒体的常客。这些都在一定程度上提升了Pachama的知名度，让他更容易去实现运营推广。</p><p>这是本系列的第一篇，关于竞争关系将会在后续文章中进行分析。</p><h2 id="致谢"><a href="#致谢" class="headerlink" title="致谢"></a>致谢</h2><p>感谢微信公众号硅兔赛跑的<a href="https://mp.weixin.qq.com/s/wbxCbAiKGizZeMd2-eNh7A">“碳中和”任重道远，科技初创公司或成最强辅助</a>为我提供数个优质案例，也感谢虎嗅平台，集合各个平台优秀创作，让我看到如此优质作品。</p>]]></content>
+    
+    
+    <summary type="html">Pachama致力于成为一个将植树造林项目结合到碳交易中的市场平台。</summary>
+    
+    
+    
+    <category term="应对气候变化" scheme="https://lizhening.github.io/categories/%E5%BA%94%E5%AF%B9%E6%B0%94%E5%80%99%E5%8F%98%E5%8C%96/"/>
+    
+    <category term="温室气体减排" scheme="https://lizhening.github.io/categories/%E5%BA%94%E5%AF%B9%E6%B0%94%E5%80%99%E5%8F%98%E5%8C%96/%E6%B8%A9%E5%AE%A4%E6%B0%94%E4%BD%93%E5%87%8F%E6%8E%92/"/>
+    
+    <category term="初创公司" scheme="https://lizhening.github.io/categories/%E5%BA%94%E5%AF%B9%E6%B0%94%E5%80%99%E5%8F%98%E5%8C%96/%E6%B8%A9%E5%AE%A4%E6%B0%94%E4%BD%93%E5%87%8F%E6%8E%92/%E5%88%9D%E5%88%9B%E5%85%AC%E5%8F%B8/"/>
+    
+    
+    <category term="初创公司" scheme="https://lizhening.github.io/tags/%E5%88%9D%E5%88%9B%E5%85%AC%E5%8F%B8/"/>
+    
+    <category term="森林碳减排" scheme="https://lizhening.github.io/tags/%E6%A3%AE%E6%9E%97%E7%A2%B3%E5%87%8F%E6%8E%92/"/>
+    
+    <category term="卫星技术" scheme="https://lizhening.github.io/tags/%E5%8D%AB%E6%98%9F%E6%8A%80%E6%9C%AF/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>使用Artitalk为Hexo博客加上随笔（说说）功能</title>
+    <link href="https://lizhening.github.io/posts/ccfb6fd0/"/>
+    <id>https://lizhening.github.io/posts/ccfb6fd0/</id>
+    <published>2022-05-09T13:12:34.000Z</published>
+    <updated>2022-05-09T15:17:24.412Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><p>想添加随笔功能原因是我觉得写一篇完整的文章对我来说压力太大了，很容易导致拖延症。同时，还是有很多情绪、想法需要找一个方式表达出来，想到了建立一个自己的微博。进而发现可以使用Artitalk实现。</p></blockquote><h2 id="系统介绍"><a href="#系统介绍" class="headerlink" title="系统介绍"></a>系统介绍</h2><p>使用的平台及其版本：</p><ul><li>npm：8.1.2</li><li>node：16.3.2</li><li>Hexo：5.4.0</li><li>Theme：<a href="https://hexo.fluid-dev.com/">fluid</a></li><li>Hexo-cli：4.3.0</li></ul><h2 id="Artitalk简介"><a href="#Artitalk简介" class="headerlink" title="Artitalk简介"></a>Artitalk简介</h2><p>这是一个基于<code>LeanCloud</code>实现的可实时发布说说/微语的<code>js</code>。我不大懂技术，并且目前也没有找到类似的竞品，没法找到产品的优劣。这是<a href="https://artitalk.js.org/">Artitalk项目的主页</a>，各位读者可以自行了解与分析。</p><p>下面是项目主页中列出的产品特性，我对这些特性没感觉，完全只是喜欢这个功能。</p><ul><li>增删查改全方面支持；</li><li>支持针对每条说说的评论；</li><li>支持 Markdown/html 语法；</li><li>支持图片上传。</li></ul><p>不仅如此，这个项目还有加分项：</p><ol><li>项目Issue回应比较及时并且还有<a href="https://artitalk.js.org/contact.html">QQ互助群</a>，出现问题可以向开发同学寻求支持。</li><li>在项目主页中有<a href="https://artitalk.js.org/links.html">成功案例</a>分享，遇到无法解决的问题，可联系一下与你相同框架主题的小伙伴提问。</li><li>项目主页结构完整功能，细节丰富。<strong>下次添加新功能一定要先研究主页，与社群联系，可以减少很多工作量</strong>。</li></ol><h2 id="LeanCloud账户申请以及后台配置"><a href="#LeanCloud账户申请以及后台配置" class="headerlink" title="LeanCloud账户申请以及后台配置"></a>LeanCloud账户申请以及后台配置</h2><p>项目主页的<a href="https://artitalk.js.org/doc.html">使用文档</a>中有详细的账户申请和后台配置流程。还可以参考其他博主文章， 图文结合更方便，例如：<a href="https://yezhechenyang.gitee.io/2020/100614065.html">叶遮沉阳的博文</a>和<a href="https://blog.csdn.net/weixin_58068682/article/details/116612753">Amnesia_Fu的博文</a>。</p><p>有一点需要注意，LeanCloud后台已经改版，有些功能位置发生变化。目前Artitalk主页以及其他博主的文章仍然基于老版的配置界面。虽然逻辑仍然通畅，但是可能按照说明找不到功能。基于2022年5月9日的LeanCloud后台界面。我对后台配置流程进行修订，修订步骤是3、4和8，都是功能位置，如下：</p><ol><li>前往 <a href="https://leancloud.app/">LeanCloud 国际版</a>，注册账号。</li><li>注册完成之后根据 LeanCloud 的提示绑定手机号和邮箱。</li><li>绑定完成之后点击<code>创建应用</code>，应用名称随意，接着单击新建的应用名，在进入<code>应用概览</code>界面。在<code>数据存储</code>选项卡的<code>结构化数据</code>中创建<code>class</code>，命名为 <code>shuoshuo</code>。</li><li>在<code>内建账户</code>选项卡的<code>用户管理</code>中点击添加用户，输入想用的用户名及密码。</li><li>回到<code>结构化数据</code>中，点击<code>class</code>下的<code>shuoshuo</code>。找到权限，在<code>Class</code>访问权限中将<code>add_fields</code>以及<code>create</code>权限设置为指定用户，输入你刚才输入的用户名会自动匹配。为了安全起见，将<code>delete</code>和<code>update</code>也设置为跟它们一样的权限。</li><li>然后新建一个名为<code>atComment</code>的<code>class</code>，权限什么的使用默认的即可。</li><li>点击<code>class</code>下的<code>_User</code>添加列，列名称为<code>img</code>，默认值填上你这个账号想要用的发布说说的头像url，这一项不进行配置，说说头像会显示为默认头像 —— Artitalk 的 logo。</li><li>在<code>设置</code>选项卡中找到<code>应用凭证</code>，记下来<code>AppID</code>和<code>AppKey</code>，一会会用。</li><li>最后将<code>_User</code>中的权限全部调为指定用户，或者数据创建者，为了保证不被篡改用户数据以达到强制发布说说。</li></ol><h2 id="本地配置"><a href="#本地配置" class="headerlink" title="本地配置"></a>本地配置</h2><p>首先需要说明，我不想把随笔单放一页，因此把他集成到<code>关于</code>页面中，因此将<code>Artitalk</code>的<code>JS</code>文件插入<code>/themes/fluid/layout/about.ejs</code>。我把他放在主要内容之后，评论之前。你问我为什么不单独建立一个<code>ejs</code>文件或者采用更优雅的方式，很简单，我读不懂JS，也不会写，也不想学。</p><p>如果想要新建一个随笔页面可以参考<a href="https://yezhechenyang.gitee.io/2020/100614065.html">叶遮沉阳的博文</a>中页面引入的思路。我想<code>fluid</code>主题可能需要以下步骤：</p><ol><li>Hexo新建<code>Artitalk</code>页面。</li><li>修改<code>_config.fluid.yml</code>文件中的<code>menu</code>（导航菜单栏）和<code>Custom Page</code>（自定义页）两处。</li><li>在layout下添加arrtitalk.ejs，将项目主页中的<code>JS</code>放入其中，引入说说。</li></ol><h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><ul><li>[1] <a href="https://blog.csdn.net/weixin_58068682/article/details/116612753">Amnesia_Fu的博文</a></li><li>[2] <a href="https://yezhechenyang.gitee.io/2020/100614065.html">叶遮沉阳的博文</a></li><li>[3] <a href="https://artitalk.js.org/doc.html">Artitalk项目主页</a></li></ul>]]></content>
+    
+    
+    <summary type="html">本文主要介绍如何使用Artitalk为Hexo博客加上随笔（说说）功能，可以发一些简短无压力的随笔或者心情分享。</summary>
+    
+    
+    
+    <category term="Hexo博客建设" scheme="https://lizhening.github.io/categories/Hexo%E5%8D%9A%E5%AE%A2%E5%BB%BA%E8%AE%BE/"/>
+    
+    <category term="随笔（说说）功能" scheme="https://lizhening.github.io/categories/Hexo%E5%8D%9A%E5%AE%A2%E5%BB%BA%E8%AE%BE/%E9%9A%8F%E7%AC%94%EF%BC%88%E8%AF%B4%E8%AF%B4%EF%BC%89%E5%8A%9F%E8%83%BD/"/>
+    
+    
+    <category term="Hexo" scheme="https://lizhening.github.io/tags/Hexo/"/>
+    
+    <category term="Artitalk" scheme="https://lizhening.github.io/tags/Artitalk/"/>
+    
+    <category term="随笔（说说）功能" scheme="https://lizhening.github.io/tags/%E9%9A%8F%E7%AC%94%EF%BC%88%E8%AF%B4%E8%AF%B4%EF%BC%89%E5%8A%9F%E8%83%BD/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>中国可再生能源绿色电力证书简介</title>
+    <link href="https://lizhening.github.io/posts/54740602/"/>
+    <id>https://lizhening.github.io/posts/54740602/</id>
+    <published>2022-03-06T12:58:48.000Z</published>
+    <updated>2022-05-08T07:08:22.224Z</updated>
+    
+    <content type="html"><![CDATA[<p><strong>可再生能源绿色电力证书</strong>（绿证）是我国从2017年开始实施的一项自愿可再生能源交易制度。绿证是国家对发电企业<strong>每兆瓦时非水可再生能源上网电量</strong>颁发的具有独特标识代码的电子证书，是<strong>非水可再生能源发电量的确认和属性证明</strong>以及<strong>消费绿色电力</strong>的唯一凭证。绿证能够让企业和个人在中国本土市场购买可再生能源电力并追溯这一购买行为。销售绿证获得的收益可以为可再生能源企业带来额外的收益来源，推动清洁能源项目建设。</p><h3 id="基本特征"><a href="#基本特征" class="headerlink" title="基本特征"></a>基本特征</h3><p>绿证基本特征如下表所示：<br><strong>表1：绿证要素一览</strong></p><table><thead><tr><th align="center">要素</th><th align="center">明细</th></tr></thead><tbody><tr><td align="center">核发依据</td><td align="center"><a href="http://www.nea.gov.cn/2017-02/06/c_136035626.htm">《关于试行可再生能源绿色电力证书核发及自愿认购交易制度的通知》</a>以及[《绿色电力证书核发及自愿认购规则（试行）》][部门规章-绿色电力证书核发及自愿认购规则（试行）-发改委财政部能源局-20170118.pdf]</td></tr><tr><td align="center">主管机构</td><td align="center">国家发展和改革委员会、财政部、国家能源局</td></tr><tr><td align="center">核发机构</td><td align="center">国家可再生能源信息管理中心</td></tr><tr><td align="center">核发对象</td><td align="center">国家可再生能源电价附加资金补助目录内的风电（陆上风电）、光伏发电项目（不含分布式光伏项目），以及<a href="https://www.ndrc.gov.cn/xxgk/zcfb/tz/201901/t20190109_962365.html?code=&state=123">风电、光伏发电平价上网项目和低价上网项目</a></td></tr><tr><td align="center">核发标准</td><td align="center">1个证书对应 1MWh 结算电量</td></tr><tr><td align="center">信息公示</td><td align="center"><a href="http://www.greenenergy.org.cn/gctrade/shop/index.html">中国绿色电力证书认购交易平台</a></td></tr><tr><td align="center">认购主体</td><td align="center">通过信息平台注册、参与自愿认购证书或出售持有证书的政府机关、企事业单位和自然人</td></tr><tr><td align="center">规则特点</td><td align="center">1. 认购参与人不允许以自身为对手方进行认购。 2. 认购参与人购买可再生能源绿色电力证书后，不得再次出售。 3. 出售电量后，相应的电量不再享受国家可再生能源电价附加资金的补贴。</td></tr><tr><td align="center">价格限制</td><td align="center">认购价格按照<strong>不高于</strong>证书对应电量的<strong>可再生能源电价附加资金补贴金额</strong>。</td></tr><tr><td align="center">交易方式</td><td align="center">认购平台挂牌出售形式</td></tr><tr><td align="center">绿证有效期</td><td align="center">目前规则没有明确的有效期</td></tr></tbody></table><h3 id="绿证产生与交易流程"><a href="#绿证产生与交易流程" class="headerlink" title="绿证产生与交易流程"></a>绿证产生与交易流程</h3><p>绿证制度所涉及的主要利益相关方包括政府机构（如能源局）、监管机构（如国家可再生能源信息管理中心）、发电商、售电商和自愿购买者等。各方关系如下图所示。</p><ul><li><p>政府机构负责制定绿证交易规则，包括设定市场准入门槛，交易价格限额，交易方式；并授权国家可再生能源信息管理中心全面监管绿电交易制度。</p></li><li><p>在政府授权夏，国家可再生能源信息管理中心向符合条件的可再生能源发电商发放可再生电力证书，并负责建设和运行认购平台。</p></li><li><p>发电商除依据电网调度销售可再生电力，还可以通过绿证交易中心向自愿购买者销售所有获得绿证。</p></li><li><p>自愿购买者通过购买绿证实现自身可持续发展要求。</p><img src="/posts/54740602/%E7%BB%BF%E8%AF%81%E7%9A%84%E4%BA%A7%E7%94%9F%E5%92%8C%E4%BA%A4%E6%98%93%E6%B5%81%E7%A8%8B.png" class="" title="绿证的产生和交易流程"></li></ul><p><em>资料来源：国家可再生能源信息管理中心</em></p><p>在绿证体系下，可再生能源电力的使用属性和环境效益等外部性分开单独销售，可再生能源电力的使用属性通过电网，按照普通电价出售。而其环境效益集中在绿证中，通过绿证交易平台单独销售。</p><img src="/posts/54740602/%E7%BB%BF%E7%94%B5%E5%92%8C%E7%BB%BF%E8%AF%81%E9%94%80%E5%94%AE%E6%B5%81%E7%A8%8B.jpg" class="" title="绿电和绿证销售流程"><p><em>资料来源：《风能》，安信证券研究中心</em></p><h3 id="发展历程"><a href="#发展历程" class="headerlink" title="发展历程"></a>发展历程</h3><p>相对于发达国家，中国绿证制度起步较晚，于2017年7月开始交易。同时，受限于绿证价格较高，以及绿证实际用途不明确等因素限制，交易量有限。国内绿证发展过程中重要时间节点如下：<br><strong>表2：绿证交易重要政策文件</strong></p><table><thead><tr><th align="center">时间</th><th align="center">政策/事件</th><th align="center">相关机构</th><th align="center">明细/意义</th></tr></thead><tbody><tr><td align="center">2016年2月</td><td align="center"><a href="http://zfxxgk.nea.gov.cn/auto87/201603/t20160303_2205.htm">《关于建立可再生能原开发利用目标引导制度的指导意见》</a></td><td align="center">国家能源局</td><td align="center">首提绿证交易</td></tr><tr><td align="center">2017年1月</td><td align="center"><a href="http://www.nea.gov.cn/2017-02/06/c_136035626.htm">《关于试行可再生能源绿色电力证书核发及自愿认购交易制度的通知》</a></td><td align="center">国家发改委、财政部、国家能源局</td><td align="center">试行制度颁布</td></tr><tr><td align="center">2017年7月</td><td align="center">全国绿色电力证书自愿认购交易1日在京正式启动</td><td align="center">国家可再生能源信息管理中心</td><td align="center">绿证交易正式启动</td></tr><tr><td align="center">2019年1月</td><td align="center"><a href="https://www.ndrc.gov.cn/xxgk/zcfb/tz/201901/t20190109_962365.html?code=&state=123">关于积极推进风电、光伏发电无补贴平价上网有关工作的通知</a></td><td align="center">国家发改委、国家能源局</td><td align="center">明确提出鼓励通过绿领获得收益</td></tr><tr><td align="center">2019年5月</td><td align="center"><a href="http://www.gov.cn/zhengce/zhengceku/2019-09/25/content_5432993.htm">关于建立健全可再生能源电力消纳保障机制的通知</a></td><td align="center">国家发改委、国家能源局</td><td align="center">可通过自愿认购绿证方式完成消纳量</td></tr><tr><td align="center">2020年9月</td><td align="center"><a href="http://www.gov.cn/zhengce/zhengceku/2020-10/21/content_5552978.htm">《关于促进非水可再生能源发电健康发展的若干意见》有关事项的补充通知</a></td><td align="center">财政部、国家发改委、国家能源局</td><td align="center">部分项目不再补贴后核发绿证</td></tr><tr><td align="center"><em>资料来源：天风证券研究所</em></td><td align="center"></td><td align="center"></td><td align="center"></td></tr></tbody></table><img src="/posts/54740602/%E5%9B%BD%E5%86%85%E7%BB%BF%E8%AF%81%E5%8F%91%E5%B1%95%E5%8E%86%E7%A8%8B.png" class="" title="国内绿证发展历程"><p><em>资料来源：<a href="https://www.sgpjbg.com/info/30348.html">绿证是什么？有什么作用？我国绿色电力证书发展历程梳理</a></em></p><h2 id="购买绿证的用途"><a href="#购买绿证的用途" class="headerlink" title="购买绿证的用途"></a>购买绿证的用途</h2><h3 id="完成可再生能源电力消纳考核"><a href="#完成可再生能源电力消纳考核" class="headerlink" title="完成可再生能源电力消纳考核"></a>完成可再生能源电力消纳考核</h3><p>2019年5月国家发展改革委和国家能源局联合印发<a href="http://www.gov.cn/zhengce/zhengceku/2019-09/25/content_5432993.htm">《关于建立健全可再生能源电力消纳保障机制的通知》</a>（以下简称“通知“），明确对电力消费设立可再生能源电力消纳责任权重。承担消纳责任权重的市场主体完成消纳量的补充方式之一是<strong>自愿认购绿色证书</strong>。并且超过激励性消纳责任权重的消纳电量折算的能源消费量<strong>不计入该地方或企业“十三五”能耗“双控”考核</strong>的奖励机制，将形成购买绿色证书的需求。</p><p>但是，“通知”对不达标主体的处罚力度有限，无法形成对绿证价格的支撑。并且相比于绿证高昂的价格，其他完成考核方式更加经济。</p><h3 id="服务企业宣传"><a href="#服务企业宣传" class="headerlink" title="服务企业宣传"></a>服务企业宣传</h3><p>绿证体现了可再生能源电力的环境属性，因此购买绿证相当于间接使用了可再生能源电力。购买绿证能够帮助企业履行可持续发展的社会责任，实现绿色发展的社会目标。<br>绿证还可以用于声明抵消企业或者个人用电的排放，为企业宣传服务。但是目前不论是绿证还是绿电都没能与碳市场打通，因此企业使用绿电或者购买绿证无法在碳核查中抵扣用电量或者排放量。</p><h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2>]]></content>
+    
+    
+    <summary type="html">本文主要介绍中国可再生能源绿色电力证书的基本特点、发展脉络与用途，后续将补充绿证交易现状分析。</summary>
+    
+    
+    
+    <category term="应对气候变化" scheme="https://lizhening.github.io/categories/%E5%BA%94%E5%AF%B9%E6%B0%94%E5%80%99%E5%8F%98%E5%8C%96/"/>
+    
+    <category term="温室气体减排" scheme="https://lizhening.github.io/categories/%E5%BA%94%E5%AF%B9%E6%B0%94%E5%80%99%E5%8F%98%E5%8C%96/%E6%B8%A9%E5%AE%A4%E6%B0%94%E4%BD%93%E5%87%8F%E6%8E%92/"/>
+    
+    <category term="可再生能源绿证" scheme="https://lizhening.github.io/categories/%E5%BA%94%E5%AF%B9%E6%B0%94%E5%80%99%E5%8F%98%E5%8C%96/%E6%B8%A9%E5%AE%A4%E6%B0%94%E4%BD%93%E5%87%8F%E6%8E%92/%E5%8F%AF%E5%86%8D%E7%94%9F%E8%83%BD%E6%BA%90%E7%BB%BF%E8%AF%81/"/>
+    
+    
+    <category term="绿证" scheme="https://lizhening.github.io/tags/%E7%BB%BF%E8%AF%81/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>计量体系以及CMA、CNAS资质查询</title>
+    <link href="https://lizhening.github.io/posts/2afbd35e/"/>
+    <id>https://lizhening.github.io/posts/2afbd35e/</id>
+    <published>2021-12-12T12:35:51.000Z</published>
+    <updated>2022-05-08T07:08:22.501Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><p><strong>这是一篇会持续更新的文章，随着接触的不断加深，对计量管理体系的认知边界也会不断拓宽。</strong>做减排项目的时候，经常要与化验、计量以及校准机构打交道。监测数据是减排量计算的基础，从符合标准的设备或者实验室获取监测数据是数据质量保证中关键环节。为了确保计量值的准确可靠，从事计量校准机构<strong>必须</strong>获得中国计量认证（CMA）认证，如果开发国际减排项目可能还要CNAS资质</p></blockquote><h2 id="我国现行的计量体系"><a href="#我国现行的计量体系" class="headerlink" title="我国现行的计量体系"></a>我国现行的计量体系</h2><h3 id="法律法规"><a href="#法律法规" class="headerlink" title="法律法规"></a>法律法规</h3><p>计量行政法规体系包括4个层面：</p><ol><li>法律1部，即<a href="http://www.npc.gov.cn/zgrdw/npc/xinwen/2018-11/05/content_2065664.htm">《中华人民共和国计量法》</a>;</li><li>行政法规有7部，包括国务院依据《计量法》制定或批准的<a href="http://www.gov.cn/gongbao/content/2019/content_5468909.htm">《中华人民共和国计量法实施细则》</a>、<a href="https://gkml.samr.gov.cn/nsjg/jls/201902/t20190225_291141.html">《中华人民共和国进口计量器具监督管理办法》</a>、<a href="https://gkml.samr.gov.cn/nsjg/jls/201902/t20190225_291140.html">《国防计量监督管理条例》</a>、<a href="https://gkml.samr.gov.cn/nsjg/jls/201902/t20190225_291138.html">《中华人民共和国强制检定的工作计量器具检定管理办法》</a>、<a href="https://gkml.samr.gov.cn/nsjg/jls/201902/t20190225_291135.html">《全面推行我国法定计量单位的意见》</a>、<a href="https://gkml.samr.gov.cn/nsjg/jls/201902/t20190225_291134.html">《国务院关于在我国统一实行法定计量单位的命令》</a>和<a href="https://gkml.samr.gov.cn/nsjg/jls/201902/t20190225_291144.html">《关于改革全国土地面积计量单位的通知》</a>;</li><li>部门规章及地方性计量法规，由国务院主管机构或者地方立法机构针对特定情景设立的计量规定;</li><li>规范性文件。从种类上可以分为三种：计量检定系统表、计量技术规范和计量检定规程。从级别上可以分为：国家计量技术法规、地方计量技术法规和部门计量技术法规。可以在<a href="http://jjg.spc.org.cn/resmea/view/about">国家计量技术规范全文公开系统</a>中查询。</li></ol><h3 id="主管机构"><a href="#主管机构" class="headerlink" title="主管机构"></a>主管机构</h3><p>依据<a href="https://gkml.samr.gov.cn/nsjg/fgs/202104/t20210422_328103.html">《检验检测机构资质认定管理办法》</a>，<strong>国家市场监督管理总局</strong>主管全国检验检测机构资质认定工作，并负责检验检测机构资质认定的统一管理、组织实施、综合协调工作。</p><p><img src="https://s2.loli.net/2022/01/15/w1NAsMSkvceZbB5.png" alt="国家市场监督管理总局Logo"></p><p>原有国家认监委的相关业务职能由认证监督管理司和认可与检验检测监督管理司承担。但仍对外保留国家认监委牌子。<br><img src="https://s2.loli.net/2022/01/15/Vr9F47epanwQPlv.png" alt="国家认监委Logo"></p><h2 id="常见的计量项目"><a href="#常见的计量项目" class="headerlink" title="常见的计量项目"></a>常见的计量项目</h2><h3 id="计量授权机构"><a href="#计量授权机构" class="headerlink" title="计量授权机构"></a>计量授权机构</h3><p>依据《计量法》第二十条之规定，“县级以上人民政府计量行政部门可以根据需要设置计量检定机构，或者授权其他单位的计量检定机构，执行强制检定和其他检定、测试任务”，国务院主管机构制定了<a href="https://gkml.samr.gov.cn/nsjg/fgs/202104/t20210422_328102.html">《计量授权管理办法》</a>，县级以上人民政府据此开展计量授权工作。</p><p>计量授权机构是授权区域内法定计量检定机构，主要承担区域内强制检定和仲裁检定等职责。国家级计量授权机构可以通过<a href="http://psp.e-cqs.cn/aeaCma/cma/apply/onlineApply/importDataQuery.jsp">国家计量授权查询系统</a>查询，各地区的计量授权机构可以通过<a href="http://psp.e-cqs.cn/InspMeter/verificationMaintain/inspmeterOrgInfo/inspmeterOrgInfoShow.jsp">计量机构信息</a>查询。</p><p>我之前没有接触过这类机构，不太清楚这类资质实际的适用场景。计量授权机构资质依据颁发。根据《计量授权管理办法》，我觉得可能在遇到强制性检定和需要仲裁情况下才会关注这类资质。</p><h3 id="中国计量认证（CMA）"><a href="#中国计量认证（CMA）" class="headerlink" title="中国计量认证（CMA）"></a>中国计量认证（CMA）</h3><p>CMA资质源于《计量法》第二十二条规定，为社会提供公证数据的产品质量检验机构，<strong>必须</strong>经省级以上人民政府计量行政部门<strong>对其计量检定、测试的能力和可靠性考核合格</strong>。根据上述条款，国务院主管部门制定了<a href="https://gkml.samr.gov.cn/nsjg/fgs/202104/t20210422_328103.html">《检验检测机构资质认定管理办法》</a>，规范检验检测机构资质认定工作。取得计量认证合格证书的检测机构，允许其在检验报告上使用CMA标记；有CMA标记的检验报告可用于产品质量评价、成果及司法鉴定，<strong>具有法律效力。</strong><br><img src="https://s2.loli.net/2022/01/15/hfoDvw4ynckPOTB.png" alt="CMA资质标志"></p><p>写这篇文章的初衷是系统了解计量体系，并汇总各种资质的查询方法，尤其是CMA资质。但是事与愿违，直至今天也没有找到公开的、完整的CMA资质企业查询平台。我把资料整理过程中发现的检索平台罗列在下方，读者按需使用。<strong>如果有人知道CMA检索平台，请一定不吝赐教</strong>。</p><p><a href="https://zwfw.samr.gov.cn/wyc/">国家市场监督管理局查询平台</a>，可以查询计量、标准、认证认可检测方面信息。<br><a href="http://psp.e-cqs.cn/egov/shIndex.html">中国电子质量监督(e-CQS)公共服务门户</a>，根据<a href="http://www.qdh.gov.cn/art/2018/7/16/art_1293820_19455407.html">网络信息</a>，它是全国计量器具强制检定业务的信息化平台，维护强检器具台帐信息，并办理强检器具检定预约业务。<br><a href="http://cx.cnca.cn/CertECloud/index/index/page">全国认证认可信息公共服务平台</a>，我经常用它来查企业通过了哪些认证，比如管理体系认证、绿色产品认证等等。<br><a href="http://cma.cnca.cn/cma/base/tBzNationalCenter/indexList">国家质检中心名录</a>，参考<a href="https://gkml.samr.gov.cn/nsjg/rzjcs/202104/t20210414_327819.html">《市场监管总局关于进一步加强国家质检中心管理的意见》</a>，国家质检中心主要提供高端检验检测服务。我觉得如果有新设备、新标准，可以找他们一起研究开发。<br><a href="http://cma.cnca.cn/cma/solr/tBzAbilitySearch/list">检验检测机构资质认定网上审批系统</a>，我没有搞明白这是干什么的。</p><h3 id="实验室认可（CNAS）"><a href="#实验室认可（CNAS）" class="headerlink" title="实验室认可（CNAS）"></a>实验室认可（CNAS）</h3><p>CNAS认可是由中国合格评定认可委员会实施的认可活动，是一种自愿行为，任何第一方、第二方和第三方实验室均可申请认可。表明该机构已经通过了指中国合格评定国家认可委员会的认可。在通过认可范围内提供公正数据，并且数据结果在签署多边互认协议（MRA）国家中通用。详细的互认国家参考<a href="https://www.cnas.org.cn/gjhr/index.shtml">CNAS官网介绍</a>，也可参考<a href="http://www.cti-lab.com/cn/article/63/456.htm">华测的介绍软文</a>。认可实验室名单可以通过<a href="https://las.cnas.org.cn/LAS_FQ/publish/externalQueryL1.jsp">获认可的实验室名录</a>查询。<br><img src="https://s2.loli.net/2022/01/15/awcx3lAO7n5dhrM.png" alt="CNAS Logo"></p><p>在我看来，如果只做国内项目，优先选用具备CMA资质企业。首先从法律效力来看CMA会比CNAS略高，CMA资质的效力来源于《计量法》第22条，CNAS只是依据《GB/T 27025 检测和校准实验室能力的通用要求》（等效ISO/IEC17025:2005-5-15《检测和校准实验室能力的通用要求》）。其次，CMA是强制性认证而CNAS是自愿认可，能够出具CMA企业数量更多，价格相对比较便宜。</p><p>但是<strong>CNAS胜在国际通用</strong>，通过认可的实验室出具的报告在全球的多个国家和地区都是认可的，可以说是国际项目优选。</p><h3 id="产品质量检验机构授权（CAL）"><a href="#产品质量检验机构授权（CAL）" class="headerlink" title="产品质量检验机构授权（CAL）"></a>产品质量检验机构授权（CAL）</h3><p>根据<a href="http://www.cnca.gov.cn/zw/tz/tz2019/202008/t20200809_60680.shtml">《2019年认证认可检验检测工作要点》</a>，<strong>取消产品质量检验机构授权（CAL）</strong>。</p><h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><p><a href="http://www.hnjly.cn/about.aspx?catagoryID=108">湖南省计量检测研究院</a><br><a href="https://www.sohu.com/a/153994031_278665">我国的计量法规体系</a><br><a href="https://www.sohu.com/a/362558468_660740">干货：如何查找检测机构的资质和能力范围？</a><br><a href="http://www.cnca.gov.cn/jggk/">国家认证认可监督管理委员会机构概况</a><br><a href="https://www.sohu.com/a/162480991_737497">秒懂！计量认证、资质认定、实验室认可啥区别？</a></p>]]></content>
+    
+    
+    <summary type="html">总结自己CMA和CNAS资质的认识，并提供查询有资质机构的接口。</summary>
+    
+    
+    
+    <category term="范围拓展" scheme="https://lizhening.github.io/categories/%E8%8C%83%E5%9B%B4%E6%8B%93%E5%B1%95/"/>
+    
+    <category term="计量体系" scheme="https://lizhening.github.io/categories/%E8%8C%83%E5%9B%B4%E6%8B%93%E5%B1%95/%E8%AE%A1%E9%87%8F%E4%BD%93%E7%B3%BB/"/>
+    
+    
+    <category term="计量体系" scheme="https://lizhening.github.io/tags/%E8%AE%A1%E9%87%8F%E4%BD%93%E7%B3%BB/"/>
+    
+    <category term="CNAS" scheme="https://lizhening.github.io/tags/CNAS/"/>
+    
+    <category term="CMA" scheme="https://lizhening.github.io/tags/CMA/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Hexo中publish命令无法将文章推送到post文件夹中</title>
+    <link href="https://lizhening.github.io/posts/a9f9d57d/"/>
+    <id>https://lizhening.github.io/posts/a9f9d57d/</id>
+    <published>2021-11-30T05:38:13.000Z</published>
+    <updated>2022-05-08T07:08:22.344Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h2><p>最近以draft模板完成一篇文章，打算使用<code>publish</code>命令将文章发布到博客中。在发布过程中，反馈结果如下：<br><img src="https://i.loli.net/2021/11/30/u9xkdXJtiQVeTwG.png" alt="命令运行结果"><br>命令能正常运营，但是注意红色框中内容。可以发现文件依旧在<code>_drafts</code>文件夹中，只是文件名加了一个尾缀。没有像预想中的一样把文件推送到<code>_posts</code>文件夹中。</p><h2 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h2><p>我认为可能是文章<code>Front-matter</code>字段可能有问题，我的draft文件模板如下：<br><img src="https://i.loli.net/2021/11/30/8YXvreZkMwhaGNK.png" alt="draft模板"><br>注意红色框线中的内容，<code>layout</code>字段缺省值是<code>false</code>。我认为很可能是这个字段让hexo无法将文章推送到<code>_posts</code>文件夹中。<code>publish</code>命令默认的发布时使用的模板为<code>post</code>，我关闭了这个字段，导致命令无法识别文章模板，所以重新新建了一份。</p><p>在删除<code>layout: false</code>字段后，文章可以正常的推送到<code>_posts</code>文件夹中，问题解决。<strong>不过上述原因均为推测，我没有看过源代码，不清楚是否正确。</strong></p>]]></content>
+    
+    
+    <summary type="html">介绍无法将文章从草稿推送到_posts文件中的解决方案。</summary>
+    
+    
+    
+    <category term="Hexo博客建设" scheme="https://lizhening.github.io/categories/Hexo%E5%8D%9A%E5%AE%A2%E5%BB%BA%E8%AE%BE/"/>
+    
+    <category term="问题处理" scheme="https://lizhening.github.io/categories/Hexo%E5%8D%9A%E5%AE%A2%E5%BB%BA%E8%AE%BE/%E9%97%AE%E9%A2%98%E5%A4%84%E7%90%86/"/>
+    
+    
+    <category term="笔记" scheme="https://lizhening.github.io/tags/%E7%AC%94%E8%AE%B0/"/>
+    
+    <category term="Hexo" scheme="https://lizhening.github.io/tags/Hexo/"/>
+    
+    <category term="Front-matter" scheme="https://lizhening.github.io/tags/Front-matter/"/>
+    
+    <category term="publish命令" scheme="https://lizhening.github.io/tags/publish%E5%91%BD%E4%BB%A4/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>对于碳中和机票的思考</title>
+    <link href="https://lizhening.github.io/posts/undefined/"/>
+    <id>https://lizhening.github.io/posts/undefined/</id>
+    <published>2021-11-14T04:56:44.000Z</published>
+    <updated>2022-05-08T07:08:22.501Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><p>最近，发现厦门航空联合兴业银行推出了“碳中和”机票，助力国家实现“碳中和”目标。作为碳减排行业从业者，非常乐于见到更多的行业、企业和公众意识到可持续发展的重要性，认同减少温室气体排放的意义。但是在了解这个项目过程中，<strong>发现网络上只有只言片语的宣传信息，对项目如何量化、如何抵消完全没有介绍。我认为企业应在加强信息披露，增加减排工作透明度，不要把一个很好的项目搞成“漂绿”式的宣传。</strong></p></blockquote><h2 id="“碳中和”机票的背景"><a href="#“碳中和”机票的背景" class="headerlink" title="“碳中和”机票的背景"></a>“碳中和”机票的背景</h2><p>大致在2021年11月，厦门航空、兴业银行厦门分行联合推出“碳中和”机票。旅客自愿选择购买“碳中和机票”（比普通机票贵10元），航空公司通过兴业银行厦门分行进行碳中和。兴业银行厦门分行委托厦门产权交易中心通过“蓝碳基金”购入的海洋碳汇，以此来抵消旅客旅程的碳排放，并进行碳中和机票认证。<br><img src="https://i.loli.net/2021/11/30/FuWL1dfaIChSEl3.png" alt="“碳中和”机票的介绍"></p><p>对于“碳中和”机票的详细介绍，可以看<a href="https://www.cib.com.cn/cn/aboutCIB/about/news/2021/20211112_1.html">兴业银行的新闻稿</a>和<a href="https://news.cnstock.com/news,bwkx-202111-4781559.htm">中国证券网的报道</a>。</p><p>毋庸置疑，推出“碳中和”机票既能够增强公众低碳出行的意识，又能够为减排项目提供资金支持，还能够提升企业绿色形象，是一个一举多得的好项目。</p><h2 id="存在的不足以及建议"><a href="#存在的不足以及建议" class="headerlink" title="存在的不足以及建议"></a>存在的不足以及建议</h2><p>作为一个减排行业从业人员，相比于其他公众群体，想更进一步了解项目的信息。比如：</p><ol><li>如何计算航空碳排放？依据的标准（核算指南）是什么？</li><li>如何获取计算参数，如何保证数据有效性和准确性？</li><li>机票进行碳中和依据的标准是什么？</li><li>用于抵消的减排量来自哪个减排机制？按照什么标准进行注册和签发？是否有减排机制的介绍？</li><li>用于抵消的减排量来自于哪个减排项目？这个减排项目如何减少温室气体排放？</li><li>购买“碳中和”的机票多支付的10元的流向了哪里？其中有多少用于购买抵消的减排量？</li></ol><p>但是在查阅资料的过程中，网络上绝大部分的介绍都是新闻稿，在厦门航空和兴业银行以及厦门产权交易中心的官方网站上都没有找到对于项目介绍的文章。并且可能是项目刚开展不久，厦航的客服没听过“碳中和”机票，甚至还闹了一个小笑话。<br><img src="https://i.loli.net/2021/11/30/aZETrPFD3xN9Klp.png" alt="客服错误的理解了“碳中和机票”的含义"></p><p>路漫漫其修远兮，碳中和的概念刚刚兴起，政府、企业和公众都在学习和适应的过程中，在公众参与、信息披露等方面必然有所欠缺。又是一个“睁眼看世界”的时候，必须承认西方国家，尤其是欧洲国家在可持续发展和低碳运营和宣传方面比我们多积累了至少10年的经验和教训，在很多方面应该向他们学习。在国内也有一些好的样本可以借鉴，比如台湾的富士康，大陆的“美帝良心想”就做的不错。</p><p>从公众和从业者的角度来说，我希望开展绿色宣传的企业能够提供更多的背景信息。一方面能够让公众更多的了解和参与到减排项目中，增强公众的参与感与认同感。另一方面能够发挥社会的智慧与监督作用，完善项目中的漏洞，监督相关方高效、准确的执行。</p><h2 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h2><p>虽然项目参与方没有公开用于抵消的减排量来源，我在公开途径还是查找到一些蛛丝马迹。<strong>以下内容均为我个人的推测，没法保证推测的准确性。实际情况还要依据项目参与方的介绍。</strong></p><p>根据兴业银行的介绍，<em>碳补偿由兴业银行厦门分行委托厦门产权交易中心通过“蓝碳基金”购入的海洋碳汇</em>，因此“蓝碳基金”、“兴业银行厦门分行”以及“厦门产权交易中心”是三个关键词。经过检索，发现该基金由兴业银行厦门分行与厦门产权交易中心合作设立，并且在同一篇新闻稿中提到<a href="http://www.xemas.com.cn/content-detail.html?parent-uid=0b63dee0-1d5a-4245-ba50-238f137d4cea&self-uid=f14fd78e-849c-43d0-931e-81b5f9b73ccb">厦门产权交易中心对联合国《生物多样性公约》第十五次缔约方大会（COP15）平行活动进行了碳中和</a>。同时，还能发现另一篇<a href="https://epaper.xmnn.cn/xmrb/20210913/202109/t20210913_5453911.htm">来自厦门日报的报道</a>，文章称<em>厦门产权交易中心昨日（2021年9月12日）完成了首宗海洋碳汇交易——泉州洛阳江红树林生态修复项目2000吨海洋碳汇在厦门产权交易中心海洋碳汇交易平台顺利成交</em>，同时文章还说明该项目依据厦门大学陈鹭真教授团队开发的《红树林造林碳汇项目方法学》开发。结合兴业银行新闻稿中<em>首批“碳中和机票”抵消排放的碳汇款项将用于红树林生态修复项目</em>。</p><p><strong>我推测</strong>，用于抵消的减排量来可能来自于泉州洛阳江红树林生态修复项目，依照陈鹭真教授团队编制的《红树林造林碳汇项目方法学》开发。</p><p>遗憾的是，不论是项目应用的方法学《红树林造林碳汇项目方法学》，还是项目注册PDD或者项目的监测报告都没有公开文本。</p><p>我能够找到的信息就这么多了，如果有更多的信息，欢迎留言。</p><h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><p><a href="https://www.cib.com.cn/cn/aboutCIB/about/news/2021/20211112_1.html">兴业银行携手厦门航空推出全国首批碳中和机票</a><br><a href="https://news.cnstock.com/news,bwkx-202111-4781559.htm">兴业银行携手厦门航空推出全国首批碳中和机票</a><br><a href="http://www.xemas.com.cn/content-detail.html?parent-uid=0b63dee0-1d5a-4245-ba50-238f137d4cea&self-uid=f14fd78e-849c-43d0-931e-81b5f9b73ccb">厦门产权交易中心为联合国COP15平行活动实施碳中和–全国首个蓝碳基金在厦设立，助力双碳战略</a><br><a href="https://epaper.xmnn.cn/xmrb/20210913/202109/t20210913_5453911.htm">厦门产权交易中心完成首宗海洋碳汇交易</a><br><a href="http://sthjt.fujian.gov.cn/zwgk/sthjyw/stdt/202109/t20210915_5689069.htm">全国首个海洋碳汇交易服务平台完成首宗海洋碳汇交易</a><br><a href="https://www.cdmfund.org/28865.html">国内首个“蓝碳”项目交易完成</a></p>]]></content>
+    
+    
+    <summary type="html">对于企业绿色宣传的建议。</summary>
+    
+    
+    
+    <category term="应对气候变化" scheme="https://lizhening.github.io/categories/%E5%BA%94%E5%AF%B9%E6%B0%94%E5%80%99%E5%8F%98%E5%8C%96/"/>
+    
+    <category term="气候适应" scheme="https://lizhening.github.io/categories/%E5%BA%94%E5%AF%B9%E6%B0%94%E5%80%99%E5%8F%98%E5%8C%96/%E6%B0%94%E5%80%99%E9%80%82%E5%BA%94/"/>
+    
+    <category term="宣传" scheme="https://lizhening.github.io/categories/%E5%BA%94%E5%AF%B9%E6%B0%94%E5%80%99%E5%8F%98%E5%8C%96/%E6%B0%94%E5%80%99%E9%80%82%E5%BA%94/%E5%AE%A3%E4%BC%A0/"/>
+    
+    
+    <category term="备忘" scheme="https://lizhening.github.io/tags/%E5%A4%87%E5%BF%98/"/>
+    
+    <category term="宣传" scheme="https://lizhening.github.io/tags/%E5%AE%A3%E4%BC%A0/"/>
+    
+    <category term="碳中和" scheme="https://lizhening.github.io/tags/%E7%A2%B3%E4%B8%AD%E5%92%8C/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>碳排放承诺汇总</title>
+    <link href="https://lizhening.github.io/posts/35fadffe/"/>
+    <id>https://lizhening.github.io/posts/35fadffe/</id>
+    <published>2021-10-21T13:57:58.000Z</published>
+    <updated>2022-05-29T06:10:37.033Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><p>碳排放承诺是企业和政治实体履行社会责任的一种体现。本文内容于2021年10月20日开始编辑，仍在不断完善中。</p></blockquote><h2 id="企业自愿碳排放承诺"><a href="#企业自愿碳排放承诺" class="headerlink" title="企业自愿碳排放承诺"></a>企业自愿碳排放承诺</h2><style>#customers {  font-family: Arial, Helvetica, sans-serif;  border-collapse: collapse;  width: 100%;}#customers td, #customers th {  border: 1px solid #ddd;  padding: 8px;  font-size: 12px;}#customers tr:nth-child(even){background-color: #f2f2f2;}#customers tr:hover {background-color: #ddd;}#customers th {  padding-top: 12px;  padding-bottom: 12px;  text-align: left;  background-color: #4CAF50;  color: white;}</style><body><div style="overflow-x:auto;"><style>#customers {  font-family: Arial, Helvetica, sans-serif;  border-collapse: collapse;  width: 150%;}#customers td, #customers th {  border: 1px solid #ddd;  padding: 8px;}#customers tr:nth-child(even){background-color: #f2f2f2;}#customers tr:hover {background-color: #ddd;}#customers th {  padding-top: 12px;  padding-bottom: 12px;  text-align: left;  background-color: #4CAF50;  color: white;}</style>  <table id="customers">    <tr>      <th>公司名称</th>      <th>行业</th>      <th>地区</th>      <th>承诺范围</th>      <th>基准年</th>      <th>基准年排放量</th>      <th>零排放时间</th>      <th>承诺内容</th>      <th>进展</th>    </tr>    <tr>      <td><a href="https://www.chevron.com/-/media/chevron/sustainability/documents/2021-climate-change-resilience-report.pdf" target="_blank">雪佛龙</a></td>      <td>能源</td>      <td>北美</td>      <td>范围1和2</td>      <td>2016</td>      <td>6,700万tCO2e(股权比例法)<br>6,800万tCO2e(控制权法)</td>      <td>2050</td>      <td>1. 2028年的范围 1、2 和 3 的碳排放强度比2016年的水平至少降低5%。<br> 2. 到2050年，在范围 1 和 2 范围内实现零排放。</td>      <td>2020年排放情况：5,800万tCO2e(权益边界)<br>5,700万tCO2e(运营边界)</td>    </tr>    <tr>     <td><a href="https://global.nissannews.com/en/releases/release-18e8181d3a7c563be5e62225a70c61b2-nissan-sets-carbon-neutral-goal-for-2050" target="_blank">日产汽车</a></td>     <td>汽车工业</td>     <td>东亚</td>     <td>企业运营和产品生命周期</td>     <td>2005</td>     <td>/</td>     <td>2050</td>     <td>1. 在2030年代初期，实现核心市场（日本、中国、美国和欧洲）新车型100%的电动化。<br> 2. 到2050年整个集团的企业运营和产品生命周期实现碳中和。</td>     <td>2020财年范围1和范围2排放254万tCO2e</td>    </tr>    <tr>     <td><a href="https://www.mitsubishicorp.com/jp/en/carbon-neutral/" target="_blank">三菱商社</a></td>     <td>贸易集团</td>     <td>东亚</td>     <td>范围1和2</td>     <td>2020</td>     <td>2,530万tCO2e(股权比例法)</td>     <td>2050</td>     <td>1. 到2030财年，相对于2020财年排放量减半。<br> 2. 到2050年实现净零排放。<br> 3. 到2050年实现100%非化石能源。<br> 4. 到2030财年结束（2031年3月31日），可再生能源发电装机容量比2020财年结束时翻倍。</td>     <td><p>2021年10月18日发布碳中和的<a href="https://www.mitsubishicorp.com/jp/en/pr/archive/2021/html/0000047907.html" target="_blank">路线图</a></p></td>    </tr>    <tr>     <td><a href="https://about.att.com/csr/home/reporting/issue-brief/greenhouse-gas-emissions.html" target="_blank">AT&T</a></td>     <td>通讯</td>     <td>北美</td>     <td>范围1和2</td>     <td>2015</td>     <td>2,530万tCO2e(股权比例法)</td>     <td>2035</td>     <td>SBTi1. 到2030年，将范围1和2的温室气体排放量减少63%。<br> SBTi2. 努力确保到2024年，50%的供应商设定自己的科学范围1和范围2目标。<br> 1. 到2025年，通过提高网络效率和提供可持续的客户解决方案，将运营足迹减少到10%。<br> 2. 到 2035 年实现碳中和。<br> 3. 提供连接解决方案，使企业客户能够在2018年至2035年期间减少10亿吨的温室气体排放量。</td>     <td>2021年范围1和2的估计排放量为562万tCO2e</td>    </tr>    <tr>     <td><a href="https://www.shell.com/energy-and-innovation/the-energy-future/our-climate-target.html" target="_blank">壳牌</a></td>     <td>能源</td>     <td>欧洲</td>     <td>范围1、2和部分3</td>     <td>2016</td>     <td>17亿tCO2e(峰值年2018年)</td>     <td>2050</td>     <td>1. 到2030年范围1和2的温室气体排放量减少50%。<br>2. 到2050年实现能源产品零碳排放。<br>3. 到2050年实现运营范围1和2的净零排放。</td>     <td>到2021年底，壳牌运营控制下的范围1和范围2排放量从2016年的8,300万吨减少到6,800万吨</td>    </tr>    <tr>     <td><a href="https://www.foxconn.com/zh-cn/CSR/focus-environment?section=focus-environment-tab2#environment" target="_blank">鸿海科技（富士康）</a></td>     <td>电子产品制造</td>     <td>东亚</td>     <td>范围1、2和3</td>     <td>2015</td>     <td>7,060万tCO2e(范围1和2)</td>     <td>2050</td>     <td>1.2020年单位营业收入二氧化碳排放量下降24%。<br>2.承诺不迟于2050年实现净零排放。<br>3.价值链的温室气体排放于2050年之前实现温室气体净零排放目标。</td>     <td>2020年范围1和范围2排放量为5,417,602tCO2e</td>    </tr>    <tr>     <td><a href="https://www.lenovo.com/us/en/sustainability-climate-change-approach/" target="_blank">联想</a></td>     <td>消费电子制造</td>     <td>东亚</td>     <td>范围1、2和3</td>     <td>2018/19财年</td>     <td>7,060万tCO2e(范围1和2)</td>     <td>2050</td>     <td>到2029/30财年：<br>SBTi1.范围1和范围2温室气体绝对排放量减少50%。<br>SBTi2.单位售出产品产生的范围3温室气体排放量减少25%。<br>SBTi3.每百万美元采购开支中，商品和服务产生的范围3温室气体排放量减少25%。<br>SBTi4.每公吨/公里运输及配送产品过程中，上游物流运输及配送产生的范围3温室气体排放量减少25%。</td>     <td>20/21财年范围1和2排放量为184,947tCO2e</td>    </tr>    <tr>     <td><a href="https://www.antgroup.com/news-media/media-library?type=%E7%A4%BE%E4%BC%9A%E8%B4%A3%E4%BB%BB%E6%8A%A5%E5%91%8A" target="_blank">蚂蚁</a></td>     <td>金融</td>     <td>东亚</td>     <td>范围1、2和3</td>     <td>2020</td>     <td>/</td>     <td>2030</td>     <td>1.2021年起，实现运营排放的碳中和（范围一和二）。<br>2.2030年实现净零排放（范围一、二和三）。<br>3.定期披露碳中和进展。</td>     <td>/</td>    </tr>    <tr>     <td><a href="https://sustainability.alibabagroup.com/sc" target="_blank">阿里巴巴</a></td>     <td>信息科技</td>     <td>东亚</td>     <td>范围1、2和3</td>     <td>2020</td>     <td>951.4万tCO2e(范围1、2、3)</td>     <td>2030</td>     <td>1.不晚于2030年，实现自身运营碳中和(范围一、二)。<br>2.不晚于2030年，协同上下游价值链实现碳排放强度比2020年降低50%。<br>3.到2035年的15年间，带动生态累计减碳15亿吨。</td>     <td>/</td>    </tr>    <tr>     <td><a href="https://www.intel.com/content/www/us/en/newsroom/news/net-zero-greenhouse-gas-emissions-operations.html" target="_blank">英特尔</a></td>     <td>半导体工业</td>     <td>北美</td>     <td>范围1和2</td>     <td>2020</td>     <td>288万tCO2e(范围1和2)</td>     <td>2040</td>     <td>1.到2040年，运营中实现温室气体净零排放。<br>2.到2030年，减少10%的范围1和2的排放。</td>     <td>2021年范围1和2排放量为327.4万tCO2e</td>    </tr>    <tr>     <td><a href="https://www.sony.com.cn/content/sonyportal/zh-cn/cms/newscenter/corporate/2022/20220518-2.html.html" target="_blank">索尼</a></td>     <td>创意娱乐</td>     <td>东亚</td>     <td>范围1、2和3</td>     <td>2020财年</td>     <td>139.3万tCO2e(范围1和2)</td>     <td>2040</td>     <td>1.到2040年，运营中实现温室气体净零排放。<br>2.到2030年，减少10%的范围1和2的排放。</td>     <td>2020年范围1和2排放量为139.3万tCO2e，范围3排放1,707.7万tCO2e。</td>    </tr>  </table></div></body><h2 id="行业-部门碳承诺"><a href="#行业-部门碳承诺" class="headerlink" title="行业/部门碳承诺"></a>行业/部门碳承诺</h2><table><thead><tr><th align="center">承诺名称</th><th align="center">行业/部门</th><th align="center">零排放时间</th><th align="left">承诺内容</th><th align="center">参与企业</th></tr></thead><tbody><tr><td align="center"><a href="https://www.cozev.org/">Cargo Owners for Zero Emission Vessels</a></td><td align="center">航运</td><td align="center">2040</td><td align="left">到2040年将完全使用零碳（全生命周期范围）燃料船只海运</td><td align="center">亚马逊、米其林、宜家、联合利华、Brooks Running、Patagonia、Frog Bikes、Tchibo、Inditex</td></tr></tbody></table><h2 id="地区碳承诺"><a href="#地区碳承诺" class="headerlink" title="地区碳承诺"></a>地区碳承诺</h2><blockquote><p>可以在UNFCCC网站中有专门数据库——<a href="https://www4.unfccc.int/sites/NDCStaging/Pages/Home.aspx">国家自主贡献（NDC）</a>，记录各国的NDC变化。很多国家会选择在每年的10月份左右更新他们的NDC，既为即将召开的联合国气候大会预热，也想搞一个大新闻。下面这个表格中不仅包含国家的自主贡献，也会包含一些特殊政治实体的贡献。</p></blockquote><table><thead><tr><th align="center">地区</th><th align="center">大州</th><th align="center">承诺层级</th><th align="center">零排放时间</th><th align="left">承诺内容</th><th align="center">覆盖温室气体种类</th></tr></thead><tbody><tr><td align="center"><a href="https://www.industry.gov.au/data-and-publications/australias-long-term-emissions-reduction-plan">澳大利亚联邦</a></td><td align="center">大洋洲</td><td align="center">领导人讲话</td><td align="center">2050</td><td align="left">1. 到 2050 年实现净零碳排放，但不会将目标立法，而是依靠消费者和公司来推动减排。2. 到2030年，相对2005年减排30~35%。</td><td align="center">不详</td></tr><tr><td align="center">沙特阿拉伯王国</td><td align="center">亚洲</td><td align="center">领导人讲话</td><td align="center">2060</td><td align="left">1. 到2060年实现净零碳排放。2. 到2030年，种植4.5亿棵树，每年减排2.78亿吨。3. 到2030年可再生能源将满足50%的能源需求。</td><td align="center">不详</td></tr></tbody></table><blockquote><p>待更新,下次更新时确保表格显示美观。</p></blockquote>]]></content>
+    
+    
+    <summary type="html">本文收集并持续更新企业和地区的碳排放承诺，并尽可能跟踪其进展。</summary>
+    
+    
+    
+    <category term="应对气候变化" scheme="https://lizhening.github.io/categories/%E5%BA%94%E5%AF%B9%E6%B0%94%E5%80%99%E5%8F%98%E5%8C%96/"/>
+    
+    <category term="气候适应" scheme="https://lizhening.github.io/categories/%E5%BA%94%E5%AF%B9%E6%B0%94%E5%80%99%E5%8F%98%E5%8C%96/%E6%B0%94%E5%80%99%E9%80%82%E5%BA%94/"/>
+    
+    <category term="责任" scheme="https://lizhening.github.io/categories/%E5%BA%94%E5%AF%B9%E6%B0%94%E5%80%99%E5%8F%98%E5%8C%96/%E6%B0%94%E5%80%99%E9%80%82%E5%BA%94/%E8%B4%A3%E4%BB%BB/"/>
+    
+    
+    <category term="简讯" scheme="https://lizhening.github.io/tags/%E7%AE%80%E8%AE%AF/"/>
+    
+    <category term="碳排放承诺" scheme="https://lizhening.github.io/tags/%E7%A2%B3%E6%8E%92%E6%94%BE%E6%89%BF%E8%AF%BA/"/>
+    
+    <category term="汇总" scheme="https://lizhening.github.io/tags/%E6%B1%87%E6%80%BB/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>使用hexo-abbrlink链接出现undefined</title>
+    <link href="https://lizhening.github.io/posts/117b0a2e/"/>
+    <id>https://lizhening.github.io/posts/117b0a2e/</id>
+    <published>2021-10-21T03:35:09.000Z</published>
+    <updated>2022-05-08T07:08:22.496Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><p>Hexo的默认的文章链接生成规则是<code>:year/:month/:day/:title</code>，是按照年、月、日、标题来生成的。如果文章标题是中文的话，URL链接是也会是中文，复制后的链接是一长串，非常不利于阅读，也不简洁。而且文章题目变化后链接也会变，之前的文章就变成404了。为了生成简洁且唯一链接不变的URL链接，我使用了<code>hexo-abbrlink</code>插件。</p></blockquote><p>关于插件的安装，直接参考插件的<a href="https://github.com/rozbo/hexo-abbrlink">主页</a>。</p><h2 id="问题与处理方案"><a href="#问题与处理方案" class="headerlink" title="问题与处理方案"></a>问题与处理方案</h2><p>插件安装完成之后，共计出现了两个个问题。分别是：</p><ol><li>使用<code>hexo g</code>命令之后，会出现WARNING。但是不影响使用。<ul><li>由于不影响使用可以不去处理，如果看着不舒服，可以参考博主“Yibo”的文章<a href="https://www.haoyizebo.com/posts/710984d0/">解决 Hexo 在使用 Node.js 14 时的 Accessing non-existent property ‘xxx’ of module exports inside circular dependency 问题</a><br><img src="https://i.loli.net/2021/10/21/TGqbHctm2YnrpZf.png" alt="Warning"></li></ul></li><li>按照插件主页修改配置文件，部分文章或者所有文章的链接都变成<code>undefined</code>了，并指向同一篇文章。<ul><li>如果新的文章链接没问题，老文章的链接都变成<code>undefined</code>，大概率是缓存的问题。执行<code>hexo clean</code>清楚掉以前生成的文章缓存，然后<code>hexo g</code>重新渲染就ok了。</li><li>如果全部文章的链接都有问题或者没有任何规律，总有一部分文章链接是<code>undefined</code>。建议检查一下文章开头的<code>Front-matter</code>，文章的<code>Front-matter</code>中不能设置layout，将layout属性删掉后就可以正常使用了。参考自<a href="https://github.com/rozbo/hexo-abbrlink/issues/37">Github网友FENG1000的答案</a>，亲测非常好用。<br><img src="https://i.loli.net/2021/10/21/XUHjMGVLo63sCzu.png" alt="Layout属性位置"></li></ul></li></ol><h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><ul><li>[1] <a href="https://www.haoyizebo.com/posts/710984d0/">解决 Hexo 在使用 Node.js 14 时的 Accessing non-existent property ‘xxx’ of module exports inside circular dependency 问题</a></li><li>[2] <a href="https://www.liaofuzhan.com/posts/4084686398.html">Hexo-abbrlink生成唯一永久文章链接</a></li><li>[3] <a href="https://github.com/rozbo/hexo-abbrlink/issues/37">Github网友FENG1000的答案</a></li></ul>]]></content>
+    
+    
+    <summary type="html">本文提供了安装hexo-abbrlink插件后出现的问题的解决方案。</summary>
+    
+    
+    
+    <category term="Hexo博客建设" scheme="https://lizhening.github.io/categories/Hexo%E5%8D%9A%E5%AE%A2%E5%BB%BA%E8%AE%BE/"/>
+    
+    <category term="问题处理" scheme="https://lizhening.github.io/categories/Hexo%E5%8D%9A%E5%AE%A2%E5%BB%BA%E8%AE%BE/%E9%97%AE%E9%A2%98%E5%A4%84%E7%90%86/"/>
+    
+    
+    <category term="笔记" scheme="https://lizhening.github.io/tags/%E7%AC%94%E8%AE%B0/"/>
+    
+    <category term="Hexo" scheme="https://lizhening.github.io/tags/Hexo/"/>
+    
+    <category term="链接" scheme="https://lizhening.github.io/tags/%E9%93%BE%E6%8E%A5/"/>
+    
+    <category term="hexo-abbrlink" scheme="https://lizhening.github.io/tags/hexo-abbrlink/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>黄金标准机制的要求</title>
+    <link href="https://lizhening.github.io/posts/b991a7f6/"/>
+    <id>https://lizhening.github.io/posts/b991a7f6/</id>
+    <published>2021-10-20T10:49:44.000Z</published>
+    <updated>2022-05-08T07:08:22.639Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><p>受到巴黎协定第六条谈判进度的缓慢的影响，CDM基本处于停滞状态。目光聚集到其他减排机制上。黄金标准（Gold Standard，以下简称GS）受益于其严格的标准要求，在国际上受到广泛认可。并且GS自诞生之初就通过GS CERs贴标与CDM有着良好的连接，现在更是可以直接将满足要求的CDM项目转为GS项目。通过这种转化机制GS降低CDM业主的成本，有望吸引更多的CDM参与方加入到GS中。</p></blockquote><h2 id="黄金标准简介"><a href="#黄金标准简介" class="headerlink" title="黄金标准简介"></a>黄金标准简介</h2><p>黄金标准创立于2003年，由世界自然基金会（WWF）联合其他组织共同发起成立。该项目目的是认证同时符合环境要求和可持续要求的减排项目。Gold Standard for Global Goal（以下简称GS4GG）是其提出的最新标准。相较于之前的GS 2.0系列标准，该标准强化了对可以续发展目标的响应，更加符合巴黎协定与联合国可持续发展目标要求。目前，所有申请加入GS的项目都必须依照GS4GG标准要求开发项目。老项目仍然可以允许按照GS 2.0系列标准进行签发，但是在签发之后必须升级到GS4GG标准。</p><p>如果想要更加直观的了解GS的宗旨与工作成果，可以到<a href="https://www.goldstandard.org/about-us/vision-and-mission">VISION+ Impacts</a>查看。</p><h2 id="组织机构"><a href="#组织机构" class="headerlink" title="组织机构"></a>组织机构</h2><p>完整的GS网络主要由四部分构成，分别是：GS基金董事会、GS秘书处和技术管理委员会以及NGO支持网络。<br><img src="https://i.loli.net/2021/10/20/NgckfJdymAPBUb5.png" alt="GS网络组成"><br>与CDM类似，GS秘书处是与减排项目业主联系最近紧密的部门。项目的审定、注册与签发都需要和他们打交道。如果是初次接触GS，可以通过<a href="https://globalgoals.goldstandard.org/contacts/">CONTACTS PAGE</a>的联系方式与GS交流。</p><h2 id="规则框架"><a href="#规则框架" class="headerlink" title="规则框架"></a>规则框架</h2><p>经过近20年的发展，GS拥有一套比较完善且清晰的文件规则体系。GS官网按照功能将文件分为”Governance document“、”Core Documents“、”Assurance document“、”Activity Requirements“、”Guidelines”、”Optional Requirements“、”Rule Updates“、”Rule Clarifications“<br>、”Template“、”Methodology Tool“、”Methodology“、”Framework methodology“、”Procedures“13个类型。</p><p>我在实际阅读过程中，为了便于使用，可以从重要性角度结合实际功能对其进行分类，大概可以分为三个层级。</p><h3 id="纲领性文件"><a href="#纲领性文件" class="headerlink" title="纲领性文件"></a>纲领性文件</h3><p>第一个层级是纲领性文件，可以在<a href="https://globalgoals.goldstandard.org/governance/">Governance</a>中找到。主要介绍GS的标准程序、原则、职权范围、评价机制和政策。这是GS的一切行为的纲领和根基，但是对于一般项目开发的指导有限。</p><h3 id="核心文件"><a href="#核心文件" class="headerlink" title="核心文件"></a>核心文件</h3><p>第二个层级是核心文件，可以在<a href="https://globalgoals.goldstandard.org/documents/core-documents/">Core Documents</a>中找到，这些文件适用于所有项目。包括了对项目一般要求、利益相关方咨询要求、员工保障措施、性别平等的要求。其中，最为基础的文件是<a href="https://globalgoals.goldstandard.org/101-par-principles-requirements/">《PRINCIPLES &amp; REQUIREMENTS》</a> ，概括性的阐述了范围、适用性、要求和流程。如果GS项目遇到问题，首先应该检索这个文件，如果没有专门规定，再去找专项文件中找解决方案。在这一层级中，还可以包含临时或者永久的<a href="https://globalgoals.goldstandard.org/documents/rc/">规则解释</a>，在我的理解中他们是对规则的补充和解释。如果查看最新的要求，可以到<a href="https://globalgoals.goldstandard.org/rule-updates/">规则更新</a>查看，即将施行和已经施行的要求会在这个页面展示。</p><h3 id="指导文件"><a href="#指导文件" class="headerlink" title="指导文件"></a>指导文件</h3><p>第三个层级就是针对不同项目或者不同情景的指导文件了，包含的内容就比较多。主要可以分为四大类，</p><ol><li>第一部分是<a href="https://globalgoals.goldstandard.org/documents/optional-requirements/">一般性的规则文件</a>，比如减排量声明的要求、GS 2.0升级到GS4GG的transition要求、POA项目、小规模项目以及设计变更和偏移申报的流程。</li><li>第二部分是针对不同类型项目的<a href="https://globalgoals.goldstandard.org/200-activity-requirements/">具体要求</a>和<a href="https://globalgoals.goldstandard.org/documents/guidelines/">指导</a>。具体要求指的是GS对土地使用和造林项目（LUF）、可再生能源项目（RE）和社区服务项目（CSA）提出的更加细致、有针对性的要求。例如，对于常见的可再生能源项目，只有位于最不发达国家（LDC）、小岛屿与发展中国家（SIDS）、内陆发展中国家（LLDC）或者可再生能源技术渗透率低于5%的低收入或者中低收入国家才能够注册GS项目。这些要求可以说是非常严格，正是因为较高的要求和标准，才能保证减排收益回馈到最不发到地区，同时也确保减排量的稀缺性与高价格属性。指导是GS对于一些领域的强制性指导方案，比如利益相关方咨询、造林风险评估等。</li><li>第三部分是支撑文件，主要包括在编写项目文件过程中用到的各种<a href="https://globalgoals.goldstandard.org/documents/template/">模板</a>、<a href="https://globalgoals.goldstandard.org/documents/methodology/">方法学</a>（包括减排量计算方法学和<a href="https://globalgoals.goldstandard.org/400-sdg-impact-quantification/">SDGs影响评估方法学</a>）和<a href="https://globalgoals.goldstandard.org/documents/methodology-tool/">工具</a>。</li><li>第四部分是专项要求，更像是对于一类问题的汇总。比如对CDM项目转换为GS项目的<a href="https://globalgoals.goldstandard.org/cdm-transition/">要求</a>以及专门对<a href="https://globalgoals.goldstandard.org/corsia-updates/">CORIS的要求</a>。</li></ol><h2 id="项目要求"><a href="#项目要求" class="headerlink" title="项目要求"></a>项目要求</h2>]]></content>
+    
+    
+    <summary type="html">黄金标准项目开发过程中的经验总结。</summary>
+    
+    
+    
+    <category term="应对气候变化" scheme="https://lizhening.github.io/categories/%E5%BA%94%E5%AF%B9%E6%B0%94%E5%80%99%E5%8F%98%E5%8C%96/"/>
+    
+    <category term="温室气体减排" scheme="https://lizhening.github.io/categories/%E5%BA%94%E5%AF%B9%E6%B0%94%E5%80%99%E5%8F%98%E5%8C%96/%E6%B8%A9%E5%AE%A4%E6%B0%94%E4%BD%93%E5%87%8F%E6%8E%92/"/>
+    
+    <category term="GS" scheme="https://lizhening.github.io/categories/%E5%BA%94%E5%AF%B9%E6%B0%94%E5%80%99%E5%8F%98%E5%8C%96/%E6%B8%A9%E5%AE%A4%E6%B0%94%E4%BD%93%E5%87%8F%E6%8E%92/GS/"/>
+    
+    
+    <category term="黄金标准" scheme="https://lizhening.github.io/tags/%E9%BB%84%E9%87%91%E6%A0%87%E5%87%86/"/>
+    
+    <category term="开发要求" scheme="https://lizhening.github.io/tags/%E5%BC%80%E5%8F%91%E8%A6%81%E6%B1%82/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>企业宣传与SDGs</title>
+    <link href="https://lizhening.github.io/posts/5237aa05/"/>
+    <id>https://lizhening.github.io/posts/5237aa05/</id>
+    <published>2021-10-14T05:43:44.000Z</published>
+    <updated>2022-05-08T07:08:22.609Z</updated>
+    
+    <content type="html"><![CDATA[<p>在查找信息过程中，发现<a href="https://global.toyota/en/">丰田公司官网</a>的文章底部会有<a href="https://www.un.org/sustainabledevelopment/zh/">联合国可持续发展目标</a>（SDGs）的标志。并且会在文章最下部明确标注文章内容体现了哪几项SDGs目标。<br><img src="https://i.loli.net/2021/10/14/uC6jVcbrMoJnDEL.png" alt="丰田公司网站文章上的SDGs标志"></p><p>并且网站还有专门的一级标题介绍公司的<a href="https://global.toyota/en/sustainability/?padid=ag478_from_header">可持续工作</a>，并且有单独的网页介绍公司对SDGs的主要行动，方便用户了解公司的行动。<br><img src="https://i.loli.net/2021/10/14/hIWGiepYSHnMDEQ.png" alt="丰田网站上的SDGs行动"></p><p>我觉的这是一个非常棒的宣传展现形式。目前还没有在其他公司的网站上看到类似内容。可以应用到应对气候变化宣传项目中，推广SDGs目标，展现公司的专业性与国际化。</p>]]></content>
+    
+    
+    <summary type="html">在企业的信息发布、宣传时，与SDGs结合并添加适当的SDGs标志，展现公司的专业性与国际化。</summary>
+    
+    
+    
+    <category term="应对气候变化" scheme="https://lizhening.github.io/categories/%E5%BA%94%E5%AF%B9%E6%B0%94%E5%80%99%E5%8F%98%E5%8C%96/"/>
+    
+    <category term="气候适应" scheme="https://lizhening.github.io/categories/%E5%BA%94%E5%AF%B9%E6%B0%94%E5%80%99%E5%8F%98%E5%8C%96/%E6%B0%94%E5%80%99%E9%80%82%E5%BA%94/"/>
+    
+    <category term="宣传" scheme="https://lizhening.github.io/categories/%E5%BA%94%E5%AF%B9%E6%B0%94%E5%80%99%E5%8F%98%E5%8C%96/%E6%B0%94%E5%80%99%E9%80%82%E5%BA%94/%E5%AE%A3%E4%BC%A0/"/>
+    
+    
+    <category term="备忘" scheme="https://lizhening.github.io/tags/%E5%A4%87%E5%BF%98/"/>
+    
+    <category term="SDGs目标" scheme="https://lizhening.github.io/tags/SDGs%E7%9B%AE%E6%A0%87/"/>
+    
+    <category term="宣传" scheme="https://lizhening.github.io/tags/%E5%AE%A3%E4%BC%A0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Hexo博客上传本地文件以及实现PDF预览</title>
+    <link href="https://lizhening.github.io/posts/7d20ce7f/"/>
+    <id>https://lizhening.github.io/posts/7d20ce7f/</id>
+    <published>2021-10-13T03:48:09.000Z</published>
+    <updated>2022-05-08T07:08:22.717Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><p>写博文的时候想把我的计算过程文件上传到网站，供读者下载检查。发现了这个CSDN博主“白马金羁侠少年”的《<a href="https://blog.csdn.net/qq_43827595/article/details/104574959">【如何在网页中实现pdf在线预览】10分钟学会如何利用Hexo博客上传本地pdf文件并在线预览pdf</a>》。本文完全照搬原文，用于本地备忘。</p></blockquote><h2 id="上传本地文件"><a href="#上传本地文件" class="headerlink" title="上传本地文件"></a>上传本地文件</h2><p>只需要把文件放在<code>source</code>文件下，再使用<code>hexo d</code>部署时，文件会自动被上传到Github上。为了便于文件管理和组织，可以在<code>source</code>文件下新建<code>file</code>文件夹用于分类存储文件。</p><p>使用<code>hexo d</code>部署后，文件的链接是<code>博客域名/file/文件名</code>，例如我这次上传的文件链接就是<code>https://lizhening.github.io/document/2020EF.pdf</code>。之后就可以访问这个pdf文件了，同样的道理把html文件、jpg文件等其他文件放到file文件夹里也可以生成网页链接。<strong>当然别人可以通过你的github.io看到你所有的pdf文件，因为都是public的。</strong></p><p>有两点需要注意：</p><ol><li>链接中需要包含文件名的后缀；</li><li>文件名最好由数字和字母组成，不要包含中文、空格或这特殊字符。解析时候容易出错。</li></ol><h2 id="再文章中添加pdf预览功能"><a href="#再文章中添加pdf预览功能" class="headerlink" title="再文章中添加pdf预览功能"></a>再文章中添加pdf预览功能</h2><p>PDF预览功能需要借助<a href="https://github.com/superalsrk/hexo-pdf/">hexo-pdf插件</a>实现。插件非常小巧方便，关于插件的安装和使用，插件作者已经在主页介绍的很详细了。</p><ol><li>hexo-pdf插件。通过npm安装，注意是在hexo根目录下执行该语句。<code>npm install --save hexo-pdf</code></li><li>应用。在文章合适位置插入代码。对于一般的PDF文件、Google Driver和Slideshare都可以使用<code>&#123;% pdf 链接 %&#125;</code>的形式，例如<code>&#123;% pdf http://7xov2f.com1.z0.glb.clouddn.com/bash_freshman.pdf %&#125;</code>。对于一般的PDF文件也可以本地PDF。</li></ol><h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p>在博客配置和文章写作过程中，也参考以下文章：<br><a href="https://blog.csdn.net/qq_43827595/article/details/104574959">【如何在网页中实现pdf在线预览】10分钟学会如何利用Hexo博客上传本地pdf文件并在线预览pdf</a></p><blockquote><p>后记：在找解决方案的过程中，我按照惯性思维，“列出问题——百度”，发现自己好傻。百度网盘、阿里网盘、蓝奏云都是很棒的解决方案，这几年逛“52破解”的经理都白瞎了。总结来看，针对目前处境，提出一个合适的问题是非常重要的。我的问题是如何让分享给读者，让其下载。而非如何上上传到网站上，让读者下载，路走窄了。</p></blockquote>]]></content>
+    
+    
+    <summary type="html">本文介绍如何将本地文件上传到Hexo博客上，并在文章中实现PDF预览。</summary>
+    
+    
+    
+    <category term="Hexo博客建设" scheme="https://lizhening.github.io/categories/Hexo%E5%8D%9A%E5%AE%A2%E5%BB%BA%E8%AE%BE/"/>
+    
+    <category term="文件上传" scheme="https://lizhening.github.io/categories/Hexo%E5%8D%9A%E5%AE%A2%E5%BB%BA%E8%AE%BE/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0/"/>
+    
+    <category term="PDF预览" scheme="https://lizhening.github.io/categories/Hexo%E5%8D%9A%E5%AE%A2%E5%BB%BA%E8%AE%BE/PDF%E9%A2%84%E8%A7%88/"/>
+    
+    
+    <category term="Hexo" scheme="https://lizhening.github.io/tags/Hexo/"/>
+    
+    <category term="PDF在线预览" scheme="https://lizhening.github.io/tags/PDF%E5%9C%A8%E7%BA%BF%E9%A2%84%E8%A7%88/"/>
+    
+    <category term="上传文件" scheme="https://lizhening.github.io/tags/%E4%B8%8A%E4%BC%A0%E6%96%87%E4%BB%B6/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>2019年中国区域及省级电网平均二氧化碳排放因子</title>
+    <link href="https://lizhening.github.io/posts/4200ea75/"/>
+    <id>https://lizhening.github.io/posts/4200ea75/</id>
+    <published>2021-10-11T08:52:47.000Z</published>
+    <updated>2022-06-07T10:58:52.734Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><p>依据《2010 年中国区域及省级电网平均二氧化碳排放因子》的计算说明，计算了《2019 年中国区域及省级电网平均二氧化碳排放因子》。本文主要介绍计算过程中的遇到的问题以及处理方法，同时为了方便交流讨论，将PDF版本的计算过程放在链接中。如果想要索取可编辑版本文件，请通过留言或者邮件方式与我联系。</p></blockquote><h2 id="声明"><a href="#声明" class="headerlink" title="声明"></a>声明</h2><p>本文以及所附的文件以及文中提及的可编辑版本文件均采用《署名-相同方式共享 4.0协议》(CC BY-SA 4.0)，请您仔细阅读<a href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh">本协议的介绍链接</a>，以免产生不必要的争论。</p><p>由于作者的认知水平和理解能力有限，在计算过程中难免有所疏漏。<strong>本文谨代表本人的一种探索性研究，正式结果请参照国家主管机构发布的文件。如您想要引用本文数据，请您对本文进行细致、周密的检查，确认无误后再引用。作者不承担您因使用本文数据造成的任何损失。</strong>如果您对本文存在疑问或者问题，欢迎通过留言或者邮件的方式进行交流。</p><h2 id="计算方法来源依据"><a href="#计算方法来源依据" class="headerlink" title="计算方法来源依据"></a>计算方法来源依据</h2><p>本文依据在<a href="http://www.ccchina.org.cn/index.aspx">中国气候变化信息网</a>上公开的<a href="https://www.ccchina.org.cn/archiver/ccchinacn/UpFile/Files/Default/20131011145155611667.pdf">《2010 年中国区域及省级电网平均二氧化碳排放因子》</a>中公示的计算方法的进行核算。</p><p>同时，也参考了国家发展和改革委员会应对气候变化司发布的《<a href="http://www.ccchina.org.cn/archiver/ccchinacn/UpFile/Files/Default/20140923163205362312.pdf">2011年和2012年中国区域电网平均二氧化碳排放因子</a>》中部分内容。</p><h2 id="数据来源"><a href="#数据来源" class="headerlink" title="数据来源"></a>数据来源</h2><p>我先依照《2010 年中国区域及省级电网平均二氧化碳排放因子》中要求，选取本地数据核算出的全国电网平均二氧化碳排放排放因子为0.6448 tCO2/MWh。我核算的数值明显高于生态环境部最新发布的《企业温室气体排放核算方法与报告指南 发电设施》（环办气候〔2021〕9号）中提出的2020年电网排放因子的0.5810 tCO2/MWh。</p><p>电网排放因子不会在一年之间发生剧烈变化，生态环境部应该不至于算错，但是我对自己的计算结果也比较有信心。虽然生态环境部没有公开他的数据源以及核算方法，但是全国电网排放因子在大数上应该等于全国发电排放除以全国发电量，即使数据源不同也不应该会有10%的差别。</p><p>因此，我将注意力转移到燃料排放因子上，参考了生态环境部发布的<a href="https://www.mee.gov.cn/ywgz/ydqhbh/wsqtkz/202012/t20201229_815386.shtml">《2019年度减排项目中国区域电网基准线排放因子》</a>，排放因子改用IPCC（2006）缺省值 95% 置信区间下限。计算得到2019年全国电网排放因子为0.5901t CO2/MWh，这与生态环境部使用的2020年数据就比较接近了，差异的原因也在可解释范围内，可能是2020年电力清洁化工作导致电力排放因子降低，也可能是数据源选取有细微。</p><p>两版计算过程我都放到下载地址，这两版计算文件只有燃料排放因子来源不同，数据来源详见计算表格下方的注释。其余数据（发电燃料用量、燃料地位发热量、发电量、电力调度量）来源均相同，为了方便比较我也将不同版本排放因子数据源整理如下。</p><table><thead><tr><th align="center">数据项</th><th align="center">2010年数据源</th><th align="center">2011年和2012年数据源</th><th align="center">2019年数据源</th></tr></thead><tbody><tr><td align="center">发电量</td><td align="center">《中国电力年鉴》</td><td align="center">《中国电力年鉴》</td><td align="center">《中国电力年鉴》和《电力工业统计资料汇编》</td></tr><tr><td align="center">用电量</td><td align="center">《中国电力年鉴》</td><td align="center">不涉及</td><td align="center">《电力工业统计资料汇编》</td></tr><tr><td align="center">跨省电量交换和进出口电量</td><td align="center">《电力工业统计资料汇编》</td><td align="center">《电力工业统计资料汇编》</td><td align="center">《电力工业统计资料汇编》</td></tr><tr><td align="center">跨省电量交换和进出口电量</td><td align="center">《电力工业统计资料汇编》</td><td align="center">《电力工业统计资料汇编》</td><td align="center">《电力工业统计资料汇编》</td></tr><tr><td align="center">发电燃料消费量</td><td align="center">《中国能源统计年鉴》</td><td align="center">《中国能源统计年鉴》</td><td align="center">《中国能源统计年鉴》</td></tr><tr><td align="center">发电燃料的平均低位发热值</td><td align="center">《中国能源统计年鉴》</td><td align="center">《中国能源统计年鉴》</td><td align="center">《中国能源统计年鉴》</td></tr><tr><td align="center">单位热值含碳量</td><td align="center">《省级温室气体清单编制指南（试行）》（2011年3月）、《2006 IPCC Guidelines for National Greenhouse Gas Inventories》Volume 2 Energy 第一章</td><td align="center">《中国能源统计年鉴》</td><td align="center">《2006 IPCC Guidelines for National Greenhouse Gas Inventories》Volume 2 Energy 第一章表 1.4</td></tr><tr><td align="center">碳氧化率</td><td align="center">《省级温室气体清单编制指南（试行）》（2011年3月）、《2006 IPCC Guidelines for National Greenhouse Gas Inventories》Volume 2 Energy 第一章</td><td align="center">《中国能源统计年鉴》</td><td align="center">《2006 IPCC Guidelines for National Greenhouse Gas Inventories》Volume 2 Energy 第一章表 1.4</td></tr><tr><td align="center">燃料 CO2 排放因子</td><td align="center">/</td><td align="center">/</td><td align="center">分别使用本地数据计算值和《2006 IPCC Guidelines for National Greenhouse Gas Inventories》Volume 2 Energy 第一章表 1.4 缺省值 95% 置信区间下限</td></tr><tr><td align="center">其他国家的发电 CO2 平均排放因子</td><td align="center">《CO2 Emissions from Fuel Combustion Highlights》</td><td align="center">《CO2 Emissions from Fuel Combustion Highlights》</td><td align="center">使用IRENA数据</td></tr></tbody></table><h2 id="问题与挑战"><a href="#问题与挑战" class="headerlink" title="问题与挑战"></a>问题与挑战</h2><p>计算过程中遇到了两个主要问题。</p><p>首先是数据源问题，虽然《2010 年中国区域及省级电网平均二氧化碳排放因子》中说明了所有数据的来源。但是因为上次核算时间久远，一些文件格式发生了变化，比如《电力工业统计资料汇编》不在展示分省原煤热值，因此直接使用《中国能源年鉴2020》数据；《CO2 Emissions from Fuel Combustion Highlights》不在展示各国的电力排放因子，因此替换了数据源。</p><p>上面问题虽然麻烦，花点时间还好解决。最让我头疼的还是各省之间的电力调度数据，首先存在各种专线，很难搞清楚电力到底送到那里了；</p><p>其次，存在省网向区域电网（而非某个特定省级电网）送电情况，我不知道怎样归类；</p><p>实在是能力有限，对电力系统只是一知半解，所以只核算有明确指向性的电力调度，上面两种情况都忽略，由此造成的用电亏空最后统一通过当地区域电网来补充，对一些外购电大省影响会比较大，比如北京、天津、上东、河南、江苏、广西和海南。</p><p>最后，西藏也和周边省市存在电力调度，但是由于数据原因现行核算体系始终不包含西藏，会对周边省市尤其是四川有一些影响。</p><p>除此之外，计算过程中也遇到互为基础数据问题。根据公式，计算某区域电网排放因子时需要考虑净调入该区域电力及其排放量，也就是说必须先搞清楚向A区域净调入电力的区域的电网平均排放因子才能计算A区域电网平均排放因子。有时会形成一个闭环，无法直接求解。例如华东电网从华中电网调入电力、华中电网从南方电网调入电力、南方电网从华东电网调入电力，三个电网排放因子互为基础数据。对此，我通过电量、电网平均排放因子和排放量之间的关系构建构建三元一次方程求解。<strong>如果各位有更好的办法，希望各位不吝赐教。</strong></p><h2 id="计算结果"><a href="#计算结果" class="headerlink" title="计算结果"></a>计算结果</h2><p><img src="https://lizhening.github.io/img/2019EF.png" alt="2019 年中国区域及省级电网平均二氧化碳排放因子"></p><p>如果有能力，我会在之后的文章中更新关于结果的解读，使用IPCC缺省值计算过程<a href="https://lizhening.github.io/document/AverageCO2EmissionsFromChinasPowerGridIn2019-IPCC_EF.pdf">点此下载</a>；</p><div class="row">    <embed src="https://lizhening.github.io/document/AverageCO2EmissionsFromChinasPowerGridIn2019-IPCC_EF.pdf" width="100%" height="550" type="application/pdf"></div><p>燃料排放因子使用本地数据计算过程<a href="https://lizhening.github.io/document/AverageCO2EmissionsFromChinasPowerGridIn2019-Local_EF.pdf">点此下载</a></p><div class="row">    <embed src="https://lizhening.github.io/document/AverageCO2EmissionsFromChinasPowerGridIn2019-Local_EF.pdf" width="100%" height="550" type="application/pdf"></div>]]></content>
+    
+    
+    <summary type="html">本文给出了2019年中国电网平均排放因子的计算结果以及与2010版本计算结果的数据选取上的异同点。</summary>
+    
+    
+    
+    <category term="应对气候变化" scheme="https://lizhening.github.io/categories/%E5%BA%94%E5%AF%B9%E6%B0%94%E5%80%99%E5%8F%98%E5%8C%96/"/>
+    
+    <category term="温室气体减排" scheme="https://lizhening.github.io/categories/%E5%BA%94%E5%AF%B9%E6%B0%94%E5%80%99%E5%8F%98%E5%8C%96/%E6%B8%A9%E5%AE%A4%E6%B0%94%E4%BD%93%E5%87%8F%E6%8E%92/"/>
+    
+    <category term="排放量计算" scheme="https://lizhening.github.io/categories/%E5%BA%94%E5%AF%B9%E6%B0%94%E5%80%99%E5%8F%98%E5%8C%96/%E6%B8%A9%E5%AE%A4%E6%B0%94%E4%BD%93%E5%87%8F%E6%8E%92/%E6%8E%92%E6%94%BE%E9%87%8F%E8%AE%A1%E7%AE%97/"/>
+    
+    
+    <category term="电网平均CO2排放因子" scheme="https://lizhening.github.io/tags/%E7%94%B5%E7%BD%91%E5%B9%B3%E5%9D%87CO2%E6%8E%92%E6%94%BE%E5%9B%A0%E5%AD%90/"/>
+    
+    <category term="省级电网" scheme="https://lizhening.github.io/tags/%E7%9C%81%E7%BA%A7%E7%94%B5%E7%BD%91/"/>
+    
+    <category term="区域电网" scheme="https://lizhening.github.io/tags/%E5%8C%BA%E5%9F%9F%E7%94%B5%E7%BD%91/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>建材和有色行业有望明年纳入碳交易市场中</title>
+    <link href="https://lizhening.github.io/posts/2a29142e/"/>
+    <id>https://lizhening.github.io/posts/2a29142e/</id>
+    <published>2021-09-29T06:57:32.000Z</published>
+    <updated>2022-05-08T07:08:22.836Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="简讯"><a href="#简讯" class="headerlink" title="简讯"></a>简讯</h3><p>2021年9月27日，在“东方证券•可持续发展论坛暨东方证券·碳中和指数发布会”，上海环境能源交易所副总经理宾晖发表以下见解：</p><ol><li>有关纳入行业。在电力被作为第一批纳入碳交易市场的行业后，<strong>建材、有色等行业明年有望纳入到碳交易市场中</strong>。此外，传统的钢铁、化工、航空等行业，也会陆续纳入到范围内。</li><li>有关《碳排放交易管理暂行条例》。目前《碳排放交易管理暂行条例》还未出炉，它可能涉及到一些关键的问题，<strong>例如更详细的处罚条款</strong>。目前按照相关部门的工作进程，<strong>在年底之前，这个条例可能会通过。</strong><blockquote><p>“（碳排放数据方面）初期可能部分有些偏差，应该要判断企业的主观意愿。如果是恶意提供失实数据，需要加大处罚力度。目前在试行的办法中，对相关行为的处罚比较轻，建议在最终的条例里面，加大处罚力度，这是今后碳交易中的一个重要内容。”</p></blockquote></li><li>对于配额交易。履行清缴义务是根本，配额交易是锦上添花。<blockquote><p>“配额本质上含有义务的属性。企业在持有配额期间，可以作为资产利用，进入市场进行交易，但在年末的时候需要根据企业的排放情况履行清缴义务。企业可以通过技术提升、管理降碳实现结余，获得收益。”</p></blockquote></li></ol><h3 id="我的看法"><a href="#我的看法" class="headerlink" title="我的看法"></a>我的看法</h3><p>上海环境能源交易所是既是上海市碳交易试点的指定实施平台，也是全国碳排放权交易平台。上海环境能源交易所直接参与到全国碳市场，比较容易接触到决策层更容易了解到一手信息。因此其副总经理的发言可信度很高。</p><p>千户万唤的《碳排放交易管理暂行条例》终于要面世了，虽然条例的地位比法律要低一些，可能会在之后的施行过程中受到一些牵制，但是成文法能够向市场提供一个清晰的信号，减少首鼠两端的情况。最近，各地都加快了低碳立法速率，例如天津市人大通过<a href="http://www.tjrd.gov.cn/flfg/system/2021/09/27/030022524.shtml">《天津市碳达峰碳中和促进条例》</a>、重庆出台了<a href="http://sthjj.cq.gov.cn/zwgk_249/zfxxgkzl/fdzdgknr/lzyj/zcwj/xzgfxwj/202109/t20210917_9730397.html">《重庆市“碳惠通”生态产品价值实现平台管理办法》</a>。有据可依，对于落实双碳目标是非常重要，从文件中能够看出政府的意图和主攻方向，减少盲目投资。</p><p>我非常认同我老板的一个观点，<strong>碳交易只是一种手段、并不是实现双碳目标最核心的内容，相对来说产业政策、技术积累更加重要</strong>。碳交易是一味催化剂，不能喧宾夺主。按照这个思路，碳排放交易应该保持克制，在有限的程度上使用市场化的手段奖励优等生，加速产业低碳化（升级、转型）逐步淘汰高能耗、低产值技术与产品。如果像欧盟市场一样，设定严格的目标把碳价推的很高可能会影响到本就艰难运转的实体经济，并且高额的收益容易吸引投资和中介机构，如果对“差等生”的惩罚过多流入到第三方机构手中，对“差等生”是不是不太公平呢？如果无论碳价高低，“优等生”受到的奖励都是没有质的区别，高碳价是不是与碳市场的宗旨相悖呢？</p><h3 id="来源"><a href="#来源" class="headerlink" title="来源"></a>来源</h3><p>本条简讯来源于21世纪经济文章<a href="https://m.21jingji.com/article/20210928/herald/c7ea5e7ef9b34a77b3e673941486555a.html">《《碳排放交易管理暂行条例》有望年底出炉 ，建材、有色等行业明年或纳入碳交易市场》</a>。</p>]]></content>
+    
+    
+    <summary type="html">上海环境能源交易所副总经理宾晖称《碳排放交易管理暂行条例》可能年底出炉，其中处罚条款可能更详细。建材、有色等行业明年有望纳入到碳交易市场中。</summary>
+    
+    
+    
+    <category term="应对气候变化" scheme="https://lizhening.github.io/categories/%E5%BA%94%E5%AF%B9%E6%B0%94%E5%80%99%E5%8F%98%E5%8C%96/"/>
+    
+    <category term="温室气体减排" scheme="https://lizhening.github.io/categories/%E5%BA%94%E5%AF%B9%E6%B0%94%E5%80%99%E5%8F%98%E5%8C%96/%E6%B8%A9%E5%AE%A4%E6%B0%94%E4%BD%93%E5%87%8F%E6%8E%92/"/>
+    
+    <category term="新闻" scheme="https://lizhening.github.io/categories/%E5%BA%94%E5%AF%B9%E6%B0%94%E5%80%99%E5%8F%98%E5%8C%96/%E6%B8%A9%E5%AE%A4%E6%B0%94%E4%BD%93%E5%87%8F%E6%8E%92/%E6%96%B0%E9%97%BB/"/>
+    
+    
+    <category term="简讯" scheme="https://lizhening.github.io/tags/%E7%AE%80%E8%AE%AF/"/>
+    
+    <category term="中国碳市场" scheme="https://lizhening.github.io/tags/%E4%B8%AD%E5%9B%BD%E7%A2%B3%E5%B8%82%E5%9C%BA/"/>
+    
+    <category term="《碳排放交易管理暂行条例》" scheme="https://lizhening.github.io/tags/%E3%80%8A%E7%A2%B3%E6%8E%92%E6%94%BE%E4%BA%A4%E6%98%93%E7%AE%A1%E7%90%86%E6%9A%82%E8%A1%8C%E6%9D%A1%E4%BE%8B%E3%80%8B/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>美国加州通过修正案确保自动驾驶汽车满足零排放要求</title>
+    <link href="https://lizhening.github.io/posts/ed07c77a/"/>
+    <id>https://lizhening.github.io/posts/ed07c77a/</id>
+    <published>2021-09-27T10:54:11.000Z</published>
+    <updated>2022-05-08T07:08:22.928Z</updated>
+    
+    <content type="html"><![CDATA[<p>美国加州于2021年9月23日通过 <a href="https://leginfo.legislature.ca.gov/faces/billTextClient.xhtml?bill_id=202120220SB500">SB 500 修正案</a>。该修正案要求：</p><ul><li>最晚<strong>从2030年起，所有型号年份为2031年或之后的轻型自动驾驶汽车实现零排放</strong>。</li><li>同时该修正案也要求主管机构<strong>不能早于2027年开始执行上述规定</strong>。</li></ul><p>对于上文提到的自动驾驶汽车和轻型自动驾驶汽车，修正案中也做出了解释和定义。</p><ol><li>从外行角度来说，**在加州只有L3、L4和L5的车辆属于自动驾驶车辆(Autonomous vehicle)**。L3、L4和L5的定于需要参考SAE标准《道路机动车辆驾驶自动化系统相关术语的分类和定义》，我在网上看到CSDN博主“一个处女座的程序猿”的系列文章“<a href="https://blog.csdn.net/qq_41185868/article/details/115052371">Paper：自动驾驶领域SAE标准之《道路机动车辆驾驶自动化系统相关术语的分类和定义》官方英文原文翻译与解读</a>”，大家可以参考。</li><li>轻型自动驾驶汽车：净重小于8501磅，约合3.85吨的自动驾驶汽车。</li></ol><p>国内也有媒体对此进行报道，可以参考新浪科技文章<a href="https://finance.sina.com.cn/tech/2021-09-26/doc-iktzscyx6355876.shtml">美国加州新法律：2030年所有轻型自动驾驶汽车须实现零排放</a>。</p>]]></content>
+    
+    
+    <summary type="html">美国加州通过修正案确保自动驾驶汽车满足零排放要求。</summary>
+    
+    
+    
+    <category term="应对气候变化" scheme="https://lizhening.github.io/categories/%E5%BA%94%E5%AF%B9%E6%B0%94%E5%80%99%E5%8F%98%E5%8C%96/"/>
+    
+    <category term="温室气体减排" scheme="https://lizhening.github.io/categories/%E5%BA%94%E5%AF%B9%E6%B0%94%E5%80%99%E5%8F%98%E5%8C%96/%E6%B8%A9%E5%AE%A4%E6%B0%94%E4%BD%93%E5%87%8F%E6%8E%92/"/>
+    
+    <category term="法律" scheme="https://lizhening.github.io/categories/%E5%BA%94%E5%AF%B9%E6%B0%94%E5%80%99%E5%8F%98%E5%8C%96/%E6%B8%A9%E5%AE%A4%E6%B0%94%E4%BD%93%E5%87%8F%E6%8E%92/%E6%B3%95%E5%BE%8B/"/>
+    
+    
+    <category term="简讯" scheme="https://lizhening.github.io/tags/%E7%AE%80%E8%AE%AF/"/>
+    
+    <category term="自动驾驶" scheme="https://lizhening.github.io/tags/%E8%87%AA%E5%8A%A8%E9%A9%BE%E9%A9%B6/"/>
+    
+    <category term="零排放汽车" scheme="https://lizhening.github.io/tags/%E9%9B%B6%E6%8E%92%E6%94%BE%E6%B1%BD%E8%BD%A6/"/>
+    
+    <category term="法律" scheme="https://lizhening.github.io/tags/%E6%B3%95%E5%BE%8B/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>基于fluid主题的Hexo博客中添加评论</title>
+    <link href="https://lizhening.github.io/posts/852186e5/"/>
+    <id>https://lizhening.github.io/posts/852186e5/</id>
+    <published>2021-09-27T07:44:08.000Z</published>
+    <updated>2022-05-08T07:08:22.972Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><p>当承认我也是群居生物，意识到沟通和交流是我的基本需求后，决定添加评论功能。虽然浏览量少的可怜，仍然想碰碰运气，尝试在网络世界找到能够交流的同伴。</p></blockquote><p>fluid主题中已经兼容了很多种评论方式，我不太喜欢注册很多账号并且要求低成本。因此决定使用<code>Utterances</code>。</p><p>在这里推荐博主“roife”的文章“<a href="https://roife.github.io/2021/02/12/use-utterances-for-comment/">使用 Utterances 作为静态博客的评论插件</a>。</p><p>如何打开评论功能，Fluid的<a href="https://hexo.fluid-dev.com/docs/guide/#%E8%AF%84%E8%AE%BA">官方文档</a>已经详细介绍过了，并且在官方文档中给出了对评论插件的简要介绍，建议参考。</p><p><code>Utterances</code>的安装方法实在太简单了，博主“roife”的文章已经介绍的非常清楚了，或者大家直接对照<a href="https://utteranc.es/"><code>Utterances</code>插件主页</a>就能完成配置。</p><p><strong>需要注意的是评论代码插入的位置。</strong></p><ol><li>博主“roife”在评论区建议<code>直接插入到对应的 post 文件中</code>，这样操作比较精细化，比较繁琐。<ul><li>如果只想插入到文章中，可以根据文章编辑习惯，修改位于<code>\scaffolds\draft.md</code>的draft模板或者修改位于<code>\scaffolds\post.md</code>的post模板。修改之后的模板中自带相关代码，无需手动添加。</li></ul></li><li>我也看到说插到主题下的<code>article.ejs</code>文件中，原因类似于Google Analysis的<code>gtag.js</code>插入到<code>head.ejs</code>文件中类似，直接把评论功能插入到主题中，简单直接不需要重复操作。但是我发现，fluid主题<code>.\themes\fluid\layout\_partial</code>目录下没有<code>article.ejs</code>文件。因此，我心一横，老子直接查到<code>head.ejs</code>文件中，紧挨着着Google Analysis代码，没想到竟然好用。</li></ol>]]></content>
+    
+    
+    <summary type="html">本文介绍了如何在基于fluid主题的Hexo博客中添加评论。</summary>
+    
+    
+    
+    <category term="Hexo博客建设" scheme="https://lizhening.github.io/categories/Hexo%E5%8D%9A%E5%AE%A2%E5%BB%BA%E8%AE%BE/"/>
+    
+    <category term="评论" scheme="https://lizhening.github.io/categories/Hexo%E5%8D%9A%E5%AE%A2%E5%BB%BA%E8%AE%BE/%E8%AF%84%E8%AE%BA/"/>
+    
+    
+    <category term="Hexo" scheme="https://lizhening.github.io/tags/Hexo/"/>
+    
+    <category term="评论" scheme="https://lizhening.github.io/tags/%E8%AF%84%E8%AE%BA/"/>
+    
+    <category term="fluid" scheme="https://lizhening.github.io/tags/fluid/"/>
+    
+    <category term="Tips" scheme="https://lizhening.github.io/tags/Tips/"/>
+    
+  </entry>
+  
+</feed>
