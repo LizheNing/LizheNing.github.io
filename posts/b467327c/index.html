@@ -82,7 +82,11 @@
   </script>
   <script  src="/js/utils.js" ></script>
   <script  src="/js/color-schema.js" ></script>
-<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
 </head>
 
 
@@ -267,10 +271,10 @@
 <p>最初的想法是将博客打造成个人图书馆或者日记本，所以起初并不在意网站的Search Engine Optimization(SEO)的状况。但是当发现自己的网站甚至没有被搜索引擎收录时，还是不免失落。当生理需求被满足后，更高层次的被同类认可的需求提上了日程。<strong>这篇文章将会介绍如何将网站提交到Google并如何配置Google_Analysis服务。尤其是针对Hexo+Github Page用户。</strong></p>
 </blockquote>
 <h2 id="测试站点是否被Google收录"><a href="#测试站点是否被Google收录" class="headerlink" title="测试站点是否被Google收录"></a>测试站点是否被Google收录</h2><p>在 Google 搜索中直接搜索 <code>site:yourDomaiName</code>，如果没有任何结果，说明尚未收录。举个例子：在Google搜索框中输入 <code>site:lizhening.github.io</code></p>
-<p>如果可以搜索到内容，那么恭喜你，说明你的文章价值比较明显，可以直接跳转到<a href="#seo%E5%92%8Csem">SEO和SEM</a>部分，查看优化方案。</p>
+<p>如果可以搜索到内容，那么恭喜你，说明你的文章价值比较明显，可以直接跳转到<a href="#seo和sem">SEO和SEM</a>部分，查看优化方案。</p>
 <p>如果没有搜索结果，那请接着耐心向下看。</p>
 <h2 id="配置Google-Analysis"><a href="#配置Google-Analysis" class="headerlink" title="配置Google Analysis"></a>配置Google Analysis</h2><blockquote>
-<p>按照逻辑，如果搜索引擎没有收录网站，首先做的应该是向搜索引擎提交网站。但是在向搜索引擎提交网站时，搜索引擎会验证你对于提交的网站具有控制权。如果你的网站配置Google Analysis服务，可以直接通过验证。<strong>如果你想要使用其他验证方式，可以跳过本段，参考<a href="#%E5%90%91google%E6%8F%90%E4%BA%A4%E7%BD%91%E7%AB%99%E5%9C%B0%E5%9B%BE">向Google提交网站地图</a></strong></p>
+<p>按照逻辑，如果搜索引擎没有收录网站，首先做的应该是向搜索引擎提交网站。但是在向搜索引擎提交网站时，搜索引擎会验证你对于提交的网站具有控制权。如果你的网站配置Google Analysis服务，可以直接通过验证。<strong>如果你想要使用其他验证方式，可以跳过本段，参考<a href="#向google提交网站地图">向Google提交网站地图</a></strong></p>
 </blockquote>
 <p><a target="_blank" rel="noopener" href="https://support.google.com/analytics/answer/10089681?hl=zh-Hans">Google Analysis</a>是一款免费的网站统计分析工具，可以实时监测跟踪网站的表现，包括流量情况和用户访问情况。工具不仅会统计网站的整体流量情况，还会给出这些流量的具体组成结构，以及展示网站访问者的活动流程，让你可以清楚地了解网站的细节表现。<strong>对于一般的个人博客有明显的功能溢出。</strong>对于个人博客这种小网站，还有其他小巧便捷的分析管理工具，比如umami.is和plausible。对umami.is感兴趣的同学可以参考少数派作者“huhuhang”的文章<a target="_blank" rel="noopener" href="https://sspai.com/post/68721">个人网站 / 博客必备，零成本、低门槛创建专属数据分析工具：umami.is</a></p>
 <p>配置Google Analysis大致分为三步，分别是监测账户配置、博客设置修改和测试。这里给大家提供一个非常详细、靠谱的教程，博客作者“brook1711”的文章<a target="_blank" rel="noopener" href="https://brook1711.com/2020/12/17/fluid%E4%B8%AD%E5%85%B3%E8%81%94-Google-Anlytics-%E7%9A%84%E5%85%B7%E4%BD%93%E6%96%B9%E6%B3%95/">Hexo fluid 中关联 Google Anlytics 的具体方法</a>，这也是我的参考教程。<em>必须要提醒大家，所有的教程编辑出来时已经过时了。但是，教程的思路和配置仍然可以参考。</em></p>
@@ -301,9 +305,9 @@
 <li>尽量不要同时开多个网页分析。我同时开启百度和Google分析时，百度分析的代码自动出现在Google代码上方，会导致Google代码失效，原因不是很清楚。</li>
 </ul>
 <h3 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h3><p>包括两部分，本地测试和Google Analysis测试。</p>
-<p>本地测试需要观察文件是否能够正常编译，以及<code>gtag.js</code>代码能否正常显示。<br>使用<code>hexo g</code>命令编译文件，使用<code>hexo s</code>命令打开本地服务。在<a target="_blank" rel="noopener" href="http://localhost:4000/">http://localhost:4000</a>中预览效果。使用<code>F12</code>键查看网页HTML代码，检查<code>&lt;head&gt;</code>标签之后的<code>gtag.js</code>代码是否正常显示。<br><img src="https://i.loli.net/2021/09/26/MUVd1GxE7f59Pqb.png" srcset="/img/loading.gif" alt="本地检查"></p>
+<p>本地测试需要观察文件是否能够正常编译，以及<code>gtag.js</code>代码能否正常显示。<br>使用<code>hexo g</code>命令编译文件，使用<code>hexo s</code>命令打开本地服务。在<a target="_blank" rel="noopener" href="http://localhost:4000">http://localhost:4000</a>中预览效果。使用<code>F12</code>键查看网页HTML代码，检查<code>&lt;head&gt;</code>标签之后的<code>gtag.js</code>代码是否正常显示。<br><img src="https://i.loli.net/2021/09/26/MUVd1GxE7f59Pqb.png" srcset="/img/loading.gif" alt="本地检查"></p>
 <p>当本地测试无误后，使用<code>hexo d</code>命令同步上传。在Google Analysis中依次选择“报告”、“实时”。使用另一个浏览器打开你的博客，观察分析结果。如果能够检测到数据，那么完事大吉。否则只能求助于搜索引擎和Google Analysis的<a target="_blank" rel="noopener" href="https://support.google.com/analytics/answer/9311124?hl=zh-Hans">帮助文件</a>了。<br><img src="https://i.loli.net/2021/09/26/wGygKAUsYk4MCi6.png" srcset="/img/loading.gif" alt="Google Analysis测试"></p>
-<h2 id="向Google提交网站地图"><a href="#向Google提交网站地图" class="headerlink" title="向Google提交网站地图"></a>向Google提交网站地图</h2><p>关于Google的收录规则，**推荐大家阅读<a target="_blank" rel="noopener" href="https://developers.google.com/search/docs/basics/get-on-google?hl=zh-cn">Google搜索中心的文档</a>**。如果在操作过程中遇到大多数问题基本可以在本页面中找到解决方案。</p>
+<h2 id="向Google提交网站地图"><a href="#向Google提交网站地图" class="headerlink" title="向Google提交网站地图"></a>向Google提交网站地图</h2><p>关于Google的收录规则，<strong>推荐大家阅读<a target="_blank" rel="noopener" href="https://developers.google.com/search/docs/basics/get-on-google?hl=zh-cn">Google搜索中心的文档</a></strong>。如果在操作过程中遇到大多数问题基本可以在本页面中找到解决方案。</p>
 <p>根据Google搜索中心官方的<a target="_blank" rel="noopener" href="https://developers.google.com/search/docs/beginner/get-started?hl=zh-cn">新手入门指南</a>，只需要两部就可以向Google提交网站。分别是：</p>
 <ol>
 <li>注册 Search Console。</li>
@@ -318,7 +322,6 @@
 <h3 id="生成并提交站点地图-sitemap"><a href="#生成并提交站点地图-sitemap" class="headerlink" title="生成并提交站点地图(sitemap)"></a>生成并提交站点地图(sitemap)</h3><p>Google的官方文档在“高级SEO”中介绍了<a target="_blank" rel="noopener" href="https://developers.google.com/search/docs/advanced/sitemaps/overview?hl=zh-cn">站点地图</a>的用途和使用情景，推荐大家阅读。站点地图更适合大型、复杂的网站，个人博客可以按需选择。同时在官方文档中，Google也介绍了生成站点地图的主流方案。</p>
 <p>但是，对于Hexo博客来说有更加简单的方案。在Hexo官方<a target="_blank" rel="noopener" href="https://hexo.io/plugins/index.html">插件平台</a>中检索生成站点地图的插件。我用的是<a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo-generator-sitemap">hexo-generator-sitemap</a>。可以直接使用npm进行安装，安装语句在插件的GitHub主页中也有介绍。<br><code>npm install hexo-generator-sitemap --save</code><br>同时注意在配置文件<code>_config.yml</code>中增添对应参数参数。</p>
 <figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs yml"><span class="hljs-attr">sitemap:</span><br>  <span class="hljs-attr">path:</span> <span class="hljs-string">sitemap.xml</span><br>  <span class="hljs-attr">template:</span> <span class="hljs-string">./sitemap_template.xml</span><br>  <span class="hljs-attr">rel:</span> <span class="hljs-literal">false</span><br>  <span class="hljs-attr">tags:</span> <span class="hljs-literal">true</span><br>  <span class="hljs-attr">categories:</span> <span class="hljs-literal">true</span><br></code></pre></td></tr></table></figure>
-
 <p>在这时需要注意，“template”参数，这个参数指定了生成站点地图的模板及其储存位置。如果和一样之前对于站点地图没有了解，直接用插件提供的<a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo-generator-sitemap/blob/master/sitemap.xml">模板</a>吧。<strong>需要检查在“template”指定的位置是否有对应的文件，如果没有，直接把插件提供的模板复制到<code>_config.yml</code>下，并命名为<code>sitemap_template.xml</code>即可。</strong>否则可能出现无法生成站点地图的情况。</p>
 <p>完成修改之后，将文件编译同步到GitHub。在主页地址之后添加<code>/sitemap.xml</code>检查是否能够查看到网站地图。比如我的博客主页地址为<code>https://lizhening.github.io</code>，那么可以在<code>https://lizhening.github.io/sitemap.xml</code>上查看网页地图。<br><img src="https://i.loli.net/2021/09/26/FLfuRYTdlXAshCK.png" srcset="/img/loading.gif" alt="网站地图"></p>
 <p>打开Google Search Console控制台，在“站点地图”中输入网址<code>/sitemap.xml</code>，并提交即可。如图所见，我的站点地图仍然没有收录，我也会不断找寻原因。</p>
@@ -594,6 +597,45 @@
 
 
 
+
+  
+
+  
+    <!-- MathJax -->
+    <script>
+      MathJax = {
+        tex: {
+          inlineMath: [['$', '$'], ['\\(', '\\)']]
+        },
+        options: {
+          renderActions: {
+            findScript: [10, doc => {
+              document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+                const display = !!node.type.match(/; *mode=display/);
+                const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+                const text = document.createTextNode('');
+                node.parentNode.replaceChild(text, node);
+                math.start = { node: text, delim: '', n: 0 };
+                math.end = { node: text, delim: '', n: 0 };
+                doc.math.push(math);
+              });
+            }, '', false],
+            insertedScript: [200, () => {
+              document.querySelectorAll('mjx-container').forEach(node => {
+                let target = node.parentNode;
+                if (target.nodeName.toLowerCase() === 'li') {
+                  target.parentNode.classList.add('has-jax');
+                }
+              });
+            }, '', false]
+          }
+        }
+      };
+    </script>
+
+    <script async src="https://cdn.jsdelivr.net/npm/mathjax@3.1.2/es5/tex-svg.js" ></script>
+
+  
 
 
 

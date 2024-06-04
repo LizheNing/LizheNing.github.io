@@ -82,7 +82,11 @@
   </script>
   <script  src="/js/utils.js" ></script>
   <script  src="/js/color-schema.js" ></script>
-<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
 </head>
 
 
@@ -264,7 +268,7 @@
             
             <div class="markdown-body">
               <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><blockquote>
-<p>2024年4月30日，欧盟委员会发布了<a target="_blank" rel="noopener" href="https://ec.europa.eu/info/law/better-regulation/have-your-say/initiatives/13877-Batteries-for-electric-vehicles-carbon-footprint-methodology_en">电动汽车电池碳足迹计算规则草案及附件</a>(以下简称“草案”)，该文件是<a target="_blank" rel="noopener" href="https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R1542">Regulation (EU) 2023/1542</a>，即《欧盟电池与废电池法》(以下简称“新电池法”)的配套细则，提供了电动汽车电池碳足迹计算和验证的方法。该文件一经发布就受到了广泛关注，不仅在于电池法本身的进展，还因为草案否定了PPA和能源属性证书(EAC，俗称“绿证”)这两个市场化工具，直接波及电力市场。同时，我们还应注意到草案提出的核算规则将导致不同地区生产的动力电池碳足迹大相径庭，《电池法》未来对电池碳足迹的要求将会借此影响全球电池供应链的分布，对中国电池企业的全球生产布局造成重大影响。</p>
+<p>2024年4月30日，欧盟委员会发布了<a target="_blank" rel="noopener" href="https://ec.europa.eu/info/law/better-regulation/have-your-say/initiatives/13877-Batteries-for-electric-vehicles-carbon-footprint-methodology_en">电动汽车电池碳足迹计算规则草案及附件</a>(以下简称“草案”)，该文件是<a target="_blank" rel="noopener" href="https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32023R1542">Regulation (EU) 2023/1542</a>，即《欧盟电池与废电池法》(以下简称“新电池法”)的配套细则，提供了电动汽车电池碳足迹计算和验证的方法。该文件一经发布就受到了广泛关注，不仅在于电池法本身的进展，还因为草案否定了PPA和能源属性证书(EAC，俗称“绿证”)这两个市场化工具，直接波及电力市场。同时，我们还应注意到草案提出的核算规则将导致不同地区生产的动力电池碳足迹大相径庭，《电池法》未来对电池碳足迹的要求将会借此影响全球电池供应链的分布，对中国电池企业的全球生产布局造成重大影响。</p>
 </blockquote>
 <h2 id="背景介绍"><a href="#背景介绍" class="headerlink" title="背景介绍"></a>背景介绍</h2><p>2023年8月17日，“新电池法”正式生效，法案将投放到欧盟市场的电池分为5大类进行监管，并分别提出强制性要求，涵盖生命周期碳足迹披露、可持续性、安全、尽职调查、电池护照、废旧电池管理等指标内容。</p>
 <img src="/posts/60710a16/1.BatteryCategories.png" srcset="/img/loading.gif" class="" title="电池分类">
@@ -273,22 +277,15 @@
 <li>披露电池碳足迹数据；</li>
 <li>披露电池碳足迹绩效水平；</li>
 <li>设定电池碳足迹最大阈值；<br>通过上述三步实现对电池碳足迹的准入管理，目标是从2028年开始，将高碳足迹电池逐步驱离欧盟市场。<img src="/posts/60710a16/2.Timeline.png" srcset="/img/loading.gif" class="" title="动力电池碳足迹时间线">
-
 </li>
 </ul>
 <p>欧盟委员会已经于布鲁塞尔时间2024年4月30日发布草案，该草案已经在当地时间5月28日前完成了公众咨询，接下来草案将会经过60天的<a target="_blank" rel="noopener" href="http://chinawto.mofcom.gov.cn/article/jsbl/zszc/201411/20141100808155.shtml">WTO/TBT</a>通报，如果没有重大修改，草案将会发布在欧洲公告上，并于发布后的20个工作日生效，预计在2024年8月18日左右。因此，<strong>预计在2025年8月18日左右，销往欧洲的电池就需要披露碳足迹了</strong>。</p>
 <p>下文将以EV电池为例，介绍在新电池法系统下，如何计算电池碳足迹。</p>
-<h2 id="对象与功能单位"><a href="#对象与功能单位" class="headerlink" title="对象与功能单位"></a>对象与功能单位</h2><h3 id="草案适用于哪些对象（电池）"><a href="#草案适用于哪些对象（电池）" class="headerlink" title="草案适用于哪些对象（电池）"></a>草案适用于哪些对象（电池）</h3><p>在新电池法中，<strong>电动汽车电池</strong>（Electric vehicle battery，即EV电池）指的是Regulation (EU) No168/2013 所规定的 L 类电动或混动车辆提供牵引电力，且重量超过 25 公斤的的电池，或者为Regulation (EU) 2018/858 所规定的M、N、O 类电动或混动车辆提供牵引动力的电池。定义中的L、M、N、O则是欧盟对于汽车的分类。因此，只有这几类车辆中使用的<strong>动力电池</strong>才可以按照本次发布的草案计算。想知道自己生产的电池能不能用这次的草案计算，比对一下产品用途就可以。</p>
-<img src="/posts/60710a16/3.VehicleCategories.png" srcset="/img/loading.gif" class="" title="欧盟汽车分类">
-<p>另外，草案对不同型号电池的认定也非常严格。不论产品的技术工艺是否相同，不同容量、不同工厂生产的电池均视为不同型号。<strong>最令人抓狂的一点是，不论什么原因（包括但是不限于材料清单、材料来源、工艺、与用电和其他辅助设备相关），只要电池碳足迹与之前披露值相比增加了10%以上，也要将其视为新电池型号，重新计算碳足迹，并披露新的碳足迹</strong>。</p>
-<p>这就要求企业必须对碳足迹有非常深入了解，掌握哪些因素可能会对碳足迹产生影响，并且能够试试掌握这些影响因素的变化情况。我们要知道，供应链足迹占电池总碳足迹约70%，这些数据绝大部分发生、管理、储存于供应链企业上，如果按照电池法要求，电池生产企业不仅要掌握自己工厂生产运营数据，还要了解上游供应商的运营情况。</p>
-<img src="/posts/60710a16/BatteryCarbonFootprintComposition.jpg" srcset="/img/loading.gif" class="" title="各类电池碳足迹占比">
-<p>单纯人力收集很难覆盖如此高的工作量，需要有一套数字化的管理系统。这对电池企业数字化能力和供应商管理能力提出了非常高的考验，既要合理、好用能够收集到足够的数据，又不能太越界，激起供应商反感，导致工作推不下去。</p>
+<h2 id="对象与功能单位"><a href="#对象与功能单位" class="headerlink" title="对象与功能单位"></a>对象与功能单位</h2><h3 id="草案适用于哪些对象（电池）"><a href="#草案适用于哪些对象（电池）" class="headerlink" title="草案适用于哪些对象（电池）"></a>草案适用于哪些对象（电池）</h3><p>在新电池法中，<strong>电动汽车电池</strong>（Electric vehicle battery，即EV电池）指的是Regulation (EU) No168/2013 所规定的 L 类电动或混动车辆提供牵引电力，且重量超过 25 公斤的的电池，或者为Regulation (EU) 2018/858 所规定的M、N、O 类电动或混动车辆提供牵引动力的电池。定义中的L、M、N、O则是欧盟对于汽车的分类。因此，只有这几类车辆中使用的<strong>动力电池</strong>才可以按照本次发布的草案计算。想知道自己生产的电池能不能用这次的草案计算，比对一下产品用途就可以。<br><img src="/posts/60710a16/3.VehicleCategories.png" srcset="/img/loading.gif" class="" title="欧盟汽车分类"><br>另外，草案对不同型号电池的认定也非常严格。不论产品的技术工艺是否相同，不同容量、不同工厂生产的电池均视为不同型号。<strong>最令人抓狂的一点是，不论什么原因（包括但是不限于材料清单、材料来源、工艺、与用电和其他辅助设备相关），只要电池碳足迹与之前披露值相比增加了10%以上，也要将其视为新电池型号，重新计算碳足迹，并披露新的碳足迹</strong>。</p>
+<p>这就要求企业必须对碳足迹有非常深入了解，掌握哪些因素可能会对碳足迹产生影响，并且能够试试掌握这些影响因素的变化情况。我们要知道，供应链足迹占电池总碳足迹约70%，这些数据绝大部分发生、管理、储存于供应链企业上，如果按照电池法要求，电池生产企业不仅要掌握自己工厂生产运营数据，还要了解上游供应商的运营情况。<br><img src="/posts/60710a16/BatteryCarbonFootprintComposition.jpg" srcset="/img/loading.gif" class="" title="各类电池碳足迹占比"><br>单纯人力收集很难覆盖如此高的工作量，需要有一套数字化的管理系统。这对电池企业数字化能力和供应商管理能力提出了非常高的考验，既要合理、好用能够收集到足够的数据，又不能太越界，激起供应商反感，导致工作推不下去。</p>
 <h3 id="功能单位"><a href="#功能单位" class="headerlink" title="功能单位"></a>功能单位</h3><p>草案以电池在其预期使用寿命内提供的$1 kWh$的能量为功能单位，因此碳足迹的单位为$kg/kwh$。但是需要注意的是，这有别于现在通常使用的电池包能量碳足迹绩效。二者的差异主要在被除数，<strong>草案要求以预期寿命的总能量为除数</strong>，而非电池包能量。</p>
-<p>电池总能量($E_{total}$)主要受电池包能量、充放电频率以及使用寿命影响，计算方法如下:<br>$E_{total}=Energy,capacity \times FEqC,per,year \times years,of,operation$<br>其中，<br>$Energy,capacity$指的是电池在放电能量，以$kWh$计。但他不一定等于电池的额定能量，还要考虑电池管理系统(Battery Management System，即BMS)的调配，BMS可能会锁死一部分电量，用户无法调用，这部分电量就不在$Energy,capacity$范围之内；</p>
-<p>$FEqC,per,year$是电池每年等效充放电次数，或者说每年的充电循环次数，等效就代表这不是实际充电次数，实际充电次数和充电量受到太多因素影响。为了简化计算，把每年实际充放电量转化为标准充放电循环。并且按照汽车类型不同，分别给出了缺省值。</p>
-<img src="/posts/60710a16/4.DefaultValue.png" srcset="/img/loading.gif" class="" title="等效充电次数缺省值">
-<p>$years,of,operation$指的是电池使用寿命，草案采取了一种巧妙的方法，将企业承诺的电池或车辆保修期定为电池使用寿命。</p>
+<p>电池总能量($E_{total}$)主要受电池包能量、充放电频率以及使用寿命影响，计算方法如下:<br>$E_{total}=Energy\,capacity \times FEqC\,per\,year \times years\,of\,operation$<br>其中，<br>$Energy\,capacity$指的是电池在放电能量，以$kWh$计。但他不一定等于电池的额定能量，还要考虑电池管理系统(Battery Management System，即BMS)的调配，BMS可能会锁死一部分电量，用户无法调用，这部分电量就不在$Energy\,capacity$范围之内；</p>
+<p>$FEqC\,per\,year$是电池每年等效充放电次数，或者说每年的充电循环次数，等效就代表这不是实际充电次数，实际充电次数和充电量受到太多因素影响。为了简化计算，把每年实际充放电量转化为标准充放电循环。并且按照汽车类型不同，分别给出了缺省值。<br><img src="/posts/60710a16/4.DefaultValue.png" srcset="/img/loading.gif" class="" title="等效充电次数缺省值"><br>$years\,of\,operation$指的是电池使用寿命，草案采取了一种巧妙的方法，将企业承诺的电池或车辆保修期定为电池使用寿命。</p>
 <ul>
 <li>如果电池有明确保修期，使用电池保修期作为电池寿命；</li>
 <li>如果没有单独针对电池的保修期，但是有包含电池的产品保修，将其作为电池寿命；</li>
@@ -300,9 +297,7 @@
 <p>欧洲委员会下设的<a target="_blank" rel="noopener" href="https://joint-research-centre.ec.europa.eu/index_en">Joint Research Centre(JRC)</a>在2023年曾经公布过一份EV电池碳足迹计算方法提案。与之前JRC给出的复杂的测试方法不同，本次草案提出的这套方法的确更容易操作，但是也可能会导致潜在公平性问题。目前已经看到英国的企业反馈草案会低估小电池车辆的行驶充电次数，进而高估电池碳足迹。<strong>对于插电混动汽车的电池也会出现类似的问题。</strong></p>
 <p>另外，草案中可能会对能量密度低的电池产生额外的激励。同样的电池容量，能量密度低的电池质量大，增加车辆的总重，从而增加车辆的滚动阻力，即使电量相同，但是低能量密度电池会降低车的形式距离。EV电池的最终目的还是让车辆行驶一定距离，还是放电量相同，这可能是一个问题？</p>
 <h3 id="参考流"><a href="#参考流" class="headerlink" title="参考流"></a>参考流</h3><p>与功能单元相对应的电池质量，电池质量/总能量，以$kg/kWh$衡量。</p>
-<h2 id="核算边界"><a href="#核算边界" class="headerlink" title="核算边界"></a>核算边界</h2><p>草案要求计算电池原材料开采和预处理、生产、分销和寿命终止以及回收阶段的碳排放，<strong>不考虑电池使用阶段碳排放</strong>，如下图所示。</p>
-<img src="/posts/60710a16/5.SystemBoundary.png" srcset="/img/loading.gif" class="" title="核算边界">
-<p>以下过程则不在边界内，无需考虑：</p>
+<h2 id="核算边界"><a href="#核算边界" class="headerlink" title="核算边界"></a>核算边界</h2><p>草案要求计算电池原材料开采和预处理、生产、分销和寿命终止以及回收阶段的碳排放，<strong>不考虑电池使用阶段碳排放</strong>，如下图所示。<br><img src="/posts/60710a16/5.SystemBoundary.png" srcset="/img/loading.gif" class="" title="核算边界"><br>以下过程则不在边界内，无需考虑：</p>
 <ul>
 <li>厂房、设备等资本产品建造和生产过程；</li>
 <li>包装材料的生产过程；</li>
@@ -310,20 +305,15 @@
 <li>与电池生产不直接相关的辅助投入，例如办公场所照明和供暖、间接服务、研发、销售和行政管理等过程；</li>
 <li>将成品电池组装到整车的过程；</li>
 </ul>
-<h2 id="取舍准则"><a href="#取舍准则" class="headerlink" title="取舍准则"></a>取舍准则</h2><p>草案允许<strong>每个系统组件</strong>舍弃质量百分比<strong>不超过1%的</strong>输入和输出流。草案将电池系统分为明确了系统组件包括：</p>
-<img src="/posts/60710a16/6.CutoffValue.png" srcset="/img/loading.gif" class="" title="可以使用取舍规则的组件">
-<p>另外需要注意的是，研磨介质无论是否满足取舍规则的要求，都必须纳入碳足迹的计算。</p>
+<h2 id="取舍准则"><a href="#取舍准则" class="headerlink" title="取舍准则"></a>取舍准则</h2><p>草案允许<strong>每个系统组件</strong>舍弃质量百分比<strong>不超过1%的</strong>输入和输出流。草案将电池系统分为明确了系统组件包括：<br><img src="/posts/60710a16/6.CutoffValue.png" srcset="/img/loading.gif" class="" title="可以使用取舍规则的组件"><br>另外需要注意的是，研磨介质无论是否满足取舍规则的要求，都必须纳入碳足迹的计算。</p>
 <h3 id="质量平衡处理"><a href="#质量平衡处理" class="headerlink" title="质量平衡处理"></a>质量平衡处理</h3><p>被忽略的质量并不是按照“零排放”处理，而是<strong>必须</strong>加到<strong>系统部件</strong>中碳足迹强度最高的物质中，以满足质量守恒的要求，就是所有输入流重量加和等于所有输出流重量的加和。</p>
 <p>比方说，一个电子元件总重是3kg，但是通过BOM只能找到2.98kg的原材料，剩下的0.02kg不知道是啥。这时候可以让工程师继续分析，让供应商继续排查，最终确定这是什么材料。也可以不去分析，把他当作这个电子元件中碳足迹强度最高的材料，例如电子元件中常用到的金、铂等，但是不论他实际是铝还是钢，如果不能确定，就按最大的算。因此，为了不高估碳足迹，尽量避免进行质量截断。<strong>碳足迹研究应指明是否以及在哪采取了“1%质量截断原则”</strong>。</p>
-<h2 id="数据收集和质量要求"><a href="#数据收集和质量要求" class="headerlink" title="数据收集和质量要求"></a>数据收集和质量要求</h2><p>草案将核算边界内的活动分为三类过程，执行严格程度不同的收据收集要求，具体分类如下：</p>
-<img src="/posts/60710a16/7.ProcessCategories.png" srcset="/img/loading.gif" class="" title="过程分类">
-
+<h2 id="数据收集和质量要求"><a href="#数据收集和质量要求" class="headerlink" title="数据收集和质量要求"></a>数据收集和质量要求</h2><p>草案将核算边界内的活动分为三类过程，执行严格程度不同的收据收集要求，具体分类如下：<br><img src="/posts/60710a16/7.ProcessCategories.png" srcset="/img/loading.gif" class="" title="过程分类"></p>
 <p>我认为JRC的提案中的可视化方法非常值得借鉴，下图是我自己对草案中数据要求的理解，借鉴了JRC的画图方式。草案将所有过程分为三类，按照数据要求的严格程度从上到下依次为：</p>
 <ul>
 <li>强制性公司特有过程；</li>
 <li>非强制性最相关过程；</li>
 <li>其他过程。<img src="/posts/60710a16/11.DataClassification.png" srcset="/img/loading.gif" class="" title="电池法碳足迹数据分类-20240603">
-
 </li>
 </ul>
 <h3 id="强制性公司特有过程"><a href="#强制性公司特有过程" class="headerlink" title="强制性公司特有过程"></a>强制性公司特有过程</h3><p>只包含两部分，<strong>主产品生产、产品分销过程</strong>，该部分<strong>必须使用公司实际</strong>数据。这其中很多数据都由价值链中其他企业掌握，比如说分销的数据大概率由主机厂掌握、原材料数据在上游供应商手中。如果按照要求用公司实际数据计算碳足迹，就会涉及到数据的传递，草案提出了三种价值链上数据沟通方法：</p>
@@ -335,9 +325,7 @@
 <p>不论采用哪种方式，都得确保欧盟的市场监管当局和公告机构能够获取这些数据，并对其进行评审。强制性公司特有过程优先使用监测数据，如果部分过程没有监测计量数据，可以通过化学方程式估算。也可以通过质量平衡来计算，但是如果用到质量平衡来确定输入量，需要考虑成品率，边角废弃量等数据。</p>
 <p>所有数据最好是年平均数据，如果生产时间不足一年，也可以酌情缩短。<strong>新产品导入、工艺变化时，最多可以排除6个月的数据。</strong></p>
 <p>草案对公司特有数据集的建模、数据格式、命名法、DQR、元数据、结果等有明确规定。对公司特有数据应包括的输入输出、数据年限、过程输入输出参数、各种过程数据收集等，都有明确要求。</p>
-<h3 id="非强制性最相关过程"><a href="#非强制性最相关过程" class="headerlink" title="非强制性最相关过程"></a>非强制性最相关过程</h3><p>上图中橘黄色的过程是草案中指定的非强制性最相关过程。这类过程即允许使用数据库中次级数据建模，也可以使用企业特定数据建模，共计存在4种建模方法。</p>
-<img src="/posts/60710a16/8.DataSelection.png" srcset="/img/loading.gif" class="" title="非强制最相关过程数据选择">
-
+<h3 id="非强制性最相关过程"><a href="#非强制性最相关过程" class="headerlink" title="非强制性最相关过程"></a>非强制性最相关过程</h3><p>上图中橘黄色的过程是草案中指定的非强制性最相关过程。这类过程即允许使用数据库中次级数据建模，也可以使用企业特定数据建模，共计存在4种建模方法。<br><img src="/posts/60710a16/8.DataSelection.png" srcset="/img/loading.gif" class="" title="非强制最相关过程数据选择"></p>
 <h3 id="其他过程"><a href="#其他过程" class="headerlink" title="其他过程"></a>其他过程</h3><p>除了上述提到的过程之外的过程，剩下的都是其他过程，可以直接使用数据库次级数据建模。数据选取规则如下：</p>
 <ol>
 <li>如果数据库存在技术代表性评级≤4的次要数据集，选择其中最具代表性的数据集；</li>
@@ -348,15 +336,12 @@
 </ol>
 </li>
 </ol>
-<h2 id="数据质量要求"><a href="#数据质量要求" class="headerlink" title="数据质量要求"></a>数据质量要求</h2><p>草案要求从时间相关性、技术代表性和地理代表性三个维度开展数据质量评级（DQR），以每个过程的碳足迹贡献为权重，分别计算三个维度DQR质量评级的平均值，最终的DQR评分则是三个维度得分的算数平均数。DQR三个指标TiR、TeR、GeR的评价标准如下：</p>
-<img src="/posts/60710a16/9.DQR.png" srcset="/img/loading.gif" class="" title="数据质量评级规则">
-
+<h2 id="数据质量要求"><a href="#数据质量要求" class="headerlink" title="数据质量要求"></a>数据质量要求</h2><p>草案要求从时间相关性、技术代表性和地理代表性三个维度开展数据质量评级（DQR），以每个过程的碳足迹贡献为权重，分别计算三个维度DQR质量评级的平均值，最终的DQR评分则是三个维度得分的算数平均数。DQR三个指标TiR、TeR、GeR的评价标准如下：<br><img src="/posts/60710a16/9.DQR.png" srcset="/img/loading.gif" class="" title="数据质量评级规则"></p>
 <h2 id="电力建模"><a href="#电力建模" class="headerlink" title="电力建模"></a>电力建模</h2><p>电力消费建模是本次变化较大，争议比较突出的部分。草案规定，电力消费的碳足迹只能是<strong>全国平均电力消费组合的碳足迹</strong>，<strong>只能采用数据库中的数据</strong>。只有一种情况例外，<strong>同设施内发电、直连电力可以建模计算</strong>。</p>
 <p>相比JRC版本，草案剔除了具体供应商电力产品模型和剩余电力消费组合模型，这意味着相关<strong>企业无法通过购买绿电实现产品碳减排</strong>。</p>
 <p>如果按照全国平均电力消费组合的方式，目前我国尚未发布全国平均电力消费组合的碳足迹数据，如果选择欧盟所认可的数据库中的基础数据进行相关计算。以Sphera数据库（以前常被称为Gabi）种数据，中国电力平均消费组合碳足迹达到欧盟平均水平2倍以上，而电力有是电池生产中最重要的排放源之一，使用全国平均数据将会极大削弱中国电池的碳足迹竞争力。</p>
 <p>除此之外，还存在规则互认的问题，且不论草案关于直连部分引用的<a target="_blank" rel="noopener" href="https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32019L0944">Directive (EU) 2019/944</a>第二条41款的论述本身就十分模糊。论证不同司法管辖区之间的案例的具有一致性就存在太多变量。例如我国在吉林、山西、山东、内蒙古等省份开展的新能源直供电试点能够得到通报机构的认可存在很大不确定性，比亚迪欧洲也向欧盟反馈了类似的问题。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs word">Article 2, point (41), of Directive (EU) 2019&#x2F;944:<br>‘direct line’ means either an electricity line linking an isolated generation site with an isolated customer or an electricity line linking a producer and an electricity supply undertaking to supply directly their own premises, subsidiaries and customers;<br>直连电力是指：<br>1. 连接孤立发电站和孤立客户的电线，或<br>2. 指连接生产商和供电企业，直接为其自身经营场所、子公司和客户供电的电力线路。<br></code></pre></td></tr></table></figure>
-
 <h2 id="分配规则"><a href="#分配规则" class="headerlink" title="分配规则"></a>分配规则</h2><p>对于分配的最简单理解就是，如果一个生产过程有多个产品，就需要把排放按照一定规则分摊到每个产品上，草案中分配原则如下：</p>
 <ol>
 <li>优先使用细分法(subdivisom)，即将多功能过程拆分成若干提供单一功能的子过程；</li>
@@ -371,9 +356,7 @@
 <li>报废车辆运输到拆车厂、将废电池从拆车厂运输到拆解地点的运输不在核算边界之内。</li>
 </ul>
 <p>草案对分销阶段运输方面提出了更高的要求，分销运输距离将覆盖电池从制造现场到投放市场的全过程，对于投入欧盟市场的中国产品，这要求电池制造商向车厂确定额外的距离数据，向供应链下游企业要数据，相对来说更困难。另外草案中未明确距离如何计算，保险的方法可能要遵循ISO 14083的要求，这也是一个要求非常高的标准，十分考验中国企业碳管理能力和价值链管理能力。</p>
-<h2 id="EOL和再生量建模"><a href="#EOL和再生量建模" class="headerlink" title="EOL和再生量建模"></a>EOL和再生量建模</h2><p>对生产过程使用的再生材料、各生命周期阶段产生的废物处理的建模，<strong>必须采用循环足迹公式(Circular Foopimt Formula，CFF)，不能Cut-off</strong>。公式主要分为材料回收(Material Recycling)、能量回收(Energy Recovery)与废料处置(Disposal)三个模块，根据实际情况进行组合，以核算环境影响。草案中共计有6种组合方式：材料输入、材料回收、电芯回收、PWB回收、能量回收、废物处置。</p>
-<img src="/posts/60710a16/10.WasteBatteryTreatmentProcess.png" srcset="/img/loading.gif" class="" title="废电池处理流程">
-
+<h2 id="EOL和再生量建模"><a href="#EOL和再生量建模" class="headerlink" title="EOL和再生量建模"></a>EOL和再生量建模</h2><p>对生产过程使用的再生材料、各生命周期阶段产生的废物处理的建模，<strong>必须采用循环足迹公式(Circular Foopimt Formula，CFF)，不能Cut-off</strong>。公式主要分为材料回收(Material Recycling)、能量回收(Energy Recovery)与废料处置(Disposal)三个模块，根据实际情况进行组合，以核算环境影响。草案中共计有6种组合方式：材料输入、材料回收、电芯回收、PWB回收、能量回收、废物处置。<br><img src="/posts/60710a16/10.WasteBatteryTreatmentProcess.png" srcset="/img/loading.gif" class="" title="废电池处理流程"></p>
 <p>公式中大部分参数已规定了默认值，<strong>仅有4个回收率可以使用企业特定数据</strong>，要求也非常严格：</p>
 <ul>
 <li>只有提供<strong>供应链溯源证据</strong>情况下，才能使用企业实际的回收材料使用率$R_{1_Mat}$，否则缺省值为0；</li>
@@ -658,6 +641,45 @@
 
 
 
+
+  
+
+  
+    <!-- MathJax -->
+    <script>
+      MathJax = {
+        tex: {
+          inlineMath: [['$', '$'], ['\\(', '\\)']]
+        },
+        options: {
+          renderActions: {
+            findScript: [10, doc => {
+              document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+                const display = !!node.type.match(/; *mode=display/);
+                const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+                const text = document.createTextNode('');
+                node.parentNode.replaceChild(text, node);
+                math.start = { node: text, delim: '', n: 0 };
+                math.end = { node: text, delim: '', n: 0 };
+                doc.math.push(math);
+              });
+            }, '', false],
+            insertedScript: [200, () => {
+              document.querySelectorAll('mjx-container').forEach(node => {
+                let target = node.parentNode;
+                if (target.nodeName.toLowerCase() === 'li') {
+                  target.parentNode.classList.add('has-jax');
+                }
+              });
+            }, '', false]
+          }
+        }
+      };
+    </script>
+
+    <script async src="https://cdn.jsdelivr.net/npm/mathjax@3.1.2/es5/tex-svg.js" ></script>
+
+  
 
 
 

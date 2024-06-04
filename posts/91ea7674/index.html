@@ -82,7 +82,11 @@
   </script>
   <script  src="/js/utils.js" ></script>
   <script  src="/js/color-schema.js" ></script>
-<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
 </head>
 
 
@@ -266,7 +270,7 @@
               <blockquote>
 <p>2023年5月17日，欧盟<a target="_blank" rel="noopener" href="https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=OJ:L:2023:130:FULL">碳边境调节机制（carbon border adjustment mechanism，简称CBAM）法规</a>被正式生效，这标志着CBAM正式走完所有立法程序，成为欧盟法律（Regulation）。相较于实际影响，其象征性意义更加重大。这是<strong>首次将碳排放管辖权扩大域外国家</strong>，要求贸易链中企业申报、缴纳碳排放费用，世界各地的企业都要面临一项新的挑战。本文根据自身经验，分析CBAM法案中关键要点，分享给各位。</p>
 </blockquote>
-<p>欧盟很早就酝酿对外征收碳排放税，最早的实质性行动可以追溯到2008年通过的“航空碳排放交易指令”，将[非欧盟国际航班纳入温室气体排放交易机制] <a target="_blank" rel="noopener" href="http://ies.cass.cn/wz/yjcg/ozfygjf/201407/t20140714_2458449.shtml" title="欧盟航空碳税的新动向与未来走向">1</a>。但是此时，国际社会对气候变化的共识较少，受到了主要贸易伙伴强烈反对，并且当时EU-ETS仍然不太成熟，该法案并未实际执行。因此，从2021年7月形成CBAM立法草案开始，立法进程受到广泛关注。</p>
+<p>欧盟很早就酝酿对外征收碳排放税，最早的实质性行动可以追溯到2008年通过的“航空碳排放交易指令”，将<a target="_blank" rel="noopener" href="http://ies.cass.cn/wz/yjcg/ozfygjf/201407/t20140714_2458449.shtml" title="欧盟航空碳税的新动向与未来走向">非欧盟国际航班纳入温室气体排放交易机制</a>。但是此时，国际社会对气候变化的共识较少，受到了主要贸易伙伴强烈反对，并且当时EU-ETS仍然不太成熟，该法案并未实际执行。因此，从2021年7月形成CBAM立法草案开始，立法进程受到广泛关注。</p>
 <p>如果用简化理解，可以将CBAM理解为一种欧盟关税，纳税人是欧盟的进口商（大概率会转嫁到上游生产者），征税对象是商品生产过程中的排放行为，目前CBAM执行动态税率，可以简化理解为商品生产国碳价与欧盟市场碳价之差。用一句话来解释CBAM，“欧盟将对EU-ETS覆盖行业进口产品，征收碳排放税费，使欧盟内外的同量碳排放所需支付的价格基本持平，以保护欧盟境内生产企业。”</p>
 <blockquote>
 <p>根据法案正文对该机制的定义，欧盟主张CBAM是一种碳排放管制政策，可将进口产品置于欧盟碳市场相同的价格环境，而非“关税”。</p>
@@ -294,7 +298,7 @@
 <li>可以随时向委员会申请删除CBAM注册信息，但注册信息具体的删除时间有委员会决定，以不影响审查已经签发的CBAM证书为宜，预计可能在运营商获得最后一份CBAM证书后四年以后。</li>
 </ul>
 <p>最重要的，运营商还有核算产品隐含碳排放义务，并需要获得指定机构的认证，并将其结果通知授权CBAM申报人，已完成申报活动。<strong>完成核算和认证的材料必须至少保留4年，以备抽查</strong>。因此，想赚欧盟的钱，必须要一套管理程序来应对CBAM。<strong>从内容上来说，可以沿用碳管理体系，在其基础上针对CBAM进行一些重点优化即可同时应对国内碳市场和欧盟CBAM。</strong></p>
-<h2 id="覆盖范围"><a href="#覆盖范围" class="headerlink" title="覆盖范围"></a>覆盖范围</h2><h3 id="适用行业"><a href="#适用行业" class="headerlink" title="适用行业"></a>适用行业</h3><p>欧盟设立CBAM是为了解决“碳泄露”问题，[所谓碳泄露是指由于与气候政策相关的成本原因，企业将生产转移到排放限制较宽松的其他国家] <a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s?__biz=MzA5MzI5NTYzMw==&mid=2653228047&idx=1&sn=fbf0bf2949f9967cb830affda7837aed&chksm=8bb1a971bcc6206738a154a730fd96e7e59e18b40162536273914dc972d2c28a0777b8034bcb&mpshare=1&scene=2&srcid=0511rPzLXyejfz1aMCpoR8py&sharer_sharetime=1683810644361&sharer_shareid=2982d6041ab8c28da7b347d0e50c5483#rd" title="一文说清欧盟碳关税，企业提升碳管理能力或成应对关键">2</a>。防止企业因为EU-ETS的严格要求，将生产设施转移到国外，这也是欧盟绕开WTO最惠国待遇的法理基础。因此，不论是现在还是未来，CBAM机制覆盖范围必定是EU-ETS的子集，CBAM法案说理部分第28、29、67条也直接反应这个观点。</p>
+<h2 id="覆盖范围"><a href="#覆盖范围" class="headerlink" title="覆盖范围"></a>覆盖范围</h2><h3 id="适用行业"><a href="#适用行业" class="headerlink" title="适用行业"></a>适用行业</h3><p>欧盟设立CBAM是为了解决“碳泄露”问题，<a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s?__biz=MzA5MzI5NTYzMw==&amp;mid=2653228047&amp;idx=1&amp;sn=fbf0bf2949f9967cb830affda7837aed&amp;chksm=8bb1a971bcc6206738a154a730fd96e7e59e18b40162536273914dc972d2c28a0777b8034bcb&amp;mpshare=1&amp;scene=2&amp;srcid=0511rPzLXyejfz1aMCpoR8py&amp;sharer_sharetime=1683810644361&amp;sharer_shareid=2982d6041ab8c28da7b347d0e50c5483#rd" title="一文说清欧盟碳关税，企业提升碳管理能力或成应对关键">所谓碳泄露是指由于与气候政策相关的成本原因，企业将生产转移到排放限制较宽松的其他国家</a>。防止企业因为EU-ETS的严格要求，将生产设施转移到国外，这也是欧盟绕开WTO最惠国待遇的法理基础。因此，不论是现在还是未来，CBAM机制覆盖范围必定是EU-ETS的子集，CBAM法案说理部分第28、29、67条也直接反应这个观点。</p>
 <p><a target="_blank" rel="noopener" href="https://climate.ec.europa.eu/eu-action/eu-emissions-trading-system-eu-ets_en">目前EU-ETS主要集中在能源部门、能源密集型工业部门、航空和海运部门</a>。根据欧委会评估，钢铁、炼油、水泥、铝、有机基础化学品、氢和化肥是排放量最大的行业。同时在立法过程中，欧委会还考虑泄露风险和管理成本，将炼油、有机基础化学品排除首批名单，现有技术和知识条件下，很难对此类单个产品隐含碳排放进行核算。考虑到电力行业巨大的排放，也将电力进行管理。</p>
 <p>首批将六类产品纳入管理范围，我按照是否核算间接排放（用电排放），将其分为两类：</p>
 <ul>
@@ -310,9 +314,7 @@
 <li>其他有碳泄露风险的产品，尤其是<strong>有机化学品和聚合物</strong>；</li>
 <li>商品生产的前体材料隐含的排放。</li>
 </ol>
-<p>其中，只有第3点提到了将有机化学品和聚合物纳入覆盖范围的建议，此类产品的厂家的确需更加关注CBAM运行机制和法规调整方向。如果仅考虑排放规模，后续炼油是一个可能的方向，但考虑到经济半径和市场需求，对中国企业的影响非常有限。即使退一万步来说，如果欧盟能够在2034年顺利的取消EU-ETS的全部免费配额，CBAM有可能会涵盖EU-ETS内所有行业，这就是CBAM的极限了。如果涵盖了EU-ETS不覆盖的企业，会突破WTO最惠要求，摧毁其法理基础。</p>
-<img src="/posts/91ea7674/CBAM_schedule.png" srcset="/img/loading.gif" class="" title="CBAM潜在时间表">
-
+<p>其中，只有第3点提到了将有机化学品和聚合物纳入覆盖范围的建议，此类产品的厂家的确需更加关注CBAM运行机制和法规调整方向。如果仅考虑排放规模，后续炼油是一个可能的方向，但考虑到经济半径和市场需求，对中国企业的影响非常有限。即使退一万步来说，如果欧盟能够在2034年顺利的取消EU-ETS的全部免费配额，CBAM有可能会涵盖EU-ETS内所有行业，这就是CBAM的极限了。如果涵盖了EU-ETS不覆盖的企业，会突破WTO最惠要求，摧毁其法理基础。<br><img src="/posts/91ea7674/CBAM_schedule.png" srcset="/img/loading.gif" class="" title="CBAM潜在时间表"></p>
 <p>除了行业覆盖范围会扩大，商品的碳排放边界也会逐步增加。除了第3条，其余条目均在考虑不断扩增核算范围，从间接排放、运输排放到前体材料隐含排放。核算边界不断扩增，核算难度越来越大，最终可能不会全部执行。但为了完成评估报告，CBAM一定会要求进口商报送相关数据，并通过价值链传到给中国的企业。这就要求中国企业至少能够拿出相应数据，甚至能够符合第三方审核的要求，需要企业建立自己的碳管理体系。</p>
 <h3 id="温室气体类型"><a href="#温室气体类型" class="headerlink" title="温室气体类型"></a>温室气体类型</h3><p>CBAM 机制下的温室气体排放应符合第 2003/87/EC 号指令附件 1 覆盖的温室气体排放，即<strong>二氧化碳以及氧化亚氮和全氟化碳（如适用）</strong>， 不包括甲烷。</p>
 <h2 id="履约流程要求"><a href="#履约流程要求" class="headerlink" title="履约流程要求"></a>履约流程要求</h2><h4 id="过渡阶段"><a href="#过渡阶段" class="headerlink" title="过渡阶段"></a>过渡阶段</h4><p>CBAM法案设置了一段过渡期，时间从2023年10月1日开始到2025年12月31日，在过渡期内进口商仅需要在货物进入欧盟之前，履行报告义务，而无需缴纳相关费用。过渡期内报告义务流程如下。</p>
@@ -343,12 +345,10 @@
 <p>但是目前核算边界、数据源、排放因子都有待欧洲委员会给出详细的实施细则，在这些细则出台之前，很难评估核算工作难度。如果参照EU ETS规则开展工作，将会对国内生产企业和检测化验企业提出非常高的要求。</p>
 <h3 id="默认值"><a href="#默认值" class="headerlink" title="默认值"></a>默认值</h3><p>如果 CBAM 授权申报商无法准确确定实际排放量，则应当使用默认值。这些数值应有两个来源：</p>
 <ul>
-<li><p>在商品出口国每种商品的平均排放强度的基础上，向上浮动一定比例，浮动比例尚未确定。</p>
-</li>
-<li><p>如果出口国缺乏某种商品的可靠数据，则应将 EU ETS 内生产该类商品的最差设施的平均碳排放强度的 X%设为默认值，X数值也需要欧洲委员会出台细则确定。</p>
-<h3 id="电力特殊要求"><a href="#电力特殊要求" class="headerlink" title="电力特殊要求"></a>电力特殊要求</h3></li>
+<li>在商品出口国每种商品的平均排放强度的基础上，向上浮动一定比例，浮动比例尚未确定。</li>
+<li>如果出口国缺乏某种商品的可靠数据，则应将 EU ETS 内生产该类商品的最差设施的平均碳排放强度的 X%设为默认值，X数值也需要欧洲委员会出台细则确定。</li>
 </ul>
-<p>法案对商品中隐含电力碳排放进行了单独说明，<strong>除非有证据证明生产者与发电企业签订购电协议，并且购电量也满足一定要求</strong>，则可以使用实际的隐含排放量计算。否则均应使用默认值。<em>VPPA能否能满足要求？绿电绿证、光伏、风电绿证之间区别，电力市场是否可以购买可再生能源。</em> </p>
+<h3 id="电力特殊要求"><a href="#电力特殊要求" class="headerlink" title="电力特殊要求"></a>电力特殊要求</h3><p>法案对商品中隐含电力碳排放进行了单独说明，<strong>除非有证据证明生产者与发电企业签订购电协议，并且购电量也满足一定要求</strong>，则可以使用实际的隐含排放量计算。否则均应使用默认值。<em>VPPA能否能满足要求？绿电绿证、光伏、风电绿证之间区别，电力市场是否可以购买可再生能源。</em> </p>
 <p>关于默认值计算方式，虽然目前仍然不是很清晰，但是法案给出了计算依据：</p>
 <ol>
 <li>欧盟电网排放系数；</li>
@@ -360,18 +360,24 @@
 <h2 id="信息披露"><a href="#信息披露" class="headerlink" title="信息披露"></a>信息披露</h2><p>委员会每年都会公布上一年CBAM覆盖每种商品进口隐含的总排放量，但是不会披露具体进口商和运营商的信息。</p>
 <p>另外，法案允许经营者选择是否公开经营者名称、地址和联系方式，所以如非必要，尽量选择不公开，少说少错，在大数据时代，谁知道会不会有好事者发现企业的小动作。<strong>但是设施所在位置一定会对外披露</strong>。</p>
 <h2 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h2><p>隐含排放：商品生产过程直接排放和消耗电力产生的排放。<br>实际排放量：商品生产过程直接排放，以及<strong>基于实际电力生产数据计算的电力排放</strong>。<br>归因碳排放量：生产过程的系统边界内，报告期内由产生商品的生产过程引起的设施的排放量。<br>电力排放系数：是默认值，按二氧化碳排放量计，代表商品生产过程中消耗的电力的排放强度；</p>
-<h2 id="附件一-CBAM覆盖产品清单"><a href="#附件一-CBAM覆盖产品清单" class="headerlink" title="附件一 CBAM覆盖产品清单"></a>附件一 CBAM覆盖产品清单</h2><table>
+<h2 id="附件一-CBAM覆盖产品清单"><a href="#附件一-CBAM覆盖产品清单" class="headerlink" title="附件一 CBAM覆盖产品清单"></a>附件一 CBAM覆盖产品清单</h2><div class="table-container">
+<table>
 <thead>
 <tr>
-<th align="center">CN代码</th>
-<th align="right">商品名称</th>
-<th align="center">排放源</th>
-<th align="center">温室气体类型</th>
+<th style="text-align:center">CN代码</th>
+<th style="text-align:right">商品名称</th>
+<th style="text-align:center">排放源</th>
+<th style="text-align:center">温室气体类型</th>
 </tr>
 </thead>
+<tbody>
+<tr>
+<td style="text-align:center"></td>
+</tr>
+</tbody>
 </table>
-<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><p>[9]: <a target="_blank" rel="noopener" href="https://oeil.secure.europarl.europa.eu/oeil/popups/ficheprocedure.do?lang=en&amp;reference=2021/0214(COD)">https://oeil.secure.europarl.europa.eu/oeil/popups/ficheprocedure.do?lang=en&amp;reference=2021/0214(COD)</a> (2021/0214(COD)Carbon Border Adjustment Mechanism)<br>[10]:<a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/BkXuKG8i8IhFG02RsRIO-w">https://mp.weixin.qq.com/s/BkXuKG8i8IhFG02RsRIO-w</a></p>
-
+</div>
+<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2>
             </div>
             <hr>
             <div>
@@ -644,6 +650,45 @@
 
 
 
+
+  
+
+  
+    <!-- MathJax -->
+    <script>
+      MathJax = {
+        tex: {
+          inlineMath: [['$', '$'], ['\\(', '\\)']]
+        },
+        options: {
+          renderActions: {
+            findScript: [10, doc => {
+              document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+                const display = !!node.type.match(/; *mode=display/);
+                const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+                const text = document.createTextNode('');
+                node.parentNode.replaceChild(text, node);
+                math.start = { node: text, delim: '', n: 0 };
+                math.end = { node: text, delim: '', n: 0 };
+                doc.math.push(math);
+              });
+            }, '', false],
+            insertedScript: [200, () => {
+              document.querySelectorAll('mjx-container').forEach(node => {
+                let target = node.parentNode;
+                if (target.nodeName.toLowerCase() === 'li') {
+                  target.parentNode.classList.add('has-jax');
+                }
+              });
+            }, '', false]
+          }
+        }
+      };
+    </script>
+
+    <script async src="https://cdn.jsdelivr.net/npm/mathjax@3.1.2/es5/tex-svg.js" ></script>
+
+  
 
 
 

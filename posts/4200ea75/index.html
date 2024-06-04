@@ -82,7 +82,11 @@
   </script>
   <script  src="/js/utils.js" ></script>
   <script  src="/js/color-schema.js" ></script>
-<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
 </head>
 
 
@@ -274,76 +278,80 @@
 <p>电网排放因子不会在一年之间发生剧烈变化，生态环境部应该不至于算错，但是我对自己的计算结果也比较有信心。虽然生态环境部没有公开他的数据源以及核算方法，但是全国电网排放因子在大数上应该等于全国发电排放除以全国发电量，即使数据源不同也不应该会有10%的差别。</p>
 <p>因此，我将注意力转移到燃料排放因子上，参考了生态环境部发布的<a target="_blank" rel="noopener" href="https://www.mee.gov.cn/ywgz/ydqhbh/wsqtkz/202012/t20201229_815386.shtml">《2019年度减排项目中国区域电网基准线排放因子》</a>，排放因子改用IPCC（2006）缺省值 95% 置信区间下限。计算得到2019年全国电网排放因子为0.5901t CO2/MWh，这与生态环境部使用的2020年数据就比较接近了，差异的原因也在可解释范围内，可能是2020年电力清洁化工作导致电力排放因子降低，也可能是数据源选取有细微。</p>
 <p>两版计算过程我都放到下载地址，这两版计算文件只有燃料排放因子来源不同，数据来源详见计算表格下方的注释。其余数据（发电燃料用量、燃料地位发热量、发电量、电力调度量）来源均相同，为了方便比较我也将不同版本排放因子数据源整理如下。</p>
+<div class="table-container">
 <table>
 <thead>
 <tr>
-<th align="center">数据项</th>
-<th align="center">2010年数据源</th>
-<th align="center">2011年和2012年数据源</th>
-<th align="center">2019年数据源</th>
+<th style="text-align:center">数据项</th>
+<th style="text-align:center">2010年数据源</th>
+<th style="text-align:center">2011年和2012年数据源</th>
+<th style="text-align:center">2019年数据源</th>
 </tr>
 </thead>
-<tbody><tr>
-<td align="center">发电量</td>
-<td align="center">《中国电力年鉴》</td>
-<td align="center">《中国电力年鉴》</td>
-<td align="center">《中国电力年鉴》和《电力工业统计资料汇编》</td>
+<tbody>
+<tr>
+<td style="text-align:center">发电量</td>
+<td style="text-align:center">《中国电力年鉴》</td>
+<td style="text-align:center">《中国电力年鉴》</td>
+<td style="text-align:center">《中国电力年鉴》和《电力工业统计资料汇编》</td>
 </tr>
 <tr>
-<td align="center">用电量</td>
-<td align="center">《中国电力年鉴》</td>
-<td align="center">不涉及</td>
-<td align="center">《电力工业统计资料汇编》</td>
+<td style="text-align:center">用电量</td>
+<td style="text-align:center">《中国电力年鉴》</td>
+<td style="text-align:center">不涉及</td>
+<td style="text-align:center">《电力工业统计资料汇编》</td>
 </tr>
 <tr>
-<td align="center">跨省电量交换和进出口电量</td>
-<td align="center">《电力工业统计资料汇编》</td>
-<td align="center">《电力工业统计资料汇编》</td>
-<td align="center">《电力工业统计资料汇编》</td>
+<td style="text-align:center">跨省电量交换和进出口电量</td>
+<td style="text-align:center">《电力工业统计资料汇编》</td>
+<td style="text-align:center">《电力工业统计资料汇编》</td>
+<td style="text-align:center">《电力工业统计资料汇编》</td>
 </tr>
 <tr>
-<td align="center">跨省电量交换和进出口电量</td>
-<td align="center">《电力工业统计资料汇编》</td>
-<td align="center">《电力工业统计资料汇编》</td>
-<td align="center">《电力工业统计资料汇编》</td>
+<td style="text-align:center">跨省电量交换和进出口电量</td>
+<td style="text-align:center">《电力工业统计资料汇编》</td>
+<td style="text-align:center">《电力工业统计资料汇编》</td>
+<td style="text-align:center">《电力工业统计资料汇编》</td>
 </tr>
 <tr>
-<td align="center">发电燃料消费量</td>
-<td align="center">《中国能源统计年鉴》</td>
-<td align="center">《中国能源统计年鉴》</td>
-<td align="center">《中国能源统计年鉴》</td>
+<td style="text-align:center">发电燃料消费量</td>
+<td style="text-align:center">《中国能源统计年鉴》</td>
+<td style="text-align:center">《中国能源统计年鉴》</td>
+<td style="text-align:center">《中国能源统计年鉴》</td>
 </tr>
 <tr>
-<td align="center">发电燃料的平均低位发热值</td>
-<td align="center">《中国能源统计年鉴》</td>
-<td align="center">《中国能源统计年鉴》</td>
-<td align="center">《中国能源统计年鉴》</td>
+<td style="text-align:center">发电燃料的平均低位发热值</td>
+<td style="text-align:center">《中国能源统计年鉴》</td>
+<td style="text-align:center">《中国能源统计年鉴》</td>
+<td style="text-align:center">《中国能源统计年鉴》</td>
 </tr>
 <tr>
-<td align="center">单位热值含碳量</td>
-<td align="center">《省级温室气体清单编制指南（试行）》（2011年3月）、《2006 IPCC Guidelines for National Greenhouse Gas Inventories》Volume 2 Energy 第一章</td>
-<td align="center">《中国能源统计年鉴》</td>
-<td align="center">《2006 IPCC Guidelines for National Greenhouse Gas Inventories》Volume 2 Energy 第一章表 1.4</td>
+<td style="text-align:center">单位热值含碳量</td>
+<td style="text-align:center">《省级温室气体清单编制指南（试行）》（2011年3月）、《2006 IPCC Guidelines for National Greenhouse Gas Inventories》Volume 2 Energy 第一章</td>
+<td style="text-align:center">《中国能源统计年鉴》</td>
+<td style="text-align:center">《2006 IPCC Guidelines for National Greenhouse Gas Inventories》Volume 2 Energy 第一章表 1.4</td>
 </tr>
 <tr>
-<td align="center">碳氧化率</td>
-<td align="center">《省级温室气体清单编制指南（试行）》（2011年3月）、《2006 IPCC Guidelines for National Greenhouse Gas Inventories》Volume 2 Energy 第一章</td>
-<td align="center">《中国能源统计年鉴》</td>
-<td align="center">《2006 IPCC Guidelines for National Greenhouse Gas Inventories》Volume 2 Energy 第一章表 1.4</td>
+<td style="text-align:center">碳氧化率</td>
+<td style="text-align:center">《省级温室气体清单编制指南（试行）》（2011年3月）、《2006 IPCC Guidelines for National Greenhouse Gas Inventories》Volume 2 Energy 第一章</td>
+<td style="text-align:center">《中国能源统计年鉴》</td>
+<td style="text-align:center">《2006 IPCC Guidelines for National Greenhouse Gas Inventories》Volume 2 Energy 第一章表 1.4</td>
 </tr>
 <tr>
-<td align="center">燃料 CO2 排放因子</td>
-<td align="center">/</td>
-<td align="center">/</td>
-<td align="center">分别使用本地数据计算值和《2006 IPCC Guidelines for National Greenhouse Gas Inventories》Volume 2 Energy 第一章表 1.4 缺省值 95% 置信区间下限</td>
+<td style="text-align:center">燃料 CO2 排放因子</td>
+<td style="text-align:center">/</td>
+<td style="text-align:center">/</td>
+<td style="text-align:center">分别使用本地数据计算值和《2006 IPCC Guidelines for National Greenhouse Gas Inventories》Volume 2 Energy 第一章表 1.4 缺省值 95% 置信区间下限</td>
 </tr>
 <tr>
-<td align="center">其他国家的发电 CO2 平均排放因子</td>
-<td align="center">《CO2 Emissions from Fuel Combustion Highlights》</td>
-<td align="center">《CO2 Emissions from Fuel Combustion Highlights》</td>
-<td align="center">使用IRENA数据</td>
+<td style="text-align:center">其他国家的发电 CO2 平均排放因子</td>
+<td style="text-align:center">《CO2 Emissions from Fuel Combustion Highlights》</td>
+<td style="text-align:center">《CO2 Emissions from Fuel Combustion Highlights》</td>
+<td style="text-align:center">使用IRENA数据</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
+</div>
 <h2 id="问题与挑战"><a href="#问题与挑战" class="headerlink" title="问题与挑战"></a>问题与挑战</h2><p>计算过程中遇到了两个主要问题。</p>
 <p>首先是数据源问题，虽然《2010 年中国区域及省级电网平均二氧化碳排放因子》中说明了所有数据的来源。但是因为上次核算时间久远，一些文件格式发生了变化，比如《电力工业统计资料汇编》不在展示分省原煤热值，因此直接使用《中国能源年鉴2020》数据；《CO2 Emissions from Fuel Combustion Highlights》不在展示各国的电力排放因子，因此替换了数据源。</p>
 <p>上面问题虽然麻烦，花点时间还好解决。最让我头疼的还是各省之间的电力调度数据，首先存在各种专线，很难搞清楚电力到底送到那里了；</p>
@@ -352,16 +360,14 @@
 <p>最后，西藏也和周边省市存在电力调度，但是由于数据原因现行核算体系始终不包含西藏，会对周边省市尤其是四川有一些影响。</p>
 <p>除此之外，计算过程中也遇到互为基础数据问题。根据公式，计算某区域电网排放因子时需要考虑净调入该区域电力及其排放量，也就是说必须先搞清楚向A区域净调入电力的区域的电网平均排放因子才能计算A区域电网平均排放因子。有时会形成一个闭环，无法直接求解。例如华东电网从华中电网调入电力、华中电网从南方电网调入电力、南方电网从华东电网调入电力，三个电网排放因子互为基础数据。对此，我通过电量、电网平均排放因子和排放量之间的关系构建构建三元一次方程求解。<strong>如果各位有更好的办法，希望各位不吝赐教。</strong></p>
 <h2 id="计算结果"><a href="#计算结果" class="headerlink" title="计算结果"></a>计算结果</h2><p><img src="https://lizhening.github.io/img/2019EF.png" srcset="/img/loading.gif" alt="2019 年中国区域及省级电网平均二氧化碳排放因子"></p>
-<p>如果有能力，我会在之后的文章中更新关于结果的解读，使用IPCC缺省值计算过程<a href="https://lizhening.github.io/document/AverageCO2EmissionsFromChinasPowerGridIn2019-IPCC_EF.pdf">点此下载</a>；</p>
-
+<p>如果有能力，我会在之后的文章中更新关于结果的解读，使用IPCC缺省值计算过程<a href="https://lizhening.github.io/document/AverageCO2EmissionsFromChinasPowerGridIn2019-IPCC_EF.pdf">点此下载</a>；<br>
 
 	<div class="row">
     <embed src="https://lizhening.github.io/document/AverageCO2EmissionsFromChinasPowerGridIn2019-IPCC_EF.pdf" width="100%" height="550" type="application/pdf">
 	</div>
 
 
-
-
+</p>
 <p>燃料排放因子使用本地数据计算过程<a href="https://lizhening.github.io/document/AverageCO2EmissionsFromChinasPowerGridIn2019-Local_EF.pdf">点此下载</a></p>
 
 
@@ -642,6 +648,45 @@
 
 
 
+
+  
+
+  
+    <!-- MathJax -->
+    <script>
+      MathJax = {
+        tex: {
+          inlineMath: [['$', '$'], ['\\(', '\\)']]
+        },
+        options: {
+          renderActions: {
+            findScript: [10, doc => {
+              document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+                const display = !!node.type.match(/; *mode=display/);
+                const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+                const text = document.createTextNode('');
+                node.parentNode.replaceChild(text, node);
+                math.start = { node: text, delim: '', n: 0 };
+                math.end = { node: text, delim: '', n: 0 };
+                doc.math.push(math);
+              });
+            }, '', false],
+            insertedScript: [200, () => {
+              document.querySelectorAll('mjx-container').forEach(node => {
+                let target = node.parentNode;
+                if (target.nodeName.toLowerCase() === 'li') {
+                  target.parentNode.classList.add('has-jax');
+                }
+              });
+            }, '', false]
+          }
+        }
+      };
+    </script>
+
+    <script async src="https://cdn.jsdelivr.net/npm/mathjax@3.1.2/es5/tex-svg.js" ></script>
+
+  
 
 
 

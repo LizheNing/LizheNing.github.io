@@ -82,7 +82,11 @@
   </script>
   <script  src="/js/utils.js" ></script>
   <script  src="/js/color-schema.js" ></script>
-<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
 </head>
 
 
@@ -270,7 +274,7 @@
 </ul>
 <p>对于上文提到的自动驾驶汽车和轻型自动驾驶汽车，修正案中也做出了解释和定义。</p>
 <ol>
-<li>从外行角度来说，**在加州只有L3、L4和L5的车辆属于自动驾驶车辆(Autonomous vehicle)**。L3、L4和L5的定于需要参考SAE标准《道路机动车辆驾驶自动化系统相关术语的分类和定义》，我在网上看到CSDN博主“一个处女座的程序猿”的系列文章“<a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_41185868/article/details/115052371">Paper：自动驾驶领域SAE标准之《道路机动车辆驾驶自动化系统相关术语的分类和定义》官方英文原文翻译与解读</a>”，大家可以参考。</li>
+<li>从外行角度来说，<strong>在加州只有L3、L4和L5的车辆属于自动驾驶车辆(Autonomous vehicle)</strong>。L3、L4和L5的定于需要参考SAE标准《道路机动车辆驾驶自动化系统相关术语的分类和定义》，我在网上看到CSDN博主“一个处女座的程序猿”的系列文章“<a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_41185868/article/details/115052371">Paper：自动驾驶领域SAE标准之《道路机动车辆驾驶自动化系统相关术语的分类和定义》官方英文原文翻译与解读</a>”，大家可以参考。</li>
 <li>轻型自动驾驶汽车：净重小于8501磅，约合3.85吨的自动驾驶汽车。</li>
 </ol>
 <p>国内也有媒体对此进行报道，可以参考新浪科技文章<a target="_blank" rel="noopener" href="https://finance.sina.com.cn/tech/2021-09-26/doc-iktzscyx6355876.shtml">美国加州新法律：2030年所有轻型自动驾驶汽车须实现零排放</a>。</p>
@@ -547,6 +551,45 @@
 
 
 
+
+  
+
+  
+    <!-- MathJax -->
+    <script>
+      MathJax = {
+        tex: {
+          inlineMath: [['$', '$'], ['\\(', '\\)']]
+        },
+        options: {
+          renderActions: {
+            findScript: [10, doc => {
+              document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+                const display = !!node.type.match(/; *mode=display/);
+                const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+                const text = document.createTextNode('');
+                node.parentNode.replaceChild(text, node);
+                math.start = { node: text, delim: '', n: 0 };
+                math.end = { node: text, delim: '', n: 0 };
+                doc.math.push(math);
+              });
+            }, '', false],
+            insertedScript: [200, () => {
+              document.querySelectorAll('mjx-container').forEach(node => {
+                let target = node.parentNode;
+                if (target.nodeName.toLowerCase() === 'li') {
+                  target.parentNode.classList.add('has-jax');
+                }
+              });
+            }, '', false]
+          }
+        }
+      };
+    </script>
+
+    <script async src="https://cdn.jsdelivr.net/npm/mathjax@3.1.2/es5/tex-svg.js" ></script>
+
+  
 
 
 

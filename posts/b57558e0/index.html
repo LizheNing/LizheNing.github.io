@@ -82,7 +82,11 @@
   </script>
   <script  src="/js/utils.js" ></script>
   <script  src="/js/color-schema.js" ></script>
-<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
 </head>
 
 
@@ -280,46 +284,50 @@
 <li><a target="_blank" rel="noopener" href="https://seveninnovationbasedoc.readthedocs.io/zh_CN/latest/sharePoint/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E8%B5%84%E6%BA%90%E6%B1%87%E6%80%BB.html">别忘了博客的初心是记录</a>。</li>
 </ol>
 <h2 id="二、为什么要选择hexo-github-page搭建自己的博客（常见的博客框架对比）"><a href="#二、为什么要选择hexo-github-page搭建自己的博客（常见的博客框架对比）" class="headerlink" title="二、为什么要选择hexo+github page搭建自己的博客（常见的博客框架对比）"></a>二、为什么要选择hexo+github page搭建自己的博客（常见的博客框架对比）</h2><p>本段内容均来自网络，主要参考了<a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_45784655/article/details/104780438">计算机瞎鼓捣能手</a>和<a target="_blank" rel="noopener" href="https://lexcao.github.io/zh/posts/jekyll-hugo-hexo">曹历鑫</a>)文章。常见的博客框架见下表：</p>
+<div class="table-container">
 <table>
 <thead>
 <tr>
-<th align="center">框架</th>
-<th align="left">优点</th>
-<th align="left">缺点</th>
-<th align="left">主页</th>
+<th style="text-align:center">框架</th>
+<th style="text-align:left">优点</th>
+<th style="text-align:left">缺点</th>
+<th style="text-align:left">主页</th>
 </tr>
 </thead>
-<tbody><tr>
-<td align="center">Hexo</td>
-<td align="left">1.支持Markdowm; 2.开源且免费；3. 静态部署，操作简单；4.中文社区；5.中文支持；6.在 GitHub Pages 部署简单。</td>
-<td align="left"></td>
-<td align="left"><a target="_blank" rel="noopener" href="https://hexo.io/">https://hexo.io/</a></td>
+<tbody>
+<tr>
+<td style="text-align:center">Hexo</td>
+<td style="text-align:left">1.支持Markdowm; 2.开源且免费；3. 静态部署，操作简单；4.中文社区；5.中文支持；6.在 GitHub Pages 部署简单。</td>
+<td style="text-align:left"></td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://hexo.io/">https://hexo.io/</a></td>
 </tr>
 <tr>
-<td align="center">jekyll</td>
-<td align="left">1. 支持Markdowm;2. 开源且免费；3. 静态部署，操作简单；4. 社区成熟；5. 强大的 GitHub Pages 支持。</td>
-<td align="left">当网站内容不断增加后，构建速度会明显变慢。</td>
-<td align="left"><a target="_blank" rel="noopener" href="https://jekyllrb.com/">https://jekyllrb.com/</a></td>
+<td style="text-align:center">jekyll</td>
+<td style="text-align:left">1. 支持Markdowm;2. 开源且免费；3. 静态部署，操作简单；4. 社区成熟；5. 强大的 GitHub Pages 支持。</td>
+<td style="text-align:left">当网站内容不断增加后，构建速度会明显变慢。</td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://jekyllrb.com/">https://jekyllrb.com/</a></td>
 </tr>
 <tr>
-<td align="center">hugo</td>
-<td align="left">1. 免费开源；2.速度非常快，对构建速度做了优化；3.内置支持很多功能（动态 API 请求的内容、无限制内容类型、shortcakes， 一个灵活的 Markdown 替代、别名重定向）：4. 预制的 Go 模版和模式；5. 无需依赖（不用安装 Go，因为它是编译好的二进制）；</td>
-<td align="left">1. 主题使用 Go 模版，所以需要熟悉 Go；2.没有内置默认主题；3. 缺少扩展性和插件。</td>
-<td align="left"><a target="_blank" rel="noopener" href="https://www.gohugo.org/">https://www.gohugo.org/</a></td>
+<td style="text-align:center">hugo</td>
+<td style="text-align:left">1. 免费开源；2.速度非常快，对构建速度做了优化；3.内置支持很多功能（动态 API 请求的内容、无限制内容类型、shortcakes， 一个灵活的 Markdown 替代、别名重定向）：4. 预制的 Go 模版和模式；5. 无需依赖（不用安装 Go，因为它是编译好的二进制）；</td>
+<td style="text-align:left">1. 主题使用 Go 模版，所以需要熟悉 Go；2.没有内置默认主题；3. 缺少扩展性和插件。</td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://www.gohugo.org/">https://www.gohugo.org/</a></td>
 </tr>
 <tr>
-<td align="center"><a target="_blank" rel="noopener" href="https://bestzuo.cn/posts/newsoloblog.html">solo</a></td>
-<td align="left">1. 可以在动态博客和静态博客之间进行切换；2.具有一定活跃度的社区；3.图床免费；4.自带备份功能；5.可以导入 Hexo 博客的 Markdown 文章。</td>
-<td align="left">1.Docker 快速部署难以自定义博客内的样式因此只能采用 Java 源码的方式进行部署；2.博客刷新使用了 Pjax，很多时候自定义的js很容易失效了；3.评论的时候只能登录社区账号。</td>
-<td align="left"><a target="_blank" rel="noopener" href="https://solo.b3log.org/">https://solo.b3log.org/</a></td>
+<td style="text-align:center"><a target="_blank" rel="noopener" href="https://bestzuo.cn/posts/newsoloblog.html">solo</a></td>
+<td style="text-align:left">1. 可以在动态博客和静态博客之间进行切换；2.具有一定活跃度的社区；3.图床免费；4.自带备份功能；5.可以导入 Hexo 博客的 Markdown 文章。</td>
+<td style="text-align:left">1.Docker 快速部署难以自定义博客内的样式因此只能采用 Java 源码的方式进行部署；2.博客刷新使用了 Pjax，很多时候自定义的js很容易失效了；3.评论的时候只能登录社区账号。</td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://solo.b3log.org/">https://solo.b3log.org/</a></td>
 </tr>
 <tr>
-<td align="center"><a target="_blank" rel="noopener" href="https://www.php.cn/cms/wordpress/431822.html">wordpress</a></td>
-<td align="left">1.功能强大、扩展性强，这主要得益于其插件众多;2.对seo搜索引擎友好，收录也快，排名靠前;3.适合DIY;4.主题很多;5.备份和网站转移比较方便;6.有强大的社区支持。</td>
-<td align="left">1.只提供一个框架内容需要自己DIY；2.不能安装太多插件，否则会拖累网站速度和降低用户体验；3.服务器空间选择自由较小；4.不能适应大数据。5.只能“伪静态化”。</td>
-<td align="left"><a target="_blank" rel="noopener" href="https://wordpress.org/">https://wordpress.org/</a></td>
+<td style="text-align:center"><a target="_blank" rel="noopener" href="https://www.php.cn/cms/wordpress/431822.html">wordpress</a></td>
+<td style="text-align:left">1.功能强大、扩展性强，这主要得益于其插件众多;2.对seo搜索引擎友好，收录也快，排名靠前;3.适合DIY;4.主题很多;5.备份和网站转移比较方便;6.有强大的社区支持。</td>
+<td style="text-align:left">1.只提供一个框架内容需要自己DIY；2.不能安装太多插件，否则会拖累网站速度和降低用户体验；3.服务器空间选择自由较小；4.不能适应大数据。5.只能“伪静态化”。</td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://wordpress.org/">https://wordpress.org/</a></td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
+</div>
 <p>我本身不从事计算机与软件相关工作，因此很多问题还需要依靠社区来解决。作为第一个自建博客，希望选择一个上手简单一点的框架，综上，我选择使用hexo。搭建博客之初，并不能确定这个博客会持续更新多久，因此不想有太多的投入，所以选择在托管再Github Page。等到内容足够多或者想玩其他的内容的时候再购买服务器和网址。</p>
 <h2 id="三、本文涉及到的基础知识"><a href="#三、本文涉及到的基础知识" class="headerlink" title="三、本文涉及到的基础知识"></a>三、本文涉及到的基础知识</h2><ol>
 <li>下载并安装node.js;</li>
@@ -352,18 +360,14 @@
 <h3 id="配置Git，以使用SSH为例（可选）"><a href="#配置Git，以使用SSH为例（可选）" class="headerlink" title="配置Git，以使用SSH为例（可选）"></a>配置Git，以使用SSH为例（可选）</h3><p>理论上，使用Git把本地博文推送到到Github时，需要输入Github的用户名和密码用于校验。每次更新都要输入密码比较麻烦，可以通过设置SSH简化输入账户和密码这一步。操作如下：<br>注意：<em>这一步最好在第一次向Github中push内容之前操作。</em><br>配置过程大致分为六步：</p>
 <ol>
 <li><p>配置用户信息：</p>
-<p>git init<br>git config –global user.name ‘用户名’<br>git config –global user.email ‘用户邮箱’</p>
+<p>git init<br>git config —global user.name ‘用户名’<br>git config —global user.email ‘用户邮箱’</p>
 </li>
 <li><p>检查本机是否有SSH。打开Git，键入<code>cd ~/.ssh #检查本机已存在的ssh密钥</code>。如果显示结果为：<code>No such file or directory</code>，表明本机没有ssh密钥，可以新建。</p>
 </li>
-<li><p>执行生成公钥和私钥的命令：<code>ssh-keygen -t rsa -C &quot;邮件地址&quot;</code>出现如图字样，说明安装成功，再连续回车3次即可。<br><img src="https://i.loli.net/2021/03/10/wn53HGqsuvmjFSA.png" srcset="/img/loading.gif" alt="生成密码"></p>
-</li>
-<li><p>安装成功会显示密钥路径，根据路径找到文件，打开<code>id_rsa.pub</code>文件，将其内容全部复制。</p>
-</li>
-<li><p>打开github网站，点击“Setting”，如下图。在设置页面中选择“SSH and GPG keys”。点击“New SSH Key”粘贴上一步复制的内容到Key位置，Title随便输入。<br><img src="https://i.loli.net/2021/03/10/kOtu7KvSW1eR4d3.png" srcset="/img/loading.gif" alt="设置的位置"><br><img src="https://i.loli.net/2021/03/10/FXRGoQBaij3lKOJ.png" srcset="/img/loading.gif" alt="SSH key设置"></p>
-</li>
-<li><p>测试是否链接成功：在Git的Bash窗口，输入<code>ssh -T git@github.com</code>，如果出现<code>You&#39;ve successfully authenticated, but GitHub does not provide shell access.</code>则表明配置成功。</p>
-</li>
+<li>执行生成公钥和私钥的命令：<code>ssh-keygen -t rsa -C &quot;邮件地址&quot;</code>出现如图字样，说明安装成功，再连续回车3次即可。<br><img src="https://i.loli.net/2021/03/10/wn53HGqsuvmjFSA.png" srcset="/img/loading.gif" alt="生成密码"></li>
+<li>安装成功会显示密钥路径，根据路径找到文件，打开<code>id_rsa.pub</code>文件，将其内容全部复制。</li>
+<li>打开github网站，点击“Setting”，如下图。在设置页面中选择“SSH and GPG keys”。点击“New SSH Key”粘贴上一步复制的内容到Key位置，Title随便输入。<br><img src="https://i.loli.net/2021/03/10/kOtu7KvSW1eR4d3.png" srcset="/img/loading.gif" alt="设置的位置"><br><img src="https://i.loli.net/2021/03/10/FXRGoQBaij3lKOJ.png" srcset="/img/loading.gif" alt="SSH key设置"></li>
+<li>测试是否链接成功：在Git的Bash窗口，输入<code>ssh -T git@github.com</code>，如果出现<code>You&#39;ve successfully authenticated, but GitHub does not provide shell access.</code>则表明配置成功。</li>
 </ol>
 <p>本部分内容和部分图片参考“echo 曦”的<a target="_blank" rel="noopener" href="https://www.cnblogs.com/cxx8181602/p/11125539.html">git 配置 https和ssh 免密码登录 常用操作命令</a></p>
 <h2 id="四、Hexo博客的搭建"><a href="#四、Hexo博客的搭建" class="headerlink" title="四、Hexo博客的搭建"></a>四、Hexo博客的搭建</h2><p>搭建过程主要分为四步，hexo的安装、hexo的配置、文章发布和博客模板更换。</p>
@@ -392,7 +396,7 @@
 <h4 id="本地预览"><a href="#本地预览" class="headerlink" title="本地预览"></a>本地预览</h4><ol>
 <li>在Git中执行<code>hexo g</code>命令，该命令作用是将网站资源放在public目录下，相当于执行了hexo generate；</li>
 <li>在Git中执行<code>hexo s</code>命令，该命令作用是启动服务，本地预览，相当于执行了hexo server；</li>
-<li>打开<a target="_blank" rel="noopener" href="http://localhost:4000/">http://localhost:4000</a>，即可预览博客。</li>
+<li>打开<a target="_blank" rel="noopener" href="http://localhost:4000">http://localhost:4000</a>，即可预览博客。</li>
 </ol>
 <h4 id="远程发布"><a href="#远程发布" class="headerlink" title="远程发布"></a>远程发布</h4><ol>
 <li>在Git中执行<code>hexo g</code>命令。</li>
@@ -689,6 +693,45 @@
 
 
 
+
+  
+
+  
+    <!-- MathJax -->
+    <script>
+      MathJax = {
+        tex: {
+          inlineMath: [['$', '$'], ['\\(', '\\)']]
+        },
+        options: {
+          renderActions: {
+            findScript: [10, doc => {
+              document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+                const display = !!node.type.match(/; *mode=display/);
+                const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+                const text = document.createTextNode('');
+                node.parentNode.replaceChild(text, node);
+                math.start = { node: text, delim: '', n: 0 };
+                math.end = { node: text, delim: '', n: 0 };
+                doc.math.push(math);
+              });
+            }, '', false],
+            insertedScript: [200, () => {
+              document.querySelectorAll('mjx-container').forEach(node => {
+                let target = node.parentNode;
+                if (target.nodeName.toLowerCase() === 'li') {
+                  target.parentNode.classList.add('has-jax');
+                }
+              });
+            }, '', false]
+          }
+        }
+      };
+    </script>
+
+    <script async src="https://cdn.jsdelivr.net/npm/mathjax@3.1.2/es5/tex-svg.js" ></script>
+
+  
 
 
 
