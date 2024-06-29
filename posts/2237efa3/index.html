@@ -1,0 +1,747 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=&#34;auto&#34;>
+
+
+
+<head>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-9HJ2PMCHPY"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-9HJ2PMCHPY');
+</script>
+<meta name="msvalidate.01" content="FA75E899632FACA1BA9E71D03A1FD8EC" />
+<script src="https://utteranc.es/client.js"
+        repo="LizheNing/LizheNing.github.io"
+        issue-term="pathname"
+        label="Comment"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script>  
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/tag-icon.png">
+  <link rel="icon" href="/img/tag-icon.png">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+  
+  <meta name="theme-color" content="#2f4154">
+  
+    <meta name="description" content="介绍ISO 14068-1标准的要点，以及如何实现碳中和认证。">
+  
+  <meta name="author" content="John Doe">
+  <meta name="keywords" content="">
+  
+  <title>ISO14068-1碳中和标准解读 - Hexo</title>
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.4.0/styles/github-gist.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+  
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"lizhening.github.io","root":"/","version":"1.8.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":"§"},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"onlypost":false},"web_analytics":{"enable":true,"baidu":null,"google":"UA-208524185-1","gtag":"G-9HJ2PMCHPY","tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}}};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+</head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>Lizhe's Blog</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/links/">
+                <i class="iconfont icon-link-fill"></i>
+                友链
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;</a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" href="javascript:">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner" id="banner" parallax=true
+         style="background: url('/img/default.png') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="ISO14068-1碳中和标准解读">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2024-06-26 22:12" pubdate>
+        2024年6月26日 晚上
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      3.2k 字
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      34
+       分钟
+    </span>
+  
+
+  
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">ISO14068-1碳中和标准解读</h1>
+            
+            <div class="markdown-body">
+              <blockquote>
+<p>在ISO 14068-1发布以前，碳中和声明和标签通常基于碳足迹量化，但是对于如何从量化转向管理，实现碳中和的标准化方法，国际未达成共识。 因此，各个组织基于自身理解来定义碳中和声明的要求，这产生了许多没有可比性、可信度不一的碳中和标签。ISO将标准描述为“描述做某事的最佳方式的公式”。几乎可以肯定的是，<strong>ISO 14068标准将成为评判碳中和声明和标签的新基准</strong>。达不到该标准的要求会降低声明的可信度，并导致漂绿或误导性营销的指控。<sup><a href="#fn_1" id="reffn_1">1</a></sup>。</p>
+</blockquote>
+<h2 id="什么是碳中和"><a href="#什么是碳中和" class="headerlink" title="什么是碳中和"></a>什么是碳中和</h2><p>在介绍标准具体要求之前，有必要理清各种关于碳中和的概念。自从中国政府2020年提出“30·60”双碳目标之后，“碳中和”、“气候中和”、“净零排放”等概念频繁出现，在一定程度上给公众理解、具体行动方案制定造成困扰。<sup><a href="#fn_2" id="reffn_2">2</a></sup>根据政府间气候变化专门委员会（IPCC）《全球升温1.5℃特别报告》术语界定：</p>
+<ul>
+<li><strong>气候中和（Climate Neutrality）</strong></li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs word">人类活动对气候系统没有净影响的状态。要实现这种状态需要平衡残余排放与排放（二氧化碳）移除以及考虑人类活动的区域或局地生物地球物理效应，例如人类活动可影响地表反照率或局地气候。<br></code></pre></td></tr></table></figure>
+<ul>
+<li><strong>净零排放</strong></li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs word">规定时期内人为移除抵消排入大气的温室气体人为排量。如果涉及多种温室气体，则净零排放的量化取决于选定用于比较不同气体排放量的气候指标（例如全球变暖潜势、全球温度变化潜势等以及选择的时间范围）。<br></code></pre></td></tr></table></figure>
+<ul>
+<li><strong>广义碳中和</strong></li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs word">广义碳中和使用“碳”一词来指代所有温室气体，因此广义碳中和与净零排放含义相同<br></code></pre></td></tr></table></figure>
+<ul>
+<li><strong>狭义碳中和</strong></li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs word">在规定时期内，人为CO2移除在全球范围抵消人为CO2排放。CO2净零排放也称之为碳中和。<br></code></pre></td></tr></table></figure>
+<p><img src="2024-06-29-ISO14068-1碳中和标准解读/图1碳中和概念辨析.png" srcset="/img/loading.gif" alt="图1碳中和概念辨析"><br>目前中国政府提出的2060碳中和目标<sup><a href="#fn_3" id="reffn_3">3</a></sup>、ISO 14068-1中所提出的碳中和均是广义碳中和，涵盖所有温室气体。</p>
+<h2 id="ISO-14068-1标准要求和要点"><a href="#ISO-14068-1标准要求和要点" class="headerlink" title="ISO 14068-1标准要求和要点"></a>ISO 14068-1标准要求和要点</h2><h3 id="标准适用对象"><a href="#标准适用对象" class="headerlink" title="标准适用对象"></a>标准适用对象</h3><p>ISO14068-1:2023标准（以下简称“标准”）提供了标准化的碳中和实现路径，可以用来<strong>指导组织（包括公司、地方政府和金融机构）和产品（商品或服务，包括建筑和活动），但不适用于区域的碳中和（如地区、国家、州或城市），包括在联合国气候变化框架公约（UNFCCC）下签约方按照公约汇报所取得的成果。</strong></p>
+<h3 id="如何实现碳中和"><a href="#如何实现碳中和" class="headerlink" title="如何实现碳中和"></a>如何实现碳中和</h3><p>标准为实现碳中和制定了一套标准化的框架，主体首先应承诺实现碳中和并持续维护该承诺，并明确承诺的主体和边界。按照ISO 14064-1（对于组织）或ISO 14067（对于产品和活动）量化边界内GHG排放和清除量。基于基准情况开发、实施、维护详尽的碳中和管理计划（Carbon Neutral Management，CNM Plan）。按照CNM Plan策划、实施各项措施，实现碳减排、碳清除，对于本周期内无法减排或者清除的碳排放，使用碳信用抵消剩余的碳足迹。对于每个周期的碳中和情况，编制并公开报告，通过第三方审核后，做出年度碳中和的声明。<br><img src="2024-06-29-ISO14068-1碳中和标准解读/图2碳中和实现路径.png" srcset="/img/loading.gif" alt="图2碳中和实现路径"></p>
+<p><strong>标准的核心是建立一个全面的碳中和管理计划，根据碳中和管理计划，每个周期开展减排、清除、抵消等工作，而不是仅仅将碳中和作为一项年度任务</strong>。这是相对于PAS 2060标准的显著的改善，碳中和是一项长久的、稳定的承诺，而非事务性、临时的认证。</p>
+<h3 id="标准对碳中和管理计划的要求"><a href="#标准对碳中和管理计划的要求" class="headerlink" title="标准对碳中和管理计划的要求"></a>标准对碳中和管理计划的要求</h3><p>标准提供了一套相对完整的碳中和管理计划框架，包含碳中和路径要求、行动优先级、减排雄心的指引以及具体的文件要求。帮助企业设定合理、具有雄心的减排目标，逐步减少碳足迹并最终实现碳中和。</p>
+<p><strong>设置碳中和路径是CNM的核心，是标准核心中的核心</strong>。标准将路径分为短期（5~10年）和长期（至少20年）目标，每个阶段都路径都应基于普遍接受的科学方法，行业常用的碳中和路径方法学包括国际气候变化专门委员会（IPCC）、国际能源署（IEA）、评估低碳转型方法（ACT）和科学目标倡议（SBTi）等。<br><img src="2024-06-29-ISO14068-1碳中和标准解读/图3碳中和管理计划层次.png" srcset="/img/loading.gif" alt="图3碳中和管理计划层次"></p>
+<p>碳中和路径的最终成果是形成一个类似下图的减排路径。标准还关注了减排路径过程中的碳隧道视野问题<sup><a href="#fn_8" id="reffn_8">8</a></sup>，防止对环境和社会产生不利影响，以牺牲其他环境方面为代价降低碳排放。<br><img src="2024-06-29-ISO14068-1碳中和标准解读/图4碳中和路径.png" srcset="/img/loading.gif" alt="图4碳中和路径"></p>
+<h3 id="抵消产品的要求"><a href="#抵消产品的要求" class="headerlink" title="抵消产品的要求"></a>抵消产品的要求</h3><p><strong>ISO 14068允许使用碳信用实现碳中和</strong>，但是提出了碳中和的层次结构——碳减排优先于碳清除、优先于碳抵消，也提到了碳信用的退出路线：</p>
+<ul>
+<li>在早期阶段可以使用碳减排信用和碳清除信用。</li>
+<li>在后期阶段，不使用碳信用，如果技术无法实现，则只能使用碳清除信用。</li>
+</ul>
+<p>标准也对用于碳中和的碳信用提出具体要求，可以分为基础要求和时限要求两类：</p>
+<ul>
+<li>基础要求：真实性、额外性、可测量、永久性、经认证，这都是些减排项目基础要求。</li>
+<li>时限要求：<ul>
+<li>不超过 5 年的碳信用；<em>这里面其实有个问题，怎么定义5年以内的碳信用，是5年以内签发的碳信用，还是5年以内产生的碳信用。如果是前者那么范围就会非常大，但是从标准制定者的意图来看，应该更倾向后者，持续鼓励最新的减排项目，这在关于绿证的条款中有透露。</em></li>
+<li>不迟于报告期结束后 12 个月内注销；</li>
+<li>必须为“事后碳信用”，代表已经发生的温室气体减排量或温室气体清除量的碳信用。</li>
+</ul>
+</li>
+</ul>
+<p>另外，标准接受基于市场方法量化碳排放和制定碳中和管理计划，这表示标准接受绿电或绿证抵消。同样标准也提出了相对明确的规定，主体上参考了RE100的要求：</p>
+<ul>
+<li>传递与电力交付单位相关的信息；</li>
+<li>以唯一的声明来保证，以避免在主体边界内重复计算温室气体排放量和温室气体清除量；</li>
+<li>由报告实体或代表报告实体跟踪和赎回、取消或注销；</li>
+<li>尽可能贴近合同文书适用的时期，并包含相应的时间跨度；</li>
+<li>是在国内生产的，如果电网是互联的，则是在消费所在地的市场边界内生产的。</li>
+</ul>
+<p>为促进可再生能源能力的发展，<strong>各实体应按下列顺序采购电力</strong>：</p>
+<ul>
+<li>自发电或具有直接线路连接的实体间实物购电协议；</li>
+<li>来自可再生能源的金融购电协议；</li>
+<li>来自不超过15年发电设施的购电合同工具。</li>
+</ul>
+<h2 id="标准影响和建议"><a href="#标准影响和建议" class="headerlink" title="标准影响和建议"></a>标准影响和建议</h2><h3 id="逐步考虑价值链排放"><a href="#逐步考虑价值链排放" class="headerlink" title="逐步考虑价值链排放"></a>逐步考虑价值链排放</h3><p>如果说PAS 2060是支持和鼓励能够实现运营碳中和的企业，那ISO 14068-1则是为价值链减排而生的。价值链是标准的核心原则之一，碳中和需要包括整个价值链内的温室气体排放和温室气体清除，包括上游和下游过程。<br><img src="2024-06-29-ISO14068-1碳中和标准解读/图5价值链.png" srcset="/img/loading.gif" alt="图5价值链"><br>另外标准用了一章来阐述如何能够体现减排的雄心，但其中最核心的一点就是尽可能扩大边界：</p>
+<ul>
+<li>边界尽量覆盖所有的温室气体排放源；</li>
+<li>边界包含整个组织，而非一个工厂；</li>
+<li>边界覆盖所有产品，而非某个产品；</li>
+<li>边界涵盖整个价值链。</li>
+</ul>
+<p>按照SBTi的要求，具有雄心的减排规划需要至少覆盖40%范围三排放，且需要包含产品使用。虽然标准没有给出量化指标的要求，但这个趋势肯定会持续。所以注重</p>
+<p>但是这里面也有很多问题，比如：</p>
+<ul>
+<li>现在就要考虑所有价值链排放吗？附录B.1备注中列出很多排放，不论从技术上还是量化方法上，目前都没有办法准确量化完整的价值链排放，这应该是一个循序渐进的过程，根据环境变化，改变核算逐步考虑价值链碳排放。</li>
+<li>实现碳中和，必须要抵消价值链排放吗？</li>
+</ul>
+<h3 id="谨慎使用“碳中和产品”用于宣传"><a href="#谨慎使用“碳中和产品”用于宣传" class="headerlink" title="谨慎使用“碳中和产品”用于宣传"></a>谨慎使用“碳中和产品”用于宣传</h3><p>虽然标准明确可以用于“产品碳中和”认证，也允许针对产品的<strong>部分生命周期</strong>开展碳中和认证。这在很大程度上降低了产品碳中和的难度，但是这也会带来过度宣传和“漂绿”的风险。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs word">漂绿：一种欺骗性营销手段，旨在让人们相信某个组织的产品、目标和政策比实际情况更环保。<br></code></pre></td></tr></table></figure>
+<p>近年来西方发达国家严厉打击“漂绿”行为，欧盟在2024年3月通过了《赋权消费者实现绿色转型指令》<sup><a href="#fn_5" id="reffn_5">5</a></sup>，<strong>禁止基于排放抵消计划，从而声称产品对环境具有中性、减少或积极的影响的宣传，如产品的“碳中和”声明</strong>。美国联邦贸易委员会也正在更新其绿色指南，限制“生态”和“环保”等术语的使用。更多有关漂绿的案例可以参考中伦的这篇推文<sup><a href="#fn_10" id="reffn_10">10</a></sup>。</p>
+<p>目前来看通过ISO认证，公司能够为产品的碳中和声明提供基于科学的验证，但由于不同组织对“碳中和”概念认知存在争议，相关概念界定较为模糊，以及不同地区管制要求，<strong>企业需要谨慎使用“产品碳中和”用于宣传。</strong></p>
+<h3 id="重视碳信用的质量"><a href="#重视碳信用的质量" class="headerlink" title="重视碳信用的质量"></a>重视碳信用的质量</h3><p>对于绝大多数企业和产品，使用碳信用实现碳中和对是经济可行、甚至是唯一可行的方案。但是，是否应该使用碳信用、以及使用什么类型的碳信用目前仍然有非常大的争议。SBTi就因为允许企业使用“环境属性证书” （包括碳信用）来减少范围3排放就引起非常大的争议。</p>
+<p><strong>目前核心争议点仍在“漂绿”风险</strong>，近年爆出多起减排项目黑幕，这不仅严重打击了公众对碳信用的信心，还影响了那些购买碳信用的企业，他们因为没有谨慎和仔细审核碳信用来源，夸大项目的环境收益而受到批评。</p>
+<p>另外，随着CDM停止，很多CDM时代遗存的减排量正在大量进入市场，这类“上古”项目早已回收投资成本，用一个非常低的碳信用价格赚一点额外收益。与之相对的是，目前新兴的减排项目仍需要大量的资金资助，必须设置较高的碳信用才能保障项目运营。</p>
+<p>企业是否应该选择什么标准的碳信用目前没有行业的规范，但是对于负责任的企业，应该有一套自身的标准和立场，<strong>帮助企业在达成碳中和的过程中，慎重选择符合要求的碳信用进行抵销</strong>。<sup><a href="#fn_6" id="reffn_6">6</a></sup>这方面可以参考沃尔沃，他们有一系列立场文件<sup><a href="#fn_11" id="reffn_11">11</a></sup>。</p>
+<h2 id="参考文件"><a href="#参考文件" class="headerlink" title="参考文件"></a>参考文件</h2><blockquote id="fn_1">
+<sup>1</sup>. <a target="_blank" rel="noopener" href="https://www.iso.org/standard/43279.html">https://www.iso.org/standard/43279.html</a><a href="#reffn_1" title="Jump back to footnote [1] in the text."> &#8617;</a>
+</blockquote>
+<blockquote id="fn_2">
+<sup>2</sup>. <a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/evFFpBA-VF90qpC982Mrug">https://mp.weixin.qq.com/s/evFFpBA-VF90qpC982Mrug</a><a href="#reffn_2" title="Jump back to footnote [2] in the text."> &#8617;</a>
+</blockquote>
+<blockquote id="fn_3">
+<sup>3</sup>. <a target="_blank" rel="noopener" href="https://www.eco.gov.cn/news_info/51201.html">https://www.eco.gov.cn/news_info/51201.html</a><a href="#reffn_3" title="Jump back to footnote [3] in the text."> &#8617;</a>
+</blockquote>
+<blockquote id="fn_4">
+<sup>4</sup>. <a target="_blank" rel="noopener" href="https://www.bsigroup.com/zh-TW/blog/esg-blog/trends-in-net-zero-emissions-and-carbon-neutrality/">https://www.bsigroup.com/zh-TW/blog/esg-blog/trends-in-net-zero-emissions-and-carbon-neutrality/</a><a href="#reffn_4" title="Jump back to footnote [4] in the text."> &#8617;</a>
+</blockquote>
+<blockquote id="fn_5">
+<sup>5</sup>. <a target="_blank" rel="noopener" href="https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=OJ:L_202400825">https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=OJ:L_202400825</a><a href="#reffn_5" title="Jump back to footnote [5] in the text."> &#8617;</a>
+</blockquote>
+<blockquote id="fn_6">
+<sup>6</sup>. <a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/H5vGhXR3OHWxRjsqiMGq3g">https://mp.weixin.qq.com/s/H5vGhXR3OHWxRjsqiMGq3g</a><a href="#reffn_6" title="Jump back to footnote [6] in the text."> &#8617;</a>
+</blockquote>
+<blockquote id="fn_7">
+<sup>7</sup>. <a target="_blank" rel="noopener" href="https://www.bsigroup.com/zh-TW/PAS-2060-Carbon-Neutral/">https://www.bsigroup.com/zh-TW/PAS-2060-Carbon-Neutral/</a><a href="#reffn_7" title="Jump back to footnote [7] in the text."> &#8617;</a>
+</blockquote>
+<blockquote id="fn_8">
+<sup>8</sup>. <a target="_blank" rel="noopener" href="https://www.globalreporting.org/news/news-center/cop26-avoiding-carbon-tunnel-vision/">https://www.globalreporting.org/news/news-center/cop26-avoiding-carbon-tunnel-vision/</a><a href="#reffn_8" title="Jump back to footnote [8] in the text."> &#8617;</a>
+</blockquote>
+<blockquote id="fn_10">
+<sup>10</sup>. <a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/-A5_OqJWt0CVVOr-D7EEQA">https://mp.weixin.qq.com/s/-A5_OqJWt0CVVOr-D7EEQA</a><a href="#reffn_10" title="Jump back to footnote [10] in the text."> &#8617;</a>
+</blockquote>
+<blockquote id="fn_11">
+<sup>11</sup>. <a target="_blank" rel="noopener" href="https://www.volvocars.com.cn/zh-cn/v/sustainability/downloads">https://www.volvocars.com.cn/zh-cn/v/sustainability/downloads</a><a href="#reffn_11" title="Jump back to footnote [11] in the text."> &#8617;</a>
+</blockquote>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/%E5%BA%94%E5%AF%B9%E6%B0%94%E5%80%99%E5%8F%98%E5%8C%96/">应对气候变化</a>
+                    
+                      <a class="hover-with-bg" href="/categories/%E5%BA%94%E5%AF%B9%E6%B0%94%E5%80%99%E5%8F%98%E5%8C%96/%E6%B0%94%E5%80%99%E9%80%82%E5%BA%94/">气候适应</a>
+                    
+                      <a class="hover-with-bg" href="/categories/%E5%BA%94%E5%AF%B9%E6%B0%94%E5%80%99%E5%8F%98%E5%8C%96/%E6%B0%94%E5%80%99%E9%80%82%E5%BA%94/%E8%AE%A4%E8%AF%81%E6%A0%87%E5%87%86/">认证标准</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/%E7%A2%B3%E4%B8%AD%E5%92%8C/">碳中和</a>
+                    
+                      <a class="hover-with-bg" href="/tags/%E7%A2%B3%E4%B8%AD%E5%92%8C%E6%A0%87%E5%87%86/">碳中和标准</a>
+                    
+                      <a class="hover-with-bg" href="/tags/%E8%AE%A4%E8%AF%81/">认证</a>
+                    
+                      <a class="hover-with-bg" href="/tags/%E9%9B%B6%E7%A2%B3/">零碳</a>
+                    
+                      <a class="hover-with-bg" href="/tags/%E7%A2%B3%E4%B8%AD%E5%92%8C%E8%B7%AF%E5%BE%84/">碳中和路径</a>
+                    
+                      <a class="hover-with-bg" href="/tags/ISO-14068/">ISO 14068</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">
+                  
+                    本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！
+                  
+                </p>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/posts/60710a16/">
+                        <span class="hidden-mobile">欧盟电池法下碳足迹计算方法综述</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+              <!-- Comments -->
+              <article class="comments" id="comments">
+                
+                  
+                
+                
+  <script type="text/javascript">
+    Fluid.utils.waitElementVisible('comments', function() {
+      var light = 'github-light';
+      var dark = 'github-dark';
+      var schema = document.documentElement.getAttribute('data-user-color-scheme');
+      if (schema === 'dark') {
+        schema = dark;
+      } else {
+        schema = light;
+      }
+      window.UtterancesThemeLight = light;
+      window.UtterancesThemeDark = dark;
+      var s = document.createElement('script');
+      s.setAttribute('src', 'https://utteranc.es/client.js');
+      s.setAttribute('repo', 'LizheNing/LizheNing.github.io');
+      s.setAttribute('issue-term', 'pathname');
+      
+      s.setAttribute('label', 'utterances');
+      
+      s.setAttribute('theme', schema);
+      s.setAttribute('crossorigin', 'anonymous');
+      document.getElementById('comments').appendChild(s);
+    })
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+              </article>
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"> <img src="https://img.shields.io/badge/Powered-Hexo-{blue}" srcset="/img/loading.gif"></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"> <img src="https://img.shields.io/badge/Theme-Fluid-{red}" srcset="/img/loading.gif"></a> 
+  </div>
+  
+  <div class="statistics">
+    
+    
+
+    
+      
+        <!-- 不蒜子统计PV -->
+        <span id="busuanzi_container_site_pv" style="display: none">
+            总访问量 
+            <span id="busuanzi_value_site_pv"></span>
+             次
+          </span>
+      
+      
+        <!-- 不蒜子统计UV -->
+        <span id="busuanzi_container_site_uv" style="display: none">
+            总访客数 
+            <span id="busuanzi_value_site_uv"></span>
+             人
+          </span>
+      
+    
+  </div>
+
+
+  
+
+  
+</footer>
+
+<!-- SCRIPTS -->
+
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/debouncer.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  
+    <script  src="/js/lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/tocbot@4.12.0/dist/tocbot.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4.3.0/anchor.min.js" ></script>
+
+
+
+  <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js" ></script>
+
+
+
+  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
+
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+      typing(title)
+      
+    })(window, document);
+  </script>
+
+
+
+  <script  src="/js/local-search.js" ></script>
+  <script>
+    (function () {
+      var path = "/local-search.xml";
+      $('#local-search-input').on('click', function() {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      });
+      $('#modalSearch').on('shown.bs.modal', function() {
+        $('#local-search-input').focus();
+      });
+    })()
+  </script>
+
+
+
+
+
+  
+
+  
+    <!-- MathJax -->
+    <script>
+      MathJax = {
+        tex: {
+          inlineMath: [['$', '$'], ['\\(', '\\)']]
+        },
+        options: {
+          renderActions: {
+            findScript: [10, doc => {
+              document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+                const display = !!node.type.match(/; *mode=display/);
+                const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+                const text = document.createTextNode('');
+                node.parentNode.replaceChild(text, node);
+                math.start = { node: text, delim: '', n: 0 };
+                math.end = { node: text, delim: '', n: 0 };
+                doc.math.push(math);
+              });
+            }, '', false],
+            insertedScript: [200, () => {
+              document.querySelectorAll('mjx-container').forEach(node => {
+                let target = node.parentNode;
+                if (target.nodeName.toLowerCase() === 'li') {
+                  target.parentNode.classList.add('has-jax');
+                }
+              });
+            }, '', false]
+          }
+        }
+      };
+    </script>
+
+    <script async src="https://cdn.jsdelivr.net/npm/mathjax@3.1.2/es5/tex-svg.js" ></script>
+
+  
+
+
+
+
+
+
+
+
+  
+
+  
+    <!-- Google Analytics -->
+    <script defer>
+      window.ga = window.ga || function () { (ga.q = ga.q || []).push(arguments) };
+      ga.l = +new Date;
+      ga('create', 'UA-208524185-1', 'auto');
+      ga('send', 'pageview');
+    </script>
+    <script async src='https://www.google-analytics.com/analytics.js'></script>
+  
+
+  
+    <!-- Google gtag.js -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-9HJ2PMCHPY"></script>
+    <script defer>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-9HJ2PMCHPY');
+    </script>
+  
+
+  
+
+  
+
+  
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+<!-- 不蒜子访问量统计
+  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
+  </script> 
+
+  <span id="busuanzi_container_site_uv">
+    本站访客数<span id="busuanzi_value_site_uv"></span>人次
+  </span>
+
+  <span id="busuanzi_container_page_pv">
+    本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+  </span>
+-->
+
+</body>
+</html>
