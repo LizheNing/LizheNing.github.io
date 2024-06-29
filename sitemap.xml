@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://lizhening.github.io/posts/b6f16158/</loc>
+    
+    <lastmod>2024-06-29</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://lizhening.github.io/posts/2237efa3/</loc>
     
     <lastmod>2024-06-29</lastmod>
@@ -13,7 +22,7 @@
   <url>
     <loc>https://lizhening.github.io/posts/60710a16/</loc>
     
-    <lastmod>2024-06-04</lastmod>
+    <lastmod>2024-06-29</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -867,6 +876,20 @@
   
   <url>
     <loc>https://lizhening.github.io/tags/ISO-14068/</loc>
+    <lastmod>2024-06-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://lizhening.github.io/tags/%E9%9B%B6%E7%A2%B3%E5%B7%A5%E5%8E%82/</loc>
+    <lastmod>2024-06-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://lizhening.github.io/tags/%E5%9B%A2%E4%BD%93%E6%A0%87%E5%87%86/</loc>
     <lastmod>2024-06-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
