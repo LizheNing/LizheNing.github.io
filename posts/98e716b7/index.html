@@ -35,12 +35,12 @@
   
   <meta name="theme-color" content="#2f4154">
   
-    <meta name="description" content="使用Emissions Database for Global Atmospheric Research（EDGAR）2018年全球碳排放数据，制成全球碳排放地图。">
+    <meta name="description" content="介绍造成甲烷GWP数值差异的原因和使用建议.">
   
   <meta name="author" content="John Doe">
   <meta name="keywords" content="">
   
-  <title>2018年全球温室气体排放地图 - Hexo</title>
+  <title>化石甲烷与非化石甲烷GWP差异和应用 - Hexo</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" />
 
@@ -202,7 +202,7 @@
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="2018年全球温室气体排放地图">
+            <span class="h2" id="subtitle" title="化石甲烷与非化石甲烷GWP差异和应用">
               
             </span>
 
@@ -212,8 +212,8 @@
   
     <span class="post-meta">
       <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-      <time datetime="2022-06-09 22:41" pubdate>
-        2022年6月9日 晚上
+      <time datetime="2025-08-04 23:24" pubdate>
+        2025年8月4日 晚上
       </time>
     </span>
   
@@ -224,7 +224,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      861 字
+      1.2k 字
     </span>
   
 
@@ -234,7 +234,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      9
+      13
        分钟
     </span>
   
@@ -264,26 +264,69 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">2018年全球温室气体排放地图</h1>
+            <h1 style="display: none">化石甲烷与非化石甲烷GWP差异和应用</h1>
             
             <div class="markdown-body">
               <blockquote>
-<p>对可视化有兴趣，暂时没有看到全球碳排放的地图，所以想自己搞一个。</p>
+<p>AR6报告为甲烷提供了三种不同的 GWP 值和六个不同的标签，来描述不同来源的甲烷。这三个值分别是什么含义，应该用在什么场景一直深深的困扰着我。今天发现<a target="_blank" rel="noopener" href="https://ghginstitute.org/2024/10/17/which-methane-gwp-value-do-i-use/">GHG Management Institute</a>的一篇博文，读完犹如醍醐灌顶，因此总结下来备忘。</p>
 </blockquote>
-<h2 id="数据源"><a href="#数据源" class="headerlink" title="数据源"></a>数据源</h2><p>温室气体排放数据来自于欧盟委员会的<a target="_blank" rel="noopener" href="https://edgar.jrc.ec.europa.eu/">Emissions Database for Global Atmospheric Research（EDGAR）</a>。我用的是 EDGAR v6.0，它提供了每个部门和国家的三种主要温室气体（CO2、CH4、N2O）和氟化气体的排放量。由于网络问题，我始终没法下载到氟化气体的排放量表格，所以可视化成果中只展示 CO2、CH4、N2O 排放。</p>
-<p><a target="_blank" rel="noopener" href="https://edgar.jrc.ec.europa.eu/dataset_ghg60#p1">EDGAR v6.0 数据主页</a>详细介绍了每项数据的来源：</p>
-<p><code>能源部门活动数据主要基于来自 IEA (2019) World Energy Balances ，经欧盟委员会联合研究中心修改；农业部门活动数据主要来自粮农组织（FAO）。美国地质调查局 (USGS)、国际化肥协会 (IFA)、气体燃烧减少伙伴关系 (GGFR)/美国国家海洋和大气管理局 (NOAA)、UNFCCC 和世界钢铁协会 (worldsteel) 最新的统计数据也用于活动数据。</code></p>
-<p>我直接使用了时间序列数据进行可视化，虽然 EDGAR 同时提供了，更加精细的排放数据，甚至可以精确到每平方米温室气体排放量。但是我既弄不清楚这类数据的来源（卫星数据？？），也不符合我的最初的想法。我想获得一张国别的温室气体排放地图，因此数据精确到国别更加符合我的需要。</p>
-<h2 id="数据处理"><a href="#数据处理" class="headerlink" title="数据处理"></a>数据处理</h2><p>EDGAR v6.0 数据包含生物源和化石源排放，本次工作包含了生物源和化石源的CO2、CH4和N2O排放，使用GWP将CH4和N2O折算为CO2e。并将折算后的二氧化碳当量作为2018年该国家温室气体排放量。</p>
-<p>值得注意的是，本次工作使用使用GWP数据区分了化石源甲烷和非化石源甲烷，数据来自AR6第一工作组编制的《Climate Change 2021: The Physical Science Basis》1017页，第7章表7.15，GWP应用值如下表所示：<br><img src="https://s2.loli.net/2022/06/10/BN24DjJUOsE1Itw.png" srcset="/img/loading.gif" alt="GWP应用值"></p>
-<p>至于为什么同样是甲烷，化石源和非化石源和GWP不同，<a target="_blank" rel="noopener" href="https://clear.ucdavis.edu/explainers/why-methane-cattle-warms-climate-differently-co2-fossil-fuels">一种说法</a>是非化石源甲烷，比如反刍动物或者湿地产生的甲烷，都能溯源到大气中的二氧化碳，而对大气来说化石源甲烷是全新的碳，因此化石源甲烷升温潜值更高。</p>
-<h2 id="遗留问题"><a href="#遗留问题" class="headerlink" title="遗留问题"></a>遗留问题</h2><p>虽然我也广泛的寻找资料，但是由于能力有限，还是有一些问题没法解决：</p>
+<h2 id="甲烷GWP表述，数值以及他们出现的位置"><a href="#甲烷GWP表述，数值以及他们出现的位置" class="headerlink" title="甲烷GWP表述，数值以及他们出现的位置"></a>甲烷GWP表述，数值以及他们出现的位置</h2><p>在AR 6种，这些甲烷GWP表述出现在两个不同工作组报告中的三个不同位置，增加了企业选择正确、适合GWP的难度。GHG Management Institution整理不同甲烷GWP出现的位置，<a target="_blank" rel="noopener" href="https://ghginstitute.org/ipcc-ar6-methane-gwp-tables/">点击这里查看链接</a>。</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>IPCC AR6 GHG Labels</th>
+<th>GWP value (100 yr)</th>
+<th>References</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><script type="math/tex">CH_{4}-fossil</script></td>
+<td>29.8</td>
+<td>AR6 WGI Chapter 7, Table 7.15</td>
+</tr>
+<tr>
+<td><script type="math/tex">CH_{4}(fossil – fugitive\ and\ process)</script></td>
+<td>29.8</td>
+<td>AR6 WGIII, Annex II, Table 9</td>
+</tr>
+<tr>
+<td><script type="math/tex">CH_{4}-non\ fossil</script></td>
+<td>27.0</td>
+<td>AR6 WGI Chapter 7, Table 7.15</td>
+</tr>
+<tr>
+<td><script type="math/tex">CH_{4}(biogenic)</script></td>
+<td>27.0</td>
+<td>AR6 WGIII, Annex II, Table 9</td>
+</tr>
+<tr>
+<td><script type="math/tex">CH_{4}(fossil\ combustion)</script></td>
+<td>27.0</td>
+<td>AR6 WGIII, Annex II, Table 9</td>
+</tr>
+<tr>
+<td>Methane</td>
+<td>27.9</td>
+<td>AR6 Supplemental Material for WGI Chapter 7, Table 7.SM.6</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h2 id="造成差异的原因"><a href="#造成差异的原因" class="headerlink" title="造成差异的原因"></a>造成差异的原因</h2><p>造成甲烷有三种不同GWP数据的直接原因就是甲烷的寿命较短。一般认为甲烷的寿命约12年，在寿命结束之后绝大多数(IPCC假定为75%)甲烷会通过大气化学作用转化为二氧化碳，而通常使用的GWP的时间尺度通常用100年。甲烷转化为二氧化碳仍然是温室气体。<strong>处理剩余88年的辐射强迫的不同方式，就导致了甲烷出现3种不同的GWP数值。</strong></p>
+<h3 id="方案1：仅考虑甲烷阶段的辐射强迫（GWP-27-9）"><a href="#方案1：仅考虑甲烷阶段的辐射强迫（GWP-27-9）" class="headerlink" title="方案1：仅考虑甲烷阶段的辐射强迫（GWP=27.9）"></a>方案1：仅考虑甲烷阶段的辐射强迫（GWP=27.9）</h3><p>该方案不考虑甲烷转化为二氧化碳之后的辐射强迫，仅考虑甲烷阶段的辐射强迫。如下图所示，阴影面积是甲烷造成辐射强迫的积分值，当甲烷逐化为二氧化碳后，不考虑这些二氧化碳产生的辐射强迫。<br></p>
+<h3 id="方案2：考虑甲烷以及其转化的二氧化碳的辐射强迫"><a href="#方案2：考虑甲烷以及其转化的二氧化碳的辐射强迫" class="headerlink" title="方案2：考虑甲烷以及其转化的二氧化碳的辐射强迫"></a>方案2：考虑甲烷以及其转化的二氧化碳的辐射强迫</h3><p>要计算由甲烷转化的二氧化碳的辐射强迫，甲烷的来源，或者进一步说碳元素的来源就十分关键。与其他温室气体主要来自人类活动的排放不同，有相当一部分甲烷来自生命活动，例如反刍动物额打嗝放屁等。这些碳元素本身就存在大气环境中，是自然活动的一部分，没有因为认为活动而增加。相反，在甲烷的大气化学转化过程中，还会有一少部分(IPCC 假定为25%)转化为甲醛等，从大气中自然沉降到陆地、水体，从而减少了大气中的二氧化碳。因此，由于甲烷来源不同，形成了两种不同的GWP数值。</p>
+<h4 id="方案2-1：化石源甲烷"><a href="#方案2-1：化石源甲烷" class="headerlink" title="方案2.1：化石源甲烷"></a>方案2.1：化石源甲烷</h4><p>最典型的来源就是煤矿瓦斯、天然气运输过程中的逸散等，毋庸置疑这些甲烷一定来自人类活动，因此在其转化为二氧化碳后，也会导致大气中温室气体增加，辐射强迫增加。<br>因此需要在甲烷的辐射强迫(27.9)基础上，加上75%转化为二氧化碳部分的辐射强迫：</p>
+<script type="math/tex; mode=display">29.8≈27.9+75\%×44/16</script>
+<h4 id="方案2-2：生物源甲烷"><a href="#方案2-2：生物源甲烷" class="headerlink" title="方案2.2：生物源甲烷"></a>方案2.2：生物源甲烷</h4><p>如上所述，生物源甲烷不仅不会增加大气中本底碳元素含量，还会减少大气中的碳元素的总量。甲烷在寿命结束之后具有减排效应，因此可以在甲烷GWP基础上，扣减转化为转化为甲醛的从大气中沉降的部分：</p>
+<script type="math/tex; mode=display">27.0≈27.9-25\%×44/16</script>
+<h2 id="使用建议"><a href="#使用建议" class="headerlink" title="使用建议"></a>使用建议</h2><p>对于我来说，最重要的是如何使用这些数值，能够满足相关的标准、反应真是的情况。GHG Management Institute 的建议如下：</p>
 <ol>
-<li>无法区分塞尔维亚共和国和黑山的排放量。塞尔维亚和黑山原本是一个国家，2006年分成塞尔维亚共和国、黑山两个国家。不知道什么原因，EDGAR v6.0 仍将其视为一个整体统计排放量。因此，谨慎起见不对塞尔维亚共和国以及黑山排放量进行可视化。</li>
-<li>缺少部分地区和国家排放量。为了保证对比相对客观，我只可视化均有化石源以及生物源CO2、CH4、N2O数据的国家和地区，存在一项或者多项数据缺失国家或地区均未纳入可视化范围。</li>
-<li>未纳入氟化气体的排放量。</li>
+<li>绝大多数场景应该使用27.9作为甲烷的GWP。特别注意的是，对于燃烧过程产生的甲烷排放，应当使用27.9作为甲烷的GWP，通常在计算燃烧排放时，已经考虑将燃料中的碳转化为二氧化碳的情况(碳氧化率100%)。</li>
+<li>在煤矿瓦斯、天然气泄漏、管道传输逸散等甲烷直接排放的场景中使用29.8作为甲烷的GWP。</li>
+<li>不要使用27.0作为甲烷的GWP。因为GHG Management Institute综合其他研究认为，虽然会有25%的甲烷转化为甲醛，但是这些甲醛即使沉降土壤和水体之后，也会经历化学反应或者微生物作用，最终转化为二氧化碳。使用该数值会错误估算甲烷的气候影响。</li>
 </ol>
-<h2 id="成果展示"><a href="#成果展示" class="headerlink" title="成果展示"></a>成果展示</h2><p>由于页面大小所限，为了更好的观看体验请请移步<a href="https://lizhening.github.io/html/Global_Emission_Map.html">Global_Emission_Map页面</a>。</p>
 
             </div>
             <hr>
@@ -297,7 +340,7 @@
                     
                       <a class="hover-with-bg" href="/categories/%E5%BA%94%E5%AF%B9%E6%B0%94%E5%80%99%E5%8F%98%E5%8C%96/%E6%B0%94%E5%80%99%E9%80%82%E5%BA%94/">气候适应</a>
                     
-                      <a class="hover-with-bg" href="/categories/%E5%BA%94%E5%AF%B9%E6%B0%94%E5%80%99%E5%8F%98%E5%8C%96/%E6%B0%94%E5%80%99%E9%80%82%E5%BA%94/%E5%8F%AF%E8%A7%86%E5%8C%96/">可视化</a>
+                      <a class="hover-with-bg" href="/categories/%E5%BA%94%E5%AF%B9%E6%B0%94%E5%80%99%E5%8F%98%E5%8C%96/%E6%B0%94%E5%80%99%E9%80%82%E5%BA%94/%E6%8E%92%E6%94%BE%E6%A0%B8%E7%AE%97/">排放核算</a>
                     
                   </div>
                 
@@ -305,15 +348,9 @@
                   <div class="post-meta">
                     <i class="iconfont icon-tags"></i>
                     
-                      <a class="hover-with-bg" href="/tags/%E7%A2%B3%E6%8E%92%E6%94%BE/">碳排放</a>
+                      <a class="hover-with-bg" href="/tags/GWP/">GWP</a>
                     
-                      <a class="hover-with-bg" href="/tags/%E6%B8%A9%E5%AE%A4%E6%B0%94%E4%BD%93/">温室气体</a>
-                    
-                      <a class="hover-with-bg" href="/tags/%E5%9C%B0%E7%90%86%E5%8F%AF%E8%A7%86%E5%8C%96/">地理可视化</a>
-                    
-                      <a class="hover-with-bg" href="/tags/%E5%85%A8%E7%90%83/">全球</a>
-                    
-                      <a class="hover-with-bg" href="/tags/%E7%A2%B3%E6%8E%92%E6%94%BE%E5%9C%B0%E5%9B%BE/">碳排放地图</a>
+                      <a class="hover-with-bg" href="/tags/%E7%A2%B3%E6%A0%B8%E7%AE%97/">碳核算</a>
                     
                   </div>
                 
@@ -330,18 +367,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/posts/ee333938/">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">新《中国清洁发展机制基金管理办法》发布</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/posts/d06fc2e0/">
-                        <span class="hidden-mobile">森林碳交易的先行者Pachama</span>
+                      <a href="/posts/2237efa3/">
+                        <span class="hidden-mobile">ISO 14068-1碳中和标准解读</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
