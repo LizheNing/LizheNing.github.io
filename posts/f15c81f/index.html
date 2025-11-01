@@ -1,0 +1,938 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=&#34;auto&#34;>
+
+
+
+<head>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-9HJ2PMCHPY"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-9HJ2PMCHPY');
+</script>
+<meta name="msvalidate.01" content="FA75E899632FACA1BA9E71D03A1FD8EC" />
+<script src="https://utteranc.es/client.js"
+        repo="LizheNing/LizheNing.github.io"
+        issue-term="pathname"
+        label="Comment"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script>  
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/tag-icon.png">
+  <link rel="icon" href="/img/tag-icon.png">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+  
+  <meta name="theme-color" content="#2f4154">
+  
+    <meta name="description" content="基于GHG Protocol碳核算标准，解读如何应用中国电力碳排放因子，量化产品与组织的碳排放。">
+  
+  <meta name="author" content="John Doe">
+  <meta name="keywords" content="">
+  
+  <title>电力碳排放因子使用指南 - Hexo</title>
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.4.0/styles/github-gist.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+  
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"lizhening.github.io","root":"/","version":"1.8.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":"§"},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"onlypost":false},"web_analytics":{"enable":true,"baidu":null,"google":"UA-208524185-1","gtag":"G-9HJ2PMCHPY","tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}}};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+</head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>Lizhe's Blog</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/links/">
+                <i class="iconfont icon-link-fill"></i>
+                友链
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;</a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" href="javascript:">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner" id="banner" parallax=true
+         style="background: url('/img/default.png') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="电力碳排放因子使用指南">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2025-11-01 15:38" pubdate>
+        2025年11月1日 下午
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      6.4k 字
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      65
+       分钟
+    </span>
+  
+
+  
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">电力碳排放因子使用指南</h1>
+            
+            <div class="markdown-body">
+              <h2 id="引言"><a href="#引言" class="headerlink" title="引言"></a>引言</h2><p>近日，生态环境部发布了<a target="_blank" rel="noopener" href="https://www.mee.gov.cn/xxgk2018/xxgk/xxgk01/202510/t20251024_1130734.html">《关于发布2024年电力碳足迹因子数据的公告》</a>，已经建成了持续、稳定更新的工作机制。但是我国电力体制与国外情况存在差异，因子的类型与标准要求并不完全一致，这就导致国内计算电力碳排放时不能直接套用国外相关标准。</p>
+<p>本文试图从使用场景、标准要求，因子计算逻辑角度分析，为读者合理、准确使用电力排放因子提供建议。</p>
+<h2 id="电力排放因子的应用场景"><a href="#电力排放因子的应用场景" class="headerlink" title="电力排放因子的应用场景"></a>电力排放因子的应用场景</h2><p>电力排放因子广泛应用于碳排放核算领域，如果按照使用场景是否受到外部强制政策监管，可以将应用场景分为合规场景和自愿场景。</p>
+<img src="/posts/f15c81f/Classfication.png" srcset="/img/loading.gif" class="" title="场景分类">
+<p>通常在<strong>合规场景</strong>中，企业的核算行为受到规章制度的明确管控。</p>
+<ul>
+<li>是否可以使用电力排放因子？</li>
+<li>使用哪种类型的排放因子？</li>
+<li>以及排放因子的来源都严格受限。</li>
+</ul>
+<p>以碳市场为例，全国碳市场不管控间接排放，不需要电力排放因子，但地方试点碳市场需要使用电力排放因子核算用电碳排放。因此，不同的合规场景遵循的逻辑各异，需要严格按照要求要求选择适用的电力排放因子。</p>
+<p>但在<strong>自愿场景</strong>则不同，企业开展开展碳排放核算的目的相对统一，支持企业对外数据披露。相比合规场景，自愿场景更加有规律可循。本指南面向自愿场景，以自愿场景中的组织碳核算与产品碳足迹核算两种最常见的场景，介绍每种场景下标准如何要求，以及如何选择正确的电力排放因子。</p>
+<img src="/posts/f15c81f/Scene.png" srcset="/img/loading.gif" class="" title="使用场景">
+<p>在自愿场景中，温室气体议定书（GHG Protocol）和 ISO 14060 系列是两套绕不开的标准体系，这两套标准为量化组织碳排放（组织碳足迹）或特定产品碳足迹的排放量，提供了详细要求和指导。鉴于GHGP提供了详尽的量化指导，目前企业界和国际组织更多使用GHGP进行碳排放核算与披露，因此本文也主要基于GHGP的分类和要求展开。<br>按照GHG Protocol标准，以下场景需要使用电力排放因子：</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th><strong>使用场景</strong></th>
+<th><strong>范围</strong></th>
+<th><strong>类别</strong></th>
+<th><strong>备注</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>组织碳排放</td>
+<td>范围二</td>
+<td>外购电力消耗导致间接排放</td>
+<td>可以分为基于市场方法和基于位置方法两种口径进行披露</td>
+</tr>
+<tr>
+<td>组织碳排放</td>
+<td>范围三</td>
+<td>类别3：未包含在范围一或范围二内的燃料和能源相关排放——外购电力的上游碳排放</td>
+<td></td>
+</tr>
+<tr>
+<td>组织碳排放</td>
+<td>范围三</td>
+<td>类别3：未包含在范围一或范围二内的燃料和能源相关排放——电力传输和配送损耗排放</td>
+<td>按照ISO 14064-1标准，该排放源应合并入外购电力消耗导致的间接排放</td>
+</tr>
+<tr>
+<td>组织碳排放</td>
+<td>范围三</td>
+<td>类别3：未包含在范围一或范围二内的燃料和能源相关排放——出售给最终用户的电力生产排放</td>
+<td></td>
+</tr>
+<tr>
+<td>组织碳排放</td>
+<td>范围三</td>
+<td>类别12：售出产品的使用</td>
+<td>仅涉及生产用电产品的企业</td>
+</tr>
+<tr>
+<td>产品碳足迹</td>
+<td>-</td>
+<td>产品生产和使用过程电力消耗导致的排放</td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>值得注意的是，尽管 GHGP 与 ISO 14060 在总体上高度一致，但它们对排放细节处理仍有差异，如果出现标准要求不统一情况，会单独标示。</p>
+<h2 id="企业外购电方式"><a href="#企业外购电方式" class="headerlink" title="企业外购电方式"></a>企业外购电方式</h2><p>电力排放因子主要的功能是将企业外购的电量与碳排放量之间建立联系，将电量转化为碳排放量。而不同发电技术类型（例如火电、风电、核电）电力的碳排放量天壤之别，如果企业能够搞清楚我们用的电是什么类型的电，那其实碳排放量的计算是最准确的。</p>
+<p>但是受限于购电方式，不同购电方式导致企业掌握的电力发电端的信息截然不同，这也进一步导致，在碳排放核算中，选择电力排放因子的空间完全不同。在当前的电力市场环境下，企业向通过电网购电的方式一般有三种，分别是电网代理购电、与售电公司代理购电、直购电。</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th><strong>项目</strong></th>
+<th><strong>直购电</strong></th>
+<th><strong>售电公司代理购电</strong></th>
+<th><strong>电网代理购电</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>交易方</strong></td>
+<td>发电厂</td>
+<td>售电公司</td>
+<td>电网公司</td>
+</tr>
+<tr>
+<td><strong>是否了解所用电力的发电类型</strong></td>
+<td>完全掌握</td>
+<td>部分有可能掌握，部分售电公司可能会向用户提供其所用电力发电类型的明细（火电、风电、核电等占比）</td>
+<td>不掌握，电网公司不会提供电力组合信息</td>
+</tr>
+<tr>
+<td><strong>是否可以采购绿电</strong></td>
+<td>是</td>
+<td>是</td>
+<td>否</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>在企业是否能掌握其所用发电类型信息这个维度上，直购电和电网代理购电分别走在两个极端。不同售电公司的管理和服务水平不同，少部分售电会向用户提供发电类型，这种情境下用户获得的信息与直购电相同，可以参考直购电的处理方法。相似的，如果售电公司完全无法提供发电类型，也可以参考电网代理发电类型情景进行量化。相对复杂的情景是，和售电公司约定采购一定数量绿电，或者自行采购了绿证（发改委1044号文明确<strong>绿证是我国可再生能源电量环境属性的唯一证明</strong>，不在细分绿电和绿证的区别），而售电公司/电网公司又无法提供剩余电量的发电类型技术组合，这种情况需要单独进行讨论。</p>
+<ul>
+<li><strong>能够获取完整发电类型信息：</strong>适用于直购电、售电公司可以提供电力排放因子或者发电类型的情况。</li>
+<li><strong>完全无法获取发电类型信息：</strong>适用于电网代理购电、售电公司无法提供信息，并且企业也未外购绿电、绿证情景。</li>
+<li><strong>可以获得部分电量的发电类型信息：</strong>这就是在第二种情景下，额外采购了绿电或绿证。</li>
+</ul>
+<h2 id="电力碳排放因子使用指南"><a href="#电力碳排放因子使用指南" class="headerlink" title="电力碳排放因子使用指南"></a>电力碳排放因子使用指南</h2><p>在介绍每种情境下，电力排放因子的选取原则之前，简单回顾一下GHGP对电力相关排放源的划分。电力生命周期可以划分为发电燃料提取、发电设施生产和运输阶段、发电阶段、传输配送阶段(T&amp;D)。对于用电企业，发电阶段排放归属于范围二，发电燃料提取、发电设施生产和运输阶段排放归属于范围三的外购电力上游排放，传输配送阶段归属范围三传输和配送损耗排放。了解清楚排放划分，有助于理解下文排放因子的选择。</p>
+<img src="/posts/f15c81f/Scope3Category3.PNG" srcset="/img/loading.gif" class="" title="能源上游排放中与电力相关部分">
+<h3 id="范围二：外购电力导致的间接排放"><a href="#范围二：外购电力导致的间接排放" class="headerlink" title="范围二：外购电力导致的间接排放"></a>范围二：外购电力导致的间接排放</h3><p>外购电力导致的间接排放是一般工商业企业最主要的排放源之一，在计算范围二排放时，GHGP标准明确要求<strong>使用生产端排放因子，即电力二氧化碳排放因子</strong>。在标准中，企业有两种披露外购电排放的口径，<strong>必须</strong>披露基于位置的排放量，<strong>可以</strong>报告基于市场的排放量。</p>
+<h4 id="外购电力导致的间接排放——基于位置方法"><a href="#外购电力导致的间接排放——基于位置方法" class="headerlink" title="外购电力导致的间接排放——基于位置方法"></a>外购电力导致的间接排放——基于位置方法</h4><ul>
+<li><strong>核算对象：</strong>为生产报告企业消耗的电力，在发电过程中产生的直接温室气体排放，例如化石燃料燃烧、尾气脱硫处理等。基于位置方法反映了用电区域的电网平均排放强度。</li>
+<li><strong>适用企业：</strong>适用于所有的电力的用户</li>
+<li><strong>标准要求：</strong>提供了该情景下电力排放因子选择的一般原则，即<strong>优先选择地区或者区域的电力排放因子，次选国别排放因子</strong>。</li>
+</ul>
+<img src="/posts/f15c81f/LoactionHierarchy.png" srcset="/img/loading.gif" class="" title="位置方法排放因子选取优先顺序">
+<ul>
+<li><strong>选用原则：</strong><ul>
+<li>本排放源只量化发电过程的排放，因此只需要<strong>电力二氧化碳排放因子</strong>。目前生态环境部已经发布了全国、区域和省级电力二氧化碳排放因子，并且区域和省级因子均考虑了电力的调入和调出，完全满足GHGP的应用要求。<strong>因此从准确性角度来说，企业应当优先使用所在省的排放因子，次选所在区域排放因子，最后才是全国排放因子。</strong></li>
+<li>但是不同企业量化的碳排放的目标稍有差异。<strong>如果企业在全国多个省区设有工厂</strong>，从内部管理角度考虑，使用省级排放因子会增加排放因子的维护和管理难度，也不利于工厂间的内部对标。另外由于不同省区间电力排放因子差异极大，在开展减排和内部碳定价时，不同省区需要设置不同的内部碳价，影响企业管理和脱碳效率。<strong>在公司内部统一使用全国排放因子能有效避免上述问题</strong>。</li>
+</ul>
+</li>
+</ul>
+<h4 id="外购电力导致的间接排放——基于市场方法"><a href="#外购电力导致的间接排放——基于市场方法" class="headerlink" title="外购电力导致的间接排放——基于市场方法"></a>外购电力导致的间接排放——基于市场方法</h4><ul>
+<li><strong>核算对象：</strong>为生产报告企业消耗的电力而在发电过程中产生的直接温室气体排放，例如化石燃料燃烧、尾气脱硫处理等。基于市场方法反映了企业主动选择电力的排放情况。</li>
+<li><strong>适用企业：</strong>适用于所有的电力的用户</li>
+<li><strong>标准要求：</strong>GHGP提供了该情景下电力排放因子选择的一般原则，即优先选择市场化工具提供的排放因子，在无法获得数据的情况下使用国家或者区域剩余电力排放因子（Residual mix）。GHGP提供的指南与国内实际情况做一个映射。</li>
+</ul>
+<img src="/posts/f15c81f/MarketHierarchy.png" srcset="/img/loading.gif" class="" title="市场方法排放因子选取优先顺序">
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th><strong>GHGP排放因子来源</strong></th>
+<th>国内对应排放因子</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>能源属性证书，EAC</strong></td>
+<td>中国可再生能源绿色证书，GEC</td>
+</tr>
+<tr>
+<td><strong>合同</strong></td>
+<td>发电厂向直购电用户提供的电力排放因子</td>
+</tr>
+<tr>
+<td><strong>供应商排放因子</strong></td>
+<td>售电公司提供的电力排放因子。虽然售电公司有能力获取电力排放因子，但是目前国内只有极少数售电公司愿意提供这方面服务</td>
+</tr>
+<tr>
+<td><strong>剩余排放因子</strong></td>
+<td>全国电力平均二氧化碳排放因子（不包括市场化交易的非化石能源电量）</td>
+</tr>
+<tr>
+<td><strong>其他电网平均排放因子</strong></td>
+<td>由于已经存在剩余排放因子，不应再使用其他电网平均排放因子</td>
+</tr>
+</tbody>
+</table>
+</div>
+<ul>
+<li><strong>选用原则：</strong>市场化工具的使用情况，与购电方式、企业能够了解到的发电类型信息密切相关<ul>
+<li><strong>能够获取完整发电类型信息：</strong>如果能知道每个发电厂的电力排放因子，以电量为权重，即可得到最准确的电力排放因子。即使无法获取每个电厂的排放因子，对于范围二核算，只需要知道火电的比例，并乘以<strong>全国化石能源电力二氧化碳排放因子</strong>，就能算出用电的排放因子。</li>
+<li><strong>完全无法获取发电类型信息：缺乏使用市场化工作的基础，完全没基于市场方法进行披露的必要。</strong></li>
+<li><strong>可以获得部分电量的发电类型信息</strong>：对于采购绿电或者绿证对应的电量，应当使用证书中标示的排放因子进行计算，由于当前中国绿证只面向可再生能源，因此排放因子可以直接取零。对于余下不掌握发电技术信息的电量，缺乏更加准确的描述信息，<strong>只能使用剩余排放因子，即全国电力平均二氧化碳排放因子（不包括市场化交易的非化石能源电量）。</strong>从2025年底，绿证有效期统一为两年，目前的N-2发布机制能够精准的匹配剩余电量排放情况。</li>
+</ul>
+</li>
+</ul>
+<h4 id="范围三：其他间接温室气体排放"><a href="#范围三：其他间接温室气体排放" class="headerlink" title="范围三：其他间接温室气体排放"></a>范围三：其他间接温室气体排放</h4><p>范围三的排放是一家公司活动的结果， 但并不是产生于该公司拥有或控制的排放源。与电力相关的排放源主要集中在<strong>类别3：未包含在范围一或范围二内的燃料和能源相关排放</strong>，外购电力的上游碳排放、电力传输和配送损耗排放、出售给最终用户的电力生产排放是其中典型代表。</p>
+<h5 id="外购电力的上游碳排放"><a href="#外购电力的上游碳排放" class="headerlink" title="外购电力的上游碳排放"></a>外购电力的上游碳排放</h5><ul>
+<li><strong>核算对象：</strong>为生产报告企业消耗的电力而消耗的燃料的开采、生产和运输导致的排放，例如煤矿开采、燃料提炼、天然气提取等</li>
+<li><strong>适用企业：</strong>适用于所有用电企业</li>
+<li><strong>标准要求：</strong>按照GHGP要求，该排放分属范围三的类别3，而按照 ISO 14064-1，该排放分属类别四“组织采购产品导致的间接温室气体排放”，应该归属于该目录下的4.1项“组织外购商品导致的间接温室气体排放”</li>
+<li><strong>选用原则</strong>：<ul>
+<li><strong>能够获取发电类型信息</strong>：每种发电类型的排放因子与对应采购电量乘积，最后汇总加和即可获得组织层面电力上游碳排放量。排放因子选用公告中发布的<strong>发电类型电力碳足迹因子</strong>。</li>
+<li><strong>完全无法获取发电类型信息：电力上游排放只考虑发电燃料提取、发电设施生产和运输阶段</strong>，如果不了解发电类型结构，当前发布的数据中缺乏与其完全相对应的电力排放因子。公告中发布的“<strong>全国电力平均碳足迹因子</strong>”是消费端混合的碳排放因子，也就是说不仅包含了电力上游碳排放，也包含了发电过程排放、T&amp;D过程的排放。<ul>
+<li>由于T&amp;D过程排放也是范围三的一部分，且发电过程排放在范围二中能够核算清楚。因此可以采取一种折中的方法，即同时核算电力上游排放、T&amp;D过程排放。具体操作上，可以先使用<strong>全国电力平均碳足迹因子</strong>计算电力全生命周期排放，再扣除范围二中发电过程排放，即可计算出电力上游排放与T&amp;D过程排放之和。<strong>但是这种方法存在数据周期不对应的问题，碳足迹因子是2025年，发电结算因子是2022年。</strong></li>
+<li>还有一种相对复杂的建模方法，基于全国发电结构，使用公告中发布的不同发电类型因子，建模计算发电类型的上游平均碳足迹。数据难收集，过程比较复杂，不建议使用。</li>
+</ul>
+</li>
+<li><strong>可以获得部分电量的发电类型信息</strong>：对于已知发电类型的绿电，可直接使用公布的不同类型绿电的电力碳足迹因子，因为这些碳足迹因子都是生产段的因子。没法获取发电类型电量，可以参照上面。</li>
+</ul>
+</li>
+</ul>
+<h5 id="电力传输和分配过程损耗排放"><a href="#电力传输和分配过程损耗排放" class="headerlink" title="电力传输和分配过程损耗排放"></a>电力传输和分配过程损耗排放</h5><ul>
+<li><strong>核算对象：</strong>在输配电系统中消耗(即损失)的电力，<strong>在生产过程产生的排放</strong></li>
+<li><strong>适用企业：</strong>适用于电力的最终用户</li>
+<li><strong>标准要求：</strong>按照 ISO 14064-1原文，<strong>该类别排放分属类别二“采购能源导致的间接排放”，也就是我们常说的范围二排放。</strong>但是为了保证在不同标准下企业运营边界（范围1+范围2）排放值相同，也会有企业将其归类到类别4.1“组织外购商品导致的间接温室气体排放”</li>
+<li><strong>选用原则：</strong><ul>
+<li>如果之前没有核算过T&amp;D过程排放，那仅需要针对火电部分计算其对应的T&amp;D排放，使用的电力排放因子与范围二相同。</li>
+<li>如果在上游排放中已经核算电力传输和分配过程损耗排放，那再这里就无需重复计算。<ul>
+<li>这里会引申出一个问题，<strong>能不能使用公告中输配电碳足迹因子呢？</strong>答案是不太合理，首先该类别仅考虑电力生产过程排放，使用足迹因子会扩大核算边界，导致排放量增加。另外，该类别也不需要考虑电网建设和运营过程排放，因此<strong>即使想要使用，也应该进行预处理，需要输配电（含线损）减去输配电（不含线损），得到一个单纯输配电的线损的排放因子。</strong></li>
+<li>考虑到将上游排放与T&amp;D过程排放合并处理，以及使用使用输配电因子计算都有一定缺陷，并且对于大多数企业来说，该部分排放量都很小，因此不同方法对整体结果的影响非常小，但合并处理的缺陷能够随着时间逐渐解决。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h5 id="出售给最终用户的电力生产排放"><a href="#出售给最终用户的电力生产排放" class="headerlink" title="出售给最终用户的电力生产排放"></a>出售给最终用户的电力生产排放</h5><ul>
+<li><strong>核算对象：</strong>售出电力在<strong>生产过程产生的排放</strong></li>
+<li><strong>适用企业：仅由公共事业公司和能源零售商报告</strong>，例如电网企业、售电公司以及最近兴起的电动汽车充电站运营公司等</li>
+<li><strong>选用原则：</strong>该类别排放仅考虑发电过程排放，因此在要求上与范围二一致。并且为了便于与下游客户沟通，更倾向于使用基于市场方法相同的原则。</li>
+</ul>
+<h5 id="售出产品的使用"><a href="#售出产品的使用" class="headerlink" title="售出产品的使用"></a>售出产品的使用</h5><ul>
+<li><strong>核算对象：</strong>报告企业在报告年份售出的产品和服务的最终使用导致的排放</li>
+<li><strong>适用企业：</strong>仅涉及生产用电产品的企业</li>
+<li><strong>标准要求：</strong>售出产品在预期寿命期的<strong>直接使用阶段排放</strong>，即最终用户使用产生的范围一和范围二排放</li>
+<li>选用原则：标准要求仅需要核算直接使用阶段的排放，因此<strong>应当使用电力二氧化碳排放因子。</strong></li>
+</ul>
+<p>除上述排放源以外，随着电力替代进程的推进，越来越多间接排放将与用电相关联，继而需要使用到电力排放因子。运输有关排放是近年来变化最显著的代表，交通工具的电动化促使核算上下游物流、商旅、员工通勤等间接排放时需要考虑纯电动车辆和混动车辆占比，以及电力排放因子的选择准则。在物流运输的细分领域中， ISO 14083 以及全球物流排放委员会框架（ GLEC）提供了可行的指南，在该体系下需要使用油井到车轮（WTW）的排放因子核算“<strong>车辆能源供应的温室气体排放</strong>”，也就是本次公告中的“<strong>全国电力平均碳足迹因子</strong>”。</p>
+<h3 id="产品碳足迹核算"><a href="#产品碳足迹核算" class="headerlink" title="产品碳足迹核算"></a>产品碳足迹核算</h3><p>在产品碳足迹核算中，电力是一项绕不开的输入流。就如公告所说，电力碳足迹因子的主要用途就是服务各行业产品核算电力生产和消费产生的碳足迹。</p>
+<p>对电力建模是准确度最高的计算方法，尤其是用电排放占比很高的产品，更应该基于电力建模进行碳足迹核算，以提升量化的准确性。公告中提供了多种技术类型的排放因子，为电力建模提供了排放系数基础。模型中电力构成就需要根据企业的购电模式来划分。</p>
+<ul>
+<li><strong>能够获取发电类型信息：</strong>按照每种发电类型电量，以及公告中发布的不同发电类型碳足迹因子，建模计算所用电力碳足迹。</li>
+<li><strong>完全无法获取发电技术类型信息：使用公告中的全国电力平均碳足迹因子是一个不错的选择。</strong></li>
+</ul>
+<p><strong>如果企业额外采购了，绿证/绿电应该如何计算用电排放？</strong>如果使用建模法，只需要为绿证/绿电对应电量匹配正确的排放系数即可。如果其他电力使用全国电力平均碳足迹因子计算碳足迹，那可能会存在一些兼容上问题。先看一下GHGP标准怎么描述：</p>
+<blockquote>
+<p>正如来自其他排放源的数据，企业宜选择电力排放因子，因为这些因子与产品清单中使用的电力来源有地理相关性。当电力供应商能提供特定供应商的排放因子，并且这些排放从区域排放因子中被扣除，那么宜使用这些供应商的电力数据。否则，企业宜使用区域平均排放因子，以避免重复计算。</p>
+</blockquote>
+<p>根据目前发布的信息中，电力碳足迹因子没有考虑绿电/绿证使用情况。从这个角度来看，在使用<strong>全国电力平均碳足迹因子</strong>计算非绿电/绿证电量排放量的情况，使用对应发电类型碳足迹因子计算绿电/绿证排放量稍显不妥。那应该怎么办呢？去压力售电公司，让他们提供所售电力的发电技术类型，共同推动行业向前发展。</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>对前文内容做一个总结，电力排放因子的选用，如下表所示：</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th><strong>使用场景</strong></th>
+<th><strong>电力信息掌握状况</strong></th>
+<th><strong>能够获取发电类型信息</strong></th>
+<th><strong>完全无法获取发电类型信息</strong></th>
+<th><strong>可以获得部分电量的发电类型信息</strong></th>
+<th><strong>可以获得部分电量的发电类型信息</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>使用场景</strong></td>
+<td>排放类别/购电方式</td>
+<td>直购电、部分售电公司代理购电</td>
+<td>电网电力购电、部分售电公司代理购电</td>
+<td>电网电力购电、部分售电公司代理购电</td>
+<td>绿电或者绿证</td>
+</tr>
+<tr>
+<td><strong>组织碳排放</strong></td>
+<td>范围2：外购电力消耗导致间接排放——基于位置方法</td>
+<td>电力二氧化碳排放因子</td>
+<td>电力二氧化碳排放因子</td>
+<td>电力二氧化碳排放因子</td>
+<td>电力二氧化碳排放因子</td>
+</tr>
+<tr>
+<td><strong>组织碳排放</strong></td>
+<td>范围2：外购电力消耗导致间接排放——基于市场方法</td>
+<td>基于化石能源比例和全国化石能源电力二氧化碳排放因子计算</td>
+<td>不涉及</td>
+<td>全国电力平均二氧化碳排放因子（不包括市场化交易的非化石能源电量）</td>
+<td>零排放</td>
+</tr>
+<tr>
+<td><strong>组织碳排放</strong></td>
+<td>范围3：未包含在范围一或范围二内的燃料和能源相关排放——外购电力的上游碳排放</td>
+<td>基于主要发电类型电力碳足迹因子建模</td>
+<td>同时计算电力上游和T&amp;D过程排放，使用全国电力碳足迹因子与电力二氧化碳排放因子差值计算</td>
+<td>同时计算电力上游和T&amp;D过程排放，使用全国电力碳足迹因子与电力二氧化碳排放因子差值计算</td>
+<td>对应发电类型的排放因子</td>
+</tr>
+<tr>
+<td><strong>组织碳排放</strong></td>
+<td>范围3：未包含在范围一或范围二内的燃料和能源相关排放——电力传输和配送损耗排放</td>
+<td>电力二氧化碳排放因子</td>
+<td>同时计算电力上游和T&amp;D过程排放，使用全国电力碳足迹因子与电力二氧化碳排放因子差值计算</td>
+<td>同时计算电力上游和T&amp;D过程排放，使用全国电力碳足迹因子与电力二氧化碳排放因子差值计算</td>
+<td>零排放</td>
+</tr>
+<tr>
+<td><strong>组织碳排放</strong></td>
+<td>范围3：未包含在范围一或范围二内的燃料和能源相关排放——出售给最终用户的电力生产排放</td>
+<td>基于化石能源比例和全国化石能源电力二氧化碳排放因子计算</td>
+<td>电力二氧化碳排放因子</td>
+<td>电力二氧化碳排放因子</td>
+<td>零排放</td>
+</tr>
+<tr>
+<td><strong>组织碳排放</strong></td>
+<td>范围3：售出产品的使用</td>
+<td>电力二氧化碳排放因子</td>
+<td>电力二氧化碳排放因子</td>
+<td>电力二氧化碳排放因子</td>
+<td>电力二氧化碳排放因子</td>
+</tr>
+<tr>
+<td><strong>产品碳足迹</strong></td>
+<td>产品生产和使用过程电力消耗导致的排放</td>
+<td>基于主要发电类型电力碳足迹因子建模</td>
+<td>全国电力碳足迹因子</td>
+<td>基于主要发电类型电力碳足迹因子建模</td>
+<td>基于主要发电类型电力碳足迹因子建模</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h2 id="致谢"><a href="#致谢" class="headerlink" title="致谢"></a>致谢</h2><p>周泉、宁致远、田野以及蔡老师、伍老师对本文有贡献。</p>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/%E5%BA%94%E5%AF%B9%E6%B0%94%E5%80%99%E5%8F%98%E5%8C%96/">应对气候变化</a>
+                    
+                      <a class="hover-with-bg" href="/categories/%E5%BA%94%E5%AF%B9%E6%B0%94%E5%80%99%E5%8F%98%E5%8C%96/%E6%B0%94%E5%80%99%E9%80%82%E5%BA%94/">气候适应</a>
+                    
+                      <a class="hover-with-bg" href="/categories/%E5%BA%94%E5%AF%B9%E6%B0%94%E5%80%99%E5%8F%98%E5%8C%96/%E6%B0%94%E5%80%99%E9%80%82%E5%BA%94/%E4%BC%81%E4%B8%9A%E7%AE%A1%E7%90%86/">企业管理</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/%E7%94%B5%E5%8A%9B%E4%BA%8C%E6%B0%A7%E5%8C%96%E7%A2%B3%E6%8E%92%E6%94%BE%E5%9B%A0%E5%AD%90/">电力二氧化碳排放因子</a>
+                    
+                      <a class="hover-with-bg" href="/tags/%E7%94%B5%E5%8A%9B%E7%A2%B3%E8%B6%B3%E8%BF%B9%E5%9B%A0%E5%AD%90/">电力碳足迹因子</a>
+                    
+                      <a class="hover-with-bg" href="/tags/%E4%BC%81%E4%B8%9A%E7%A2%B3%E6%8E%92%E6%94%BE%E6%A0%B8%E7%AE%97/">企业碳排放核算</a>
+                    
+                      <a class="hover-with-bg" href="/tags/GHGP%E6%A0%87%E5%87%86%E5%BA%94%E7%94%A8/">GHGP标准应用</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">
+                  
+                    本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！
+                  
+                </p>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/posts/98e716b7/">
+                        <span class="hidden-mobile">化石甲烷与非化石甲烷GWP差异和应用</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+              <!-- Comments -->
+              <article class="comments" id="comments">
+                
+                  
+                
+                
+  <script type="text/javascript">
+    Fluid.utils.waitElementVisible('comments', function() {
+      var light = 'github-light';
+      var dark = 'github-dark';
+      var schema = document.documentElement.getAttribute('data-user-color-scheme');
+      if (schema === 'dark') {
+        schema = dark;
+      } else {
+        schema = light;
+      }
+      window.UtterancesThemeLight = light;
+      window.UtterancesThemeDark = dark;
+      var s = document.createElement('script');
+      s.setAttribute('src', 'https://utteranc.es/client.js');
+      s.setAttribute('repo', 'LizheNing/LizheNing.github.io');
+      s.setAttribute('issue-term', 'pathname');
+      
+      s.setAttribute('label', 'utterances');
+      
+      s.setAttribute('theme', schema);
+      s.setAttribute('crossorigin', 'anonymous');
+      document.getElementById('comments').appendChild(s);
+    })
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+              </article>
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"> <img src="https://img.shields.io/badge/Powered-Hexo-{blue}" srcset="/img/loading.gif"></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"> <img src="https://img.shields.io/badge/Theme-Fluid-{red}" srcset="/img/loading.gif"></a> 
+  </div>
+  
+  <div class="statistics">
+    
+    
+
+    
+      
+        <!-- 不蒜子统计PV -->
+        <span id="busuanzi_container_site_pv" style="display: none">
+            总访问量 
+            <span id="busuanzi_value_site_pv"></span>
+             次
+          </span>
+      
+      
+        <!-- 不蒜子统计UV -->
+        <span id="busuanzi_container_site_uv" style="display: none">
+            总访客数 
+            <span id="busuanzi_value_site_uv"></span>
+             人
+          </span>
+      
+    
+  </div>
+
+
+  
+
+  
+</footer>
+
+<!-- SCRIPTS -->
+
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/debouncer.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  
+    <script  src="/js/lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/tocbot@4.12.0/dist/tocbot.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4.3.0/anchor.min.js" ></script>
+
+
+
+  <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js" ></script>
+
+
+
+  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
+
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+      typing(title)
+      
+    })(window, document);
+  </script>
+
+
+
+  <script  src="/js/local-search.js" ></script>
+  <script>
+    (function () {
+      var path = "/local-search.xml";
+      $('#local-search-input').on('click', function() {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      });
+      $('#modalSearch').on('shown.bs.modal', function() {
+        $('#local-search-input').focus();
+      });
+    })()
+  </script>
+
+
+
+
+
+  
+
+  
+    <!-- MathJax -->
+    <script>
+      MathJax = {
+        tex: {
+          inlineMath: [['$', '$'], ['\\(', '\\)']]
+        },
+        options: {
+          renderActions: {
+            findScript: [10, doc => {
+              document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+                const display = !!node.type.match(/; *mode=display/);
+                const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+                const text = document.createTextNode('');
+                node.parentNode.replaceChild(text, node);
+                math.start = { node: text, delim: '', n: 0 };
+                math.end = { node: text, delim: '', n: 0 };
+                doc.math.push(math);
+              });
+            }, '', false],
+            insertedScript: [200, () => {
+              document.querySelectorAll('mjx-container').forEach(node => {
+                let target = node.parentNode;
+                if (target.nodeName.toLowerCase() === 'li') {
+                  target.parentNode.classList.add('has-jax');
+                }
+              });
+            }, '', false]
+          }
+        }
+      };
+    </script>
+
+    <script async src="https://cdn.jsdelivr.net/npm/mathjax@3.1.2/es5/tex-svg.js" ></script>
+
+  
+
+
+
+
+
+
+
+
+  
+
+  
+    <!-- Google Analytics -->
+    <script defer>
+      window.ga = window.ga || function () { (ga.q = ga.q || []).push(arguments) };
+      ga.l = +new Date;
+      ga('create', 'UA-208524185-1', 'auto');
+      ga('send', 'pageview');
+    </script>
+    <script async src='https://www.google-analytics.com/analytics.js'></script>
+  
+
+  
+    <!-- Google gtag.js -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-9HJ2PMCHPY"></script>
+    <script defer>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-9HJ2PMCHPY');
+    </script>
+  
+
+  
+
+  
+
+  
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+<!-- 不蒜子访问量统计
+  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
+  </script> 
+
+  <span id="busuanzi_container_site_uv">
+    本站访客数<span id="busuanzi_value_site_uv"></span>人次
+  </span>
+
+  <span id="busuanzi_container_page_pv">
+    本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+  </span>
+-->
+
+</body>
+</html>
