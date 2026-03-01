@@ -6,7 +6,7 @@
   <link href="https://lizhening.github.io/atom.xml" rel="self"/>
   
   <link href="https://lizhening.github.io/"/>
-  <updated>2025-11-01T10:37:13.388Z</updated>
+  <updated>2026-03-01T15:19:39.905Z</updated>
   <id>https://lizhening.github.io/</id>
   
   <author>
@@ -15,6 +15,39 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>2025年澳大利亚燃油经济性法规运行结果浅析</title>
+    <link href="https://lizhening.github.io/posts/f9d47372/"/>
+    <id>https://lizhening.github.io/posts/f9d47372/</id>
+    <published>2026-03-01T14:59:05.000Z</published>
+    <updated>2026-03-01T15:19:39.905Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="2025年NVES运行摘要"><a href="#2025年NVES运行摘要" class="headerlink" title="2025年NVES运行摘要"></a>2025年NVES运行摘要</h2><p>2026年2月18日，澳大利亚主管机构终于发布了“新车能效标准”(New Vehicle Efficiency Standard )在导入期(introductory period，2025年7月1日~2025年12月31日)的运行结果。从首份 报告来看，运行结果相当乐观：</p><ul><li>标准将59家纳入管理，在导入期覆盖了620,947辆新车，占2025年澳大利亚新车注册量的50.03%。考虑到导入期仅覆盖了半年，有效的覆盖了澳大利亚新车市场。</li><li>在59家履约企业中，40家企业完成了自己的排放目标，完成率约68%，超过共计产生了1,716万的正积分(Units accrued)，标准目标设定合理保证了多数企业都能完成目标。</li><li>剩余19家企业产生了121万的负积分(Liabilities accrued)，正负积分比例约为14：1，系统盈余充分，攻击远大于需求，整体履约难度较低。即使扣除这些负积分，系统仍然结余了1,594万的正积分，按照最乐观估计，上述盈余足够澳洲市场使用7年，粗略来看未来市场交易动力较低。</li><li>不论是类型Ⅰ车辆(以乘用车为主，以下使用乘用车代称)还是类型Ⅱ车辆(多数为轻型商用车，以下使用轻商代称)的平均排放量低于法定目标。轻型商用车平均为199，约为目标值(214)的92.99%，而乘用车的表现更为优异，实际平均排放目标为 114，仅为目标值(144)的79.16%。</li></ul><img src="/posts/f9d47372/Summary.png" class="" title="运行摘要"><h2 id="澳洲汽车销售情况"><a href="#澳洲汽车销售情况" class="headerlink" title="澳洲汽车销售情况"></a>澳洲汽车销售情况</h2><h3 id="日本品牌主导澳洲市场，中国品牌增长迅速"><a href="#日本品牌主导澳洲市场，中国品牌增长迅速" class="headerlink" title="日本品牌主导澳洲市场，中国品牌增长迅速"></a>日本品牌主导澳洲市场，中国品牌增长迅速</h3><p>从车辆品牌来看，日系车主导了澳洲市场，8家日本车企占据澳洲注册量的41.86%，完全。其次中国品牌，15家中国车企占据了22.76%的澳洲市场，并且中国车销量增速迅猛，10年间将市占率从0.2%提升到20.4%(2025年全年口径)。但是中国企业间的竞争也是最激烈的，中国车企数量仅少于欧洲，远多于日本、美国和韩国车企，相爱相杀的戏码即将在澳洲上演。</p><img src="/posts/f9d47372/%E6%B3%A8%E5%86%8C%E6%95%B0%E9%87%8F.png" class="" title="注册数量"><h3 id="市场集中度低，竞争充分，有利于中国企业"><a href="#市场集中度低，竞争充分，有利于中国企业" class="headerlink" title="市场集中度低，竞争充分，有利于中国企业"></a>市场集中度低，竞争充分，有利于中国企业</h3><p>销量前5家的车企，占据了45.75%的份额，销量前10车企共计占据70.28%的市场份额，属于中等集中度、竞争较充分的市场，既未形成高度垄断格局，也不是极度分散。这种结构有利于高技术、新能源、新进入品牌突破，但也意味着行业竞争将长期激烈，规模效应相对有限。</p><img src="/posts/f9d47372/%E5%93%81%E7%89%8C%E5%88%86%E5%B8%83.png" class="" title="品牌分布"><h3 id="新能源汽车增长势头迅猛，未来仍有上涨空间"><a href="#新能源汽车增长势头迅猛，未来仍有上涨空间" class="headerlink" title="新能源汽车增长势头迅猛，未来仍有上涨空间"></a>新能源汽车增长势头迅猛，未来仍有上涨空间</h3><p>2025年，澳洲纯电动汽车(EV)销量为103,270辆，插电式混合动力汽车(PHEV)销量为53,484辆，分别占比总销量的8.32%和4.31%。而在导入期，覆盖的车辆中约有12%是电动车，剩余88%是内燃机或混合动力车，可以发现显著的拉升了EV的渗透率。</p><img src="/posts/f9d47372/%E5%8F%91%E5%B1%95%E8%B6%8B%E5%8A%BF.png" class="" title="发展趋势"><p>与此同时，新能源汽车仍有充足上升空间。新能源汽车增速仍在跨越式发展，2025年上半年，PHEV销量突破2.5万辆，较2024年同期增长两倍多，全年销量53,484辆，占新能源汽车销量的1/3。2026年PHEV的销量仍在快速上涨，仅2026年1月份同比激增170.5%。并且按照电动汽车理事会(Electric Vehicle Council)的预估，到2035年电动汽车车队规模将达到500万辆。目前EV保有量仅约40万辆，未来上升空间充分。</p><h2 id="CAFE运行情况分析"><a href="#CAFE运行情况分析" class="headerlink" title="CAFE运行情况分析"></a>CAFE运行情况分析</h2><p>59家履约企业中，仅有1家企业是经销商，贡献了2辆受控车辆，剩余58家企业，620,945辆汽车均有整车生产企业贡献。这其中接近一半的主机厂(25家)注册量不足1,000辆，即使考虑到导入期仅有半年，将注册量翻倍，也仍有16家主机厂注册量不足1,000辆，注册量最少武汉路特斯(Lotus Technology)仅有1辆汽车。这些小规模企业仅占总销量的0.17%，对负积分贡献率也仅有3.55%，将这些企业纳入管控，与比例原则相符吗？有必要吗？</p><h3 id="履约企业注册账户积极性不高，负积分企业更积极应对"><a href="#履约企业注册账户积极性不高，负积分企业更积极应对" class="headerlink" title="履约企业注册账户积极性不高，负积分企业更积极应对"></a>履约企业注册账户积极性不高，负积分企业更积极应对</h3><p>目前59家履约企业中，仅有16家企业完成账户注册，注册率不足30%。这些注册账户的企业，占新车注册数量的34%，占正积分的46%，占负积分的64%。这里能看出负积分企业明显更有动力注册账户。从国别视角来看，中国和欧洲企业各占6家，日本企业4家，美国、韩国和印度企业全部挂零。日本企业更加关注法规，其次是中国和欧洲企业。</p><p>目前所有的正积分只发给完成账户注册的企业，因此目前市场上可以可以销售的正积分仅有783万。哪些拥有正积分，但是没有完成账户注册的企业，他们的正积分会如何处理，等到企业完成注册之后再发给他们吗？目前还没有找到相关表述。</p><h3 id="中国品牌正积分遥遥领先，日本品牌恐成为最大买家"><a href="#中国品牌正积分遥遥领先，日本品牌恐成为最大买家" class="headerlink" title="中国品牌正积分遥遥领先，日本品牌恐成为最大买家"></a>中国品牌正积分遥遥领先，日本品牌恐成为最大买家</h3><p>2025年引入期共计产生了1,716万的正积分和121万的负积分，按照品牌国别来看，中国品牌正积分数量最多，14家中国企业贡献了866万正积分，只有上汽大通一家是负积分，考虑到上汽集团有37万正积分，很可能内部消化。</p><p>中国品牌出售积分的最大的竞争对手，可能来自美国，直白点主要来自特斯拉。美国品牌中特斯拉拥有221万正积分，由于完全没有历史包袱，即使目标收紧，也仍然没有履约难度，可以放心卖积分。虽然通用也有45万正积分，但是考虑到未来履约难度逐渐增加，可以用于出售的数量有限。并且考虑到特斯拉在欧洲市场，早已经与马自达、斯巴鲁等“大冤种”组建积分池，在澳洲积分市场的合作可能更加便利。中国车企想要进入其中，可能仍要依赖价格手段。</p><img src="/posts/f9d47372/%E7%A7%AF%E5%88%86%E6%95%B0%E9%87%8F.png" class="" title="积分数量"><p>其次是日本品牌，贡献了第二多的正积分和最多的负积分，充分展现了日本品牌在澳洲的差异化战略。作为澳洲注册量最大的品牌，丰田拥有289万正积分，是日系品牌中正积分最多的企业；与此相反，主打运动、操控的马自达贡献了50万负积分，是负积分最多的企业。“丰田联盟”中五十铃与铃木分别拥有36万和6万正积分，斯巴鲁拥有近14万的正积分。</p><p>整体来看，日系品牌合规风险较高，平均每注册一辆车仅能够获得9.67个积分，其中表现最好的丰田，每辆车也只能获得25个积分，其他日系品牌不足丰田的一半。按照 法规要求，2026年乘用车和轻商目标相比2025年下降17%和14%，这对这对销量高、电动化转型慢的日系品牌来说，下一个冬天将格外难熬。</p><h3 id="正负积分集中度高，交易机会难觅"><a href="#正负积分集中度高，交易机会难觅" class="headerlink" title="正负积分集中度高，交易机会难觅"></a>正负积分集中度高，交易机会难觅</h3><p>积分的供应和需求都相对充足，但分布非常集中。以供应端为例，40家车企产生了1,716万正积分，但是分布极度不平衡，前5家车企集中度超过70%，比亚迪一家掌握了超过37%的正积分，与特斯拉相同，比亚迪已经全面电动化转型，产生的积分全部可以出售。比亚迪与特斯拉两家企业占据了正积分的50%，剩余38家企业瓜分剩下50%，并且由于没有燃油车包袱，B&amp;T组合正积分稳定产出、全部销售，长期来看他们将会构成市场定价的基础。</p><img src="/posts/f9d47372/%E7%A7%AF%E5%88%86%E5%88%86%E5%B8%83.png" class="" title="积分分布"><p>积分需求端面临的挑战更大，马自达一家贡献了42%的需求量，加上日产、斯巴鲁——“日系三个萝卜头”，占总需求的70%。由于积分供应量远超于需求量，需求方有充足的空间，实现多元化积分供应商来降低履约成本。短期内，需求方的意愿对于交易达成和交易价格具有决定性影响。</p>]]></content>
+    
+    
+    <summary type="html">澳大利亚燃机经济性法案运行情况分析</summary>
+    
+    
+    
+    <category term="应对气候变化" scheme="https://lizhening.github.io/categories/%E5%BA%94%E5%AF%B9%E6%B0%94%E5%80%99%E5%8F%98%E5%8C%96/"/>
+    
+    <category term="气候适应" scheme="https://lizhening.github.io/categories/%E5%BA%94%E5%AF%B9%E6%B0%94%E5%80%99%E5%8F%98%E5%8C%96/%E6%B0%94%E5%80%99%E9%80%82%E5%BA%94/"/>
+    
+    <category term="企业管理" scheme="https://lizhening.github.io/categories/%E5%BA%94%E5%AF%B9%E6%B0%94%E5%80%99%E5%8F%98%E5%8C%96/%E6%B0%94%E5%80%99%E9%80%82%E5%BA%94/%E4%BC%81%E4%B8%9A%E7%AE%A1%E7%90%86/"/>
+    
+    
+    <category term="CAFE" scheme="https://lizhening.github.io/tags/CAFE/"/>
+    
+    <category term="燃油经济性" scheme="https://lizhening.github.io/tags/%E7%87%83%E6%B2%B9%E7%BB%8F%E6%B5%8E%E6%80%A7/"/>
+    
+    <category term="New Vehicle Efficiency Standard" scheme="https://lizhening.github.io/tags/New-Vehicle-Efficiency-Standard/"/>
+    
+    <category term="NVES" scheme="https://lizhening.github.io/tags/NVES/"/>
+    
+    <category term="能效积分" scheme="https://lizhening.github.io/tags/%E8%83%BD%E6%95%88%E7%A7%AF%E5%88%86/"/>
+    
+  </entry>
   
   <entry>
     <title>电力碳排放因子使用指南</title>
@@ -130,13 +163,13 @@
     <category term="法律法规" scheme="https://lizhening.github.io/categories/%E5%BA%94%E5%AF%B9%E6%B0%94%E5%80%99%E5%8F%98%E5%8C%96/%E6%B0%94%E5%80%99%E9%80%82%E5%BA%94/%E6%B3%95%E5%BE%8B%E6%B3%95%E8%A7%84/"/>
     
     
-    <category term="欧盟" scheme="https://lizhening.github.io/tags/%E6%AC%A7%E7%9B%9F/"/>
-    
     <category term="新电池法" scheme="https://lizhening.github.io/tags/%E6%96%B0%E7%94%B5%E6%B1%A0%E6%B3%95/"/>
     
     <category term="碳足迹" scheme="https://lizhening.github.io/tags/%E7%A2%B3%E8%B6%B3%E8%BF%B9/"/>
     
     <category term="电池碳足迹" scheme="https://lizhening.github.io/tags/%E7%94%B5%E6%B1%A0%E7%A2%B3%E8%B6%B3%E8%BF%B9/"/>
+    
+    <category term="欧盟" scheme="https://lizhening.github.io/tags/%E6%AC%A7%E7%9B%9F/"/>
     
     <category term="应对策略" scheme="https://lizhening.github.io/tags/%E5%BA%94%E5%AF%B9%E7%AD%96%E7%95%A5/"/>
     
@@ -163,13 +196,13 @@
     <category term="法律法规" scheme="https://lizhening.github.io/categories/%E5%BA%94%E5%AF%B9%E6%B0%94%E5%80%99%E5%8F%98%E5%8C%96/%E6%B0%94%E5%80%99%E9%80%82%E5%BA%94/%E6%B3%95%E5%BE%8B%E6%B3%95%E8%A7%84/"/>
     
     
+    <category term="欧盟" scheme="https://lizhening.github.io/tags/%E6%AC%A7%E7%9B%9F/"/>
+    
     <category term="CBAM" scheme="https://lizhening.github.io/tags/CBAM/"/>
     
     <category term="碳关税" scheme="https://lizhening.github.io/tags/%E7%A2%B3%E5%85%B3%E7%A8%8E/"/>
     
     <category term="碳边境调整机制" scheme="https://lizhening.github.io/tags/%E7%A2%B3%E8%BE%B9%E5%A2%83%E8%B0%83%E6%95%B4%E6%9C%BA%E5%88%B6/"/>
-    
-    <category term="欧盟" scheme="https://lizhening.github.io/tags/%E6%AC%A7%E7%9B%9F/"/>
     
   </entry>
   
@@ -578,33 +611,6 @@
     <category term="链接" scheme="https://lizhening.github.io/tags/%E9%93%BE%E6%8E%A5/"/>
     
     <category term="hexo-abbrlink" scheme="https://lizhening.github.io/tags/hexo-abbrlink/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>黄金标准机制的要求</title>
-    <link href="https://lizhening.github.io/posts/b991a7f6/"/>
-    <id>https://lizhening.github.io/posts/b991a7f6/</id>
-    <published>2021-10-20T10:49:44.000Z</published>
-    <updated>2022-05-08T07:08:22.639Z</updated>
-    
-    <content type="html"><![CDATA[<blockquote><p>受到巴黎协定第六条谈判进度的缓慢的影响，CDM基本处于停滞状态。目光聚集到其他减排机制上。黄金标准（Gold Standard，以下简称GS）受益于其严格的标准要求，在国际上受到广泛认可。并且GS自诞生之初就通过GS CERs贴标与CDM有着良好的连接，现在更是可以直接将满足要求的CDM项目转为GS项目。通过这种转化机制GS降低CDM业主的成本，有望吸引更多的CDM参与方加入到GS中。</p></blockquote><h2 id="黄金标准简介"><a href="#黄金标准简介" class="headerlink" title="黄金标准简介"></a>黄金标准简介</h2><p>黄金标准创立于2003年，由世界自然基金会（WWF）联合其他组织共同发起成立。该项目目的是认证同时符合环境要求和可持续要求的减排项目。Gold Standard for Global Goal（以下简称GS4GG）是其提出的最新标准。相较于之前的GS 2.0系列标准，该标准强化了对可以续发展目标的响应，更加符合巴黎协定与联合国可持续发展目标要求。目前，所有申请加入GS的项目都必须依照GS4GG标准要求开发项目。老项目仍然可以允许按照GS 2.0系列标准进行签发，但是在签发之后必须升级到GS4GG标准。</p><p>如果想要更加直观的了解GS的宗旨与工作成果，可以到<a href="https://www.goldstandard.org/about-us/vision-and-mission">VISION+ Impacts</a>查看。</p><h2 id="组织机构"><a href="#组织机构" class="headerlink" title="组织机构"></a>组织机构</h2><p>完整的GS网络主要由四部分构成，分别是：GS基金董事会、GS秘书处和技术管理委员会以及NGO支持网络。<br><img src="https://i.loli.net/2021/10/20/NgckfJdymAPBUb5.png" alt="GS网络组成"><br>与CDM类似，GS秘书处是与减排项目业主联系最近紧密的部门。项目的审定、注册与签发都需要和他们打交道。如果是初次接触GS，可以通过<a href="https://globalgoals.goldstandard.org/contacts/">CONTACTS PAGE</a>的联系方式与GS交流。</p><h2 id="规则框架"><a href="#规则框架" class="headerlink" title="规则框架"></a>规则框架</h2><p>经过近20年的发展，GS拥有一套比较完善且清晰的文件规则体系。GS官网按照功能将文件分为”Governance document“、”Core Documents“、”Assurance document“、”Activity Requirements“、”Guidelines”、”Optional Requirements“、”Rule Updates“、”Rule Clarifications“<br>、”Template“、”Methodology Tool“、”Methodology“、”Framework methodology“、”Procedures“13个类型。</p><p>我在实际阅读过程中，为了便于使用，可以从重要性角度结合实际功能对其进行分类，大概可以分为三个层级。</p><h3 id="纲领性文件"><a href="#纲领性文件" class="headerlink" title="纲领性文件"></a>纲领性文件</h3><p>第一个层级是纲领性文件，可以在<a href="https://globalgoals.goldstandard.org/governance/">Governance</a>中找到。主要介绍GS的标准程序、原则、职权范围、评价机制和政策。这是GS的一切行为的纲领和根基，但是对于一般项目开发的指导有限。</p><h3 id="核心文件"><a href="#核心文件" class="headerlink" title="核心文件"></a>核心文件</h3><p>第二个层级是核心文件，可以在<a href="https://globalgoals.goldstandard.org/documents/core-documents/">Core Documents</a>中找到，这些文件适用于所有项目。包括了对项目一般要求、利益相关方咨询要求、员工保障措施、性别平等的要求。其中，最为基础的文件是<a href="https://globalgoals.goldstandard.org/101-par-principles-requirements/">《PRINCIPLES &amp; REQUIREMENTS》</a> ，概括性的阐述了范围、适用性、要求和流程。如果GS项目遇到问题，首先应该检索这个文件，如果没有专门规定，再去找专项文件中找解决方案。在这一层级中，还可以包含临时或者永久的<a href="https://globalgoals.goldstandard.org/documents/rc/">规则解释</a>，在我的理解中他们是对规则的补充和解释。如果查看最新的要求，可以到<a href="https://globalgoals.goldstandard.org/rule-updates/">规则更新</a>查看，即将施行和已经施行的要求会在这个页面展示。</p><h3 id="指导文件"><a href="#指导文件" class="headerlink" title="指导文件"></a>指导文件</h3><p>第三个层级就是针对不同项目或者不同情景的指导文件了，包含的内容就比较多。主要可以分为四大类，</p><ol><li>第一部分是<a href="https://globalgoals.goldstandard.org/documents/optional-requirements/">一般性的规则文件</a>，比如减排量声明的要求、GS 2.0升级到GS4GG的transition要求、POA项目、小规模项目以及设计变更和偏移申报的流程。</li><li>第二部分是针对不同类型项目的<a href="https://globalgoals.goldstandard.org/200-activity-requirements/">具体要求</a>和<a href="https://globalgoals.goldstandard.org/documents/guidelines/">指导</a>。具体要求指的是GS对土地使用和造林项目（LUF）、可再生能源项目（RE）和社区服务项目（CSA）提出的更加细致、有针对性的要求。例如，对于常见的可再生能源项目，只有位于最不发达国家（LDC）、小岛屿与发展中国家（SIDS）、内陆发展中国家（LLDC）或者可再生能源技术渗透率低于5%的低收入或者中低收入国家才能够注册GS项目。这些要求可以说是非常严格，正是因为较高的要求和标准，才能保证减排收益回馈到最不发到地区，同时也确保减排量的稀缺性与高价格属性。指导是GS对于一些领域的强制性指导方案，比如利益相关方咨询、造林风险评估等。</li><li>第三部分是支撑文件，主要包括在编写项目文件过程中用到的各种<a href="https://globalgoals.goldstandard.org/documents/template/">模板</a>、<a href="https://globalgoals.goldstandard.org/documents/methodology/">方法学</a>（包括减排量计算方法学和<a href="https://globalgoals.goldstandard.org/400-sdg-impact-quantification/">SDGs影响评估方法学</a>）和<a href="https://globalgoals.goldstandard.org/documents/methodology-tool/">工具</a>。</li><li>第四部分是专项要求，更像是对于一类问题的汇总。比如对CDM项目转换为GS项目的<a href="https://globalgoals.goldstandard.org/cdm-transition/">要求</a>以及专门对<a href="https://globalgoals.goldstandard.org/corsia-updates/">CORIS的要求</a>。</li></ol><h2 id="项目要求"><a href="#项目要求" class="headerlink" title="项目要求"></a>项目要求</h2>]]></content>
-    
-    
-    <summary type="html">黄金标准项目开发过程中的经验总结。</summary>
-    
-    
-    
-    <category term="应对气候变化" scheme="https://lizhening.github.io/categories/%E5%BA%94%E5%AF%B9%E6%B0%94%E5%80%99%E5%8F%98%E5%8C%96/"/>
-    
-    <category term="温室气体减排" scheme="https://lizhening.github.io/categories/%E5%BA%94%E5%AF%B9%E6%B0%94%E5%80%99%E5%8F%98%E5%8C%96/%E6%B8%A9%E5%AE%A4%E6%B0%94%E4%BD%93%E5%87%8F%E6%8E%92/"/>
-    
-    <category term="GS" scheme="https://lizhening.github.io/categories/%E5%BA%94%E5%AF%B9%E6%B0%94%E5%80%99%E5%8F%98%E5%8C%96/%E6%B8%A9%E5%AE%A4%E6%B0%94%E4%BD%93%E5%87%8F%E6%8E%92/GS/"/>
-    
-    
-    <category term="黄金标准" scheme="https://lizhening.github.io/tags/%E9%BB%84%E9%87%91%E6%A0%87%E5%87%86/"/>
-    
-    <category term="开发要求" scheme="https://lizhening.github.io/tags/%E5%BC%80%E5%8F%91%E8%A6%81%E6%B1%82/"/>
     
   </entry>
   
